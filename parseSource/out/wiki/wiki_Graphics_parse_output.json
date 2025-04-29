@@ -1,0 +1,1318 @@
+{
+    "GL_Primitive": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "type",
+                "type": "int",
+                "documentation": ""
+            },
+            {
+                "name": "lineWidth",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "hasTexture",
+                "type": "bool",
+                "documentation": ""
+            },
+            {
+                "name": "texture",
+                "type": "GL_Texture",
+                "documentation": ""
+            },
+            {
+                "name": "textureAntialias",
+                "type": "bool",
+                "documentation": ""
+            },
+            {
+                "name": "hasColor",
+                "type": "bool",
+                "documentation": ""
+            },
+            {
+                "name": "color",
+                "type": "GL_Color",
+                "documentation": ""
+            },
+            {
+                "name": "id",
+                "type": "int",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
+    "GL_Texture": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "id_",
+                "type": "int",
+                "documentation": ""
+            },
+            {
+                "name": "width_",
+                "type": "int",
+                "documentation": ""
+            },
+            {
+                "name": "height_",
+                "type": "int",
+                "documentation": ""
+            },
+            {
+                "name": "isLogical_",
+                "type": "bool",
+                "documentation": ""
+            },
+            {
+                "name": "u_base_",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "v_base_",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "u_size_",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "v_size_",
+                "type": "float",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
+    "GL_Color": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "r",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "g",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "b",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "a",
+                "type": "float",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
+    "GL_ColorTexVertex": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "x",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "y",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "u",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "v",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "r",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "g",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "b",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "a",
+                "type": "float",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
+    "GL_Line": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "start",
+                "type": "Pointf",
+                "documentation": ""
+            },
+            {
+                "name": "end",
+                "type": "Pointf",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
+    "GL_TexVertex": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "x",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "y",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "u",
+                "type": "float",
+                "documentation": ""
+            },
+            {
+                "name": "v",
+                "type": "float",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
+    "CSurface": {
+        "methods": [
+            {
+                "name": "AddTexVertices",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "vec",
+                        "type": "std::vector<GL_TexVertex>"
+                    },
+                    {
+                        "name": "x1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "u1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "v1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "x2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "u2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "v2",
+                        "type": "float"
+                    }
+                ],
+                "documentation": "**Warning**: operations with `std::vector` are not yet implemented"
+            },
+            {
+                "name": "GL_BlitImage",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "x2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "rotation",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "mirror",
+                        "type": "bool"
+                    }
+                ],
+                "documentation": "Renders an image texture\n`float x, float y` -- starting point (top-left corner)\n`float x2, float y2` -- width and length"
+            },
+            {
+                "name": "GL_BlitImagePartial",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "size_x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "size_y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "start_x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "end_x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "start_y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "end_y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "alpha",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "mirror",
+                        "type": "bool"
+                    }
+                ],
+                "documentation": "Renders a portion of an image texture\n`float x, float y` -- starting point (top-left corner)\n`float x2, float y2` -- width and length\n`float start_x, float end_x, float start_y, float end_y` -- normalized coordinates of the portion of the texture to render\nExample:"
+            },
+            {
+                "name": "GL_BlitMultiColorImage",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "texVertices",
+                        "type": "std::vector<GL_ColorTexVertex>"
+                    },
+                    {
+                        "name": "antialias",
+                        "type": "bool"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_BlitMultiImage",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "texVertices",
+                        "type": "std::vector<GL_TexVertex>"
+                    },
+                    {
+                        "name": "antialias",
+                        "type": "bool"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_BlitPixelImage",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "x2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "rotation",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "mirror",
+                        "type": "bool"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_BlitPixelImageWide",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "x2",
+                        "type": "int"
+                    },
+                    {
+                        "name": "y2",
+                        "type": "int"
+                    },
+                    {
+                        "name": "opacity",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "mirror",
+                        "type": "bool"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_ClearAll",
+                "return_type": "void",
+                "args": [],
+                "documentation": "Remove everything that has been drawn."
+            },
+            {
+                "name": "GL_ClearColor",
+                "return_type": "void",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_CreateImagePrimitive",
+                "return_type": "GL_Primitive",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "size_x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "size_y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "rotate",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_CreateMultiImagePrimitive",
+                "return_type": "GL_Primitive",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "vec",
+                        "type": "std::vector<GL_TexVertex>"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_CreateMultiLinePrimitive",
+                "return_type": "GL_Primitive",
+                "args": [
+                    {
+                        "name": "vec",
+                        "type": "std::vector<GL_Line>"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "thickness",
+                        "type": "float"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_CreateMultiRectPrimitive",
+                "return_type": "GL_Primitive",
+                "args": [
+                    {
+                        "name": "vec",
+                        "type": "std::vector<Globals::Rect>"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_CreatePixelImagePrimitive",
+                "return_type": "GL_Primitive",
+                "args": [
+                    {
+                        "name": "tex",
+                        "type": "GL_Texture"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "size_x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "size_y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "rotate",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "unk",
+                        "type": "bool"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_CreateRectOutlinePrimitive",
+                "return_type": "GL_Primitive",
+                "args": [
+                    {
+                        "name": "x",
+                        "type": "int"
+                    },
+                    {
+                        "name": "y",
+                        "type": "int"
+                    },
+                    {
+                        "name": "w",
+                        "type": "int"
+                    },
+                    {
+                        "name": "h",
+                        "type": "int"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "lineWidth",
+                        "type": "float"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_CreateRectPrimitive",
+                "return_type": "GL_Primitive",
+                "args": [
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "w",
+                        "type": "float"
+                    },
+                    {
+                        "name": "h",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_DestroyPrimitive",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "primitive",
+                        "type": "GL_Primitive"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_DisableBlend",
+                "return_type": "bool",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_DrawCircle",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "radius",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": "Renders a full circle\n`float x, float y` -- center point\n`radius` -- the radius of the circle"
+            },
+            {
+                "name": "GL_DrawLine",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "x1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "x2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "lineWidth",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": "Renders a line\n`float x1, float y1` -- starting point\n`float x2, float y2` -- end point"
+            },
+            {
+                "name": "GL_DrawRect",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "x1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "x2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": "Renders a rectangle\n`float x1, float y1` -- starting point (top-left corner)\n`float x2, float y2` -- width and length"
+            },
+            {
+                "name": "GL_DrawRectOutline",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "x1",
+                        "type": "int"
+                    },
+                    {
+                        "name": "y1",
+                        "type": "int"
+                    },
+                    {
+                        "name": "x2",
+                        "type": "int"
+                    },
+                    {
+                        "name": "y2",
+                        "type": "int"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "lineWidth",
+                        "type": "float"
+                    }
+                ],
+                "documentation": "Renders a rectange, no fill\n`float x1, float y1` -- starting point (top-left corner)\n`float x2, float y2` -- width and length"
+            },
+            {
+                "name": "GL_DrawShield",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "x",
+                        "type": "int"
+                    },
+                    {
+                        "name": "y",
+                        "type": "int"
+                    },
+                    {
+                        "name": "a1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "b1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "angle1",
+                        "type": "int"
+                    },
+                    {
+                        "name": "angle2",
+                        "type": "int"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    },
+                    {
+                        "name": "thickness",
+                        "type": "float"
+                    }
+                ],
+                "documentation": "Renders a gradient shield effect. (like how a portion of the shield turns white when a beam hits it)\n`int x, int y` -- center point\n`float a1, float b1` -- radius X, radius Y\n`int angle1, int angle2` -- start direction, end direction"
+            },
+            {
+                "name": "GL_DrawLaser",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "x",
+                        "type": "int"
+                    },
+                    {
+                        "name": "y",
+                        "type": "int"
+                    },
+                    {
+                        "name": "w",
+                        "type": "int"
+                    },
+                    {
+                        "name": "h",
+                        "type": "int"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": "Renders a beam.\n`int x, int y` -- origin point\n`int w` -- beam length\n`int h` -- beam thickness"
+            },
+            {
+                "name": "GL_DrawTriangle",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "vertex1",
+                        "type": "Point"
+                    },
+                    {
+                        "name": "vertex2",
+                        "type": "Point"
+                    },
+                    {
+                        "name": "vertex3",
+                        "type": "Point"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": "Renders a triangle. The verticies are constructed with `Hyperspace.Point(x, y)`"
+            },
+            {
+                "name": "GL_EnableBlend",
+                "return_type": "bool",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_GetColor",
+                "return_type": "GL_Color",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_LoadIdentity",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_OrthoProjection",
+                "return_type": "int",
+                "args": [
+                    {
+                        "name": "mx1",
+                        "type": "float"
+                    },
+                    {
+                        "name": "mx2",
+                        "type": "float"
+                    },
+                    {
+                        "name": "mx3",
+                        "type": "float"
+                    },
+                    {
+                        "name": "mx4",
+                        "type": "float"
+                    },
+                    {
+                        "name": "mx5",
+                        "type": "float"
+                    },
+                    {
+                        "name": "mx6",
+                        "type": "float"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_PopMatrix",
+                "return_type": "int",
+                "args": [],
+                "documentation": "Remove the current graphic from the selected stack."
+            },
+            {
+                "name": "GL_PopScissor",
+                "return_type": "void",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_PopStencilMode",
+                "return_type": "void",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_PushMatrix",
+                "return_type": "int",
+                "args": [],
+                "documentation": "Push the current graphic, that is about to be drawn, onto the selected stack. Which can later be modified with other `CSurface` methods."
+            },
+            {
+                "name": "GL_PushStencilMode",
+                "return_type": "void",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_RemoveColorTint",
+                "return_type": "void",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GL_RenderPrimitive",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "primitive",
+                        "type": "GL_Primitive"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_RenderPrimitiveWithAlpha",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "primitive",
+                        "type": "GL_Primitive"
+                    },
+                    {
+                        "name": "alpha",
+                        "type": "float"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_RenderPrimitiveWithColor",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "primitive",
+                        "type": "GL_Primitive"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_Rotate",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "angle",
+                        "type": "float"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "z=1.f",
+                        "type": "float"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_Scale",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "z",
+                        "type": "float"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_SetColor",
+                "return_type": "int",
+                "args": [
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_SetColorTint",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_SetStencilMode",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "stencilMode",
+                        "type": "GL_StencilMode"
+                    },
+                    {
+                        "name": "ref",
+                        "type": "int"
+                    },
+                    {
+                        "name": "mask",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GL_Translate",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "z=0.f",
+                        "type": "float"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GetColorTint",
+                "return_type": "GL_Color",
+                "args": [],
+                "documentation": ""
+            }
+        ],
+        "fields": [],
+        "constants": []
+    },
+    "freetype": {
+        "methods": [
+            {
+                "name": "easy_measurePrintLines",
+                "return_type": "Pointf",
+                "args": [
+                    {
+                        "name": "fontSize",
+                        "type": "int"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "line_length",
+                        "type": "int"
+                    },
+                    {
+                        "name": "text",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": "Return: The horizontal/vertical size of the text. Note that the augments `x` and `y` do not affect the return value."
+            },
+            {
+                "name": "easy_measureWidth",
+                "return_type": "int",
+                "args": [
+                    {
+                        "name": "fontSize",
+                        "type": "int"
+                    },
+                    {
+                        "name": "text",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": "Return: The horizontal size of the text."
+            },
+            {
+                "name": "easy_print",
+                "return_type": "Pointf",
+                "args": [
+                    {
+                        "name": "fontSize",
+                        "type": "int"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "text",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": "Return.`x`: The horizontal size of the text.\nReturn.`y`: Y position of the last letter."
+            },
+            {
+                "name": "easy_printAutoNewlines",
+                "return_type": "Pointf",
+                "args": [
+                    {
+                        "name": "fontSize",
+                        "type": "int"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "line_length",
+                        "type": "int"
+                    },
+                    {
+                        "name": "text",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": "Return.`x`: The horizontal size of the text.\nReturn.`y`: Y position of the last letter."
+            },
+            {
+                "name": "easy_printAutoShrink",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "fontId",
+                        "type": "int"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "maxWidth",
+                        "type": "int"
+                    },
+                    {
+                        "name": "centered",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "text",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "easy_printCenter",
+                "return_type": "Pointf",
+                "args": [
+                    {
+                        "name": "fontSize",
+                        "type": "int"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "text",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "easy_printNewlinesCentered",
+                "return_type": "Pointf",
+                "args": [
+                    {
+                        "name": "fontSize",
+                        "type": "int"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "line_length",
+                        "type": "int"
+                    },
+                    {
+                        "name": "text",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "easy_printRightAlign",
+                "return_type": "Pointf",
+                "args": [
+                    {
+                        "name": "fontSize",
+                        "type": "int"
+                    },
+                    {
+                        "name": "x",
+                        "type": "float"
+                    },
+                    {
+                        "name": "y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "text",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": "Return.`x`: The value is somehow always fixed to 0.\nReturn.`y`: Y position of the last letter."
+            }
+        ],
+        "fields": [],
+        "constants": []
+    }
+}
