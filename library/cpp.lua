@@ -1,4 +1,10 @@
 ---@meta
+-- C++ type definitions
+
+---@class array<T, integer> -- array is not exposed yet
+
+
+
 ---@class vector<T>: { [integer]: T }
 local vector = {}
 
@@ -13,8 +19,11 @@ function vector:empty() end
 
 function vector:clear() end
 
-function vector:push_back() end
-    
+---@generic T
+---@param self vector<T>
+---@param value T
+function vector:push_back(value) end
+
 function vector:pop_back() end
 
 ---@generic T

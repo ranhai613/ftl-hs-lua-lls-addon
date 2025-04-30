@@ -25,19 +25,19 @@ C_LUA_PRIMITIVES = {
     # int
     "char" : "integer",
     "signed_char" : "integer",
-    "unsigned_char" : "integer",
+    "unsigned_char" : "uint",
     "int" : "integer",
     "signed_int": "integer",
-    "unsigned_int": "integer",
+    "unsigned_int": "uint",
     "short" : "integer",
     "signed_short" : "integer",
-    "unsigned_short" : "integer",
+    "unsigned_short" : "uint",
     "long" : "integer",
     "signed_long" : "integer",
-    "unsigned_long" : "integer",
+    "unsigned_long" : "uint",
     "long_long" : "integer",
     "signed_long_long" : "integer",
-    "unsigned_long_long" : "integer",
+    "unsigned_long_long" : "uint",
     
     "int8_t" : "integer",
     
@@ -226,12 +226,12 @@ g_functionDataMap: dict[str, FunctionInfo] = {}
 g_enum_parse_requests = set()
 
 def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, HSData_path: str, wikiData_path: str = None) -> str:    
-    def get_lua_type(type: str) -> str:
+    def get_lua_type(type: str, isClassDef=False) -> str:
         type = type.strip()
         if type in HS_LUA_MODULES:
             return type
     
-        type = type.replace("unsigned ", "").replace(" ", "").replace("std::", "").replace("*", "").replace("&", "")
+        type = type.replace("unsigned ", "u").replace(" ", "").replace("std::", "").replace("*", "").replace("&", "")
         
         # Handle arrays like int[10]
         array_match = re.match(r'(.+)\[(\d+)\]', type)
@@ -263,7 +263,7 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
             return f"{get_lua_type(outer_type)}<{processed_inner_type}>"
         
         ret = C_LUA_PRIMITIVES.get(type)
-        if ret:
+        if ret and not isClassDef:
             return ret
         
         ret = classMap.get(type)
@@ -404,33 +404,20 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
             constantName = m.group(1)
             typeName = m.group(2)
             g_enum_parse_requests.add(typeName)
-            # if re.search(r"(\w+)::\w+", typeName):
-            #     typeName = m.group(1)
             
-            # documentation = ""
+            documentation = ""
             
-            # # Check wiki data
-            # if wikiInfo:
-            #     matchedList = [x for x in wikiInfo["constants"] if x["name"] == constantName]
-            #     if matchedList:
-            #         typeName = matchedList[0]["type"]
-            #         documentation = matchedList[0]["documentation"]
-            
-            # result[className].append(
-            #     {
-            #         "label": constantName,
-            #         "kind": 13,
-            #         "detail": typeName,
-            #         "documentation": documentation,
-            #         "data": {"type": typeName}
-            #     }
-            # )
-            
+            # Check wiki data
+            if wikiInfo:
+                matchedList = [x for x in wikiInfo["constants"] if x["name"] == constantName]
+                if matchedList:
+                    documentation = matchedList[0]["documentation"]
+                        
             value = enumMap.get(typeName, None)
             if value is None:
                 print(f"parse_constants: {typeName} not found in enumMap")
                 continue
-            ret += f"    {constantName} = {value},\n"
+            ret += f"    {constantName} = {value}," + (" -- " + documentation.replace("\n", "<br>") if documentation else "") + "\n"
             count += 1
             
         return ret, count
@@ -488,23 +475,19 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
     globalHSInfo = HSData.get(moduleName, None)
     globalWikiInfo = wikiData.get(moduleName, None)
     
-    result += f"---@class {moduleName}\n"
-    
     globalFields = re.search(r'static\s+swig_lua_attribute\s+swig_SwigModule_attributes\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
     if globalFields:
-        p, _ = parse_fields(moduleName, globalWikiInfo, globalFields.group(1), True)
-        result += p
-        
-    result += f"{moduleName} = {{}}\n\n"
-
+        part_module_fields, _ = parse_fields(moduleName, globalWikiInfo, globalFields.group(1), True)
+    
     globalMethods = re.search(r'static\s+swig_lua_method\s+swig_SwigModule_methods\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
     if globalMethods:
-        p, _ = parse_methods(moduleName, globalHSInfo, globalWikiInfo, globalMethods.group(1), FuncType.STATIC)
-        result += p
+        part_module_methods, _ = parse_methods(moduleName, globalHSInfo, globalWikiInfo, globalMethods.group(1), FuncType.STATIC)
     
-    # globalConstants = re.search(r'static\s+swig_lua_const_info\s+swig_SwigModule_constants\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
-    # if globalConstants:
-    #     result += parse_constants(moduleName, globalWikiInfo, globalConstants.group(1))
+    globalConstants = re.search(r'static\s+swig_lua_const_info\s+swig_SwigModule_constants\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
+    if globalConstants:
+        part_methods_consts, _ = parse_constants(moduleName, globalWikiInfo, globalConstants.group(1))
+    
+    result += f"---@class {moduleName}\n{part_module_fields}{moduleName} = {{" + (f"\n{part_methods_consts}" if part_methods_consts else "") + f"}}\n\n{part_module_methods}"
     
     # Parse classes
     for m in re.finditer(r'#define SWIGTYPE_p_(\w+)', lua_code):
@@ -547,10 +530,11 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
             part_consts, count_consts = parse_constants(className, wikiInfo, constants_m.group(1))
         
         should_be_enum = count_constructor < 2 and count_methods == 0 and count_fields == 0 and count_consts > 0
+        this_name = get_lua_type(className, True)
         if should_be_enum:
-            result += f"---@enum {get_lua_type(className)}\n{get_lua_type(className)} = {{\n{part_consts}}}\n\n"
+            result += f"---@enum {this_name}\n{this_name} = {{\n{part_consts}}}\n\n"
         else:
-            result += f"---@class {get_lua_type(className)}" + ((": " + ", ".join(parents)) if parents else "") + f"\n{part_fields}{get_lua_type(className)} = {{" + (f"\n{part_consts}" if count_consts > 0 else "") + f"}}\n\n{part_constructor}{part_methods}"
+            result += f"---@class {this_name}" + ((": " + ", ".join(parents)) if parents else "") + f"\n{part_fields}{this_name} = {{" + (f"\n{part_consts}" if count_consts > 0 else "") + f"}}\n\n{part_constructor}{part_methods}"
     
     return result
     
@@ -578,7 +562,7 @@ DATA_LIST = [
     {
         "name": "Defines",
         "luaWrap": "src/lua_wrap/definesLUA_wrap.cxx",
-        "wikiData": None,
+        "wikiData": "out/wiki/wiki_Defines_parse_output.json",
     },
     {
         "name": "RapidXML",

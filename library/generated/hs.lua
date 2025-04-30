@@ -1,8 +1,7 @@
 ---@meta
 ---@class Hyperspace
----@field testvec vector<integer>
 ---@field version Hyperspace.HyperspaceVersion (Read-only) 
----@field Global_currentSeed integer (Read-only) 
+---@field Global_currentSeed uint (Read-only) 
 ---@field metaVariables Hyperspace.playerVariableType 
 ---@field playerVariables Hyperspace.playerVariableType 
 ---@field Animations Hyperspace.AnimationControl (Read-only) 
@@ -24,7 +23,126 @@
 ---@field StatBoostDefinition_savedStatBoostDefs unordered_map<string, Hyperspace.StatBoostDefinition> 
 ---@field CustomShipUnlocks_instance Hyperspace.CustomShipUnlocks (Read-only) 
 ---@field App Hyperspace.CApp (Read-only) 
-Hyperspace = {}
+Hyperspace = {
+    CrewExtraCondition_BURNING = 0,
+    CrewExtraCondition_SUFFOCATING = 1,
+    CrewExtraCondition_MIND_CONTROLLED = 2,
+    CrewExtraCondition_STUNNED = 3,
+    CrewExtraCondition_REPAIRING = 4,
+    CrewExtraCondition_REPAIRING_SYSTEM = 5,
+    CrewExtraCondition_REPAIRING_BREACH = 6,
+    CrewExtraCondition_FIGHTING = 7,
+    CrewExtraCondition_SABOTAGING = 8,
+    CrewExtraCondition_SHOOTING = 9,
+    CrewExtraCondition_MOVING = 10,
+    CrewExtraCondition_IDLE = 11,
+    CrewExtraCondition_MANNING = 12,
+    CrewExtraCondition_FIREFIGHTING = 13,
+    CrewExtraCondition_DYING = 14,
+    CrewExtraCondition_TELEPORTING = 15,
+    ActivatedPowerRequirements_Type_PLAYER = 0,
+    ActivatedPowerRequirements_Type_ENEMY = 1,
+    ActivatedPowerRequirements_Type_CHARGE = 2,
+    ActivatedPowerRequirements_Type_UNKNOWN = 3,
+    CrewStat_MAX_HEALTH = 0,
+    CrewStat_STUN_MULTIPLIER = 1,
+    CrewStat_MOVE_SPEED_MULTIPLIER = 2,
+    CrewStat_REPAIR_SPEED_MULTIPLIER = 3,
+    CrewStat_DAMAGE_MULTIPLIER = 4,
+    CrewStat_RANGED_DAMAGE_MULTIPLIER = 5,
+    CrewStat_DOOR_DAMAGE_MULTIPLIER = 6,
+    CrewStat_FIRE_REPAIR_MULTIPLIER = 7,
+    CrewStat_SUFFOCATION_MODIFIER = 8,
+    CrewStat_FIRE_DAMAGE_MULTIPLIER = 9,
+    CrewStat_OXYGEN_CHANGE_SPEED = 10,
+    CrewStat_DAMAGE_TAKEN_MULTIPLIER = 11,
+    CrewStat_CLONE_SPEED_MULTIPLIER = 12,
+    CrewStat_PASSIVE_HEAL_AMOUNT = 13,
+    CrewStat_TRUE_PASSIVE_HEAL_AMOUNT = 14,
+    CrewStat_TRUE_HEAL_AMOUNT = 15,
+    CrewStat_PASSIVE_HEAL_DELAY = 16,
+    CrewStat_ACTIVE_HEAL_AMOUNT = 17,
+    CrewStat_SABOTAGE_SPEED_MULTIPLIER = 18,
+    CrewStat_ALL_DAMAGE_TAKEN_MULTIPLIER = 19,
+    CrewStat_HEAL_SPEED_MULTIPLIER = 20,
+    CrewStat_HEAL_CREW_AMOUNT = 21,
+    CrewStat_DAMAGE_ENEMIES_AMOUNT = 22,
+    CrewStat_BONUS_POWER = 23,
+    CrewStat_POWER_DRAIN = 24,
+    CrewStat_ESSENTIAL = 25,
+    CrewStat_CAN_FIGHT = 26,
+    CrewStat_CAN_REPAIR = 27,
+    CrewStat_CAN_SABOTAGE = 28,
+    CrewStat_CAN_MAN = 29,
+    CrewStat_CAN_TELEPORT = 30,
+    CrewStat_CAN_SUFFOCATE = 31,
+    CrewStat_CONTROLLABLE = 32,
+    CrewStat_CAN_BURN = 33,
+    CrewStat_IS_TELEPATHIC = 34,
+    CrewStat_RESISTS_MIND_CONTROL = 35,
+    CrewStat_IS_ANAEROBIC = 36,
+    CrewStat_CAN_PHASE_THROUGH_DOORS = 37,
+    CrewStat_DETECTS_LIFEFORMS = 38,
+    CrewStat_CLONE_LOSE_SKILLS = 39,
+    CrewStat_POWER_DRAIN_FRIENDLY = 40,
+    CrewStat_DEFAULT_SKILL_LEVEL = 41,
+    CrewStat_POWER_RECHARGE_MULTIPLIER = 42,
+    CrewStat_HACK_DOORS = 43,
+    CrewStat_NO_CLONE = 44,
+    CrewStat_NO_SLOT = 45,
+    CrewStat_NO_AI = 46,
+    CrewStat_VALID_TARGET = 47,
+    CrewStat_CAN_MOVE = 48,
+    CrewStat_TELEPORT_MOVE = 49,
+    CrewStat_TELEPORT_MOVE_OTHER_SHIP = 50,
+    CrewStat_SILENCED = 51,
+    CrewStat_LOW_HEALTH_THRESHOLD = 52,
+    CrewStat_NO_WARNING = 53,
+    CrewStat_CREW_SLOTS = 54,
+    CrewStat_ACTIVATE_WHEN_READY = 55,
+    CrewStat_STAT_BOOST = 56,
+    CrewStat_DEATH_EFFECT = 57,
+    CrewStat_POWER_EFFECT = 58,
+    CrewStat_POWER_MAX_CHARGES = 59,
+    CrewStat_POWER_CHARGES_PER_JUMP = 60,
+    CrewStat_POWER_COOLDOWN = 61,
+    CrewStat_TRANSFORM_RACE = 62,
+    StatBoostDefinition_BoostType_MULT = 0,
+    StatBoostDefinition_BoostType_FLAT = 1,
+    StatBoostDefinition_BoostType_ADD = 1,
+    StatBoostDefinition_BoostType_SET = 2,
+    StatBoostDefinition_BoostType_FLIP = 3,
+    StatBoostDefinition_BoostType_SET_VALUE = 4,
+    StatBoostDefinition_BoostType_MIN = 5,
+    StatBoostDefinition_BoostType_MAX = 6,
+    StatBoostDefinition_BoostType_REPLACE_GROUP = 7,
+    StatBoostDefinition_BoostType_REPLACE_POWER = 8,
+    StatBoostDefinition_BoostSource_CREW = 0,
+    StatBoostDefinition_BoostSource_AUGMENT = 1,
+    StatBoostDefinition_ShipTarget_PLAYER_SHIP = 0,
+    StatBoostDefinition_ShipTarget_ENEMY_SHIP = 1,
+    StatBoostDefinition_ShipTarget_CURRENT_ALL = 2,
+    StatBoostDefinition_ShipTarget_CURRENT_ROOM = 3,
+    StatBoostDefinition_ShipTarget_OTHER_ALL = 4,
+    StatBoostDefinition_ShipTarget_ORIGINAL_SHIP = 5,
+    StatBoostDefinition_ShipTarget_ORIGINAL_OTHER_SHIP = 6,
+    StatBoostDefinition_ShipTarget_CREW_TARGET = 7,
+    StatBoostDefinition_ShipTarget_TARGETS_ME = 8,
+    StatBoostDefinition_ShipTarget_ALL = 9,
+    StatBoostDefinition_SystemRoomTarget_ALL = 0,
+    StatBoostDefinition_SystemRoomTarget_NONE = 1,
+    StatBoostDefinition_CrewTarget_ALLIES = 0,
+    StatBoostDefinition_CrewTarget_ENEMIES = 1,
+    StatBoostDefinition_CrewTarget_SELF = 2,
+    StatBoostDefinition_CrewTarget_ALL = 3,
+    StatBoostDefinition_CrewTarget_CURRENT_ALLIES = 4,
+    StatBoostDefinition_CrewTarget_CURRENT_ENEMIES = 5,
+    StatBoostDefinition_CrewTarget_ORIGINAL_ALLIES = 6,
+    StatBoostDefinition_CrewTarget_ORIGINAL_ENEMIES = 7,
+    StatBoostDefinition_DroneTarget_DRONES = 0,
+    StatBoostDefinition_DroneTarget_CREW = 1,
+    StatBoostDefinition_DroneTarget_ALL = 2,
+}
 
 ---@param unknown Hyperspace.font_data
 ---@param unknown1 integer
@@ -40,7 +158,7 @@ function Hyperspace.getSkillBonus(unknown, unknown1) end
 ---@return integer
 function Hyperspace.random32() end
 
----@param unknown integer
+---@param unknown uint
 ---@return unknown
 function Hyperspace.setRandomSeed(unknown) end
 
@@ -111,14 +229,14 @@ function Hyperspace.ShipGenerator_GenerateSystemMaxes(unknown, unknown1) end
 
 ---@param unknown Hyperspace.ShipManager
 ---@param unknown1 string
----@param unknown2 integer
+---@param unknown2 uint
 ---@return vector<Hyperspace.CrewBlueprint>
 function Hyperspace.ShipGenerator_GetPossibleCrewList(unknown, unknown1, unknown2) end
 
 ---@param unknown Hyperspace.ShipManager
 ---@param unknown1 string
 ---@param unknown2 integer
----@param unknown3 integer
+---@param unknown3 uint
 ---@param unknown4 boolean
 ---@return vector<Hyperspace.DroneBlueprint>
 function Hyperspace.ShipGenerator_GetPossibleDroneList(unknown, unknown1, unknown2, unknown3, unknown4) end
@@ -133,13 +251,13 @@ function Hyperspace.ShipGenerator_GetPossibleSystemUpgrades(unknown, unknown1, u
 ---@param unknown Hyperspace.ShipManager
 ---@param unknown1 string
 ---@param unknown2 integer
----@param unknown3 integer
+---@param unknown3 uint
 ---@return vector<Hyperspace.WeaponBlueprint>
 function Hyperspace.ShipGenerator_GetPossibleWeaponList(unknown, unknown1, unknown2, unknown3) end
 
 ---@param unknown Hyperspace.ShipManager
 ---@param unknown1 vector<integer>
----@param unknown2 integer
+---@param unknown2 uint
 ---@return boolean
 function Hyperspace.ShipGenerator_UpgradeSystem(unknown, unknown1, unknown2) end
 
@@ -174,8 +292,8 @@ function Hyperspace.CustomEventsParser_GetInstance() end
 ---@return Hyperspace.CustomShipSelect
 function Hyperspace.CustomShipSelect_GetInstance() end
 
----@param unknown integer
----@return integer
+---@param unknown uint
+---@return uint
 function Hyperspace.GetNextPowerReadyState(unknown) end
 
 ---@param unknown Hyperspace.CrewMember
@@ -284,8 +402,8 @@ function Hyperspace.ActivatedPower:GetCrewBoxResourceWidth(mode) end
 
 ---@class Hyperspace.ActivatedPowerDefinition
 ---@field name string (Read-only) **read-only**
----@field activateGroupIndex integer (Read-only) **read-only**
----@field replaceGroupIndex integer (Read-only) **read-only**
+---@field activateGroupIndex uint (Read-only) **read-only**
+---@field replaceGroupIndex uint (Read-only) **read-only**
 ---@field sortOrder integer 
 ---@field damage Hyperspace.Damage 
 ---@field cooldown number 
@@ -907,7 +1025,7 @@ Hyperspace.CachedRectOutline = {}
 ---@class Hyperspace.ChoiceBox: Hyperspace.FocusWindow
 ---@field mainText string 
 ---@field choices vector<Hyperspace.ChoiceText> If you want to modify the current `ChoiceText` values please refer to `:GetChoices()` instead
----@field columnSize integer 
+---@field columnSize uint 
 ---@field choiceBoxes vector<Hyperspace.Rect> 
 ---@field potentialChoice integer 
 ---@field selectedChoice integer 
@@ -1896,7 +2014,7 @@ function Hyperspace.CrewMemberFactory:GetCloneReadyList(player) end
 ---@field crewPowers vector<Hyperspace.ActivatedPower> (Read-only) **read-only**
 ---@field hasSpecialPower boolean 
 ---@field powerResources vector<Hyperspace.ActivatedPowerResource> (Read-only) **read-only**
----@field powerResourceMap unordered_map<integer, Hyperspace.ActivatedPowerResource> (Read-only) **read-only**
+---@field powerResourceMap unordered_map<uint, Hyperspace.ActivatedPowerResource> (Read-only) **read-only**
 ---@field powerChange vector<Hyperspace.ActivatedPowerDefinition> 
 ---@field noSlot boolean 
 ---@field noClone boolean 
@@ -2048,7 +2166,7 @@ function Hyperspace.CustomDamageDefinition:GiveId() end
 
 ---@class Hyperspace.CustomEvent
 ---@field unlockShip string 
----@field triggeredEvents vector<integer> (Read-only) **read-only**
+---@field triggeredEvents vector<uint> (Read-only) **read-only**
 Hyperspace.CustomEvent = {}
 
 ---@return Hyperspace.CustomEvent
@@ -2725,9 +2843,9 @@ Hyperspace.HackingSystem = {}
 function Hyperspace.HackingSystem:BlowHackingDrone() end
 
 ---@class Hyperspace.HyperspaceVersion
----@field major integer (Read-only) 
----@field minor integer (Read-only) 
----@field patch integer (Read-only) 
+---@field major uint (Read-only) 
+---@field minor uint (Read-only) 
+---@field patch uint (Read-only) 
 Hyperspace.HyperspaceVersion = {}
 
 ---@return integer
@@ -3125,7 +3243,7 @@ function Hyperspace.PowerManager.GetPowerManager(iShipId) end
 
 ---@class Hyperspace.PowerResourceDefinition
 ---@field name string (Read-only) **read-only**
----@field groupIndex integer (Read-only) **read-only**
+---@field groupIndex uint (Read-only) **read-only**
 ---@field sortOrder integer 
 ---@field cooldown number 
 ---@field jumpCooldown integer 
@@ -3188,7 +3306,7 @@ function Hyperspace.PrintHelper.GetInstance() end
 ---@field target Graphics.Pointf 
 ---@field heading number 
 ---@field ownerId integer 
----@field selfId integer (Read-only) **read-only**
+---@field selfId uint (Read-only) **read-only**
 ---@field damage Hyperspace.Damage 
 ---@field lifespan number 
 ---@field destinationSpace integer 
@@ -3820,14 +3938,14 @@ function Hyperspace.ShipGenerator.GenerateSystemMaxes(ship, level) end
 
 ---@param unknown Hyperspace.ShipManager
 ---@param unknown1 string
----@param unknown2 integer
+---@param unknown2 uint
 ---@return vector<Hyperspace.CrewBlueprint>
 function Hyperspace.ShipGenerator.GetPossibleCrewList(unknown, unknown1, unknown2) end
 
 ---@param unknown Hyperspace.ShipManager
 ---@param unknown1 string
 ---@param unknown2 integer
----@param unknown3 integer
+---@param unknown3 uint
 ---@param unknown4 boolean
 ---@return vector<Hyperspace.DroneBlueprint>
 function Hyperspace.ShipGenerator.GetPossibleDroneList(unknown, unknown1, unknown2, unknown3, unknown4) end
@@ -3842,13 +3960,13 @@ function Hyperspace.ShipGenerator.GetPossibleSystemUpgrades(ship, systemMaxes, s
 ---@param unknown Hyperspace.ShipManager
 ---@param unknown1 string
 ---@param unknown2 integer
----@param unknown3 integer
+---@param unknown3 uint
 ---@return vector<Hyperspace.WeaponBlueprint>
 function Hyperspace.ShipGenerator.GetPossibleWeaponList(unknown, unknown1, unknown2, unknown3) end
 
 ---@param unknown Hyperspace.ShipManager
 ---@param unknown1 vector<integer>
----@param unknown2 integer
+---@param unknown2 uint
 ---@return boolean
 function Hyperspace.ShipGenerator.UpgradeSystem(unknown, unknown1, unknown2) end
 
@@ -4996,8 +5114,8 @@ function Hyperspace.StatBoost(definition) end
 ---@field powerBlacklist unordered_set<Hyperspace.ActivatedPowerDefinition> 
 ---@field powerResourceWhitelist unordered_set<Hyperspace.PowerResourceDefinition> 
 ---@field powerResourceBlacklist unordered_set<Hyperspace.PowerResourceDefinition> 
----@field powerGroupWhitelist unordered_set<integer> 
----@field powerGroupBlacklist unordered_set<integer> 
+---@field powerGroupWhitelist unordered_set<uint> 
+---@field powerGroupBlacklist unordered_set<uint> 
 ---@field hasPowerList boolean 
 ---@field deathEffectChange Hyperspace.ExplosionDefinition 
 ---@field powerScaling vector<number> 
@@ -5643,8 +5761,8 @@ function Hyperspace.WorldManager:AddBoarders(boardingEvent) end
 
 function Hyperspace.WorldManager:ClearLocation() end
 
----@class boolean
-boolean = {}
+---@class Hyperspace.bool
+Hyperspace.bool = {}
 
 ---@class Hyperspace.difference_type
 Hyperspace.difference_type = {}
@@ -5655,14 +5773,14 @@ Hyperspace.first_type = {}
 ---@class Hyperspace.font_data
 Hyperspace.font_data = {}
 
----@class integer
-integer = {}
+---@class Hyperspace.int
+Hyperspace.int = {}
 
 ---@class Hyperspace.key_type
 Hyperspace.key_type = {}
 
----@class integer
-integer = {}
+---@class Hyperspace.long_long
+Hyperspace.long_long = {}
 
 ---@class Hyperspace.mapped_type
 Hyperspace.mapped_type = {}
@@ -5683,7 +5801,7 @@ function Hyperspace.playerVariableType() end
 ---@return Hyperspace.playerVariableType
 function Hyperspace.playerVariableType(unknown) end
 
----@return integer
+---@return uint
 function Hyperspace.playerVariableType:size() end
 
 ---@return boolean
@@ -5721,11 +5839,11 @@ function Hyperspace.playerVariableType:__setitem(unknown, unknown1) end
 ---@class Hyperspace.second_type
 Hyperspace.second_type = {}
 
----@class integer
-integer = {}
+---@class Hyperspace.short
+Hyperspace.short = {}
 
----@class integer
-integer = {}
+---@class Hyperspace.signed_char
+Hyperspace.signed_char = {}
 
 ---@class Hyperspace.size_type
 Hyperspace.size_type = {}
@@ -5754,8 +5872,8 @@ Hyperspace.pairT_int_int_t = {}
 ---@class Hyperspace.string_AugmentFunction_t
 Hyperspace.string_AugmentFunction_t = {}
 
----@class string
-string = {}
+---@class RapidXML.string
+RapidXML.string = {}
 
 ---@return string
 function Hyperspace.string() end
@@ -5764,10 +5882,10 @@ function Hyperspace.string() end
 ---@return string
 function Hyperspace.string(unknown) end
 
----@return integer
+---@return uint
 function string:size() end
 
----@return integer
+---@return uint
 function string:length() end
 
 ---@return boolean
@@ -5990,23 +6108,27 @@ Hyperspace.string_t_t = {}
 ---@class Hyperspace.vectorT_unsigned_int_t
 Hyperspace.vectorT_unsigned_int_t = {}
 
----@class integer
-integer = {}
+---@class Hyperspace.unsigned_char
+Hyperspace.unsigned_char = {}
 
----@class integer
-integer = {}
+---@class Hyperspace.unsigned_int
+Hyperspace.unsigned_int = {}
 
----@class integer
-integer = {}
+---@class Hyperspace.unsigned_long_long
+Hyperspace.unsigned_long_long = {}
 
----@class integer
-integer = {}
+---@class Hyperspace.unsigned_short
+Hyperspace.unsigned_short = {}
 
 ---@class Hyperspace.value_type
 Hyperspace.value_type = {}
 
 ---@class Graphics
-Graphics = {}
+Graphics = {
+    STENCIL_IGNORE = 0,
+    STENCIL_SET = 1,
+    STENCIL_USE = 2,
+}
 
 ---@param unknown number
 ---@param unknown1 number
@@ -6845,8 +6967,8 @@ function Graphics.freetype.easy_printNewlinesCentered(fontSize, x, y, line_lengt
 ---@return Graphics.Pointf
 function Graphics.freetype.easy_printRightAlign(fontSize, x, y, text) end
 
----@class string
-string = {}
+---@class RapidXML.string
+RapidXML.string = {}
 
 ---@return string
 function Graphics.string() end
@@ -6855,10 +6977,10 @@ function Graphics.string() end
 ---@return string
 function Graphics.string(unknown) end
 
----@return integer
+---@return uint
 function string:size() end
 
----@return integer
+---@return uint
 function string:length() end
 
 ---@return boolean
@@ -6887,27 +7009,275 @@ Graphics.vectorT_GL_TexVertex_t = {}
 Graphics.Rect_t = {}
 
 ---@class Defines
-Defines = {}
+Defines = {
+    InternalEvents_UNKNOWN = 0,
+    InternalEvents_ON_TICK = 1,
+    InternalEvents_MAIN_MENU = 2,
+    InternalEvents_DANGEROUS_ENVIRONMENT = 3,
+    InternalEvents_GET_BEACON_HAZARD = 4,
+    InternalEvents_GET_HAZARD_FLASH = 5,
+    InternalEvents_GET_RUN_SEED = 6,
+    InternalEvents_ON_KEY_DOWN = 7,
+    InternalEvents_ON_KEY_UP = 8,
+    InternalEvents_ON_MOUSE_MOVE = 9,
+    InternalEvents_ON_MOUSE_L_BUTTON_DOWN = 10,
+    InternalEvents_ON_MOUSE_L_BUTTON_UP = 11,
+    InternalEvents_ON_MOUSE_R_BUTTON_DOWN = 12,
+    InternalEvents_ON_MOUSE_R_BUTTON_UP = 13,
+    InternalEvents_ON_MOUSE_M_BUTTON_DOWN = 14,
+    InternalEvents_GUI_MOUSE_MOVE = 16,
+    InternalEvents_CREW_LOOP = 17,
+    InternalEvents_CREW_CLONE = 18,
+    InternalEvents_SHIP_LOOP = 19,
+    InternalEvents_HAS_EQUIPMENT = 20,
+    InternalEvents_HAS_AUGMENTATION = 21,
+    InternalEvents_GET_AUGMENTATION_VALUE = 22,
+    InternalEvents_GET_DODGE_FACTOR = 23,
+    InternalEvents_SET_BONUS_POWER = 24,
+    InternalEvents_SELECT_ARMAMENT_PRE = 25,
+    InternalEvents_SELECT_ARMAMENT_POST = 26,
+    InternalEvents_PROJECTILE_INITIALIZE = 27,
+    InternalEvents_PROJECTILE_FIRE = 28,
+    InternalEvents_PROJECTILE_PRE = 29,
+    InternalEvents_PROJECTILE_POST = 30,
+    InternalEvents_PROJECTILE_UPDATE_PRE = 31,
+    InternalEvents_PROJECTILE_UPDATE_POST = 32,
+    InternalEvents_WEAPON_COOLDOWN_MOD = 33,
+    InternalEvents_WEAPON_STATBOX = 34,
+    InternalEvents_WEAPON_DESCBOX = 35,
+    InternalEvents_WEAPON_RENDERBOX = 36,
+    InternalEvents_DRONE_FIRE = 37,
+    InternalEvents_DRONE_COLLISION = 38,
+    InternalEvents_PROJECTILE_COLLISION = 39,
+    InternalEvents_SHIELD_COLLISION_PRE = 40,
+    InternalEvents_SHIELD_COLLISION = 41,
+    InternalEvents_DAMAGE_AREA = 42,
+    InternalEvents_DAMAGE_AREA_HIT = 43,
+    InternalEvents_DAMAGE_BEAM = 44,
+    InternalEvents_DAMAGE_SYSTEM = 45,
+    InternalEvents_SYSTEM_ADD_DAMAGE = 46,
+    InternalEvents_ACTIVATE_POWER = 47,
+    InternalEvents_PREPARE_POWER = 48,
+    InternalEvents_CANCEL_POWER = 49,
+    InternalEvents_POWER_ON_UPDATE = 50,
+    InternalEvents_POWER_RESOURCE_ON_UPDATE = 51,
+    InternalEvents_POWER_ENABLE_INIT = 52,
+    InternalEvents_POWER_RESOURCE_ENABLE_INIT = 53,
+    InternalEvents_POWER_REQ = 54,
+    InternalEvents_POWER_READY = 55,
+    InternalEvents_POWER_TOOLTIP = 56,
+    InternalEvents_GENERATOR_CREATE_SHIP = 57,
+    InternalEvents_GENERATOR_CREATE_SHIP_POST = 58,
+    InternalEvents_PRE_CREATE_CHOICEBOX = 59,
+    InternalEvents_POST_CREATE_CHOICEBOX = 60,
+    InternalEvents_TABBED_WINDOW_CONFIRM = 61,
+    InternalEvents_TABBED_WINDOW_UNDO = 62,
+    InternalEvents_JUMP_ARRIVE = 63,
+    InternalEvents_JUMP_LEAVE = 64,
+    InternalEvents_ON_WAIT = 65,
+    InternalEvents_SYSTEM_BOX_MOUSE_MOVE = 66,
+    InternalEvents_SYSTEM_BOX_MOUSE_CLICK = 67,
+    InternalEvents_SYSTEM_BOX_KEY_DOWN = 68,
+    InternalEvents_GET_LEVEL_DESCRIPTION = 69,
+    InternalEvents_CONSTRUCT_CREWMEMBER = 71,
+    InternalEvents_CONSTRUCT_SPACEDRONE = 72,
+    InternalEvents_CONSTRUCT_PROJECTILE_FACTORY = 73,
+    InternalEvents_CONSTRUCT_PROJECTILE = 74,
+    InternalEvents_CONSTRUCT_ROOM = 75,
+    InternalEvents_CONSTRUCT_SHIP_MANAGER = 76,
+    InternalEvents_CONSTRUCT_SHIP_SYSTEM = 77,
+    InternalEvents_CONSTRUCT_SYSTEM_BOX = 78,
+    InternalEvents_UNKNOWN_MAX = 79,
+    Chain_CONTINUE = 0,
+    Chain_HALT = 1,
+    Chain_PREEMPT = 2,
+    Evasion_NONE = 0,
+    Evasion_HIT = 1,
+    Evasion_MISS = 2,
+    BeamHit_SAME_TILE = 0,
+    BeamHit_NEW_TILE = 1,
+    BeamHit_NEW_ROOM = 2,
+    RenderEvents_UNKNOWN = 0,
+    RenderEvents_MAIN_MENU = 1,
+    RenderEvents_GUI_CONTAINER = 2,
+    RenderEvents_LAYER_BACKGROUND = 3,
+    RenderEvents_LAYER_FOREGROUND = 4,
+    RenderEvents_LAYER_ASTEROIDS = 5,
+    RenderEvents_LAYER_PLAYER = 6,
+    RenderEvents_SHIP = 7,
+    RenderEvents_SHIP_MANAGER = 8,
+    RenderEvents_SHIP_JUMP = 9,
+    RenderEvents_SHIP_HULL = 10,
+    RenderEvents_SHIP_ENGINES = 11,
+    RenderEvents_SHIP_FLOOR = 12,
+    RenderEvents_SHIP_BREACHES = 13,
+    RenderEvents_SHIP_SPARKS = 14,
+    RenderEvents_CREW_MEMBER_HEALTH = 15,
+    RenderEvents_LAYER_FRONT = 16,
+    RenderEvents_FTL_BUTTON = 17,
+    RenderEvents_SYSTEM_BOX = 18,
+    RenderEvents_SPACE_STATUS = 19,
+    RenderEvents_TABBED_WINDOW = 22,
+    RenderEvents_MOUSE_CONTROL = 23,
+    RenderEvents_UNKNOWN_MAX = 24,
+    SDL_KEY_UNKNOWN = 0,
+    SDL_KEY_0 = 48,
+    SDL_KEY_1 = 49,
+    SDL_KEY_2 = 50,
+    SDL_KEY_3 = 51,
+    SDL_KEY_4 = 52,
+    SDL_KEY_5 = 53,
+    SDL_KEY_6 = 54,
+    SDL_KEY_7 = 55,
+    SDL_KEY_8 = 56,
+    SDL_KEY_9 = 57,
+    SDL_KEY_AT = 64,
+    SDL_KEY_AMPERSAND = 38,
+    SDL_KEY_ASTERISK = 42,
+    SDL_KEY_BACKQUOTE = 96,
+    SDL_KEY_BACKSLASH = 92,
+    SDL_KEY_BACKSPACE = 8,
+    SDL_KEY_BREAK = 318,
+    SDL_KEY_CAPSLOCK = 301,
+    SDL_KEY_CARET = 94,
+    SDL_KEY_CLEAR = 12,
+    SDL_KEY_COLON = 58,
+    SDL_KEY_COMMA = 44,
+    SDL_KEY_COMPOSE = 314,
+    SDL_KEY_DELETE = 127,
+    SDL_KEY_DOLLAR = 36,
+    SDL_KEY_DOWN = 274,
+    SDL_KEY_END = 279,
+    SDL_KEY_EQUALS = 61,
+    SDL_KEY_ESCAPE = 27,
+    SDL_KEY_EURO = 321,
+    SDL_KEY_EXCLAIM = 33,
+    SDL_KEY_F1 = 282,
+    SDL_KEY_F10 = 291,
+    SDL_KEY_F11 = 292,
+    SDL_KEY_F12 = 293,
+    SDL_KEY_F13 = 294,
+    SDL_KEY_F14 = 295,
+    SDL_KEY_F15 = 296,
+    SDL_KEY_F2 = 283,
+    SDL_KEY_F3 = 284,
+    SDL_KEY_F4 = 285,
+    SDL_KEY_F5 = 286,
+    SDL_KEY_F6 = 287,
+    SDL_KEY_F7 = 288,
+    SDL_KEY_F8 = 289,
+    SDL_KEY_F9 = 290,
+    SDL_KEY_GREATER = 62,
+    SDL_KEY_HASH = 36,
+    SDL_KEY_HELP = 315,
+    SDL_KEY_HOME = 278,
+    SDL_KEY_INSERT = 277,
+    SDL_KEY_KP0 = 256,
+    SDL_KEY_KP1 = 257,
+    SDL_KEY_KP2 = 258,
+    SDL_KEY_KP3 = 259,
+    SDL_KEY_KP4 = 260,
+    SDL_KEY_KP5 = 261,
+    SDL_KEY_KP6 = 262,
+    SDL_KEY_KP7 = 263,
+    SDL_KEY_KP8 = 264,
+    SDL_KEY_KP9 = 265,
+    SDL_KEY_KP_PERIOD = 266,
+    SDL_KEY_KP_DIVIDE = 267,
+    SDL_KEY_KP_MULTIPLY = 268,
+    SDL_KEY_KP_MINUS = 269,
+    SDL_KEY_KP_PLUS = 270,
+    SDL_KEY_KP_ENTER = 271,
+    SDL_KEY_KP_EQUALS = 272,
+    SDL_KEY_LALT = 308,
+    SDL_KEY_LCTRL = 306,
+    SDL_KEY_LEFT = 276,
+    SDL_KEY_LEFTBRACKET = 91,
+    SDL_KEY_LEFTPAREN = 40,
+    SDL_KEY_LESS = 60,
+    SDL_KEY_LMETA = 310,
+    SDL_KEY_LSHIFT = 304,
+    SDL_KEY_LSUPER = 311,
+    SDL_KEY_MENU = 319,
+    SDL_KEY_MINUS = 45,
+    SDL_KEY_MODE = 313,
+    SDL_KEY_NUMLOCK = 300,
+    SDL_KEY_PAGEDOWN = 281,
+    SDL_KEY_PAGEUP = 280,
+    SDL_KEY_PAUSE = 19,
+    SDL_KEY_PERIOD = 46,
+    SDL_KEY_PLUS = 43,
+    SDL_KEY_POWER = 320,
+    SDL_KEY_PRINTSCREEN = 316,
+    SDL_KEY_QUESTION = 63,
+    SDL_KEY_QUOTEDBL = 34,
+    SDL_KEY_QUOTE = 39,
+    SDL_KEY_RALT = 307,
+    SDL_KEY_RCTRL = 305,
+    SDL_KEY_RETURN = 13,
+    SDL_KEY_RIGHT = 275,
+    SDL_KEY_RIGHTBRACKET = 93,
+    SDL_KEY_RIGHTPAREN = 41,
+    SDL_KEY_RMETA = 309,
+    SDL_KEY_RSHIFT = 303,
+    SDL_KEY_RSUPER = 312,
+    SDL_KEY_SCROLLOCK = 302,
+    SDL_KEY_SEMICOLON = 59,
+    SDL_KEY_SLASH = 47,
+    SDL_KEY_SPACE = 32,
+    SDL_KEY_SYSREQ = 317,
+    SDL_KEY_TAB = 9,
+    SDL_KEY_UNDERSCORE = 95,
+    SDL_KEY_UNDO = 322,
+    SDL_KEY_UP = 273,
+    SDL_KEY_a = 97,
+    SDL_KEY_b = 98,
+    SDL_KEY_c = 99,
+    SDL_KEY_d = 100,
+    SDL_KEY_e = 101,
+    SDL_KEY_f = 102,
+    SDL_KEY_g = 103,
+    SDL_KEY_h = 104,
+    SDL_KEY_i = 105,
+    SDL_KEY_j = 106,
+    SDL_KEY_k = 107,
+    SDL_KEY_l = 108,
+    SDL_KEY_m = 109,
+    SDL_KEY_n = 110,
+    SDL_KEY_o = 111,
+    SDL_KEY_p = 112,
+    SDL_KEY_q = 113,
+    SDL_KEY_r = 114,
+    SDL_KEY_s = 115,
+    SDL_KEY_t = 116,
+    SDL_KEY_u = 117,
+    SDL_KEY_v = 118,
+    SDL_KEY_w = 119,
+    SDL_KEY_x = 120,
+    SDL_KEY_y = 121,
+    SDL_KEY_z = 122,
+    SDL_KEY_LAST = 323,
+}
 
 ---@enum Defines.BeamHit
 Defines.BeamHit = {
-    SAME_TILE = 0,
-    NEW_TILE = 1,
-    NEW_ROOM = 2,
+    SAME_TILE = 0, -- Treat beam hit as same tile as last frame
+    NEW_TILE = 1, -- Treat beam hit as new tile but same room as last frame
+    NEW_ROOM = 2, -- Treat beam hit as new room from last frame
 }
 
 ---@enum Defines.Chain
 Defines.Chain = {
-    CONTINUE = 0,
-    HALT = 1,
-    PREEMPT = 2,
+    CONTINUE = 0, -- Call the next callback in the sequence if there is one
+    HALT = 1, -- Halt the callback loop, but still run subsequent C++ code
+    PREEMPT = 2, -- Halt the callback loop and skip subsequent C++ code
 }
 
 ---@enum Defines.Evasion
 Defines.Evasion = {
-    NONE = 0,
-    HIT = 1,
-    MISS = 2,
+    NONE = 0, -- Indicates evasion still needs to be checked
+    HIT = 1, -- Force projectile to hit
+    MISS = 2, -- Force projectile to miss
 }
 
 ---@enum Defines.InternalEvents
@@ -7021,147 +7391,147 @@ Defines.RenderEvents = {
 
 ---@enum Defines.SDL
 Defines.SDL = {
-    KEY_UNKNOWN = 0,
-    KEY_0 = 48,
-    KEY_1 = 49,
-    KEY_2 = 50,
-    KEY_3 = 51,
-    KEY_4 = 52,
-    KEY_5 = 53,
-    KEY_6 = 54,
-    KEY_7 = 55,
-    KEY_8 = 56,
-    KEY_9 = 57,
-    KEY_AT = 64,
-    KEY_AMPERSAND = 38,
-    KEY_ASTERISK = 42,
-    KEY_BACKQUOTE = 96,
-    KEY_BACKSLASH = 92,
-    KEY_BACKSPACE = 8,
-    KEY_BREAK = 318,
-    KEY_CAPSLOCK = 301,
-    KEY_CARET = 94,
-    KEY_CLEAR = 12,
-    KEY_COLON = 58,
-    KEY_COMMA = 44,
-    KEY_COMPOSE = 314,
-    KEY_DELETE = 127,
-    KEY_DOLLAR = 36,
-    KEY_DOWN = 274,
-    KEY_END = 279,
-    KEY_EQUALS = 61,
-    KEY_ESCAPE = 27,
-    KEY_EURO = 321,
-    KEY_EXCLAIM = 33,
-    KEY_F1 = 282,
-    KEY_F10 = 291,
-    KEY_F11 = 292,
-    KEY_F12 = 293,
-    KEY_F13 = 294,
-    KEY_F14 = 295,
-    KEY_F15 = 296,
-    KEY_F2 = 283,
-    KEY_F3 = 284,
-    KEY_F4 = 285,
-    KEY_F5 = 286,
-    KEY_F6 = 287,
-    KEY_F7 = 288,
-    KEY_F8 = 289,
-    KEY_F9 = 290,
-    KEY_GREATER = 62,
-    KEY_HASH = 36,
-    KEY_HELP = 315,
-    KEY_HOME = 278,
-    KEY_INSERT = 277,
-    KEY_KP0 = 256,
-    KEY_KP1 = 257,
-    KEY_KP2 = 258,
-    KEY_KP3 = 259,
-    KEY_KP4 = 260,
-    KEY_KP5 = 261,
-    KEY_KP6 = 262,
-    KEY_KP7 = 263,
-    KEY_KP8 = 264,
-    KEY_KP9 = 265,
-    KEY_KP_PERIOD = 266,
-    KEY_KP_DIVIDE = 267,
-    KEY_KP_MULTIPLY = 268,
-    KEY_KP_MINUS = 269,
-    KEY_KP_PLUS = 270,
-    KEY_KP_ENTER = 271,
-    KEY_KP_EQUALS = 272,
-    KEY_LALT = 308,
-    KEY_LCTRL = 306,
-    KEY_LEFT = 276,
-    KEY_LEFTBRACKET = 91,
-    KEY_LEFTPAREN = 40,
-    KEY_LESS = 60,
-    KEY_LMETA = 310,
-    KEY_LSHIFT = 304,
-    KEY_LSUPER = 311,
-    KEY_MENU = 319,
-    KEY_MINUS = 45,
-    KEY_MODE = 313,
-    KEY_NUMLOCK = 300,
-    KEY_PAGEDOWN = 281,
-    KEY_PAGEUP = 280,
-    KEY_PAUSE = 19,
-    KEY_PERIOD = 46,
-    KEY_PLUS = 43,
-    KEY_POWER = 320,
-    KEY_PRINTSCREEN = 316,
-    KEY_QUESTION = 63,
-    KEY_QUOTEDBL = 34,
-    KEY_QUOTE = 39,
-    KEY_RALT = 307,
-    KEY_RCTRL = 305,
-    KEY_RETURN = 13,
-    KEY_RIGHT = 275,
-    KEY_RIGHTBRACKET = 93,
-    KEY_RIGHTPAREN = 41,
-    KEY_RMETA = 309,
-    KEY_RSHIFT = 303,
-    KEY_RSUPER = 312,
-    KEY_SCROLLOCK = 302,
-    KEY_SEMICOLON = 59,
-    KEY_SLASH = 47,
-    KEY_SPACE = 32,
-    KEY_SYSREQ = 317,
-    KEY_TAB = 9,
-    KEY_UNDERSCORE = 95,
-    KEY_UNDO = 322,
-    KEY_UP = 273,
-    KEY_a = 97,
-    KEY_b = 98,
-    KEY_c = 99,
-    KEY_d = 100,
-    KEY_e = 101,
-    KEY_f = 102,
-    KEY_g = 103,
-    KEY_h = 104,
-    KEY_i = 105,
-    KEY_j = 106,
-    KEY_k = 107,
-    KEY_l = 108,
-    KEY_m = 109,
-    KEY_n = 110,
-    KEY_o = 111,
-    KEY_p = 112,
-    KEY_q = 113,
-    KEY_r = 114,
-    KEY_s = 115,
-    KEY_t = 116,
-    KEY_u = 117,
-    KEY_v = 118,
-    KEY_w = 119,
-    KEY_x = 120,
-    KEY_y = 121,
-    KEY_z = 122,
+    KEY_UNKNOWN = 0, -- Unknown key was pressed
+    KEY_0 = 48, -- 0 key
+    KEY_1 = 49, -- 1 key
+    KEY_2 = 50, -- 2 key
+    KEY_3 = 51, -- 3 key
+    KEY_4 = 52, -- 4 key
+    KEY_5 = 53, -- 5 key
+    KEY_6 = 54, -- 6 key
+    KEY_7 = 55, -- 7 key
+    KEY_8 = 56, -- 8 key
+    KEY_9 = 57, -- 9 key
+    KEY_AT = 64, -- @ at-sign
+    KEY_AMPERSAND = 38, -- `&` Ampersand key
+    KEY_ASTERISK = 42, -- `*` Asterisk key
+    KEY_BACKQUOTE = 96, -- `` ` `` Backquote/Backtick key
+    KEY_BACKSLASH = 92, -- `\` Backslash key
+    KEY_BACKSPACE = 8, -- Backspace key
+    KEY_BREAK = 318, -- Break key (the "break" of "pause/break")
+    KEY_CAPSLOCK = 301, -- Capslock key
+    KEY_CARET = 94, -- `^` Caret key
+    KEY_CLEAR = 12, -- CLEAR key
+    KEY_COLON = 58, -- `:` COLON key
+    KEY_COMMA = 44, -- `,` COMMA key
+    KEY_COMPOSE = 314, -- COMPOSE key
+    KEY_DELETE = 127, -- DELETE key
+    KEY_DOLLAR = 36, -- `$` DOLLAR key
+    KEY_DOWN = 274, -- DOWN Arrow key
+    KEY_END = 279, -- END key
+    KEY_EQUALS = 61, -- `=` EQUALS key
+    KEY_ESCAPE = 27, -- ESCAPE key
+    KEY_EURO = 321, -- EURO key
+    KEY_EXCLAIM = 33, -- `!` Exclamation point/mark key
+    KEY_F1 = 282, -- F1 key
+    KEY_F10 = 291, -- F10 key
+    KEY_F11 = 292, -- F11 key
+    KEY_F12 = 293, -- F12 key
+    KEY_F13 = 294, -- F13 key
+    KEY_F14 = 295, -- F14 key
+    KEY_F15 = 296, -- F15 key
+    KEY_F2 = 283, -- F2 key
+    KEY_F3 = 284, -- F3 key
+    KEY_F4 = 285, -- F4 key
+    KEY_F5 = 286, -- F5 key
+    KEY_F6 = 287, -- F6 key
+    KEY_F7 = 288, -- F7 key
+    KEY_F8 = 289, -- F8 key
+    KEY_F9 = 290, -- F9 key
+    KEY_GREATER = 62, -- `>` GREATER key
+    KEY_HASH = 36, -- `#` HASH key
+    KEY_HELP = 315, -- HELP key
+    KEY_HOME = 278, -- HOME key
+    KEY_INSERT = 277, -- INSERT key
+    KEY_KP0 = 256, -- Numpad `0` key
+    KEY_KP1 = 257, -- Numpad `1` key
+    KEY_KP2 = 258, -- Numpad `2` key
+    KEY_KP3 = 259, -- Numpad `3` key
+    KEY_KP4 = 260, -- Numpad `4` key
+    KEY_KP5 = 261, -- Numpad `5` key
+    KEY_KP6 = 262, -- Numpad `6` key
+    KEY_KP7 = 263, -- Numpad `7` key
+    KEY_KP8 = 264, -- Numpad `8` key
+    KEY_KP9 = 265, -- Numpad `9` key
+    KEY_KP_PERIOD = 266, -- Numpad `.` period key
+    KEY_KP_DIVIDE = 267, -- Numpad `/` divide key
+    KEY_KP_MULTIPLY = 268, -- Numpad `*` multiply key
+    KEY_KP_MINUS = 269, -- Numpad `-` minus key
+    KEY_KP_PLUS = 270, -- Numpad `+` plus key
+    KEY_KP_ENTER = 271, -- Numpad Enter key
+    KEY_KP_EQUALS = 272, -- Numpad `=` Equals key
+    KEY_LALT = 308, -- Left ALT key
+    KEY_LCTRL = 306, -- Left CTRL key
+    KEY_LEFT = 276, -- LEFT Arrow key
+    KEY_LEFTBRACKET = 91, -- `[` key
+    KEY_LEFTPAREN = 40, -- `(` key
+    KEY_LESS = 60, -- LESS key
+    KEY_LMETA = 310, -- Left META key
+    KEY_LSHIFT = 304, -- Left SHIFT key
+    KEY_LSUPER = 311, -- Left SUPER key
+    KEY_MENU = 319, -- Menu/Context Menu key
+    KEY_MINUS = 45, -- `-` key
+    KEY_MODE = 313, -- MODE key
+    KEY_NUMLOCK = 300, -- NUMLOCK key
+    KEY_PAGEDOWN = 281, -- PAGE DOWN key
+    KEY_PAGEUP = 280, -- PAGE UP key
+    KEY_PAUSE = 19, -- PAUSE key (of "pause/break")
+    KEY_PERIOD = 46, -- `.` key
+    KEY_PLUS = 43, -- `+` key
+    KEY_POWER = 320, -- POWER key
+    KEY_PRINTSCREEN = 316, -- PRINT SCREEN key
+    KEY_QUESTION = 63, -- `?` key
+    KEY_QUOTEDBL = 34, -- `"` key
+    KEY_QUOTE = 39, -- `'` key
+    KEY_RALT = 307, -- Right ALT key
+    KEY_RCTRL = 305, -- Right CTRL key
+    KEY_RETURN = 13, -- RETURN key
+    KEY_RIGHT = 275, -- RIGHT Arrow key
+    KEY_RIGHTBRACKET = 93, -- `]` key
+    KEY_RIGHTPAREN = 41, -- `)` key
+    KEY_RMETA = 309, -- Right META key
+    KEY_RSHIFT = 303, -- Right SHIFT key
+    KEY_RSUPER = 312, -- Right SUPER key
+    KEY_SCROLLOCK = 302, -- SCROL LOCK key
+    KEY_SEMICOLON = 59, -- `;` key
+    KEY_SLASH = 47, -- `/` key
+    KEY_SPACE = 32, -- SPACE key
+    KEY_SYSREQ = 317, -- System Request key
+    KEY_TAB = 9, -- TAB key
+    KEY_UNDERSCORE = 95, -- `_` key
+    KEY_UNDO = 322, -- UNDO key (this is not ctrl+z)
+    KEY_UP = 273, -- UP Arrow key
+    KEY_a = 97, -- a key
+    KEY_b = 98, -- b key
+    KEY_c = 99, -- c key
+    KEY_d = 100, -- d key
+    KEY_e = 101, -- e key
+    KEY_f = 102, -- f key
+    KEY_g = 103, -- g key
+    KEY_h = 104, -- h key
+    KEY_i = 105, -- i key
+    KEY_j = 106, -- j key
+    KEY_k = 107, -- k key
+    KEY_l = 108, -- l key
+    KEY_m = 109, -- m key
+    KEY_n = 110, -- n key
+    KEY_o = 111, -- o key
+    KEY_p = 112, -- p key
+    KEY_q = 113, -- q key
+    KEY_r = 114, -- r key
+    KEY_s = 115, -- s key
+    KEY_t = 116, -- t key
+    KEY_u = 117, -- u key
+    KEY_v = 118, -- v key
+    KEY_w = 119, -- w key
+    KEY_x = 120, -- x key
+    KEY_y = 121, -- y key
+    KEY_z = 122, -- z key
     KEY_LAST = 323,
 }
 
----@class string
-string = {}
+---@class RapidXML.string
+RapidXML.string = {}
 
 ---@return string
 function Defines.string() end
@@ -7170,10 +7540,10 @@ function Defines.string() end
 ---@return string
 function Defines.string(unknown) end
 
----@return integer
+---@return uint
 function string:size() end
 
----@return integer
+---@return uint
 function string:length() end
 
 ---@return boolean
@@ -7206,7 +7576,16 @@ function string:assign(unknown) end
 ---@field parse_non_destructive integer (Read-only) 
 ---@field parse_fastest integer (Read-only) 
 ---@field parse_full integer (Read-only) 
-RapidXML = {}
+RapidXML = {
+    node_document = 0,
+    node_element = 1,
+    node_data = 2,
+    node_cdata = 3,
+    node_comment = 4,
+    node_declaration = 5,
+    node_doctype = 6,
+    node_pi = 7,
+}
 
 ---@class RapidXML.memory_poolT_char_t
 RapidXML.memory_poolT_char_t = {}
@@ -7237,8 +7616,8 @@ RapidXML.xml_nodeT_char_t = {}
 ---@class RapidXML.exception
 RapidXML.exception = {}
 
----@class string
-string = {}
+---@class RapidXML.string
+RapidXML.string = {}
 
 ---@return string
 function RapidXML.string() end
@@ -7247,10 +7626,10 @@ function RapidXML.string() end
 ---@return string
 function RapidXML.string(unknown) end
 
----@return integer
+---@return uint
 function string:size() end
 
----@return integer
+---@return uint
 function string:length() end
 
 ---@return boolean

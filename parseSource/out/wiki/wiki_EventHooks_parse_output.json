@@ -1,0 +1,862 @@
+{
+  "RenderEvents": {
+    "LANGUAGE_CHOOSER": {
+      "documentation": "On rendering the language chooser menu at the start of a fresh install",
+      "args": [],
+      "returns": []
+    },
+    "MAIN_MENU": {
+      "documentation": "On rendering the main menu",
+      "args": [],
+      "returns": []
+    },
+    "GUI_CONTAINER": {
+      "documentation": "On rendering the main game, this is a wrapper around the entire game UI",
+      "args": [],
+      "returns": []
+    },
+    "LAYER_BACKGROUND": {
+      "documentation": "The space background layer",
+      "args": [],
+      "returns": []
+    },
+    "LAYER_FOREGROUND": {
+      "documentation": "The space foreground layer, includes the planet/solar flare/ion storm/nebula but not asteroids",
+      "args": [],
+      "returns": []
+    },
+    "LAYER_ASTEROIDS": {
+      "documentation": "The space asteroids layer, in front of the the space foreground",
+      "args": [],
+      "returns": []
+    },
+    "LAYER_PLAYER": {
+      "documentation": "The player ship, you can render things on top the player ship by using the after method of the callbacks",
+      "args": [],
+      "returns": []
+    },
+    "SHIP": {
+      "documentation": "Any active ship, you can render things on top the ship by using the after method of the callbacks",
+      "args": [
+        {
+          "name": "ship",
+          "type": "Ship"
+        }
+      ],
+      "returns": []
+    },
+    "LAYER_ENEMY": {
+      "documentation": "The enemy ship",
+      "args": [],
+      "returns": []
+    },
+    "SHIP_MANAGER": {
+      "documentation": "`before_function` is equivalent to `roomAnim` layer 3, `after_function` is equivalent to `roomAnim` layer 4",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": []
+    },
+    "SHIP_JUMP": {
+      "documentation": "Any active ship that is jumping, you can render things on top the ship by using the after method of the callbacks",
+      "args": [
+        {
+          "name": "ship",
+          "type": "Ship"
+        },
+        {
+          "name": "animationProgress",
+          "type": "float"
+        }
+      ],
+      "returns": []
+    },
+    "PROJECTILE": {
+      "documentation": "Projectile rendering, not a layer but per each individual projectile",
+      "args": [],
+      "returns": []
+    },
+    "SHIELDS_BASE": {
+      "documentation": "Shield base rendering (not sure if player & enemy yet)",
+      "args": [],
+      "returns": []
+    },
+    "SHIP_HULL": {
+      "documentation": "On rendering the ship hull, cloak and thruster animations",
+      "args": [
+        {
+          "name": "ship",
+          "type": "Ship"
+        },
+        {
+          "name": "alphaCloak",
+          "type": "float"
+        }
+      ],
+      "returns": []
+    },
+    "SHIP_FLOOR": {
+      "documentation": "Equivalent to `roomAnim` layer 0",
+      "args": [
+        {
+          "name": "ship",
+          "type": "Ship"
+        },
+        {
+          "name": "experimental",
+          "type": "bool"
+        }
+      ],
+      "returns": []
+    },
+    "SHIP_BREACHES": {
+      "documentation": "Equivalent to `roomAnim` layer 1",
+      "args": [
+        {
+          "name": "ship",
+          "type": "Ship"
+        }
+      ],
+      "returns": []
+    },
+    "SHIP_SPARKS": {
+      "documentation": "Equivalent to `roomAnim` layer 2",
+      "args": [
+        {
+          "name": "ship",
+          "type": "Ship"
+        }
+      ],
+      "returns": []
+    },
+    "CREW_MEMBER_HEALTH": {
+      "documentation": "Runs for each `CrewMember` regardless of whether their health bar is visible",
+      "args": [
+        {
+          "name": "crew",
+          "type": "CrewMember"
+        }
+      ],
+      "returns": []
+    },
+    "SHIP_ENGINES": {
+      "documentation": "Thruster animations",
+      "args": [
+        {
+          "name": "ship",
+          "type": "Ship"
+        },
+        {
+          "name": "showEngines",
+          "type": "bool"
+        },
+        {
+          "name": "alpha",
+          "type": "float"
+        }
+      ],
+      "returns": []
+    },
+    "SHIP_EXPLOSION": {
+      "documentation": "Probably affects both player & enemy, I think this is when the ship is destroyed",
+      "args": [],
+      "returns": []
+    },
+    "LAYER_FRONT": {
+      "documentation": "In front of player ship, where asteroids above the ship are rendered but you can draw whatever you want",
+      "args": [],
+      "returns": []
+    },
+    "FTL_BUTTON": {
+      "documentation": "Same layer as the FTL jump button and most of the player UI",
+      "args": [],
+      "returns": []
+    },
+    "SYSTEM_BOX": {
+      "documentation": "Called for each individual SystemBox, passed under the `systemBox` arg. Render coordinates are in the reference frame of the SystemBox. Unsure what `ignoreStatus` does.",
+      "args": [
+        {
+          "name": "systemBox",
+          "type": "SystemBox"
+        },
+        {
+          "name": "ignoreStatus",
+          "type": "bool"
+        }
+      ],
+      "returns": []
+    },
+    "PAUSE": {
+      "documentation": "Pause menu rendering, might be useful for also stopping some other renders",
+      "args": [],
+      "returns": []
+    },
+    "SPACE_STATUS": {
+      "documentation": "On rendering hazard environment icons",
+      "args": [],
+      "returns": []
+    },
+    "TABBED_WINDOW": {
+      "documentation": "On rendering a tab in the upgrade interface",
+      "args": [
+        {
+          "name": "currentTab",
+          "type": "int"
+        }
+      ],
+      "returns": []
+    },
+    "CHOICE": {
+      "documentation": "ConfirmWindow/ChoiceBox, when a choice window is on screen",
+      "args": [],
+      "returns": []
+    },
+    "MOUSE_CONTROL": {
+      "documentation": "Rendering at the highest layer above everything else where the mouse cursor is finally drawn",
+      "args": [],
+      "returns": []
+    }
+  },
+  "InternalEvents": {
+    "ON_TICK": {
+      "documentation": "Run code every in-game tick (frame), use in combination with other events to turn logic on and off in your code that runs every tick",
+      "args": [],
+      "returns": []
+    },
+    "MAIN_MENU": {
+      "documentation": "Run code when the main menu opens",
+      "args": [],
+      "returns": []
+    },
+    "GET_RUN_SEED": {
+      "documentation": "Run code when the seed for the run is set",
+      "args": [
+        {
+          "name": "isCustomSeed",
+          "type": "bool"
+        },
+        {
+          "name": "seed",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "isCustomSeed",
+          "type": "bool"
+        },
+        {
+          "name": "seed",
+          "type": "int"
+        }
+      ]
+    },
+    "DANGEROUS_ENVIRONMENT": {
+      "documentation": "Can be used to change the state of the environment, affecting music and ability to upgrade",
+      "args": [
+        {
+          "name": "danger",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "danger",
+          "type": "bool"
+        }
+      ]
+    },
+    "GET_BEACON_HAZARD": {
+      "documentation": "If a value is returned, can be used to mark a beacon as a hazard with an icon and tooltip on the beacon map",
+      "args": [
+        {
+          "name": "loc",
+          "type": "Location"
+        }
+      ],
+      "returns": [
+        {
+          "name": "hazardText",
+          "type": "string"
+        }
+      ]
+    },
+    "GET_HAZARD_FLASH": {
+      "documentation": "Can be used to alter the opacity and color of the flash used for suns and pulsars",
+      "args": [
+        {
+          "name": "alpha",
+          "type": "float"
+        }
+      ],
+      "returns": [
+        {
+          "name": "red",
+          "type": "float"
+        },
+        {
+          "name": "green",
+          "type": "float"
+        },
+        {
+          "name": "blue",
+          "type": "float"
+        },
+        {
+          "name": "alpha",
+          "type": "float"
+        }
+      ]
+    },
+    "ON_KEY_DOWN": {
+      "documentation": "Detect keyboard key is pressed",
+      "args": [
+        {
+          "name": "Key",
+          "type": "[Defines.SDL](#sdl-keys)"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "ON_KEY_UP": {
+      "documentation": "Detect keyboard key is unpressed",
+      "args": [
+        {
+          "name": "Key",
+          "type": "[Defines.SDL](#sdl-keys)"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "ON_MOUSE_MOVE": {
+      "documentation": "Detect mouse movement",
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "xdiff",
+          "type": "int"
+        },
+        {
+          "name": "ydiff",
+          "type": "int"
+        },
+        {
+          "name": "holdingLMB",
+          "type": "bool"
+        },
+        {
+          "name": "holdingRMB",
+          "type": "bool"
+        },
+        {
+          "name": "holdingMMB",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "GUI_MOUSE_MOVE": {
+      "documentation": "Detect mouse movement (to be used for `GenericButton`'s `MouseMove` method)",
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "ON_MOUSE_L_BUTTON_DOWN": {
+      "documentation": "Detect left mouse button is pressed",
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "ON_MOUSE_L_BUTTON_UP": {
+      "documentation": "Detect left mouse button is unpressed",
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "ON_MOUSE_R_BUTTON_DOWN": {
+      "documentation": "Detect right mouse button is pressed",
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "ON_MOUSE_R_BUTTON_UP": {
+      "documentation": "Detect right mouse button is unpressed",
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "ON_MOUSE_M_BUTTON_DOWN": {
+      "documentation": "Detect middle mouse button is pressed",
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "CREW_LOOP": {
+      "documentation": "While unpaused, run code every in-game tick for each crew member",
+      "args": [
+        {
+          "name": "crew",
+          "type": "CrewMember"
+        }
+      ],
+      "returns": []
+    },
+    "SHIP_LOOP": {
+      "documentation": "While unpaused, run code every in-game tick for each ship",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": []
+    },
+    "GET_DODGE_FACTOR": {
+      "documentation": "Can be used to alter the dodge factor for the given ship",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "value",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "value",
+          "type": "int"
+        }
+      ]
+    },
+    "SET_BONUS_POWER": {
+      "documentation": "Can be used to alter the bonus power for the given system",
+      "args": [
+        {
+          "name": "system",
+          "type": "ShipSystem"
+        },
+        {
+          "name": "amount",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "amount",
+          "type": "int"
+        }
+      ]
+    },
+    "SELECT_ARMAMENT_PRE": {
+      "documentation": "Triggered when selecting a weapon to fire, can be used to alter or block the selected weapon",
+      "args": [
+        {
+          "name": "armamentSlot",
+          "type": "uint"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "armamentSlot",
+          "type": "uint"
+        }
+      ]
+    },
+    "SELECT_ARMAMENT_POST": {
+      "documentation": "Triggered after selecting a weapon to fire",
+      "args": [
+        {
+          "name": "armamentSlot",
+          "type": "uint"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "ON_WAIT": {
+      "documentation": "Run code every time the ship waits (Spending a jump cycle without moving beacons, either when out of fuel or at last stand)",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": []
+    },
+    "WEAPON_COOLDOWN_MOD": {
+      "documentation": "Check and possibly alter the cooldown modifier being applied to a weapon. Return value cannot be greater than 1 for non-artillery weapons.",
+      "args": [
+        {
+          "name": "weapon",
+          "type": "ProjectileFactory"
+        },
+        {
+          "name": "cooldownMod",
+          "type": "float"
+        },
+        {
+          "name": "isArtillery",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "cooldownMod",
+          "type": "float"
+        }
+      ]
+    },
+    "WEAPON_STATBOX": {
+      "documentation": "Change the text displayed for the player weapon stats (only works if `redesignedWeaponTooltips` is enabled)",
+      "args": [
+        {
+          "name": "bp",
+          "type": "WeaponBlueprint"
+        },
+        {
+          "name": "stats",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        {
+          "name": "stats",
+          "type": "string"
+        }
+      ]
+    },
+    "WEAPON_DESCBOX": {
+      "documentation": "Change the text displayed for the player weapon description",
+      "args": [
+        {
+          "name": "bp",
+          "type": "WeaponBlueprint"
+        },
+        {
+          "name": "desc",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        {
+          "name": "desc",
+          "type": "string"
+        }
+      ]
+    },
+    "WEAPON_RENDERBOX": {
+      "documentation": "Change the text displayed for the player weapon cooldown timers",
+      "args": [
+        {
+          "name": "weapon",
+          "type": "ProjectileFactory"
+        },
+        {
+          "name": "cooldown",
+          "type": "int"
+        },
+        {
+          "name": "maxCooldown",
+          "type": "int"
+        },
+        {
+          "name": "firstLine",
+          "type": "string"
+        },
+        {
+          "name": "secondLine",
+          "type": "string"
+        },
+        {
+          "name": "thirdLine",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "firstLine",
+          "type": "string"
+        },
+        {
+          "name": "secondLine",
+          "type": "string"
+        },
+        {
+          "name": "thirdLine",
+          "type": "string"
+        }
+      ]
+    },
+    "PRE_CREATE_CHOICEBOX": {
+      "documentation": "Called before the creation of a `ChoiceBox` by a `LocationEvent`",
+      "args": [
+        {
+          "name": "event",
+          "type": "LocationEvent"
+        }
+      ],
+      "returns": []
+    },
+    "POST_CREATE_CHOICEBOX": {
+      "documentation": "Called after the creation of a `ChoiceBox` by a `LocationEvent`",
+      "args": [
+        {
+          "name": "choiceBox",
+          "type": "ChoiceBox"
+        },
+        {
+          "name": "event",
+          "type": "LocationEvent"
+        }
+      ],
+      "returns": []
+    },
+    "CREW_CLONE": {
+      "documentation": "Called at the start of creating a `CrewMember` after the cloning process",
+      "args": [
+        {
+          "name": "crew",
+          "type": "CrewMember"
+        }
+      ],
+      "returns": []
+    },
+    "SYSTEM_BOX_MOUSE_MOVE": {
+      "documentation": "Called when the mouse is moved at coordinates (`x`, `y`). Coordinates are relative to the SystemBox in question.",
+      "args": [
+        {
+          "name": "systemBox",
+          "type": "SystemBox"
+        },
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "SYSTEM_BOX_MOUSE_CLICK": {
+      "documentation": "Called when the mouse is clicked. `shift` indicates whether the shift key is held on click.",
+      "args": [
+        {
+          "name": "systemBox",
+          "type": "SystemBox"
+        },
+        {
+          "name": "shift",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "SYSTEM_BOX_KEY_DOWN": {
+      "documentation": "Called when a key is pressed. `Key` argument indicates the specific key pressed, and `shift` argument indicates whether the shift key is held on click.",
+      "args": [
+        {
+          "name": "systemBox",
+          "type": "SystemBox"
+        },
+        {
+          "name": "Key",
+          "type": "[Defines.SDL](#sdl-keys)"
+        },
+        {
+          "name": "shift",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "GET_LEVEL_DESCRIPTION": {
+      "documentation": "Called to get the description of what a system does at a certain level. `systemId` indicates the ID of the system, `level` indicates the power level, and `tooltip` indicates whether the string being generated is in the context of a mouseover tooltip.",
+      "args": [
+        {
+          "name": "systemId",
+          "type": "int"
+        },
+        {
+          "name": "level",
+          "type": "int"
+        },
+        {
+          "name": "tooltip",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "level_description",
+          "type": "string"
+        }
+      ]
+    },
+    "TABBED_WINDOW_CONFIRM": {
+      "documentation": "Called for every event that closes the current tab in the upgrade menu",
+      "args": [
+        {
+          "name": "currentTabName",
+          "type": "std::string"
+        }
+      ],
+      "returns": []
+    },
+    "TABBED_WINDOW_UNDO": {
+      "documentation": "Called when the UNDO button is activated in the upgrade menu",
+      "args": [
+        {
+          "name": "currentTabName",
+          "type": "std::string"
+        }
+      ],
+      "returns": []
+    }
+  }
+}
