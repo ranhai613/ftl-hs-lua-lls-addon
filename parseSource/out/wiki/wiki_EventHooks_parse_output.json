@@ -1,10 +1,5 @@
 {
   "RenderEvents": {
-    "LANGUAGE_CHOOSER": {
-      "documentation": "On rendering the language chooser menu at the start of a fresh install",
-      "args": [],
-      "returns": []
-    },
     "MAIN_MENU": {
       "documentation": "On rendering the main menu",
       "args": [],
@@ -45,17 +40,20 @@
       ],
       "returns": []
     },
-    "LAYER_ENEMY": {
-      "documentation": "The enemy ship",
-      "args": [],
-      "returns": []
-    },
     "SHIP_MANAGER": {
       "documentation": "`before_function` is equivalent to `roomAnim` layer 3, `after_function` is equivalent to `roomAnim` layer 4",
       "args": [
         {
           "name": "ship",
           "type": "ShipManager"
+        },
+        {
+          "name": "showInterior",
+          "type": "bool"
+        },
+        {
+          "name": "doorControlMode",
+          "type": "bool"
         }
       ],
       "returns": []
@@ -74,16 +72,6 @@
       ],
       "returns": []
     },
-    "PROJECTILE": {
-      "documentation": "Projectile rendering, not a layer but per each individual projectile",
-      "args": [],
-      "returns": []
-    },
-    "SHIELDS_BASE": {
-      "documentation": "Shield base rendering (not sure if player & enemy yet)",
-      "args": [],
-      "returns": []
-    },
     "SHIP_HULL": {
       "documentation": "On rendering the ship hull, cloak and thruster animations",
       "args": [
@@ -93,6 +81,24 @@
         },
         {
           "name": "alphaCloak",
+          "type": "float"
+        }
+      ],
+      "returns": []
+    },
+    "SHIP_ENGINES": {
+      "documentation": "Thruster animations",
+      "args": [
+        {
+          "name": "ship",
+          "type": "Ship"
+        },
+        {
+          "name": "showEngines",
+          "type": "bool"
+        },
+        {
+          "name": "alpha",
           "type": "float"
         }
       ],
@@ -142,29 +148,6 @@
       ],
       "returns": []
     },
-    "SHIP_ENGINES": {
-      "documentation": "Thruster animations",
-      "args": [
-        {
-          "name": "ship",
-          "type": "Ship"
-        },
-        {
-          "name": "showEngines",
-          "type": "bool"
-        },
-        {
-          "name": "alpha",
-          "type": "float"
-        }
-      ],
-      "returns": []
-    },
-    "SHIP_EXPLOSION": {
-      "documentation": "Probably affects both player & enemy, I think this is when the ship is destroyed",
-      "args": [],
-      "returns": []
-    },
     "LAYER_FRONT": {
       "documentation": "In front of player ship, where asteroids above the ship are rendered but you can draw whatever you want",
       "args": [],
@@ -189,14 +172,24 @@
       ],
       "returns": []
     },
-    "PAUSE": {
-      "documentation": "Pause menu rendering, might be useful for also stopping some other renders",
-      "args": [],
-      "returns": []
-    },
     "SPACE_STATUS": {
       "documentation": "On rendering hazard environment icons",
       "args": [],
+      "returns": []
+    },
+    "SHIP_STATUS": {
+      "documentation": "On rendering player element like hull and ressources",
+      "args": [],
+      "returns": []
+    },
+    "CHOICE_BOX": {
+      "documentation": "When any choiceBox related window is on screen",
+      "args": [
+        {
+          "name": "choiceBox",
+          "type": "ChoiceBox"
+        }
+      ],
       "returns": []
     },
     "TABBED_WINDOW": {
@@ -207,11 +200,6 @@
           "type": "int"
         }
       ],
-      "returns": []
-    },
-    "CHOICE": {
-      "documentation": "ConfirmWindow/ChoiceBox, when a choice window is on screen",
-      "args": [],
       "returns": []
     },
     "MOUSE_CONTROL": {
@@ -230,29 +218,6 @@
       "documentation": "Run code when the main menu opens",
       "args": [],
       "returns": []
-    },
-    "GET_RUN_SEED": {
-      "documentation": "Run code when the seed for the run is set",
-      "args": [
-        {
-          "name": "isCustomSeed",
-          "type": "bool"
-        },
-        {
-          "name": "seed",
-          "type": "int"
-        }
-      ],
-      "returns": [
-        {
-          "name": "isCustomSeed",
-          "type": "bool"
-        },
-        {
-          "name": "seed",
-          "type": "int"
-        }
-      ]
     },
     "DANGEROUS_ENVIRONMENT": {
       "documentation": "Can be used to change the state of the environment, affecting music and ability to upgrade",
@@ -311,12 +276,35 @@
         }
       ]
     },
+    "GET_RUN_SEED": {
+      "documentation": "Run code when the seed for the run is set",
+      "args": [
+        {
+          "name": "isCustomSeed",
+          "type": "bool"
+        },
+        {
+          "name": "seed",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "isCustomSeed",
+          "type": "bool"
+        },
+        {
+          "name": "seed",
+          "type": "int"
+        }
+      ]
+    },
     "ON_KEY_DOWN": {
       "documentation": "Detect keyboard key is pressed",
       "args": [
         {
           "name": "Key",
-          "type": "[Defines.SDL](#sdl-keys)"
+          "type": "Defines.SDL"
         }
       ],
       "returns": [
@@ -331,7 +319,7 @@
       "args": [
         {
           "name": "Key",
-          "type": "[Defines.SDL](#sdl-keys)"
+          "type": "Defines.SDL"
         }
       ],
       "returns": [
@@ -371,25 +359,6 @@
         {
           "name": "holdingMMB",
           "type": "bool"
-        }
-      ],
-      "returns": [
-        {
-          "name": "chain",
-          "type": "Defines.Chain"
-        }
-      ]
-    },
-    "GUI_MOUSE_MOVE": {
-      "documentation": "Detect mouse movement (to be used for `GenericButton`'s `MouseMove` method)",
-      "args": [
-        {
-          "name": "x",
-          "type": "int"
-        },
-        {
-          "name": "y",
-          "type": "int"
         }
       ],
       "returns": [
@@ -494,8 +463,52 @@
         }
       ]
     },
+    "ON_MOUSE_SCROLL": {
+      "documentation": "Detect mouse scrolling. `direction` will be 1.0 when scrolling down, -1.0 when scrolling up.",
+      "args": [
+        {
+          "name": "direction",
+          "type": "float"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "GUI_MOUSE_MOVE": {
+      "documentation": "Detect mouse movement (to be used for `GenericButton`'s `MouseMove` method)",
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
     "CREW_LOOP": {
       "documentation": "While unpaused, run code every in-game tick for each crew member",
+      "args": [
+        {
+          "name": "crew",
+          "type": "CrewMember"
+        }
+      ],
+      "returns": []
+    },
+    "CREW_CLONE": {
+      "documentation": "Called at the start of creating a `CrewMember` after the cloning process",
       "args": [
         {
           "name": "crew",
@@ -513,6 +526,87 @@
         }
       ],
       "returns": []
+    },
+    "HAS_EQUIPMENT": {
+      "documentation": "Run every hasEquipment check",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "equipment",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "value",
+          "type": "int"
+        }
+      ]
+    },
+    "HAS_AUGMENTATION": {
+      "documentation": "Run every hasAugmentation check",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "augment",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "value",
+          "type": "int"
+        }
+      ]
+    },
+    "GET_AUGMENTATION_VALUE": {
+      "documentation": "Called when checking an augmentation's value",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "augment",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "float"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "value",
+          "type": "float"
+        }
+      ]
     },
     "GET_DODGE_FACTOR": {
       "documentation": "Can be used to alter the dodge factor for the given ship",
@@ -594,15 +688,101 @@
         }
       ]
     },
-    "ON_WAIT": {
-      "documentation": "Run code every time the ship waits (Spending a jump cycle without moving beacons, either when out of fuel or at last stand)",
+    "PROJECTILE_INITIALIZE": {
+      "documentation": "Called when a projectile is initialized",
       "args": [
         {
-          "name": "ship",
-          "type": "ShipManager"
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "bp",
+          "type": "WeaponBlueprint"
         }
       ],
       "returns": []
+    },
+    "PROJECTILE_FIRE": {
+      "documentation": "Called when a projectile is fired",
+      "args": [
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "weapon",
+          "type": "ProjectileFactory"
+        }
+      ],
+      "returns": []
+    },
+    "PROJECTILE_PRE": {
+      "documentation": "Called before projectile processing",
+      "args": [
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "PROJECTILE_POST": {
+      "documentation": "Called after projectile processing",
+      "args": [
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "preempted",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "PROJECTILE_UPDATE_PRE": {
+      "documentation": "Called before projectile update",
+      "args": [
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "PROJECTILE_UPDATE_POST": {
+      "documentation": "Called after projectile update",
+      "args": [
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "preempted",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
     },
     "WEAPON_COOLDOWN_MOD": {
       "documentation": "Check and possibly alter the cooldown modifier being applied to a weapon. Return value cannot be greater than 1 for non-artillery weapons.",
@@ -716,6 +896,564 @@
         }
       ]
     },
+    "DRONE_FIRE": {
+      "documentation": "Called when a drone fires",
+      "args": [
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "spacedrone",
+          "type": "SpaceDrone"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "DRONE_COLLISION": {
+      "documentation": "Called when a drone collides with a projectile",
+      "args": [
+        {
+          "name": "drone",
+          "type": "SpaceDrone"
+        },
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "response",
+          "type": "CollisionResponse"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "PROJECTILE_COLLISION": {
+      "documentation": "Called when projectiles collide",
+      "args": [
+        {
+          "name": "thisProjectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "otherProjectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "response",
+          "type": "CollisionResponse"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "SHIELD_COLLISION_PRE": {
+      "documentation": "Called before shield collision logic",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "response",
+          "type": "CollisionResponse"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "SHIELD_COLLISION": {
+      "documentation": "Called after shield collision",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "response",
+          "type": "CollisionResponse"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "DAMAGE_AREA": {
+      "documentation": "Called when an is about to be hit by a projectile",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "location",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "forceHit",
+          "type": "Evasion"
+        },
+        {
+          "name": "shipFriendlyFire",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "forceHit",
+          "type": "Evasion"
+        },
+        {
+          "name": "shipFriendlyFire",
+          "type": "bool"
+        }
+      ]
+    },
+    "DAMAGE_AREA_HIT": {
+      "documentation": "Called when an area is hit by a projectile",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "location",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "shipFriendlyFire",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "DAMAGE_BEAM": {
+      "documentation": "Called when a beam deals damage",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "location",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "newTile",
+          "type": "bool"
+        },
+        {
+          "name": "beamHit",
+          "type": "BeamHit"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "beamHit",
+          "type": "BeamHit"
+        }
+      ]
+    },
+    "DAMAGE_SYSTEM": {
+      "documentation": "Called when a system takes damage",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "roomId",
+          "type": "int"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "SYSTEM_ADD_DAMAGE": {
+      "documentation": "Called when damage is added to a system, occurs after all resist calculations",
+      "args": [
+        {
+          "name": "sys",
+          "type": "ShipSystem"
+        },
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        },
+        {
+          "name": "amount",
+          "type": "int"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "amount",
+          "type": "int"
+        }
+      ]
+    },
+    "ACTIVATE_POWER": {
+      "documentation": "Called when a crew activates a power",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPower"
+        },
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "PREPARE_POWER": {
+      "documentation": "Called when preparing a power activation",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPower"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "CANCEL_POWER": {
+      "documentation": "Called when canceling a power",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPower"
+        },
+        {
+          "name": "clearAnim",
+          "type": "bool"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "POWER_ON_UPDATE": {
+      "documentation": "Called when updating a power",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPower"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "POWER_RESOURCE_ON_UPDATE": {
+      "documentation": "Called when updating a resource power",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPowerResource"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "POWER_ENABLE_INIT": {
+      "documentation": "Called when initializing power enable state",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPower"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "POWER_RESOURCE_ENABLE_INIT": {
+      "documentation": "Called when initializing resource power enable state",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPowerResource"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
+    "POWER_REQ": {
+      "documentation": "Called when checking power requirements",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPower"
+        },
+        {
+          "name": "req",
+          "type": "ActivatedPowerRequirements"
+        },
+        {
+          "name": "result",
+          "type": "PowerReadyState"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "result",
+          "type": "PowerReadyState"
+        }
+      ]
+    },
+    "POWER_READY": {
+      "documentation": "Called when checking if power is ready",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPower"
+        },
+        {
+          "name": "result",
+          "type": "PowerReadyState"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "result",
+          "type": "PowerReadyState"
+        }
+      ]
+    },
+    "POWER_TOOLTIP": {
+      "documentation": "Called when rendering power tooltip",
+      "args": [
+        {
+          "name": "power",
+          "type": "ActivatedPower"
+        },
+        {
+          "name": "state",
+          "type": "PowerReadyState"
+        }
+      ],
+      "returns": [
+        {
+          "name": "tooltip",
+          "type": "string"
+        },
+        {
+          "name": "skipAppend",
+          "type": "bool"
+        }
+      ]
+    },
+    "GENERATOR_CREATE_SHIP": {
+      "documentation": "Called when generating a new ship from an event",
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "sector",
+          "type": "int"
+        },
+        {
+          "name": "event",
+          "type": "ShipEvent"
+        },
+        {
+          "name": "bp",
+          "type": "ShipBlueprint"
+        },
+        {
+          "name": "ret",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
+          "name": "sector",
+          "type": "int"
+        },
+        {
+          "name": "event",
+          "type": "ShipEvent"
+        },
+        {
+          "name": "bp",
+          "type": "ShipBlueprint"
+        },
+        {
+          "name": "ret",
+          "type": "ShipManager"
+        }
+      ]
+    },
+    "GENERATOR_CREATE_SHIP_POST": {
+      "documentation": "Called after generating a new ship from an event",
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "sector",
+          "type": "int"
+        },
+        {
+          "name": "event",
+          "type": "ShipEvent"
+        },
+        {
+          "name": "bp",
+          "type": "ShipBlueprint"
+        },
+        {
+          "name": "ret",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": [
+        {
+          "name": "chain",
+          "type": "Defines.Chain"
+        }
+      ]
+    },
     "PRE_CREATE_CHOICEBOX": {
       "documentation": "Called before the creation of a `ChoiceBox` by a `LocationEvent`",
       "args": [
@@ -740,12 +1478,52 @@
       ],
       "returns": []
     },
-    "CREW_CLONE": {
-      "documentation": "Called at the start of creating a `CrewMember` after the cloning process",
+    "TABBED_WINDOW_CONFIRM": {
+      "documentation": "Called for every event that closes the current tab in the upgrade menu",
       "args": [
         {
-          "name": "crew",
-          "type": "CrewMember"
+          "name": "currentTabName",
+          "type": "std::string"
+        }
+      ],
+      "returns": []
+    },
+    "TABBED_WINDOW_UNDO": {
+      "documentation": "Called when the UNDO button is activated in the upgrade menu",
+      "args": [
+        {
+          "name": "currentTabName",
+          "type": "std::string"
+        }
+      ],
+      "returns": []
+    },
+    "JUMP_ARRIVE": {
+      "documentation": "Called when a ship arrives at a beacon",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": []
+    },
+    "JUMP_LEAVE": {
+      "documentation": "Called when a ship leaves a beacon",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": []
+    },
+    "ON_WAIT": {
+      "documentation": "Run code every time the ship waits (Spending a jump cycle without moving beacons, either when out of fuel or at last stand)",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
         }
       ],
       "returns": []
@@ -801,7 +1579,7 @@
         },
         {
           "name": "Key",
-          "type": "[Defines.SDL](#sdl-keys)"
+          "type": "Defines.SDL"
         },
         {
           "name": "shift",
@@ -838,22 +1616,101 @@
         }
       ]
     },
-    "TABBED_WINDOW_CONFIRM": {
-      "documentation": "Called for every event that closes the current tab in the upgrade menu",
+    "CALCULATE_LEAK_MODIFIER": {
+      "documentation": "Called once per ship every game tick to calculate a multiplier to the rate at which airlocks and breaches drain oxygen.",
       "args": [
         {
-          "name": "currentTabName",
-          "type": "std::string"
+          "name": "ship",
+          "type": "ShipManager"
+        },
+        {
+          "name": "modifier",
+          "type": "float"
+        }
+      ],
+      "returns": [
+        {
+          "name": "modifier",
+          "type": "Chain"
+        }
+      ]
+    },
+    "CONSTRUCT_CREWMEMBER": {
+      "documentation": "Called when constructing a crew member",
+      "args": [
+        {
+          "name": "crew",
+          "type": "CrewMember"
         }
       ],
       "returns": []
     },
-    "TABBED_WINDOW_UNDO": {
-      "documentation": "Called when the UNDO button is activated in the upgrade menu",
+    "CONSTRUCT_SPACEDRONE": {
+      "documentation": "Called when constructing a space drone",
       "args": [
         {
-          "name": "currentTabName",
-          "type": "std::string"
+          "name": "drone",
+          "type": "SpaceDrone"
+        }
+      ],
+      "returns": []
+    },
+    "CONSTRUCT_PROJECTILE_FACTORY": {
+      "documentation": "Called when constructing a weapon",
+      "args": [
+        {
+          "name": "weapon",
+          "type": "ProjectileFactory"
+        }
+      ],
+      "returns": []
+    },
+    "CONSTRUCT_PROJECTILE": {
+      "documentation": "Called when constructing a projectile",
+      "args": [
+        {
+          "name": "projectile",
+          "type": "Projectile"
+        }
+      ],
+      "returns": []
+    },
+    "CONSTRUCT_ROOM": {
+      "documentation": "Called when constructing a room",
+      "args": [
+        {
+          "name": "room",
+          "type": "Room"
+        }
+      ],
+      "returns": []
+    },
+    "CONSTRUCT_SHIP_MANAGER": {
+      "documentation": "Called when constructing a ShipManager",
+      "args": [
+        {
+          "name": "ship",
+          "type": "ShipManager"
+        }
+      ],
+      "returns": []
+    },
+    "CONSTRUCT_SHIP_SYSTEM": {
+      "documentation": "Called when constructing a ship system",
+      "args": [
+        {
+          "name": "system",
+          "type": "ShipSystem"
+        }
+      ],
+      "returns": []
+    },
+    "CONSTRUCT_SYSTEM_BOX": {
+      "documentation": "Called when constructing a GUI system box",
+      "args": [
+        {
+          "name": "systemBox",
+          "type": "SystemBox"
         }
       ],
       "returns": []

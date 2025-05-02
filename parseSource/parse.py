@@ -1,4 +1,7 @@
 from parseutility import get_scope_content, sanitize_type
+from eventhookbuilder import EventHookBuilder
+from additionalEnumTable import AdditionalEnum, AdditionalEnumBuilder
+
 import re
 import json
 from collections import defaultdict
@@ -40,6 +43,7 @@ C_LUA_PRIMITIVES = {
     "unsigned_long_long" : "uint",
     
     "int8_t" : "integer",
+    "size_t": "uint",
     
     # float
     "float": "number",
@@ -50,7 +54,26 @@ C_LUA_PRIMITIVES = {
     "string": "string",
 }
 
-C_POINTER_TYPES = ["unique_ptr"]
+C_POINTER_TYPES = ["unique_ptr", "SwigValueWrapper"]
+C_CONTAINER_TYPES = ["pair", "vector", "array", "unordered_set", "map", "unordered_map", "unordered_multimap"]
+C_CONTAINER_TYPES_TWO = ["pair", "map", "unordered_map", "unordered_multimap"]
+
+# taken from SWIG_LUACODE in LUA_wrap files
+ADDITIONAL_ENUMS = [
+    AdditionalEnum('Hyperspace.ActivatedPowerRequirements.Type', 'Hyperspace', 'PowerType_'),
+    AdditionalEnum('Hyperspace.CrewExtraCondition', 'Hyperspace', 'CrewExtraCondition_'),
+    AdditionalEnum('Hyperspace.CrewStat', 'Hyperspace', 'CrewStat_'),
+    AdditionalEnum('Hyperspace.StatBoostDefinition.BoostType', 'Hyperspace.StatBoostDefinition', 'BoostType_'),
+    AdditionalEnum('Hyperspace.StatBoostDefinition.BoostSource', 'Hyperspace.StatBoostDefinition', 'BoostSource_'),
+    AdditionalEnum('Hyperspace.StatBoostDefinition.ShipTarget', 'Hyperspace.StatBoostDefinition', 'ShipTarget_'),
+    AdditionalEnum('Hyperspace.StatBoostDefinition.SystemRoomTarget', 'Hyperspace.StatBoostDefinition', 'SystemRoomTarget_'),
+    AdditionalEnum('Hyperspace.StatBoostDefinition.CrewTarget', 'Hyperspace.StatBoostDefinition', 'CrewTarget_'),
+    AdditionalEnum('Hyperspace.StatBoostDefinition.DroneTarget', 'Hyperspace.StatBoostDefinition', 'DroneTarget_'),
+]
+
+MODULE_NAME_PATTERN = re.compile(r'#define\s+SWIG_name\s+"(\w+)"')
+# CLASS_NAME_PATTERN = re.compile(r'#define SWIGTYPE_p_(\w+)')
+CLASS_NAME_PATTERN = re.compile(r'static swig_lua_namespace swig_(\w+?)_(?:Sf_)?SwigStatic = {\s*"(\w+)"\s*,')
 
 class FuncType(Enum):
     METHOD = 1,
@@ -79,36 +102,6 @@ def make_str_list_unique(strings: list[str]) -> list[str]:
             unique_s = f"{s}{seen[s]}"
             result.append(unique_s)
     return result
-
-def assemble_function_detail(name: str, className: str, funcType: FuncType, retType: str, doc: str, args: list) -> str:
-    ret = "```lua\n"
-    if funcType == FuncType.METHOD:
-        ret += "method "
-    elif funcType == FuncType.STATIC:
-        ret += "function "
-    elif funcType == FuncType.CONSTRUCTOR:
-        ret += "constructor "
-    
-    ret += className + (":" if funcType == FuncType.METHOD else ".") + name + "("
-    firstArg = True
-    
-    for arg in args:
-        if not firstArg:
-            ret += ", "
-        ret += f"{arg['name']}: {arg['type']}"
-        firstArg = False
-        
-    ret += ")\n  -> "
-    if retType:
-        ret += retType
-    else:
-        ret += "unknown"
-    ret += "\n```"
-    
-    if doc:
-        ret += "\n---\n" + doc
-    
-    return ret
 
 class FunctionInfo:
     def __init__(self, name: str, returnType: str, args: list[str]):
@@ -192,7 +185,7 @@ class FunctionInfo:
                     ret.append([{"name": "unknown", "type": type} for type in thisArgs])
             return ret
         
-    def _getWikiDoc(self, args: list[str]) -> str | None:
+    def GetWikiDoc(self, args: list[str]) -> str | None:
         if self.wikiData:
             for data in self.wikiData:
                 if match_args(args, [i["type"] for i in data["args"]]):
@@ -200,89 +193,82 @@ class FunctionInfo:
         
         return None
     
-    def GetDocumentation(self, className: str, cleanName: str, funcType: FuncType) -> str:
-        assert self.HSDataIsLoaded or self.wikiDataIsLoaded, "FunctionInfo: HSData or wikiData not loaded"
-
-        if not self.overloadNames:
-            thisArgs = self.args[1:] if funcType == FuncType.METHOD else self.args
-            args = self._getArgs(thisArgs)
-            if args is not None:
-                return assemble_function_detail(cleanName, className, funcType, self.GetRetType(), self._getWikiDoc(thisArgs), args)
-            else:
-                return assemble_function_detail(cleanName, className, funcType, self.GetRetType(), None, [{"name": "unknown", "type": type} for type in thisArgs])
-        else:
-            ret = ""
-            for name in self.overloadNames:
-                thisArgs = g_functionDataMap[name].args[1:] if funcType == FuncType.METHOD else g_functionDataMap[name].args
-                args = self._getArgs(thisArgs)
-                if args is not None:
-                    ret += assemble_function_detail(cleanName, className, funcType, self.GetRetType(), self._getWikiDoc(thisArgs), args) + "  \n"
-                else:
-                    ret += assemble_function_detail(cleanName, className, funcType, self.GetRetType(), None, [{"name": "unknown", "type": type} for type in thisArgs]) + "  \n"
-            return ret
-
 g_functionDataMap: dict[str, FunctionInfo] = {}
 
 g_enum_parse_requests = set()
 
-def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, HSData_path: str, wikiData_path: str = None) -> str:    
-    def get_lua_type(type: str, isClassDef=False) -> str:
-        type = type.strip()
-        if type in HS_LUA_MODULES:
-            return type
-    
-        type = type.replace("unsigned ", "u").replace(" ", "").replace("std::", "").replace("*", "").replace("&", "")
-        
-        # Handle arrays like int[10]
-        array_match = re.match(r'(.+)\[(\d+)\]', type)
-        if array_match:
-            inner_type = array_match.group(1)
-            size = array_match.group(2)
-            # Process the inner type recursively
-            processed_inner_type = get_lua_type(inner_type)
-            return f"{processed_inner_type}[] length={size}"
-
-        # Handle template types like vector<int>
-        template_match = re.match(r'(\w+)<(.+)>', type)
-        if template_match:
-            outer_type = template_match.group(1)
-            inner_type = template_match.group(2)
-            if outer_type in C_POINTER_TYPES:
-                return get_lua_type(inner_type)
-            
-            # Process the inner type recursively
-            template_rematch = re.match(r'(\w+)<(.+)>', inner_type)
-            if template_rematch:
-                processed_inner_type = get_lua_type(inner_type)
-            else:
-                types = inner_type.split(",")
-                if outer_type in ["map", "unordered_map", "multimap", "unordered_multimap"]:
-                    types = types[:2] # Only take the first two types for map types because the latter ones are a hash function or equal function, which we don't need
-                processed_inner_type = ", ".join([get_lua_type(inner) for inner in types])
-            # Process the outer type and combine
-            return f"{get_lua_type(outer_type)}<{processed_inner_type}>"
-        
-        ret = C_LUA_PRIMITIVES.get(type)
-        if ret and not isClassDef:
-            return ret
-        
-        ret = classMap.get(type)
-        if ret:
-            return ret
-        
-        nmspaces = type.split("::")
-        bottom = classMap.get(nmspaces[-1])
-        if bottom:
-            return bottom
-        
-        top = classMap.get(nmspaces[0])
-        if top:
-            return f"{top}." + ".".join(nmspaces[1:])
-        
+def get_lua_type(type: str, isClassDef=False) -> str:
+    assert len(classMap) > 0, "get_lua_type: classMap is empty"
+    type = type.strip()
+    if type in HS_LUA_MODULES:
         return type
-        
+
+    type = type.replace("unsigned ", "u").replace("signed ", "").replace(" ", "").replace("std::", "").replace("&", "")
+    if type == "char*":
+        return "string"
     
-    def parse_constructor(moduleName: str, className: str) -> tuple[str, int]:
+    type = type.replace("*", "")
+    
+    # Handle arrays like int[10]
+    array_match = re.match(r'(.+)\[(\d+)\]', type)
+    if array_match:
+        inner_type = array_match.group(1)
+        size = array_match.group(2)
+        # Process the inner type recursively
+        processed_inner_type = get_lua_type(inner_type)
+        return f"{processed_inner_type}[] length={size}"
+
+    # Handle template types like vector<int>
+    TEMPLATE_PATTERN = re.compile(r'([\w:]+)<(.+)>')
+    template_match = re.match(TEMPLATE_PATTERN, type)
+    if template_match:
+        outer_type = template_match.group(1)
+        inner_type = template_match.group(2)
+        if outer_type in C_POINTER_TYPES:
+            return get_lua_type(inner_type)
+        
+        # Process the inner type recursively
+        template_rematch = re.match(TEMPLATE_PATTERN, inner_type)
+        if template_rematch:
+            processed_inner_type = get_lua_type(inner_type)
+        else:
+            types = inner_type.split(",")
+            if outer_type in C_CONTAINER_TYPES_TWO:
+                types = types[:2] # Only take the first two types for map types because the latter ones are a hash function or equal function, which we don't need
+            processed_inner_type = ", ".join([get_lua_type(inner) for inner in types])
+        # Process the outer type and combine
+        return f"{get_lua_type(outer_type)}<{processed_inner_type}>"
+    
+    ret = C_LUA_PRIMITIVES.get(type)
+    if ret and not isClassDef:
+        return ret
+    
+    ret = classMap.get(type)
+    if ret:
+        return ret
+    
+    nmspaces = type.split("::")
+    bottom = classMap.get(nmspaces[-1])
+    if bottom:
+        return bottom
+    
+    top = classMap.get(nmspaces[0])
+    if top:
+        return f"{top}." + ".".join(nmspaces[1:])
+    
+    return type.replace("::", ".")
+
+def format_container_type(className: str) -> str|None:
+    if not any([className.startswith(f"{x}_") for x in C_CONTAINER_TYPES]):
+        return None
+    
+    func = g_functionDataMap.get(f"_wrap_{className}_size") or g_functionDataMap.get(f"_wrap_{className}_first_get")
+    assert func, f"format_container_type: _wrap_{className} not found"
+    
+    return get_lua_type(func.args[0])
+
+def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: AdditionalEnumBuilder, enumMap: dict[str, int], lua_wrap_path: str, HSData_path: str, wikiData_path: str = None) -> str:    
+    def parse_constructor(moduleName: str, className: str, fixedRet=None) -> tuple[str, int]:
         constructor = g_functionDataMap.get(f"_wrap_new_{className}", None)
         if constructor is None:
             return "", 0
@@ -300,7 +286,7 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
         ret = ""
         count = 0
         for overload in constructor.GetArgs(True):
-            documentation = constructor._getWikiDoc([data["type"] for data in overload])
+            documentation = constructor.GetWikiDoc([data["type"] for data in overload])
             if documentation:
                 ret += "--- " + documentation.replace('\n', '<br>') + "\n"
             
@@ -318,7 +304,10 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
                 isOptional = "=" in params_type[i]
                 ret += f"---@param {name + ('?' if isOptional else '')} {params_type[i]}\n"
             
-            ret += f"---@return {get_lua_type(className)}\n"
+            if fixedRet is None:
+                ret += f"---@return {get_lua_type(className)}\n"
+            else:
+                ret += f"---@return {fixedRet}\n"
             
             ret += f"function {get_lua_type(moduleName)}." + className + "(" + ", ".join(params_name) + ") end\n\n"
             count += 1
@@ -344,7 +333,7 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
             func.LoadWikiData(wikiData)
             
             for overload in func.GetArgs(funcType == FuncType.STATIC):
-                documentation = func._getWikiDoc([data["type"] for data in overload])
+                documentation = func.GetWikiDoc([data["type"] for data in overload])
                 if documentation:
                     ret += "--- " + documentation.replace('\n', '<br>') + "\n"
                 
@@ -371,7 +360,7 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
 
         return ret, count
     
-    def parse_fields(className: str, wikiInfo: dict, content: str, isProperty=False) -> tuple[str, int]:
+    def parse_fields(className: str, wikiInfo: dict, content: str) -> tuple[str, int]:
         ret = ""
         count = 0
         for m in re.finditer(r'{\s*"(\w+)"\s*,\s*(\w+)\s*,\s*(\w+)\s*}', content):
@@ -417,9 +406,17 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
             if value is None:
                 print(f"parse_constants: {typeName} not found in enumMap")
                 continue
+            
+            if get_lua_type(className, True) == "Defines.InternalEvents":
+                documentation = eventHookBuilder.process("InternalEvents", constantName, value)
+            elif get_lua_type(className, True) == "Defines.RenderEvents":
+                documentation = eventHookBuilder.process("RenderEvents", constantName, value)
+            
             ret += f"    {constantName} = {value}," + (" -- " + documentation.replace("\n", "<br>") if documentation else "") + "\n"
             count += 1
-            
+
+            additionalEnumBuilder.process(get_lua_type(className), constantName, value)
+        
         return ret, count
     
     result = ""
@@ -437,11 +434,11 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
     with open(lua_wrap_path, 'r', encoding='utf8') as f:
         lua_code = f.read()
 
-    moduleName = re.search(r'#define\s+SWIG_name\s+"(\w+)"', lua_code).group(1)
+    moduleName = re.search(MODULE_NAME_PATTERN, lua_code).group(1)
     print(moduleName)
 
-    RET_TYPE_PATTERN = re.compile(r'  (.+?) \*?result(?: = 0 )?;')
-    ARG_PATTERN = re.compile(r'  (.+?) \*?arg(\d+) (?:= (?:\(.+?\) )?0 )?;')
+    RET_TYPE_PATTERN = re.compile(r'  (.+?) (\*?)result(?: = 0 )?;')
+    ARG_PATTERN = re.compile(r'  (.+?) (\*?)arg\d+ (?:= (?:\(.+?\) )?0 )?;')
     FUNCTION_OVERLOAD_NAME_PATTERN = re.compile(r'(\w+)__SWIG_\d+')
     
     overloadNamesBuffer = defaultdict(list)
@@ -454,22 +451,32 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
         return_type_match = re.search(RET_TYPE_PATTERN, content)
         if return_type_match:
             return_type = return_type_match.group(1)
+            if return_type == "char" and return_type_match.group(2) == "*":
+                return_type = "string"
         args = []
         for arg_match in re.finditer(ARG_PATTERN, content):
             arg_type = arg_match.group(1)
+            if arg_type == "char" and arg_match.group(2) == "*":
+                arg_type = "string"
             args.append(arg_type)
-
-        funcInfo = FunctionInfo(functionName, return_type, args)
         
         overload_match = re.search(FUNCTION_OVERLOAD_NAME_PATTERN, functionName)
         if overload_match:
             overloadNamesBuffer[overload_match.group(1)].append(functionName)
         
-        g_functionDataMap[functionName] = funcInfo
+        g_functionDataMap[functionName] = FunctionInfo(functionName, return_type, args)
     
     for name, overloads in overloadNamesBuffer.items():
         g_functionDataMap[name].overloadNames = overloads
     
+    # Parse "table" member injection
+    additionalTableMembersMap = defaultdict(list)
+    for match in re.finditer(r'script_add_native_member\(L, "(\w+)", "(\w+)", (\w+)\);', lua_code):
+        className = match.group(1)
+        memberName = match.group(2)
+        funcName = match.group(3)
+        assert funcName == "hs_Userdata_table_get"
+        additionalTableMembersMap[className].append(memberName)
     
     # Parse global variables
     globalHSInfo = HSData.get(moduleName, None)
@@ -477,7 +484,11 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
     
     globalFields = re.search(r'static\s+swig_lua_attribute\s+swig_SwigModule_attributes\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
     if globalFields:
-        part_module_fields, _ = parse_fields(moduleName, globalWikiInfo, globalFields.group(1), True)
+        part_module_fields, _ = parse_fields(moduleName, globalWikiInfo, globalFields.group(1))
+    
+    globalStaticFields = re.search(r'static\s+swig_lua_attribute\s+swig_SwigModule_Sf_SwigStatic_attributes\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
+    if globalStaticFields:
+        part_module_fields += parse_fields(moduleName, globalWikiInfo, globalStaticFields.group(1))[0]
     
     globalMethods = re.search(r'static\s+swig_lua_method\s+swig_SwigModule_methods\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
     if globalMethods:
@@ -485,13 +496,25 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
     
     globalConstants = re.search(r'static\s+swig_lua_const_info\s+swig_SwigModule_constants\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
     if globalConstants:
-        part_methods_consts, _ = parse_constants(moduleName, globalWikiInfo, globalConstants.group(1))
+        part_module_consts, _ = parse_constants(moduleName, globalWikiInfo, globalConstants.group(1))
     
-    result += f"---@class {moduleName}\n{part_module_fields}{moduleName} = {{" + (f"\n{part_methods_consts}" if part_methods_consts else "") + f"}}\n\n{part_module_methods}"
+    additionalTableMembers = additionalTableMembersMap.get(moduleName, None)
+    if additionalTableMembers:
+        for memberName in additionalTableMembers:
+            part_module_consts += f"    {memberName} = {{}},\n"
+    
+    result += f"---@class {moduleName}\n{part_module_fields}{moduleName} = {{" + (f"\n{part_module_consts}" if part_module_consts else "") + f"}}\n\n{part_module_methods}"
     
     # Parse classes
-    for m in re.finditer(r'#define SWIGTYPE_p_(\w+)', lua_code):
-        className = m.group(1).split("__")[-1]
+    for m in re.finditer(CLASS_NAME_PATTERN, lua_code):
+        className = m.group(1)
+        container_type = format_container_type(className)
+        if container_type:
+            this_name = get_lua_type(className, True)
+            part_constructor, _ = parse_constructor(moduleName, className, container_type)
+            result += part_constructor
+            continue
+        
         HSInfo = HSData.get(className, None)
         wikiInfo = wikiData.get(className, None)
         
@@ -506,6 +529,12 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
         fields_m = re.search(rf'static\s+swig_lua_attribute\s+swig_{className}_attributes\[\]\s*=\s*\{{(.*?)\}};', lua_code, re.DOTALL)
         if fields_m:
             part_fields, count_fields = parse_fields(className, wikiInfo, fields_m.group(1))
+        
+        static_fields_m = re.search(rf'static\s+swig_lua_attribute\s+swig_{className}_Sf_SwigStatic_attributes\[\]\s*=\s*\{{(.*?)\}};', lua_code, re.DOTALL)
+        if static_fields_m:
+            p, c = parse_fields(className, wikiInfo, static_fields_m.group(1))
+            part_fields += p
+            count_fields += c
         
         part_constructor, count_constructor = parse_constructor(moduleName, className)
 
@@ -529,12 +558,17 @@ def parse_LUA_wrap(classMap: dict, enumMap: dict[str, int], lua_wrap_path: str, 
         if constants_m:
             part_consts, count_consts = parse_constants(className, wikiInfo, constants_m.group(1))
         
+        additionalTableMembers = additionalTableMembersMap.get(className, None)
+        if additionalTableMembers:
+            for memberName in additionalTableMembers:
+                part_consts += f"    {memberName} = {{}},\n"
+        
         should_be_enum = count_constructor < 2 and count_methods == 0 and count_fields == 0 and count_consts > 0
         this_name = get_lua_type(className, True)
         if should_be_enum:
             result += f"---@enum {this_name}\n{this_name} = {{\n{part_consts}}}\n\n"
         else:
-            result += f"---@class {this_name}" + ((": " + ", ".join(parents)) if parents else "") + f"\n{part_fields}{this_name} = {{" + (f"\n{part_consts}" if count_consts > 0 else "") + f"}}\n\n{part_constructor}{part_methods}"
+            result += f"---@class {this_name}" + ((": " + ", ".join(parents)) if parents else "") + f"\n{part_fields}{this_name} = {{" + (f"\n{part_consts}" if part_consts else "") + f"}}\n\n{part_constructor}{part_methods}"
     
     return result
     
@@ -542,11 +576,16 @@ def build_class_map(result: dict, path: str):
     with open(path, 'r', encoding='utf8') as f:
         lua_code = f.read()
     
-    moduleName = re.search(r'#define\s+SWIG_name\s+"(\w+)"', lua_code).group(1)
-    for m in re.finditer(r'#define SWIGTYPE_p_(\w+)', lua_code):
-        className = m.group(1).split("__")[-1]
+    moduleName = re.search(MODULE_NAME_PATTERN, lua_code).group(1)
+    for m in re.finditer(CLASS_NAME_PATTERN, lua_code):
+        className = m.group(1)
+        recognizedName = m.group(2)
+        assert className == recognizedName, f"Class name mismatch: {className} != {recognizedName}"
         
         result[className] = f"{moduleName}.{className}"
+    
+    for additionalEnum in ADDITIONAL_ENUMS:
+        result[additionalEnum.tableName.split(".")[-1]] = additionalEnum.tableName
 
 DATA_LIST = [
     {
@@ -564,11 +603,11 @@ DATA_LIST = [
         "luaWrap": "src/lua_wrap/definesLUA_wrap.cxx",
         "wikiData": "out/wiki/wiki_Defines_parse_output.json",
     },
-    {
-        "name": "RapidXML",
-        "luaWrap": "src/lua_wrap/rapidxmlLUA_wrap.cxx",
-        "wikiData": None,
-    },
+    # {
+    #     "name": "RapidXML",
+    #     "luaWrap": "src/lua_wrap/rapidxmlLUA_wrap.cxx",
+    #     "wikiData": None,
+    # },
 ]
 
 HSDATA_PATH = "out/hs_base/hs_directory_parse_output.json"
@@ -578,8 +617,13 @@ OUTPUT_PATH = "../library/generated/hs.lua"
 ENUM_PARSE_REQUESTS_OUTPUT_PATH = "out/enum_parse_requests.json"
 ENUM_DATA_PATH = "out/enum_parse_output.json"
 
-if __name__ == "__main__":
-    classMap = {}
+EVENTHOOKS_DATA_PATH = "out/wiki/wiki_EventHooks_parse_output.json"
+CHAIN_INTERNAL_EVENT_LIST_PATH = "out/hs_base/hs_chain_internalEvents_list.json"
+EVENTHOOKS_OUTPUT_PATH = "../library/generated/eventhooks.lua"
+
+classMap = {}
+
+def main():
     for data in DATA_LIST:
         build_class_map(classMap, data["luaWrap"])
     
@@ -587,15 +631,36 @@ if __name__ == "__main__":
     with open(ENUM_DATA_PATH, 'r', encoding='utf8') as f:
         enumMap = json.load(f)
     
+    with open(EVENTHOOKS_DATA_PATH, 'r', encoding='utf8') as f:
+        eventHooksData = json.load(f)
+
+    for eventType, nameMap in eventHooksData.items():
+        for name, data in nameMap.items():
+            for arg in data["args"]:
+                arg["type"] = get_lua_type(arg["type"])
+            for ret in data["returns"]:
+                ret["type"] = get_lua_type(ret["type"])
+    
+    eventHookBuilder = EventHookBuilder(eventHooksData, CHAIN_INTERNAL_EVENT_LIST_PATH)
+    
+    additionalEnumBuilder = AdditionalEnumBuilder(ADDITIONAL_ENUMS)
+    
     result = "---@meta\n"
     for data in DATA_LIST:
-        result += parse_LUA_wrap(classMap, enumMap, data["luaWrap"], HSDATA_PATH, data["wikiData"])
-        
+        result += parse_LUA_wrap(eventHookBuilder, additionalEnumBuilder, enumMap, data["luaWrap"], HSDATA_PATH, data["wikiData"])
+
+    result += "\n" + additionalEnumBuilder.output()
+    result = "\n".join([line.rstrip() for line in result.split("\n")]).strip()
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     
     with open(OUTPUT_PATH, 'w', encoding='utf8') as f:
         f.write(result)
     
+    eventHookBuilder.save(EVENTHOOKS_OUTPUT_PATH)
+    
     with open(ENUM_PARSE_REQUESTS_OUTPUT_PATH, 'w', encoding='utf8') as f:
         json.dump(sorted(g_enum_parse_requests), f, indent=2)
+
+if __name__ == "__main__":
+    main()

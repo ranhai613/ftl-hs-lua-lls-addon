@@ -1,6 +1,50 @@
 ---@meta
 -- Here are stuff that are not covered by the auto-generated definition files
--- So we store them here manually
+
+
+--------- global functions ---------
+
+---@param text string
+function log(text) end
+
+--- Returns the type of a userdata as an original C++ type name.
+---@param variable userdata
+---@return string
+function swig_type(variable) end
+
+--- Compares userdata's value
+---@param a userdata
+---@param b userdata
+---@return boolean
+function  swig_equals(a, b) end
+
+--------- global functions end ---------
+
+
+--------- start of the content for SWIG_LUACODE in LUA_wrap files ---------
+
+---@generic T
+---@param x T
+---@return T
+function Hyperspace.Get_Drone_Subclass(x) end
+
+Hyperspace.ships = {
+    player = Hyperspace.Global.GetInstance():GetShipManager(0),
+    enemy = Hyperspace.Global.GetInstance():GetShipManager(1)
+}
+
+---@param shipId integer Ship ID to get the ship manager for. 0 is the player ship, 1 is the enemy ship.
+---@return Hyperspace.ShipManager
+function Hyperspace.ships(shipId) end
+
+---@class mods
+---@field [any] any
+mods = {}
+
+--------- end of the content for SWIG_LUACODE in LUA_wrap files ---------
+
+
+--------- script module ---------
 
 --- Functions for script execution control
 ---@class script
@@ -21,15 +65,24 @@ function script.on_init(callback) end
 function script.on_game_event(eventName, onLoadOnly, callback) end
 
 
----@param event 1 --[[@as Defines.InternalEvents.ON_TICK]]
----@param callback fun(a: string): Defines.Chain?
-function script.on_internal_event(event, callback) end
+--------- script module end ---------
 
----@param event 2 --[[@as Defines.InternalEvents.MAIN_MENU]]
----@param callback fun(b: number): Defines.Chain?
-function script.on_internal_event(event, callback) end
+
+---@class Hyperspace.playerVariables
+---@field [string] integer
+Hyperspace.playerVariables = {}
+
+---@class Hyperspace.metaVariables
+---@field [string] integer
+Hyperspace.metaVariables = {}
 
 
 ---@alias void any -- pointer to void
----@alias uint integer -- unsigned int
+---@alias uint integer -- unsigned int, but it is displayed as integer anyway
+
 ---@class ToggleValue<T>: { value: T, enabled: boolean } -- enabled=false
+
+
+-- bandaid for incorrect type expressions. HS should fix these in the future
+
+---@alias std_pair_int_int pair<integer, integer>

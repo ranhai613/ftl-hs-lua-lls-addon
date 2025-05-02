@@ -10,7 +10,7 @@
                 "name": "constructor",
                 "return_type": "std::vector<T>",
                 "args": [],
-                "documentation": ""
+                "documentation": "Constructs a `std::vector<T>` of size 0."
             },
             {
                 "name": "constructor",
@@ -21,7 +21,7 @@
                         "type": "unsigned"
                     }
                 ],
-                "documentation": ""
+                "documentation": "Constructs a `std::vector<T>` with a size given by `size`. Elements are default-constructed."
             },
             {
                 "name": "constructor",
@@ -32,7 +32,7 @@
                         "type": "std::vector<T>"
                     }
                 ],
-                "documentation": ""
+                "documentation": "Makes a copy of `other`."
             },
             {
                 "name": "constructor",
@@ -47,43 +47,43 @@
                         "type": "T"
                     }
                 ],
-                "documentation": ""
+                "documentation": "Constructs a vector of size `size` where each element is equal to `value`."
             },
             {
                 "name": "back",
                 "return_type": "T",
                 "args": [],
-                "documentation": ""
+                "documentation": "Accesses the last element of the vector.\nWARNING: Undefined behavior (crash) if used on an empty vector!"
             },
             {
                 "name": "clear",
                 "return_type": "void",
                 "args": [],
-                "documentation": ""
+                "documentation": "Empties the vector and sets its size to 0."
             },
             {
                 "name": "empty",
                 "return_type": "bool",
                 "args": [],
-                "documentation": ""
+                "documentation": "Returns a boolean indicating if the vector is empty."
             },
             {
                 "name": "front",
                 "return_type": "T",
                 "args": [],
-                "documentation": ""
+                "documentation": "Accesses the first element of the vector.\nWARNING: Undefined behavior (crash) if used on an empty vector!"
             },
             {
                 "name": "int :max_size",
                 "return_type": "unsigned",
                 "args": [],
-                "documentation": ""
+                "documentation": "The maximum size of the vector."
             },
             {
                 "name": "pop_back",
                 "return_type": "void",
                 "args": [],
-                "documentation": ""
+                "documentation": "Removes an element from the end and decreases the vector's size by 1."
             },
             {
                 "name": "push_back",
@@ -94,13 +94,13 @@
                         "type": "T"
                     }
                 ],
-                "documentation": ""
+                "documentation": "Adds `elem` to the vector and increases its size by 1."
             },
             {
                 "name": "int :size",
                 "return_type": "unsigned",
                 "args": [],
-                "documentation": ""
+                "documentation": "The size of the vector."
             },
             {
                 "name": "operator[]",
@@ -111,7 +111,7 @@
                         "type": "unsigned"
                     }
                 ],
-                "documentation": ""
+                "documentation": "Access the element at position `index`.\nNOTE: C vectors are 0-indexed, while lua tables are 1-indexed."
             }
         ],
         "fields": [],
@@ -353,7 +353,7 @@
                         "type": "int"
                     }
                 ],
-                "documentation": "This method will change the player ship to the one specified by `shipName`, crew/systems/weapons/drones/augments will be transfered to the new ship\nThis method will run `:ClearLocation()` at the beacon, effectively removing any hazard and ship\n`overrideSystem`: \n0: keep systems & power from the old ship, adding them to the new ship systems\n1: keep systems & power from the old ship, replacing the new ship systems\n2: No transfer of systems & power to the new ship, diclaimer: if the new ship does not contain a drone/weapon system, weapon/drone will be moved to cargo"
+                "documentation": "This method will change the player ship to the one specified by `shipName`, crew/systems/weapons/drones/augments will be transfered to the new ship\nThis method will run `:ClearLocation()` at the beacon, effectively removing any hazard and ship\n`overrideSystem`:\n0: keep systems & power from the old ship, adding them to the new ship systems\n1: keep systems & power from the old ship, replacing the new ship systems\n2: No transfer of systems & power to the new ship, diclaimer: if the new ship does not contain a drone/weapon system, weapon/drone will be moved to cargo"
             }
         ],
         "fields": [
@@ -683,7 +683,7 @@
             },
             {
                 "name": "currentBack",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -731,17 +731,17 @@
             },
             {
                 "name": "outline",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "mask",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "pattern",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             }
         ],
@@ -765,6 +765,17 @@
                 "return_type": "void",
                 "args": [],
                 "documentation": ""
+            },
+            {
+                "name": "LoadTooltip",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "tooltipName",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": "`tooltipName` should be an id of the text without prefix `tooltip_`."
             },
             {
                 "name": "MeasureTooltip",
@@ -914,17 +925,17 @@
             },
             {
                 "name": "validPointer",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "invalidPointer",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "selling",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -954,12 +965,12 @@
             },
             {
                 "name": "lastIcon",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "lastAddition",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -1051,7 +1062,7 @@
                 "args": [
                     {
                         "name": "augmentName",
-                        "type": "string"
+                        "type": "std::string"
                     }
                 ],
                 "documentation": "Adds the specified augment to the ship. Works properly with hidden augments."
@@ -1062,7 +1073,7 @@
                 "args": [
                     {
                         "name": "augmentName",
-                        "type": "string"
+                        "type": "std::string"
                     }
                 ],
                 "documentation": "Removes the specified augment from the ship. Does nothing if the augment isn't present. Works properly with hidden augments."
@@ -1081,7 +1092,7 @@
             },
             {
                 "name": "GetAugmentationList",
-                "return_type": "string[]",
+                "return_type": "std::string[]",
                 "args": [],
                 "documentation": "Returns a `std::vector<std::string>` of augments, in Lua you can handle this as if it was an array of strings."
             },
@@ -1091,7 +1102,7 @@
                 "args": [
                     {
                         "name": "augmentName",
-                        "type": "string"
+                        "type": "std::string"
                     }
                 ],
                 "documentation": "Returns the value of the augment, this corresponds to the value defined in blueprints.xml. If the ship has multiple, their values are added together."
@@ -1102,36 +1113,10 @@
                 "args": [
                     {
                         "name": "augmentName",
-                        "type": "string"
+                        "type": "std::string"
                     }
                 ],
                 "documentation": "Returns the number of the given augment you have, NOT a bool."
-            },
-            {
-                "name": "AddEquipment",
-                "return_type": "void",
-                "args": [
-                    {
-                        "name": "equipmentName",
-                        "type": "string"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
-                "name": "RemoveEquipment",
-                "return_type": "void",
-                "args": [
-                    {
-                        "name": "equipmentName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "completely",
-                        "type": "bool"
-                    }
-                ],
-                "documentation": ""
             },
             {
                 "name": "HasEquipment",
@@ -1139,7 +1124,7 @@
                 "args": [
                     {
                         "name": "equipmentName",
-                        "type": "string"
+                        "type": "std::string"
                     },
                     {
                         "name": "checkCargo=false",
@@ -1247,21 +1232,6 @@
                 "documentation": ""
             },
             {
-                "name": "AddWeapon",
-                "return_type": "int",
-                "args": [
-                    {
-                        "name": "weapon",
-                        "type": "WeaponBlueprint"
-                    },
-                    {
-                        "name": "slot",
-                        "type": "int"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
                 "name": "CanFitSubsystem",
                 "return_type": "bool",
                 "args": [
@@ -1316,44 +1286,6 @@
                 "documentation": ""
             },
             {
-                "name": "CollisionMoving",
-                "return_type": "CollisionResponse",
-                "args": [
-                    {
-                        "name": "start",
-                        "type": "Pointf"
-                    },
-                    {
-                        "name": "finish",
-                        "type": "Pointf"
-                    },
-                    {
-                        "name": "damage",
-                        "type": "DamageParameter"
-                    },
-                    {
-                        "name": "raytrace",
-                        "type": "bool"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
-                "name": "CommandCrewMoveRoom",
-                "return_type": "bool",
-                "args": [
-                    {
-                        "name": "crew",
-                        "type": "CrewMember"
-                    },
-                    {
-                        "name": "roomId",
-                        "type": "int"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
                 "name": "CountCrew",
                 "return_type": "int",
                 "args": [
@@ -1378,17 +1310,6 @@
                     }
                 ],
                 "documentation": "Counts crew in a room. shipId corresponds to which ship owns the crewmembers, 0 being the player and 1 being the enemy."
-            },
-            {
-                "name": "CreateCrewDrone",
-                "return_type": "CrewDrone",
-                "args": [
-                    {
-                        "name": "bp",
-                        "type": "DroneBlueprint"
-                    }
-                ],
-                "documentation": ""
             },
             {
                 "name": "CreateSpaceDrone",
@@ -1440,21 +1361,6 @@
                 "documentation": "I think this cuts a beam across the ship but not sure if it renders a beam or not, could possibly be used for bursts?"
             },
             {
-                "name": "DamageCrew",
-                "return_type": "bool",
-                "args": [
-                    {
-                        "name": "crew",
-                        "type": "CrewMember"
-                    },
-                    {
-                        "name": "dmg",
-                        "type": "DamageParameter"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
                 "name": "DamageHull",
                 "return_type": "int",
                 "args": [
@@ -1500,17 +1406,6 @@
                 "return_type": "bool",
                 "args": [],
                 "documentation": "Do the doors work or not"
-            },
-            {
-                "name": "FindCrew",
-                "return_type": "CrewMember",
-                "args": [
-                    {
-                        "name": "bp",
-                        "type": "CrewBlueprint"
-                    }
-                ],
-                "documentation": ""
             },
             {
                 "name": "ForceDecreaseSystemPower",
@@ -1569,17 +1464,6 @@
                     {
                         "name": "roomId",
                         "type": "int"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
-                "name": "GetLeavingCrew",
-                "return_type": "std::vector<CrewMember>",
-                "args": [
-                    {
-                        "name": "intruders",
-                        "type": "bool"
                     }
                 ],
                 "documentation": ""
@@ -1672,7 +1556,7 @@
             },
             {
                 "name": "GetTooltip",
-                "return_type": "string",
+                "return_type": "std::string",
                 "args": [
                     {
                         "name": "x",
@@ -1786,7 +1670,7 @@
                 "args": [
                     {
                         "name": "name",
-                        "type": "string"
+                        "type": "std::string"
                     },
                     {
                         "name": "checkCargo=false",
@@ -1963,44 +1847,14 @@
                 "documentation": "Array (vector) of artillery systems on this ship, you will need to check for length\n**Note:** Unlike Lua arrays, because this is a C vector internally it will start at index `0` not index `1` so `.artillerySystems[0]` is the first artillery system.\nField is **read-only** but fields under this object may still be mutable."
             },
             {
-                "name": "showNetwork",
-                "type": "bool",
-                "documentation": "No clue what this does"
-            },
-            {
-                "name": "addedSystem",
-                "type": "bool",
-                "documentation": "No clue what this does"
-            },
-            {
                 "name": "vCrewList",
                 "type": "CrewMember[]",
                 "documentation": "Array (vector) of crew members on this ship\n**Note:** Vectors are 0 indexed unlike lua's normal arrays\nField is **read-only** but fields under this object may still be mutable."
             },
             {
-                "name": "fireSpreader",
-                "type": "Spreader_Fire",
-                "documentation": ""
-            },
-            {
                 "name": "ship",
                 "type": "Ship",
                 "documentation": "Field is **read-only** but fields under this object may still be mutable."
-            },
-            {
-                "name": "statusMessages[80]",
-                "type": "char",
-                "documentation": ""
-            },
-            {
-                "name": "bGameOver",
-                "type": "bool",
-                "documentation": ""
-            },
-            {
-                "name": "current_target",
-                "type": "ShipManager",
-                "documentation": ""
             },
             {
                 "name": "jump_timer",
@@ -2015,7 +1869,7 @@
             {
                 "name": "hostile_ship",
                 "type": "bool",
-                "documentation": ""
+                "documentation": "Use `._targetable.hostile` instead"
             },
             {
                 "name": "bDestroyed",
@@ -2026,21 +1880,6 @@
                 "name": "iLastDamage",
                 "type": "int",
                 "documentation": "**read-only** (not sure if it's safe to make this editable)"
-            },
-            {
-                "name": "jumpAnimation",
-                "type": "AnimationTracker",
-                "documentation": ""
-            },
-            {
-                "name": "damMessages",
-                "type": "DamageMessage[]",
-                "documentation": "Is a vector, indexed at 0."
-            },
-            {
-                "name": "systemKey",
-                "type": "int[]",
-                "documentation": ""
             },
             {
                 "name": "currentScrap",
@@ -2103,34 +1942,9 @@
                 "documentation": "**read-only**"
             },
             {
-                "name": "explosions",
-                "type": "Animation[]",
-                "documentation": ""
-            },
-            {
                 "name": "tempVision",
                 "type": "bool[]",
                 "documentation": "**read-only**\nNote: Vectors start at index 0, unlike normal arrays in Lua"
-            },
-            {
-                "name": "droneTrash",
-                "type": "Drone[]",
-                "documentation": ""
-            },
-            {
-                "name": "spaceDrones",
-                "type": "SpaceDrone[]",
-                "documentation": ""
-            },
-            {
-                "name": "newDroneArrivals",
-                "type": "SpaceDrone[]",
-                "documentation": ""
-            },
-            {
-                "name": "bpCount",
-                "type": "int",
-                "documentation": ""
             },
             {
                 "name": "iCustomizeMode",
@@ -2158,18 +1972,8 @@
                 "documentation": "Note: Vectors start at index 0, unlike normal arrays in Lua"
             },
             {
-                "name": "highlight",
-                "type": "GL_Primitive",
-                "documentation": ""
-            },
-            {
                 "name": "failedDodgeCounter",
                 "type": "int",
-                "documentation": ""
-            },
-            {
-                "name": "hitByBeam",
-                "type": "float[]",
                 "documentation": ""
             },
             {
@@ -2180,26 +1984,6 @@
             {
                 "name": "damageCloaked",
                 "type": "int",
-                "documentation": ""
-            },
-            {
-                "name": "killedByBeam",
-                "type": "std::map<int, int>",
-                "documentation": ""
-            },
-            {
-                "name": "minBeaconHealth",
-                "type": "int",
-                "documentation": ""
-            },
-            {
-                "name": "fireExtinguishers",
-                "type": "ParticleEmitter[]",
-                "documentation": ""
-            },
-            {
-                "name": "bWasSafe",
-                "type": "bool",
                 "documentation": ""
             },
             {
@@ -2553,11 +2337,6 @@
                 "documentation": ""
             },
             {
-                "name": "vOuterWalls",
-                "type": "std::vector<OuterHull>",
-                "documentation": ""
-            },
-            {
                 "name": "vOuterAirlocks",
                 "type": "std::vector<Door>",
                 "documentation": ""
@@ -2584,7 +2363,7 @@
             },
             {
                 "name": "floorPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
@@ -2604,7 +2383,7 @@
             },
             {
                 "name": "shipImagePrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
@@ -2619,22 +2398,22 @@
             },
             {
                 "name": "cloakPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "gridPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "wallsPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "doorsPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
@@ -2649,12 +2428,12 @@
             },
             {
                 "name": "thrustersImage",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "jumpGlare",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -2670,11 +2449,6 @@
             {
                 "name": "shipName",
                 "type": "std::string",
-                "documentation": ""
-            },
-            {
-                "name": "explosion",
-                "type": "ExplosionAnimation",
                 "documentation": ""
             },
             {
@@ -2720,7 +2494,7 @@
             {
                 "name": "int8_t>>",
                 "type": "std::vector<std::pair<Animation,",
-                "documentation": "Engine animations defined in Hyperspace for the ship. The first member of the pair is the animation. The second member of the pair is an integer indicating rotation of the animation. "
+                "documentation": "Engine animations defined in Hyperspace for the ship. The first member of the pair is the animation. The second member of the pair is an integer indicating rotation of the animation."
             }
         ],
         "constants": []
@@ -2810,7 +2584,7 @@
             },
             {
                 "name": "GetName",
-                "return_type": "string",
+                "return_type": "std::string",
                 "args": [],
                 "documentation": ""
             },
@@ -2820,7 +2594,7 @@
                 "args": [
                     {
                         "name": "name",
-                        "type": "string"
+                        "type": "std::string"
                     }
                 ],
                 "documentation": ""
@@ -2878,18 +2652,6 @@
             {
                 "name": "GetDamage",
                 "return_type": "float",
-                "args": [],
-                "documentation": ""
-            },
-            {
-                "name": "GetLocation",
-                "return_type": "Location",
-                "args": [],
-                "documentation": ""
-            },
-            {
-                "name": "GetGridLocation",
-                "return_type": "Location",
                 "args": [],
                 "documentation": ""
             },
@@ -3001,18 +2763,6 @@
                 "documentation": ""
             },
             {
-                "name": "GetWeaponInfo",
-                "return_type": "WeaponBlueprint",
-                "args": [],
-                "documentation": ""
-            },
-            {
-                "name": "GetOverrideTooltip",
-                "return_type": "string",
-                "args": [],
-                "documentation": ""
-            },
-            {
                 "name": "CheckMaxPower",
                 "return_type": "void",
                 "args": [],
@@ -3093,12 +2843,6 @@
             {
                 "name": "Powered",
                 "return_type": "bool",
-                "args": [],
-                "documentation": ""
-            },
-            {
-                "name": "ShipDestroyed",
-                "return_type": "void",
                 "args": [],
                 "documentation": ""
             },
@@ -3233,11 +2977,6 @@
         ],
         "fields": [
             {
-                "name": "selectedState",
-                "type": "int",
-                "documentation": ""
-            },
-            {
                 "name": "_shipObj",
                 "type": "ShipObject",
                 "documentation": ""
@@ -3259,7 +2998,7 @@
             },
             {
                 "name": "name",
-                "type": "string",
+                "type": "std::string",
                 "documentation": ""
             },
             {
@@ -3305,41 +3044,6 @@
             {
                 "name": "iRequiredPower",
                 "type": "int",
-                "documentation": ""
-            },
-            {
-                "name": "imageIcon",
-                "type": "GL_Texture",
-                "documentation": ""
-            },
-            {
-                "name": "iconPrimitive",
-                "type": "GL_Primitive",
-                "documentation": ""
-            },
-            {
-                "name": "iconBorderPrimitive",
-                "type": "GL_Primitive",
-                "documentation": ""
-            },
-            {
-                "name": "iconPrimitives[20]",
-                "type": "GL_Primitive",
-                "documentation": ""
-            },
-            {
-                "name": "partialDamageRect",
-                "type": "CachedRect",
-                "documentation": ""
-            },
-            {
-                "name": "lockOutline",
-                "type": "CachedRectOutline",
-                "documentation": ""
-            },
-            {
-                "name": "roomShape",
-                "type": "Globals::Rect",
                 "documentation": ""
             },
             {
@@ -3429,27 +3133,27 @@
             },
             {
                 "name": "interiorImageName",
-                "type": "string",
+                "type": "std::string",
                 "documentation": ""
             },
             {
                 "name": "interiorImage",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "interiorImageOn",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "interiorImageManned",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "interiorImageMannedFancy",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
@@ -3513,11 +3217,6 @@
                 "documentation": ""
             },
             {
-                "name": "damagingEffects",
-                "type": "std::vector<Animation>",
-                "documentation": ""
-            },
-            {
                 "name": "computerLevel",
                 "type": "int",
                 "documentation": ""
@@ -3542,6 +3241,11 @@
                 "name": "additionalPowerLoss",
                 "type": "int",
                 "documentation": ""
+            },
+            {
+                "name": "xOffset",
+                "type": "int",
+                "documentation": "The offset from this SystemBox to the next in the UI."
             }
         ],
         "constants": []
@@ -3601,6 +3305,11 @@
                 "name": "bLeakingO2",
                 "type": "bool",
                 "documentation": ""
+            },
+            {
+                "name": "leakModifier",
+                "type": "float",
+                "documentation": "**Read-only**\nA multiplier to the rate at which airlocks and breaches drain oxygen.\nCan be changed with `CALCULATE_LEAK_MODIFIER` callback."
             }
         ],
         "constants": []
@@ -4026,12 +3735,12 @@
             },
             {
                 "name": "shieldImage",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "shieldPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
@@ -4247,17 +3956,17 @@
             },
             {
                 "name": "bottom",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "top",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "gas",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -4398,7 +4107,7 @@
             {
                 "name": "xOffset",
                 "type": "int",
-                "documentation": "The offset from this SystemBox to the next in the UI."
+                "documentation": "The offset from this SystemBox to the next in the UI.\nTHIS IS DEPRECIATED IN FAVOR OF `ShipSystem_Extend.xOffset`!"
             }
         ],
         "constants": []
@@ -5383,12 +5092,12 @@
         "fields": [
             {
                 "name": "baseSheet",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "colorSheet",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -5475,17 +5184,17 @@
             },
             {
                 "name": "droneImage_on",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "droneImage_off",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "lightImage",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -5562,6 +5271,22 @@
         ],
         "constants": []
     },
+    "ShipRepairDrone": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "repairBeam",
+                "type": "CachedImage",
+                "documentation": ""
+            },
+            {
+                "name": "repairBeams",
+                "type": "std::vector<float>",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
     "DroneBlueprint": {
         "methods": [],
         "fields": [
@@ -5619,7 +5344,23 @@
         "constants": []
     },
     "Room": {
-        "methods": [],
+        "methods": [
+            {
+                "name": "FillSlot",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "slot",
+                        "type": "int"
+                    },
+                    {
+                        "name": "intruder",
+                        "type": "bool"
+                    }
+                ],
+                "documentation": "Set the slot to occupied. To empty the slot, use `Ship:EmptySlots`."
+            }
+        ],
         "fields": [
             {
                 "name": "bBlackedOut",
@@ -5638,12 +5379,12 @@
             },
             {
                 "name": "highlightPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "highlightPrimitive2",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
@@ -7709,7 +7450,7 @@
             },
             {
                 "name": "selectionImage",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -8296,17 +8037,17 @@
             },
             {
                 "name": "baseStrip",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "colorStrip",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "layerStrips",
-                "type": "std::vector<GL_Texture>",
+                "type": "std::vector<GL_Texture>`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -8421,7 +8162,7 @@
             },
             {
                 "name": "layerColors",
-                "type": "std::vector<GL_Color>",
+                "type": "std::vector<GL_Color>`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             },
             {
@@ -8436,7 +8177,7 @@
             },
             {
                 "name": "projectileColor",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             },
             {
@@ -9427,7 +9168,7 @@
             },
             {
                 "name": "cooldownColor",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             },
             {
@@ -9683,7 +9424,7 @@
             },
             {
                 "name": "cooldownColor",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             },
             {
@@ -10120,7 +9861,7 @@
             },
             {
                 "name": "cooldownColor",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             }
         ],
@@ -10409,7 +10150,7 @@
             },
             {
                 "name": "image",
-                "type": "string",
+                "type": "std::string",
                 "documentation": ""
             }
         ],
@@ -10454,11 +10195,6 @@
                 "documentation": "Access via `WorldManager` instead."
             },
             {
-                "name": "shipComplete",
-                "type": "ShipComplete",
-                "documentation": ""
-            },
-            {
                 "name": "pauseTextLoc",
                 "type": "Point",
                 "documentation": ""
@@ -10466,21 +10202,6 @@
             {
                 "name": "shipPosition",
                 "type": "Point",
-                "documentation": ""
-            },
-            {
-                "name": "locationText",
-                "type": "string",
-                "documentation": ""
-            },
-            {
-                "name": "loadEvent",
-                "type": "string",
-                "documentation": ""
-            },
-            {
-                "name": "loadSector",
-                "type": "int",
                 "documentation": ""
             },
             {
@@ -10708,6 +10429,42 @@
                 "name": "boss_visual",
                 "type": "bool",
                 "documentation": "**Read-only**"
+            }
+        ],
+        "constants": []
+    },
+    "CrewControl": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "selectedCrew",
+                "type": "std::vector<CrewMember>",
+                "documentation": ""
+            },
+            {
+                "name": "potentialSelectedCrew",
+                "type": "std::vector<CrewMember>",
+                "documentation": "Crew hovered by the selection box"
+            },
+            {
+                "name": "firstMouse",
+                "type": "Point",
+                "documentation": "Affect the visual portion of the selection box"
+            },
+            {
+                "name": "currentMouse",
+                "type": "Point",
+                "documentation": "Affect the visual portion of the selection box"
+            },
+            {
+                "name": "worldFirstMouse",
+                "type": "Point",
+                "documentation": "Affect the logic portion of the selection box, fills `.potentialSelectedCrew`"
+            },
+            {
+                "name": "worldCurrentMouse",
+                "type": "Point",
+                "documentation": "Affect the logic portion of the selection box, fills `.potentialSelectedCrew`"
             }
         ],
         "constants": []
@@ -11035,7 +10792,7 @@
             },
             {
                 "name": "currentTextColor",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             },
             {
@@ -11267,6 +11024,16 @@
                 "documentation": ""
             },
             {
+                "name": "potentialLoc",
+                "type": "Location",
+                "documentation": ""
+            },
+            {
+                "name": "hoverLoc",
+                "type": "Location",
+                "documentation": ""
+            },
+            {
                 "name": "sectors",
                 "type": "std::vector<Sector>",
                 "documentation": ""
@@ -11292,14 +11059,29 @@
                 "documentation": ""
             },
             {
+                "name": "dangerZone",
+                "type": "Point",
+                "documentation": ""
+            },
+            {
+                "name": "bMapRevealed",
+                "type": "bool",
+                "documentation": ""
+            },
+            {
                 "name": "ship",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": "The map icon that rotates around the current location representing the player ship."
             },
             {
                 "name": "shipNoFuel",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": "The no fuel variant of the `ship` icon."
+            },
+            {
+                "name": "mapsBottom",
+                "type": "GL_Primitive[3]`](./Lua-Graphics-Module#GL_Primitive)",
+                "documentation": "Contains the 3 background images of the sector map. Index selected via `worldLevel % 3`."
             },
             {
                 "name": "worldLevel",
@@ -11670,7 +11452,7 @@
         "fields": [
             {
                 "name": "tex",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -12139,7 +11921,7 @@
             },
             {
                 "name": "shieldColor",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             }
         ],
@@ -12819,7 +12601,7 @@
             },
             {
                 "name": "SetProgress",
-                "return_type": "GL_Texture",
+                "return_type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "args": [
                     {
                         "name": "progress",
@@ -12860,7 +12642,7 @@
         "fields": [
             {
                 "name": "animationStrip",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -12955,12 +12737,12 @@
             },
             {
                 "name": "primitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "mirroredPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             }
         ],
@@ -13018,12 +12800,12 @@
             },
             {
                 "name": "outlinePrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
                 "name": "highlightPrimitive",
-                "type": "GL_Primitive",
+                "type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "documentation": ""
             },
             {
@@ -13306,7 +13088,7 @@
             },
             {
                 "name": "color",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             }
         ],
@@ -13707,7 +13489,7 @@
         "methods": [
             {
                 "name": "GetCurrentSkillColor",
-                "return_type": "GL_Color",
+                "return_type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "args": [
                     {
                         "name": "skill",
@@ -13982,6 +13764,17 @@
                     {
                         "name": "p2",
                         "type": "Point"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "ConnectivityDFS",
+                "return_type": "std::vector<int>",
+                "args": [
+                    {
+                        "name": "roomId",
+                        "type": "int"
                     }
                 ],
                 "documentation": ""
@@ -14953,7 +14746,7 @@
             },
             {
                 "name": "color",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             },
             {
@@ -16018,7 +15811,7 @@
         "methods": [
             {
                 "name": "CreateImagePrimitive",
-                "return_type": "GL_Primitive",
+                "return_type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "args": [
                     {
                         "name": "tex",
@@ -16053,7 +15846,7 @@
             },
             {
                 "name": "CreateImagePrimitiveString",
-                "return_type": "GL_Primitive",
+                "return_type": "GL_Primitive`](./Lua-Graphics-Module#GL_Primitive)",
                 "args": [
                     {
                         "name": "tex",
@@ -16103,7 +15896,7 @@
             },
             {
                 "name": "GetImageId",
-                "return_type": "GL_Texture",
+                "return_type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "args": [
                     {
                         "name": "dir",
@@ -16594,12 +16387,12 @@
         "fields": [
             {
                 "name": "arrow",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
                 "name": "arrow2",
-                "type": "GL_Texture",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
                 "documentation": ""
             },
             {
@@ -16619,12 +16412,12 @@
             },
             {
                 "name": "arrow_color",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             },
             {
                 "name": "arrow2_color",
-                "type": "GL_Color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
                 "documentation": ""
             }
         ],
@@ -16710,6 +16503,27 @@
     },
     "FTLButton": {
         "methods": [],
+        "fields": [],
+        "constants": []
+    },
+    "SpaceStatus": {
+        "methods": [
+            {
+                "name": "RenderWarningText",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "effect",
+                        "type": "int"
+                    },
+                    {
+                        "name": "textOffset",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            }
+        ],
         "fields": [],
         "constants": []
     }

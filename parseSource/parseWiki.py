@@ -105,7 +105,7 @@ FILELIST = [
     }
 ]
 
-if __name__ == "__main__":
+def main():
     for file in FILELIST:
         input_file = file["input"]
         output_file = file["output"]
@@ -114,3 +114,6 @@ if __name__ == "__main__":
         save_to_json(parsed_data, output_file)
 
         print(f"JSON data has been saved to {output_file}")
+
+if __name__ == "__main__":
+    main()

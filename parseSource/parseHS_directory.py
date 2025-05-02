@@ -7,6 +7,7 @@ from pprint import pp
 """
 cd src
 git clone https://github.com/FTL-Hyperspace/FTL-Hyperspace.git
+git checkout [tag]
 """
 
 STRUCT_MATCH_PATTERN = re.compile(r'(?:struct|class)\s+(?:LIBZHL_INTERFACE\s+)?(\w+)(?:\s*:\s*\w+)?\s*{')
@@ -58,6 +59,12 @@ def parse(dataMap: dict, path: str):
     with open(path, "r", encoding="utf8") as f:
         content = f.read()
     
+    for match in re.finditer(r"call_on_internal_chain_event_callbacks\(InternalEvents::(\w+)", content):
+        if match:
+            event_name = match.group(1)
+            if event_name != "Identifiers":
+                dataMap["chain_internalEvents_set"].add(event_name)
+    
     position = 0
     while position < len(content):
         match = STRUCT_MATCH_PATTERN.search(content, position)
@@ -67,7 +74,7 @@ def parse(dataMap: dict, path: str):
         struct_name = match.group(1)
         g_scope_names_stack.append(struct_name)
         struct_content = parse_internal_structs(get_scope_content(content[match.end():]))
-        dataMap[struct_name] = parse_functions(struct_content, struct_name)
+        dataMap["main"][struct_name] = parse_functions(struct_content, struct_name)
         g_scope_names_stack.pop()
         position = match.end() + len(struct_content) + 1  # Move to the end of the current struct definition
 
@@ -84,9 +91,12 @@ GLOB_EXCLUDES = [
     "src/FTL-Hyperspace/FTLGameWin32.cpp",
 ]
 
-if __name__ == "__main__":
-    dataMap = {}
-
+def main():
+    dataMap = {
+        "main": {},
+        "chain_internalEvents_set": set(),
+    }
+    
     pathSet = set()
     for pattern in GLOB_PATTERNS:
         pathSet |= set(map(lambda x: x.replace("\\", "/"), glob(pattern)))
@@ -97,4 +107,10 @@ if __name__ == "__main__":
         parse(dataMap, path)
 
     with open("out/hs_base/hs_directory_parse_output.json", "w", encoding="utf8") as f:
-        json.dump(dataMap, f, indent=2)
+        json.dump(dataMap["main"], f, indent=2)
+    
+    with open("out/hs_base/hs_chain_internalEvents_list.json", "w", encoding="utf8") as f:
+        json.dump(list(dataMap["chain_internalEvents_set"]), f, indent=2)
+
+if __name__ == "__main__":
+    main()

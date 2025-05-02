@@ -13,6 +13,7 @@ This script is designed to be run in a GDB session.
 5. The script will get the enum values and save them to "enum_parse_output.json".
 """
 
+gdb.execute("set pagination off")
 
 def sanitize_enum_name(enum_name: str) -> str:
     if enum_name.startswith("SDL::KEY_"):
