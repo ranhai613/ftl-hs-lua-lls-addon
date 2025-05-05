@@ -1,4 +1,7 @@
 {
-    "name" : "ftl-hyperspace",
-    "words" : [ "Hyperspace." ]
+    "name": "ftl-hyperspace",
+    "words": [ "Hyperspace." ],
+    "settings": {
+        "Lua.runtime.version": "Lua 5.3"
+    }
 }
