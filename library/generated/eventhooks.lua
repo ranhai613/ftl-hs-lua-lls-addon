@@ -1,5 +1,4 @@
 ---@meta
-
 --- Run code every in-game tick (frame), use in combination with other events to turn logic on and off in your code that runs every tick
 ---@param eventId 1 --[[@as Defines.InternalEvents.ON_TICK]]
 ---@param callback fun() Callback to be called when the event occurs.
@@ -20,7 +19,7 @@ function script.on_internal_event(eventId, callback, priority) end
 
 --- If a value is returned, can be used to mark a beacon as a hazard with an icon and tooltip on the beacon map
 ---@param eventId 4 --[[@as Defines.InternalEvents.GET_BEACON_HAZARD]]
----@param callback fun(loc?: Hyperspace.Location): hazardText: string Callback to be called when the event occurs.
+---@param callback fun(loc?: Hyperspace.Location): hazardText: String Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
@@ -116,19 +115,19 @@ function script.on_internal_event(eventId, callback, priority) end
 
 --- Run every hasEquipment check
 ---@param eventId 20 --[[@as Defines.InternalEvents.HAS_EQUIPMENT]]
----@param callback fun(ship?: Hyperspace.ShipManager, equipment?: string, value?: integer): chain: Defines.Chain, value: integer Callback to be called when the event occurs.
+---@param callback fun(ship?: Hyperspace.ShipManager, equipment?: String, value?: integer): chain: Defines.Chain, value: integer Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Run every hasAugmentation check
 ---@param eventId 21 --[[@as Defines.InternalEvents.HAS_AUGMENTATION]]
----@param callback fun(ship?: Hyperspace.ShipManager, augment?: string, value?: integer): chain: Defines.Chain, value: integer Callback to be called when the event occurs.
+---@param callback fun(ship?: Hyperspace.ShipManager, augment?: String, value?: integer): chain: Defines.Chain, value: integer Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when checking an augmentation's value
 ---@param eventId 22 --[[@as Defines.InternalEvents.GET_AUGMENTATION_VALUE]]
----@param callback fun(ship?: Hyperspace.ShipManager, augment?: string, value?: number): chain: Defines.Chain, value: number Callback to be called when the event occurs.
+---@param callback fun(ship?: Hyperspace.ShipManager, augment?: String, value?: number): chain: Defines.Chain, value: number Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
@@ -200,19 +199,19 @@ function script.on_internal_event(eventId, callback, priority) end
 
 --- Change the text displayed for the player weapon stats (only works if `redesignedWeaponTooltips` is enabled)
 ---@param eventId 34 --[[@as Defines.InternalEvents.WEAPON_STATBOX]]
----@param callback fun(bp?: Hyperspace.WeaponBlueprint, stats?: string): chain: Defines.Chain, stats: string Callback to be called when the event occurs.
+---@param callback fun(bp?: Hyperspace.WeaponBlueprint, stats?: String): chain: Defines.Chain, stats: String Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Change the text displayed for the player weapon description
 ---@param eventId 35 --[[@as Defines.InternalEvents.WEAPON_DESCBOX]]
----@param callback fun(bp?: Hyperspace.WeaponBlueprint, desc?: string): chain: Defines.Chain, desc: string Callback to be called when the event occurs.
+---@param callback fun(bp?: Hyperspace.WeaponBlueprint, desc?: String): chain: Defines.Chain, desc: String Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Change the text displayed for the player weapon cooldown timers
 ---@param eventId 36 --[[@as Defines.InternalEvents.WEAPON_RENDERBOX]]
----@param callback fun(weapon?: Hyperspace.ProjectileFactory, cooldown?: integer, maxCooldown?: integer, firstLine?: string, secondLine?: string, thirdLine?: string): chain: Defines.Chain, firstLine: string, secondLine: string, thirdLine: string Callback to be called when the event occurs.
+---@param callback fun(weapon?: Hyperspace.ProjectileFactory, cooldown?: integer, maxCooldown?: integer, firstLine?: String, secondLine?: String, thirdLine?: String): chain: Defines.Chain, firstLine: String, secondLine: String, thirdLine: String Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
@@ -332,19 +331,19 @@ function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when rendering power tooltip
 ---@param eventId 56 --[[@as Defines.InternalEvents.POWER_TOOLTIP]]
----@param callback fun(power?: Hyperspace.ActivatedPower, state?: PowerReadyState): tooltip: string, skipAppend: boolean Callback to be called when the event occurs.
+---@param callback fun(power?: Hyperspace.ActivatedPower, state?: PowerReadyState): tooltip: String, skipAppend: boolean Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when generating a new ship from an event
 ---@param eventId 57 --[[@as Defines.InternalEvents.GENERATOR_CREATE_SHIP]]
----@param callback fun(name?: string, sector?: integer, event?: ShipEvent, bp?: Hyperspace.ShipBlueprint, ret?: Hyperspace.ShipManager): chain: Defines.Chain, sector: integer, event: ShipEvent, bp: Hyperspace.ShipBlueprint, ret: Hyperspace.ShipManager Callback to be called when the event occurs.
+---@param callback fun(name?: String, sector?: integer, event?: ShipEvent, bp?: Hyperspace.ShipBlueprint, ret?: Hyperspace.ShipManager): chain: Defines.Chain, sector: integer, event: ShipEvent, bp: Hyperspace.ShipBlueprint, ret: Hyperspace.ShipManager Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called after generating a new ship from an event
 ---@param eventId 58 --[[@as Defines.InternalEvents.GENERATOR_CREATE_SHIP_POST]]
----@param callback fun(name?: string, sector?: integer, event?: ShipEvent, bp?: Hyperspace.ShipBlueprint, ret?: Hyperspace.ShipManager): chain: Defines.Chain? Callback to be called when the event occurs.
+---@param callback fun(name?: String, sector?: integer, event?: ShipEvent, bp?: Hyperspace.ShipBlueprint, ret?: Hyperspace.ShipManager): chain: Defines.Chain? Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
@@ -362,13 +361,13 @@ function script.on_internal_event(eventId, callback, priority) end
 
 --- Called for every event that closes the current tab in the upgrade menu
 ---@param eventId 61 --[[@as Defines.InternalEvents.TABBED_WINDOW_CONFIRM]]
----@param callback fun(currentTabName?: string) Callback to be called when the event occurs.
+---@param callback fun(currentTabName?: String) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when the UNDO button is activated in the upgrade menu
 ---@param eventId 62 --[[@as Defines.InternalEvents.TABBED_WINDOW_UNDO]]
----@param callback fun(currentTabName?: string) Callback to be called when the event occurs.
+---@param callback fun(currentTabName?: String) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
@@ -410,7 +409,7 @@ function script.on_internal_event(eventId, callback, priority) end
 
 --- Called to get the description of what a system does at a certain level. `systemId` indicates the ID of the system, `level` indicates the power level, and `tooltip` indicates whether the string being generated is in the context of a mouseover tooltip.
 ---@param eventId 69 --[[@as Defines.InternalEvents.GET_LEVEL_DESCRIPTION]]
----@param callback fun(systemId?: integer, level?: integer, tooltip?: boolean): level_description: string Callback to be called when the event occurs.
+---@param callback fun(systemId?: integer, level?: integer, tooltip?: boolean): level_description: String Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 

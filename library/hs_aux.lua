@@ -76,9 +76,8 @@ Hyperspace.playerVariables = {}
 ---@field [string] integer
 Hyperspace.metaVariables = {}
 
-
----@alias void any -- pointer to void
----@alias uint integer -- unsigned int, but it is displayed as integer anyway
+---@alias String string|number this union type is needed because of the implicit conversion between string and number in lua
+---@alias uint integer -- unsigned int
 
 ---@class ToggleValue<T>: { value: T, enabled: boolean } -- enabled=false
 

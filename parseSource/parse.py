@@ -197,15 +197,16 @@ g_functionDataMap: dict[str, FunctionInfo] = {}
 
 g_enum_parse_requests = set()
 
-def get_lua_type(type: str, isClassDef=False) -> str:
-    assert len(classMap) > 0, "get_lua_type: classMap is empty"
+def get_lua_type(type: str, isClassDef=False, isFuncRet=False) -> str:
+    # String = string|number; this union type is needed for the implicit conversion between string and number in lua
+    assert len(g_classMap) > 0, "get_lua_type: g_classMap is empty"
     type = type.strip()
     if type in HS_LUA_MODULES:
         return type
 
     type = type.replace("unsigned ", "u").replace("signed ", "").replace(" ", "").replace("std::", "").replace("&", "")
     if type == "char*":
-        return "string"
+        return "string" if isFuncRet else "String"
     
     type = type.replace("*", "")
     
@@ -241,18 +242,20 @@ def get_lua_type(type: str, isClassDef=False) -> str:
     
     ret = C_LUA_PRIMITIVES.get(type)
     if ret and not isClassDef:
+        if ret == "string" and not isFuncRet:
+            return "String"
         return ret
     
-    ret = classMap.get(type)
+    ret = g_classMap.get(type)
     if ret:
         return ret
     
     nmspaces = type.split("::")
-    bottom = classMap.get(nmspaces[-1])
+    bottom = g_classMap.get(nmspaces[-1])
     if bottom:
         return bottom
     
-    top = classMap.get(nmspaces[0])
+    top = g_classMap.get(nmspaces[0])
     if top:
         return f"{top}." + ".".join(nmspaces[1:])
     
@@ -353,7 +356,7 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
                 
                 return_type = func.GetRetType()
                 if return_type and return_type != "void":
-                    ret += f"---@return {get_lua_type(return_type)}\n"
+                    ret += f"---@return {get_lua_type(return_type, isFuncRet=True)}\n"
                 
                 ret += f"function {get_lua_type(className)}" + (":" if funcType == FuncType.METHOD else ".") + methodName + "(" + ", ".join(params_name) + ") end\n\n"
                 count += 1
@@ -490,6 +493,11 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
     if globalStaticFields:
         part_module_fields += parse_fields(moduleName, globalWikiInfo, globalStaticFields.group(1))[0]
     
+    appended_fields = g_fieldsAppendMap.get(moduleName, None)
+    if appended_fields:
+        for content in appended_fields:
+            part_module_fields += f"---@field {content}\n"
+    
     globalMethods = re.search(r'static\s+swig_lua_method\s+swig_SwigModule_methods\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
     if globalMethods:
         part_module_methods, _ = parse_methods(moduleName, globalHSInfo, globalWikiInfo, globalMethods.group(1), FuncType.STATIC)
@@ -508,9 +516,9 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
     # Parse classes
     for m in re.finditer(CLASS_NAME_PATTERN, lua_code):
         className = m.group(1)
+        full_name = get_lua_type(className, True)
         container_type = format_container_type(className)
         if container_type:
-            this_name = get_lua_type(className, True)
             part_constructor, _ = parse_constructor(moduleName, className, container_type)
             result += part_constructor
             continue
@@ -535,6 +543,12 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
             p, c = parse_fields(className, wikiInfo, static_fields_m.group(1))
             part_fields += p
             count_fields += c
+        
+        appended_fields = g_fieldsAppendMap.get(full_name, None)
+        if appended_fields:
+            for content in appended_fields:
+                part_fields += f"---@field {content}\n"
+                count_fields += 1
         
         part_constructor, count_constructor = parse_constructor(moduleName, className)
 
@@ -564,11 +578,10 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
                 part_consts += f"    {memberName} = {{}},\n"
         
         should_be_enum = count_constructor < 2 and count_methods == 0 and count_fields == 0 and count_consts > 0
-        this_name = get_lua_type(className, True)
         if should_be_enum:
-            result += f"---@enum {this_name}\n{this_name} = {{\n{part_consts}}}\n\n"
+            result += f"---@enum {full_name}\n{full_name} = {{\n{part_consts}}}\n\n"
         else:
-            result += f"---@class {this_name}" + ((": " + ", ".join(parents)) if parents else "") + f"\n{part_fields}{this_name} = {{" + (f"\n{part_consts}" if part_consts else "") + f"}}\n\n{part_constructor}{part_methods}"
+            result += f"---@class {full_name}" + ((": " + ", ".join(parents)) if parents else "") + f"\n{part_fields}{full_name} = {{" + (f"\n{part_consts}" if part_consts else "") + f"}}\n\n{part_constructor}{part_methods}"
     
     return result
     
@@ -621,11 +634,18 @@ EVENTHOOKS_DATA_PATH = "out/wiki/wiki_EventHooks_parse_output.json"
 CHAIN_INTERNAL_EVENT_LIST_PATH = "out/hs_base/hs_chain_internalEvents_list.json"
 EVENTHOOKS_OUTPUT_PATH = "../library/generated/eventhooks.lua"
 
-classMap = {}
+FIELDS_APPEND_LIST_PATH = "fields_append_list.json"
+
+g_classMap = {}
+g_fieldsAppendMap = {}
 
 def main():
+    global g_classMap, g_fieldsAppendMap
     for data in DATA_LIST:
-        build_class_map(classMap, data["luaWrap"])
+        build_class_map(g_classMap, data["luaWrap"])
+    
+    with open(FIELDS_APPEND_LIST_PATH, 'r', encoding='utf8') as f:
+        g_fieldsAppendMap = json.load(f)
     
     enumMap = {}
     with open(ENUM_DATA_PATH, 'r', encoding='utf8') as f:

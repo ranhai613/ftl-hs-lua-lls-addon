@@ -20,7 +20,7 @@
 ---@field useAugmentReq boolean
 ---@field TriggeredEventDefinition_defs vector<Hyperspace.TriggeredEventDefinition> (Read-only)
 ---@field StatBoostDefinition_statBoostDefs vector<Hyperspace.StatBoostDefinition>
----@field StatBoostDefinition_savedStatBoostDefs unordered_map<string, Hyperspace.StatBoostDefinition>
+---@field StatBoostDefinition_savedStatBoostDefs unordered_map<String, Hyperspace.StatBoostDefinition>
 ---@field CustomShipUnlocks_instance Hyperspace.CustomShipUnlocks (Read-only)
 ---@field App Hyperspace.CApp (Read-only)
 Hyperspace = {
@@ -145,7 +145,7 @@ Hyperspace = {
 }
 
 ---@param unknown Graphics.freetype.font_data
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 number
 ---@return number
 function Hyperspace.font_text_width(unknown, unknown1, unknown2) end
@@ -168,7 +168,7 @@ function Hyperspace.Global_GetInstance() end
 ---@return boolean
 function Hyperspace.Global_IsSeededRun() end
 
----@param unknown string
+---@param unknown String
 ---@return unknown
 function Hyperspace.ErrorMessage(unknown) end
 
@@ -182,7 +182,7 @@ function Hyperspace.ShipSystem_GetLevelDescription(unknown, unknown1, unknown2) 
 ---@return boolean
 function Hyperspace.ShipSystem_IsSubsystem(unknown) end
 
----@param unknown string
+---@param unknown String
 ---@return integer
 function Hyperspace.ShipSystem_NameToSystemId(unknown) end
 
@@ -216,7 +216,7 @@ function Hyperspace.ShipGraph_GetShipInfo(unknown) end
 ---@return Hyperspace.PowerManager
 function Hyperspace.PowerManager_GetPowerManager(unknown) end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 integer
 ---@param unknown2 ShipEvent
 ---@return Hyperspace.ShipManager
@@ -228,13 +228,13 @@ function Hyperspace.ShipGenerator_CreateShip(unknown, unknown1, unknown2) end
 function Hyperspace.ShipGenerator_GenerateSystemMaxes(unknown, unknown1) end
 
 ---@param unknown Hyperspace.ShipManager
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 uint
 ---@return vector<Hyperspace.CrewBlueprint>
 function Hyperspace.ShipGenerator_GetPossibleCrewList(unknown, unknown1, unknown2) end
 
 ---@param unknown Hyperspace.ShipManager
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 integer
 ---@param unknown3 uint
 ---@param unknown4 boolean
@@ -249,7 +249,7 @@ function Hyperspace.ShipGenerator_GetPossibleDroneList(unknown, unknown1, unknow
 function Hyperspace.ShipGenerator_GetPossibleSystemUpgrades(unknown, unknown1, unknown2, unknown3) end
 
 ---@param unknown Hyperspace.ShipManager
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 integer
 ---@param unknown3 uint
 ---@return vector<Hyperspace.WeaponBlueprint>
@@ -261,27 +261,27 @@ function Hyperspace.ShipGenerator_GetPossibleWeaponList(unknown, unknown1, unkno
 ---@return boolean
 function Hyperspace.ShipGenerator_UpgradeSystem(unknown, unknown1, unknown2) end
 
----@param unknown string
+---@param unknown String
 ---@return unknown
 function Hyperspace.setWindowTitle(unknown) end
 
 ---@return Hyperspace.CustomAugmentManager
 function Hyperspace.CustomAugmentManager_GetInstance() end
 
----@param unknown string
+---@param unknown String
 ---@return Hyperspace.ActivatedPowerDefinition
 function Hyperspace.ActivatedPowerDefinition_GetPowerByName(unknown) end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 Hyperspace.ActivatedPowerDefinition
 ---@return Hyperspace.ActivatedPowerDefinition
 function Hyperspace.ActivatedPowerDefinition_AddNamedDefinition(unknown, unknown1) end
 
----@param unknown string
+---@param unknown String
 ---@return Hyperspace.PowerResourceDefinition
 function Hyperspace.PowerResourceDefinition_GetByName(unknown) end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 Hyperspace.PowerResourceDefinition
 ---@return Hyperspace.PowerResourceDefinition
 function Hyperspace.PowerResourceDefinition_AddNamedDefinition(unknown, unknown1) end
@@ -317,31 +317,31 @@ function Hyperspace.TemporalSystemParser_GetDilationStrength(unknown) end
 ---@class Defines.string
 Defines.string = {}
 
----@return string
+---@return String
 function Hyperspace.string() end
 
----@param unknown string
----@return string
+---@param unknown String
+---@return String
 function Hyperspace.string(unknown) end
 
 ---@return uint
-function string:size() end
+function String:size() end
 
 ---@return uint
-function string:length() end
+function String:length() end
 
 ---@return boolean
-function string:empty() end
+function String:empty() end
 
 ---@return string
-function string:c_str() end
+function String:c_str() end
 
 ---@return string
-function string:data() end
+function String:data() end
 
----@param unknown string
+---@param unknown String
 ---@return unknown
-function string:assign(unknown) end
+function String:assign(unknown) end
 
 ---@return vector<integer>
 function Hyperspace.vector_int() end
@@ -694,11 +694,11 @@ function Hyperspace.vector_Point(unknown) end
 ---@return vector<Hyperspace.Point>
 function Hyperspace.vector_Point(unknown, unknown1) end
 
----@return map<string, integer>
+---@return map<String, integer>
 function Hyperspace.map_string_int() end
 
----@param unknown map<string, integer>
----@return map<string, integer>
+---@param unknown map<String, integer>
+---@return map<String, integer>
 function Hyperspace.map_string_int(unknown) end
 
 ---@return map<integer, Hyperspace.SystemTemplate>
@@ -708,11 +708,11 @@ function Hyperspace.map_int_SystemTemplate() end
 ---@return map<integer, Hyperspace.SystemTemplate>
 function Hyperspace.map_int_SystemTemplate(unknown) end
 
----@return unordered_map<string, integer>
+---@return unordered_map<String, integer>
 function Hyperspace.unordered_map_string_int() end
 
----@param unknown unordered_map<string, integer>
----@return unordered_map<string, integer>
+---@param unknown unordered_map<String, integer>
+---@return unordered_map<String, integer>
 function Hyperspace.unordered_map_string_int(unknown) end
 
 ---@return vector<Hyperspace.ActivatedPower>
@@ -958,20 +958,20 @@ function Hyperspace.vector_CrewPlacementDefinition(unknown) end
 ---@return vector<Hyperspace.CrewPlacementDefinition>
 function Hyperspace.vector_CrewPlacementDefinition(unknown, unknown1) end
 
----@return vector<string>
+---@return vector<String>
 function Hyperspace.vector_string() end
 
 ---@param unknown uint
----@return vector<string>
+---@return vector<String>
 function Hyperspace.vector_string(unknown) end
 
----@param unknown vector<string>
----@return vector<string>
+---@param unknown vector<String>
+---@return vector<String>
 function Hyperspace.vector_string(unknown) end
 
 ---@param unknown uint
----@param unknown1 string
----@return vector<string>
+---@param unknown1 String
+---@return vector<String>
 function Hyperspace.vector_string(unknown, unknown1) end
 
 ---@return vector<Hyperspace.StatBoostDefinition>
@@ -1162,23 +1162,23 @@ function Hyperspace.vector_p_LockdownShard(unknown) end
 ---@return vector<Hyperspace.LockdownShard>
 function Hyperspace.vector_p_LockdownShard(unknown, unknown1) end
 
----@return unordered_multimap<string, Hyperspace.AugmentFunction>
+---@return unordered_multimap<String, Hyperspace.AugmentFunction>
 function Hyperspace.unordered_multimap_string_AugmentFunction() end
 
----@param unknown unordered_multimap<string, Hyperspace.AugmentFunction>
----@return unordered_multimap<string, Hyperspace.AugmentFunction>
+---@param unknown unordered_multimap<String, Hyperspace.AugmentFunction>
+---@return unordered_multimap<String, Hyperspace.AugmentFunction>
 function Hyperspace.unordered_multimap_string_AugmentFunction(unknown) end
 
----@return pair<string, Hyperspace.AugmentFunction>
+---@return pair<String, Hyperspace.AugmentFunction>
 function Hyperspace.pair_string_AugmentFunction() end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 Hyperspace.AugmentFunction
----@return pair<string, Hyperspace.AugmentFunction>
+---@return pair<String, Hyperspace.AugmentFunction>
 function Hyperspace.pair_string_AugmentFunction(unknown, unknown1) end
 
----@param unknown pair<string, Hyperspace.AugmentFunction>
----@return pair<string, Hyperspace.AugmentFunction>
+---@param unknown pair<String, Hyperspace.AugmentFunction>
+---@return pair<String, Hyperspace.AugmentFunction>
 function Hyperspace.pair_string_AugmentFunction(unknown) end
 
 ---@return vector<Hyperspace.AugmentCrystalShard>
@@ -1326,6 +1326,7 @@ function Hyperspace.Global.IsSeededRun() end
 ---@field NumFrames integer (Read-only)
 ---@field Frames integer (Read-only)
 ---@field speedLevel integer
+---@field speedEnabled boolean
 Hyperspace.CFPS = {}
 
 ---@class Hyperspace.playerVariableType
@@ -1347,28 +1348,28 @@ function Hyperspace.playerVariableType:empty() end
 ---@return unknown
 function Hyperspace.playerVariableType:clear() end
 
----@param unknown string
+---@param unknown String
 ---@return integer
 function Hyperspace.playerVariableType:get(unknown) end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 integer
 ---@return unknown
 function Hyperspace.playerVariableType:set(unknown, unknown1) end
 
----@param unknown string
+---@param unknown String
 ---@return unknown
 function Hyperspace.playerVariableType:del(unknown) end
 
----@param unknown string
+---@param unknown String
 ---@return boolean
 function Hyperspace.playerVariableType:has_key(unknown) end
 
----@param unknown string
+---@param unknown String
 ---@return integer
 function Hyperspace.playerVariableType:__getitem(unknown) end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 integer
 ---@return unknown
 function Hyperspace.playerVariableType:__setitem(unknown, unknown1) end
@@ -1438,24 +1439,24 @@ function Hyperspace.Point:RelativeDistance(other) end
 Hyperspace.TextLibrary = {}
 
 --- Retrieve the corresponding text string from the `text_` xml files in the current language.
----@param name string
+---@param name String
 ---@return string
 function Hyperspace.TextLibrary:GetText(name) end
 
----@param name string
----@param lang string
+---@param name String
+---@param lang String
 ---@return string
 function Hyperspace.TextLibrary:GetText(name, lang) end
 
 ---@class Hyperspace.TextString
----@field data string You can change the text by setting this value.<br>If `.isLiteral` is true, this stores the text itself, otherwise it stores the text id.
+---@field data String You can change the text by setting this value.<br>If `.isLiteral` is true, this stores the text itself, otherwise it stores the text id.
 ---@field isLiteral boolean If true, the game will display the value of `.data`, otherwise it will refer to the text id from the value of `.data`.
 Hyperspace.TextString = {}
 
 ---@return Hyperspace.TextString
 function Hyperspace.TextString() end
 
----@param str string
+---@param str String
 ---@param literal boolean
 ---@return Hyperspace.TextString
 function Hyperspace.TextString(str, literal) end
@@ -1557,17 +1558,17 @@ function Hyperspace.Pointf:constructor(x, y) end
 ---@field info Hyperspace.AnimationDescriptor
 ---@field tracker Hyperspace.AnimationTracker
 ---@field position Hyperspace.Pointf
----@field soundForward string
----@field soundReverse string
+---@field soundForward String
+---@field soundReverse String
 ---@field randomizeFrames boolean
 ---@field fScale number
 ---@field fYStretch number
 ---@field currentFrame integer
 ---@field bAlwaysMirror boolean
----@field soundQueue vector<vector<string>>
+---@field soundQueue vector<vector<String>>
 ---@field fadeOut number
 ---@field startFadeOut number
----@field animName string
+---@field animName String
 ---@field mask_x_pos integer
 ---@field mask_x_size integer
 ---@field mask_y_pos integer
@@ -1579,7 +1580,7 @@ Hyperspace.Animation = {}
 ---@return Hyperspace.Animation
 function Hyperspace.Animation() end
 
----@param _image string
+---@param _image String
 ---@param _length integer
 ---@param _time number
 ---@param _position Hyperspace.Pointf
@@ -1591,7 +1592,7 @@ function Hyperspace.Animation() end
 function Hyperspace.Animation(_image, _length, _time, _position, _imageWidth, _imageHeight, _stripStartX, _numFrames) end
 
 ---@param frame integer
----@param sound string
+---@param sound String
 function Hyperspace.Animation:AddSoundQueue(frame, sound) end
 
 ---@return boolean
@@ -1676,7 +1677,7 @@ function Hyperspace.WeaponAnimation:SetFireTime(time) end
 ---@class Hyperspace.AnimationControl
 Hyperspace.AnimationControl = {}
 
----@param animName string
+---@param animName String
 ---@return Hyperspace.Animation
 function Hyperspace.AnimationControl:GetAnimation(animName) end
 
@@ -1732,7 +1733,7 @@ function Hyperspace.SystemBox(pos, sys, playerUI) end
 Hyperspace.ShipObject = {}
 
 --- Adds the specified augment to the ship. Works properly with hidden augments.
----@param augment string
+---@param augment String
 ---@return boolean
 function Hyperspace.ShipObject:AddAugmentation(augment) end
 
@@ -1743,30 +1744,30 @@ function Hyperspace.ShipObject:ClearShipInfo() end
 function Hyperspace.ShipObject:GetAugmentationCount() end
 
 --- Returns a `std::vector<std::string>` of augments, in Lua you can handle this as if it was an array of strings.
----@return vector<string>
+---@return vector<String>
 function Hyperspace.ShipObject:GetAugmentationList() end
 
 --- Returns the value of the augment, this corresponds to the value defined in blueprints.xml. If the ship has multiple, their values are added together.
----@param augment string
+---@param augment String
 ---@return number
 function Hyperspace.ShipObject:GetAugmentationValue(augment) end
 
 --- Returns the number of the given augment you have, NOT a bool.
----@param augment string
+---@param augment String
 ---@return integer
 function Hyperspace.ShipObject:HasAugmentation(augment) end
 
 --- Removes the specified augment from the ship. Does nothing if the augment isn't present. Works properly with hidden augments.
----@param augment string
+---@param augment String
 function Hyperspace.ShipObject:RemoveAugmentation(augment) end
 
 --- Returns an int indicating whether you have the blue options for the specified equipment.<br>checkCargo indicates if cargo will be included in the check.
----@param equipmentName string
+---@param equipmentName String
 ---@param checkCargo? boolean = false
 ---@return integer
 function Hyperspace.ShipObject:HasEquipment(equipmentName, checkCargo) end
 
----@param equip string
+---@param equip String
 ---@return integer
 function Hyperspace.ShipObject:HasEquipment(equip) end
 
@@ -1815,7 +1816,7 @@ function Hyperspace.TimerHelper:Update() end
 ---@field fDamage number
 ---@field pLoc Hyperspace.Point
 ---@field fMaxDamage number
----@field name string
+---@field name String
 ---@field roomId integer
 ---@field iRepairCount integer
 ---@field iSystemType integer
@@ -1842,7 +1843,7 @@ function Hyperspace.TimerHelper:Update() end
 ---@field bExploded boolean
 ---@field bOccupied boolean
 ---@field bFriendlies boolean
----@field interiorImageName string
+---@field interiorImageName String
 ---@field interiorImage Graphics.GL_Primitive
 ---@field interiorImageOn Graphics.GL_Primitive
 ---@field interiorImageManned Graphics.GL_Primitive
@@ -1884,7 +1885,7 @@ function Hyperspace.ShipSystem:GetSelected() end
 ---@return boolean
 function Hyperspace.ShipSystem:CompletelyDestroyed() end
 
----@param name string
+---@param name String
 function Hyperspace.ShipSystem:SetName(name) end
 
 --- Not sure if this is a function called every tick to cause repairs or what, probably not useful to lua
@@ -2039,7 +2040,7 @@ function Hyperspace.ShipSystem.GetLevelDescription(systemId, level, tooltip) end
 ---@return boolean
 function Hyperspace.ShipSystem.IsSubsystem(systemType) end
 
----@param name string
+---@param name String
 ---@return integer
 function Hyperspace.ShipSystem.NameToSystemId(name) end
 
@@ -2213,8 +2214,8 @@ function Hyperspace.Targetable:GetShape() end
 ---@field speed Hyperspace.Pointf
 ---@field missed boolean
 ---@field hitTarget boolean
----@field hitSolidSound string
----@field hitShieldSound string
+---@field hitSolidSound String
+---@field hitShieldSound String
 ---@field entryAngle number
 ---@field startedDeath boolean
 ---@field passedTarget boolean
@@ -2321,11 +2322,11 @@ Hyperspace.AsteroidGenerator = {}
 ---@field bp integer
 ---@field locked boolean
 ---@field tooltip Hyperspace.TextString
----@field tip string
+---@field tip String
 Hyperspace.Description = {}
 
 ---@class Hyperspace.Blueprint
----@field name string
+---@field name String
 ---@field desc Hyperspace.Description
 ---@field type integer
 Hyperspace.Blueprint = {}
@@ -2401,7 +2402,7 @@ Hyperspace.Button = {}
 ---@return Hyperspace.Button
 function Hyperspace.Button() end
 
----@param img string
+---@param img String
 ---@param pos Hyperspace.Point
 function Hyperspace.Button:OnInit(img, pos) end
 
@@ -2410,7 +2411,7 @@ function Hyperspace.Button:OnRender() end
 ---@param texture Graphics.GL_Texture
 function Hyperspace.Button:SetActiveImage(texture) end
 
----@param imageBase string
+---@param imageBase String
 function Hyperspace.Button:SetImageBase(imageBase) end
 
 ---@param texture Graphics.GL_Texture
@@ -2421,7 +2422,7 @@ function Hyperspace.Button:SetLocation(pos) end
 
 ---@class Hyperspace.BatterySystem: Hyperspace.ShipSystem
 ---@field bTurnedOn boolean
----@field soundeffect string
+---@field soundeffect String
 Hyperspace.BatterySystem = {}
 
 ---@class Hyperspace.CrewAnimation
@@ -2448,7 +2449,7 @@ Hyperspace.BatterySystem = {}
 ---@field bExactShooting boolean
 ---@field projectile Hyperspace.Animation
 ---@field bTyping boolean
----@field race string
+---@field race String
 ---@field currentShip integer
 ---@field bMale boolean
 ---@field colorblind boolean
@@ -2466,7 +2467,7 @@ Hyperspace.CrewAnimation = {}
 function Hyperspace.CrewAnimation() end
 
 ---@param _shipId integer
----@param _race string
+---@param _race String
 ---@param _unk Hyperspace.Pointf
 ---@param _hostile integer
 ---@return Hyperspace.CrewAnimation
@@ -2502,7 +2503,7 @@ function Hyperspace.CrewAnimation:Restart() end
 ---@return boolean
 function Hyperspace.CrewAnimation:CustomDeath() end
 
----@param name string
+---@param name String
 ---@param position Hyperspace.Pointf
 ---@param enemy boolean
 function Hyperspace.CrewAnimation:OnInit(name, position, enemy) end
@@ -2558,8 +2559,8 @@ function Hyperspace.CrewBlueprint:RenderSkill(x, y, length, height, skill) end
 
 ---@class Hyperspace.SCrewStats
 ---@field stat vector<integer> Has 5 values. `[0]` is the number of repairs, `[1]` is the number of crew combat kills, `[2]` is piloted evasions, `[3]` is jumps survived, `[4]` is skills mastered.
----@field species string
----@field name string
+---@field species String
+---@field name String
 ---@field male boolean
 Hyperspace.SCrewStats = {}
 
@@ -2618,12 +2619,12 @@ Hyperspace.Slot = {}
 ---@field bFrozen boolean
 ---@field bFrozenLocation boolean
 ---@field task CrewTask
----@field type string
+---@field type String
 ---@field ship Hyperspace.Ship
 ---@field finalGoal Hyperspace.Slot
 ---@field blockingDoor Hyperspace.Door
 ---@field bOutOfGame boolean
----@field species string
+---@field species String
 ---@field bDead boolean
 ---@field iOnFire integer
 ---@field bActiveManning boolean
@@ -3190,16 +3191,16 @@ function Hyperspace.Drone:BlowUp(silent) end
 function Hyperspace.Drone:GetStunned() end
 
 ---@class Hyperspace.DroneBlueprint: Hyperspace.Blueprint
----@field typeName string (Read-only)
+---@field typeName String (Read-only)
 ---@field level integer (Read-only)
 ---@field targetType integer (Read-only)
 ---@field power integer (Read-only)
 ---@field cooldown number (Read-only)
 ---@field speed integer (Read-only)
 ---@field dodge integer (Read-only)
----@field weaponBlueprint string (Read-only)
----@field droneImage string (Read-only)
----@field combatIcon string (Read-only)
+---@field weaponBlueprint String (Read-only)
+---@field droneImage String (Read-only)
+---@field combatIcon String (Read-only)
 Hyperspace.DroneBlueprint = {}
 
 ---@class Hyperspace.BeamWeapon: Hyperspace.Projectile
@@ -3255,41 +3256,41 @@ function Hyperspace.BeamWeapon(unknown, unknown1, unknown2, unknown3, unknown4, 
 function Hyperspace.BeamWeapon:OnRenderSpecific(spaceId) end
 
 ---@class Hyperspace.EffectsBlueprint
----@field launchSounds vector<string>
----@field hitShipSounds vector<string>
----@field hitShieldSounds vector<string>
----@field missSounds vector<string>
----@field image string
+---@field launchSounds vector<String>
+---@field hitShipSounds vector<String>
+---@field hitShieldSounds vector<String>
+---@field missSounds vector<String>
+---@field image String
 Hyperspace.EffectsBlueprint = {}
 
 ---@class Hyperspace.ShipBlueprint: Hyperspace.Blueprint
 ---@field desc Hyperspace.Description
----@field blueprintName string
+---@field blueprintName String
 ---@field name Hyperspace.TextString
 ---@field shipClass Hyperspace.TextString
----@field layoutFile string
----@field imgFile string
----@field cloakFile string
----@field shieldFile string
----@field floorFile string
+---@field layoutFile String
+---@field imgFile String
+---@field cloakFile String
+---@field shieldFile String
+---@field floorFile String
 ---@field systemInfo map<integer, Hyperspace.SystemTemplate>
 ---@field systems vector<integer>
 ---@field droneCount integer
 ---@field originalDroneCount integer
 ---@field droneSlots integer
----@field loadDrones string
----@field drones vector<string>
----@field augments vector<string>
+---@field loadDrones String
+---@field drones vector<String>
+---@field augments vector<String>
 ---@field weaponCount integer
 ---@field originalWeaponCount integer
 ---@field weaponSlots integer
----@field loadWeapons string
----@field weapons vector<string>
+---@field loadWeapons String
+---@field weapons vector<String>
 ---@field missiles integer
 ---@field drone_count integer
 ---@field health integer
 ---@field originalCrewCount integer
----@field defaultCrew vector<string>
+---@field defaultCrew vector<String>
 ---@field customCrew vector<Hyperspace.CrewBlueprint>
 ---@field maxPower integer
 ---@field boardingAI integer
@@ -3313,14 +3314,14 @@ function Hyperspace.ShipBlueprint(unknown) end
 ---@field location vector<integer>
 ---@field bp integer
 ---@field maxPower integer
----@field image string
+---@field image String
 ---@field slot integer
 ---@field direction integer
----@field weapon vector<string>
+---@field weapon vector<String>
 Hyperspace.SystemTemplate = {}
 
 ---@class Hyperspace.WeaponBlueprint: Hyperspace.Blueprint
----@field typeName string
+---@field typeName String
 ---@field damage Hyperspace.Damage
 ---@field shots integer
 ---@field missiles integer
@@ -3330,9 +3331,9 @@ Hyperspace.SystemTemplate = {}
 ---@field speed number
 ---@field miniCount integer
 ---@field effects Hyperspace.EffectsBlueprint
----@field weaponArt string
----@field combatIcon string
----@field explosion string
+---@field weaponArt String
+---@field combatIcon String
+---@field explosion String
 ---@field radius integer
 ---@field miniProjectiles vector<Hyperspace.MiniProjectile>
 ---@field boostPower Hyperspace.BoostPower
@@ -3353,35 +3354,35 @@ function Hyperspace.WeaponBlueprint() end
 Hyperspace.BoostPower = {}
 
 ---@class Hyperspace.MiniProjectile
----@field image string
+---@field image String
 ---@field fake boolean
 Hyperspace.MiniProjectile = {}
 
 ---@class Hyperspace.BlueprintManager
 Hyperspace.BlueprintManager = {}
 
----@param name string
+---@param name String
 ---@return Hyperspace.AugmentBlueprint
 function Hyperspace.BlueprintManager:GetAugmentBlueprint(name) end
 
----@param name string
----@return vector<string>
+---@param name String
+---@return vector<String>
 function Hyperspace.BlueprintManager:GetBlueprintList(name) end
 
----@param name string
+---@param name String
 ---@return Hyperspace.CrewBlueprint
 function Hyperspace.BlueprintManager:GetCrewBlueprint(name) end
 
----@param name string
+---@param name String
 ---@return Hyperspace.DroneBlueprint
 function Hyperspace.BlueprintManager:GetDroneBlueprint(name) end
 
----@param name string
+---@param name String
 ---@param sector integer
 ---@return Hyperspace.ShipBlueprint
 function Hyperspace.BlueprintManager:GetShipBlueprint(name, sector) end
 
----@param name string
+---@param name String
 ---@return Hyperspace.WeaponBlueprint
 function Hyperspace.BlueprintManager:GetWeaponBlueprint(name) end
 
@@ -3563,7 +3564,7 @@ function Hyperspace.BoarderPodDrone:SetDeployed(_deployed) end
 function Hyperspace.BoarderPodDrone:SetMovementTarget(target) end
 
 ---@class Hyperspace.BoardingEvent
----@field type string
+---@field type String
 ---@field min integer
 ---@field max integer
 ---@field amount integer
@@ -3606,7 +3607,7 @@ function Hyperspace.FocusWindow() end
 ---@field traitor boolean
 ---@field cloneable boolean
 ---@field cloneText Hyperspace.TextString
----@field crewType string
+---@field crewType String
 ---@field weapon Hyperspace.WeaponBlueprint
 ---@field drone Hyperspace.DroneBlueprint
 ---@field augment Hyperspace.AugmentBlueprint
@@ -3621,7 +3622,7 @@ function Hyperspace.FocusWindow() end
 ---@field upgradeAmount integer
 ---@field upgradeId integer
 ---@field upgradeSuccessFlag integer
----@field removeItem string
+---@field removeItem String
 Hyperspace.ResourceEvent = {}
 
 ---@return Hyperspace.ResourceEvent
@@ -3629,7 +3630,7 @@ function Hyperspace.ResourceEvent() end
 
 ---@class Hyperspace.ChoiceText
 ---@field type integer
----@field text string
+---@field text String
 ---@field rewards Hyperspace.ResourceEvent
 Hyperspace.ChoiceText = {}
 
@@ -3637,13 +3638,13 @@ Hyperspace.ChoiceText = {}
 function Hyperspace.ChoiceText() end
 
 ---@param unknown integer
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 Hyperspace.ResourceEvent
 ---@return Hyperspace.ChoiceText
 function Hyperspace.ChoiceText(unknown, unknown1, unknown2) end
 
 ---@class Hyperspace.ChoiceBox: Hyperspace.FocusWindow
----@field mainText string
+---@field mainText String
 ---@field choices vector<Hyperspace.ChoiceText> If you want to modify the current `ChoiceText` values please refer to `:GetChoices()` instead
 ---@field columnSize uint
 ---@field choiceBoxes vector<Hyperspace.Rect>
@@ -3703,7 +3704,7 @@ function Hyperspace.CApp:OnExit() end
 function Hyperspace.CApp:OnRequestExit() end
 
 ---@class Hyperspace.ChoiceReq
----@field object string
+---@field object String
 ---@field min_level integer
 ---@field max_level integer
 ---@field max_group integer
@@ -3716,7 +3717,7 @@ function Hyperspace.ChoiceReq() end
 ---@class Hyperspace.CloakingSystem: Hyperspace.ShipSystem
 ---@field bTurnedOn boolean
 ---@field timer Hyperspace.TimerHelper
----@field soundeffect string
+---@field soundeffect String
 Hyperspace.CloakingSystem = {}
 
 ---@class Hyperspace.CloneSystem: Hyperspace.ShipSystem
@@ -3803,7 +3804,7 @@ function Hyperspace.Equipment:AddAugment(bp, free, forceCargo) end
 ---@param forceCargo boolean
 function Hyperspace.Equipment:AddDrone(bp, free, forceCargo) end
 
----@param name string
+---@param name String
 function Hyperspace.Equipment:AddToCargo(name) end
 
 ---@param bp Hyperspace.WeaponBlueprint
@@ -3811,7 +3812,7 @@ function Hyperspace.Equipment:AddToCargo(name) end
 ---@param forceCargo boolean
 function Hyperspace.Equipment:AddWeapon(bp, free, forceCargo) end
 
----@return vector<string>
+---@return vector<String>
 function Hyperspace.Equipment:GetCargoHold() end
 
 ---@class Hyperspace.TextButton0: Hyperspace.GenericButton
@@ -3866,7 +3867,7 @@ Hyperspace.TabbedWindow = {}
 Hyperspace.CommandGui = {}
 
 ---@class Hyperspace.CrewDesc
----@field type string
+---@field type String
 ---@field prop number
 ---@field amount integer
 Hyperspace.CrewDesc = {}
@@ -3944,7 +3945,7 @@ function Hyperspace.Room:FillSlot(slot, intruder) end
 ---@field lastWorldPosition Hyperspace.Pointf
 ---@field lastWorldHeading number
 ---@field shipBox Hyperspace.Rect
----@field shipName string
+---@field shipName String
 Hyperspace.ShipGraph = {}
 
 ---@param roomId integer
@@ -4166,10 +4167,10 @@ Hyperspace.EngineSystem = {}
 ---@field distressBeacon boolean
 ---@field repair boolean
 ---@field modifyPursuit integer
----@field quest string
----@field spaceImage string
----@field planetImage string
----@field eventName string
+---@field quest String
+---@field spaceImage String
+---@field planetImage String
+---@field eventName String
 ---@field reward Hyperspace.ResourceEvent
 ---@field boarders Hyperspace.BoardingEvent
 ---@field choices vector<Hyperspace.Choice> If you want to modify the current `Choice` values please refer to `:GetChoices()` instead
@@ -4185,7 +4186,7 @@ function Hyperspace.LocationEvent() end
 function Hyperspace.LocationEvent:GetChoices() end
 
 ---@param newEvent Hyperspace.LocationEvent
----@param text string
+---@param text String
 ---@param requirement Hyperspace.ChoiceReq
 ---@param hiddenReward boolean
 function Hyperspace.LocationEvent:AddChoice(newEvent, text, requirement, hiddenReward) end
@@ -4202,7 +4203,7 @@ function Hyperspace.LocationEvent:RemoveChoice(index) end
 Hyperspace.Choice = {}
 
 ---@class Hyperspace.SectorDescription
----@field type string
+---@field type String
 ---@field name Hyperspace.TextString
 ---@field shortName Hyperspace.TextString
 Hyperspace.SectorDescription = {}
@@ -4219,13 +4220,13 @@ Hyperspace.EventGenerator = {}
 ---@return Hyperspace.EventGenerator
 function Hyperspace.EventGenerator() end
 
----@param name string
+---@param name String
 ---@param worldLevel integer
 ---@param ignoreUnique boolean
 ---@return Hyperspace.LocationEvent
 function Hyperspace.EventGenerator:CreateEvent(name, worldLevel, ignoreUnique) end
 
----@param name string
+---@param name String
 ---@param worldLevel integer
 ---@param ignoreUnique boolean
 ---@param seed integer
@@ -4247,13 +4248,13 @@ Hyperspace.ImageDesc = {}
 ---@field fDamage number
 ---@field pLoc Hyperspace.Point
 ---@field fMaxDamage number
----@field name string
+---@field name String
 ---@field roomId integer
 ---@field iRepairCount integer
 Hyperspace.Repairable = {}
 
 ---@class Hyperspace.Spreadable: Hyperspace.Repairable
----@field soundName string
+---@field soundName String
 Hyperspace.Spreadable = {}
 
 ---@class Hyperspace.Fire: Hyperspace.Spreadable
@@ -4343,8 +4344,8 @@ function Hyperspace.LaserBlast(_position, _ownerId, _targetId, _target) end
 ---@field planet Hyperspace.ImageDesc
 ---@field space Hyperspace.ImageDesc
 ---@field fleetChanging boolean
----@field planetImage string
----@field spaceImage string
+---@field planetImage String
+---@field spaceImage String
 Hyperspace.Location = {}
 
 ---@class Hyperspace.LockdownShard
@@ -4408,15 +4409,15 @@ function Hyperspace.Missile(_position, _ownerId, _targetId, _target, _heading) e
 ---@field invalidPointer Graphics.GL_Texture
 ---@field selling Graphics.GL_Texture
 ---@field openDoor Hyperspace.Animation
----@field tooltip string
+---@field tooltip String
 ---@field tooltipTimer number
 ---@field bMoving boolean
 ---@field bHideMouse boolean
 ---@field lastIcon Graphics.GL_Texture
 ---@field lastAddition Graphics.GL_Texture
 ---@field bForceTooltip boolean
----@field tooltipTitle string
----@field lastTooltipText string
+---@field tooltipTitle String
+---@field lastTooltipText String
 ---@field iHacking integer
 ---@field overrideTooltipWidth integer
 ---@field staticTooltip Hyperspace.Point
@@ -4425,7 +4426,7 @@ Hyperspace.MouseControl = {}
 function Hyperspace.MouseControl:InstantTooltip() end
 
 --- `tooltipName` should be an id of the text without prefix `tooltip_`.
----@param tooltipName string
+---@param tooltipName String
 function Hyperspace.MouseControl:LoadTooltip(tooltipName) end
 
 ---@param unk integer
@@ -4450,10 +4451,10 @@ function Hyperspace.MouseControl:ResetArmed() end
 ---@param state integer
 function Hyperspace.MouseControl:SetDoor(state) end
 
----@param tooltip string
+---@param tooltip String
 function Hyperspace.MouseControl:SetTooltip(tooltip) end
 
----@param tooltip string
+---@param tooltip String
 function Hyperspace.MouseControl:SetTooltipTitle(tooltip) end
 
 ---@class Hyperspace.OuterHull: Hyperspace.Repairable
@@ -4537,7 +4538,7 @@ function Hyperspace.PowerManager.GetPowerManager(iShipId) end
 ---@field lastTargets vector<Hyperspace.Pointf>
 ---@field targetId integer
 ---@field iAmmo integer
----@field name string
+---@field name String
 ---@field numShots integer
 ---@field currentFiringAngle number
 ---@field currentEntryAngle number
@@ -4606,7 +4607,7 @@ Hyperspace.ResourceControl = {}
 ---@return Graphics.GL_Primitive
 function Hyperspace.ResourceControl:CreateImagePrimitive(tex, unk1, unk2, unk3, color, alpha, mirror) end
 
----@param tex string
+---@param tex String
 ---@param x integer
 ---@param y integer
 ---@param rotation integer
@@ -4621,15 +4622,15 @@ function Hyperspace.ResourceControl:CreateImagePrimitiveString(tex, x, y, rotati
 ---@return Graphics.freetype.font_data
 function Hyperspace.ResourceControl:GetFontData(size, ignoreLanguage) end
 
----@param dir string
+---@param dir String
 ---@return Graphics.GL_Texture
 function Hyperspace.ResourceControl:GetImageId(dir) end
 
----@param name string
+---@param name String
 ---@return boolean
 function Hyperspace.ResourceControl:ImageExists(name) end
 
----@param fileName string
+---@param fileName String
 ---@return string
 function Hyperspace.ResourceControl:LoadFile(fileName) end
 
@@ -4643,7 +4644,7 @@ function Hyperspace.ResourceControl:LoadFile(fileName) end
 ---@return integer
 function Hyperspace.ResourceControl:RenderImage(tex, x, y, rotation, color, opacity, mirror) end
 
----@param tex string
+---@param tex String
 ---@param x integer
 ---@param y integer
 ---@param rotation integer
@@ -4677,7 +4678,7 @@ Hyperspace.ScoreKeeper = {}
 ---@field touchAutoPause boolean (Read-only)
 ---@field lowend boolean (Read-only)
 ---@field fbError boolean (Read-only)
----@field language string (Read-only)
+---@field language String (Read-only)
 ---@field languageSet boolean (Read-only)
 ---@field screenResolution Hyperspace.Point (Read-only)
 ---@field dialogKeys integer (Read-only)
@@ -4713,7 +4714,7 @@ Hyperspace.SettingValues = {}
 ---@field shieldsUp Hyperspace.AnimationTracker
 ---@field shieldImage Graphics.GL_Texture
 ---@field shieldPrimitive Graphics.GL_Primitive
----@field shieldImageName string
+---@field shieldImageName String
 ---@field bEnemyPresent boolean
 ---@field bBarrierMode boolean
 ---@field lastHitTimer number
@@ -4727,7 +4728,7 @@ Hyperspace.Shields = {}
 ---@param roomId integer
 ---@param shipId integer
 ---@param startingPower integer
----@param shieldFile string
+---@param shieldFile String
 ---@return Hyperspace.Shields
 function Hyperspace.Shields(roomId, shipId, startingPower, shieldFile) end
 
@@ -4762,14 +4763,14 @@ Hyperspace.Shield = {}
 ---@field vOuterAirlocks vector<Hyperspace.Door>
 ---@field hullIntegrity pair<integer, integer>
 ---@field weaponMounts vector<Hyperspace.WeaponMount>
----@field floorImageName string
+---@field floorImageName String
 ---@field shipFloor Hyperspace.ImageDesc
 ---@field floorPrimitive Graphics.GL_Primitive
----@field shipImageName string
+---@field shipImageName String
 ---@field shipImage Hyperspace.ImageDesc
 ---@field glowOffset Hyperspace.Point
 ---@field shipImagePrimitive Graphics.GL_Primitive
----@field cloakImageName string
+---@field cloakImageName String
 ---@field shipImageCloak Hyperspace.ImageDesc
 ---@field cloakPrimitive Graphics.GL_Primitive
 ---@field gridPrimitive Graphics.GL_Primitive
@@ -4781,7 +4782,7 @@ Hyperspace.Shield = {}
 ---@field jumpGlare Graphics.GL_Texture
 ---@field vertical_shift integer
 ---@field horizontal_shift integer
----@field shipName string
+---@field shipName String
 ---@field bDestroyed boolean
 ---@field baseEllipse Hyperspace.Ellipse
 ---@field engineAnim Hyperspace.Animation
@@ -4866,7 +4867,7 @@ Hyperspace.ShipGenerator = {}
 ---@return Hyperspace.ShipGenerator
 function Hyperspace.ShipGenerator() end
 
----@param name string
+---@param name String
 ---@param sector integer
 ---@param event ShipEvent
 ---@return Hyperspace.ShipManager
@@ -4878,13 +4879,13 @@ function Hyperspace.ShipGenerator.CreateShip(name, sector, event) end
 function Hyperspace.ShipGenerator.GenerateSystemMaxes(ship, level) end
 
 ---@param unknown Hyperspace.ShipManager
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 uint
 ---@return vector<Hyperspace.CrewBlueprint>
 function Hyperspace.ShipGenerator.GetPossibleCrewList(unknown, unknown1, unknown2) end
 
 ---@param unknown Hyperspace.ShipManager
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 integer
 ---@param unknown3 uint
 ---@param unknown4 boolean
@@ -4899,7 +4900,7 @@ function Hyperspace.ShipGenerator.GetPossibleDroneList(unknown, unknown1, unknow
 function Hyperspace.ShipGenerator.GetPossibleSystemUpgrades(ship, systemMaxes, scrap, type) end
 
 ---@param unknown Hyperspace.ShipManager
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 integer
 ---@param unknown3 uint
 ---@return vector<Hyperspace.WeaponBlueprint>
@@ -4912,7 +4913,7 @@ function Hyperspace.ShipGenerator.GetPossibleWeaponList(unknown, unknown1, unkno
 function Hyperspace.ShipGenerator.UpgradeSystem(unknown, unknown1, unknown2) end
 
 ---@class Hyperspace.ShipInfo
----@field augList map<string, integer>
+---@field augList map<String, integer>
 Hyperspace.ShipInfo = {}
 
 ---@class Hyperspace.Spreader_Fire: Hyperspace.ShipObject
@@ -5004,8 +5005,8 @@ function Hyperspace.ShipManager:RemoveSystem(systemId) end
 ---@return Hyperspace.CrewMember
 function Hyperspace.ShipManager:AddCrewMemberFromBlueprint(bp, slot, init, roomId, intruder) end
 
----@param name string
----@param race string
+---@param name String
+---@param race String
 ---@param intruder boolean
 ---@param roomId integer
 ---@param init boolean
@@ -5223,7 +5224,7 @@ function Hyperspace.ShipManager:RestoreCrewPositions() end
 
 --- Select random crew from the ship *for ~~execution~~ selection of your diabolical plans*.<br>Not sure why there is a seed option, not sure if you should give it a fixed number or call `Hyperspace.random32()` for a nice random number.
 ---@param seed integer
----@param racePref string
+---@param racePref String
 ---@return Hyperspace.CrewBlueprint
 function Hyperspace.ShipManager:SelectRandomCrew(seed, racePref) end
 
@@ -5251,11 +5252,11 @@ function Hyperspace.ShipManager:SystemFunctions(systemId) end
 function Hyperspace.ShipManager:TeleportCrew(roomId, intruders) end
 
 --- Remove an item by name (equivalent to removing via an event).<br>checkCargo indicates if items will be removed from cargo if not present in weapon/drone system.
----@param name string
+---@param name String
 ---@param checkCargo? boolean = false
 function Hyperspace.ShipManager:RemoveItem(name, checkCargo) end
 
----@param name string
+---@param name String
 function Hyperspace.ShipManager:RemoveItem(name) end
 
 ---@param unknown number
@@ -5284,7 +5285,7 @@ Hyperspace.ShipRepairDrone = {}
 ---@class Hyperspace.SoundControl
 Hyperspace.SoundControl = {}
 
----@param soundName string
+---@param soundName String
 ---@param volume number
 ---@param loop boolean
 ---@return integer
@@ -5359,7 +5360,7 @@ function Hyperspace.SpaceManager:CreateBomb(weapon, ownerId, target, targetSpace
 function Hyperspace.SpaceManager:CreateBeam(weapon, position, space, ownerId, target1, target2, targetSpace, length, heading) end
 
 ---@param weapon Hyperspace.WeaponBlueprint
----@param image string
+---@param image String
 ---@param fake boolean
 ---@param position Hyperspace.Pointf
 ---@param space integer
@@ -5381,11 +5382,11 @@ function Hyperspace.SpaceManager:CreatePDSFire(weapon, position, target, targetS
 ---@return boolean
 function Hyperspace.SpaceManager:DangerousEnvironment() end
 
----@param name string
+---@param name String
 ---@return Hyperspace.ImageDesc
 function Hyperspace.SpaceManager:SwitchBackground(name) end
 
----@param name string
+---@param name String
 ---@return Hyperspace.ImageDesc
 function Hyperspace.SpaceManager:SwitchPlanet(name) end
 
@@ -5561,20 +5562,20 @@ function Hyperspace.WorldManager:ClearLocation() end
 ---@field instance Hyperspace.CustomAchievementTracker (Read-only)
 Hyperspace.CustomAchievementTracker = {}
 
----@param name string
+---@param name String
 ---@return integer
 function Hyperspace.CustomAchievementTracker:GetAchievementStatus(name) end
 
----@param varName string
+---@param varName String
 ---@param varValue integer
 ---@param inGame? boolean = true
 function Hyperspace.CustomAchievementTracker:UpdateVariableAchievements(varName, varValue, inGame) end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 integer
 function Hyperspace.CustomAchievementTracker:UpdateVariableAchievements(unknown, unknown1) end
 
----@param name string
+---@param name String
 ---@param noPopup boolean
 function Hyperspace.CustomAchievementTracker:SetAchievement(name, noPopup) end
 
@@ -5583,12 +5584,12 @@ function Hyperspace.CustomAchievementTracker:SetAchievement(name, noPopup) end
 ---@field add integer (Read-only)
 ---@field customRender boolean (Read-only)
 ---@field present boolean (Read-only)
----@field shieldTexture string (Read-only)
+---@field shieldTexture String (Read-only)
 ---@field shieldColor Graphics.GL_Color (Read-only)
 Hyperspace.AugmentSuperShield = {}
 
 ---@class Hyperspace.AugmentCrystalShard
----@field weapon string (Read-only)
+---@field weapon String (Read-only)
 ---@field chance number (Read-only)
 ---@field stacking integer (Read-only)
 Hyperspace.AugmentCrystalShard = {}
@@ -5607,8 +5608,8 @@ Hyperspace.AugmentFunction = {}
 function Hyperspace.AugmentFunction:Functional(iShipId) end
 
 ---@class Hyperspace.AugmentDefinition
----@field name string (Read-only)
----@field functions unordered_multimap<string, Hyperspace.AugmentFunction> (Read-only)
+---@field name String (Read-only)
+---@field functions unordered_multimap<String, Hyperspace.AugmentFunction> (Read-only)
 ---@field superShield Hyperspace.AugmentSuperShield (Read-only)
 ---@field crystalShard vector<Hyperspace.AugmentCrystalShard> (Read-only)
 ---@field locked boolean (Read-only)
@@ -5622,15 +5623,15 @@ Hyperspace.CustomAugmentManager = {}
 ---@return Hyperspace.CustomAugmentManager
 function Hyperspace.CustomAugmentManager() end
 
----@param name string
+---@param name String
 ---@return boolean
 function Hyperspace.CustomAugmentManager:IsAugment(name) end
 
 ---@param iShipId integer
----@return unordered_map<string, integer>
+---@return unordered_map<String, integer>
 function Hyperspace.CustomAugmentManager:GetShipAugments(iShipId) end
 
----@param name string
+---@param name String
 ---@return Hyperspace.AugmentDefinition
 function Hyperspace.CustomAugmentManager:GetAugmentDefinition(name) end
 
@@ -5639,12 +5640,12 @@ function Hyperspace.CustomAugmentManager.GetInstance() end
 
 ---@class Hyperspace.TemporaryPowerDefinition
 ---@field duration number
----@field effectAnim string
----@field effectFinishAnim string
----@field animSheet string
+---@field effectAnim String
+---@field effectFinishAnim String
+---@field animSheet String
 ---@field baseVisible boolean
 ---@field soundsEnemy boolean
----@field sounds vector<string>
+---@field sounds vector<String>
 ---@field maxHealth ToggleValue<integer>
 ---@field stunMultiplier ToggleValue<number>
 ---@field moveSpeedMultiplier ToggleValue<number>
@@ -5707,11 +5708,11 @@ Hyperspace.TemporaryPowerDefinition = {}
 ---@field checkRoomCrew boolean
 ---@field enemyInRoom boolean
 ---@field friendlyInRoom boolean
----@field whiteList vector<string>
----@field friendlyWhiteList vector<string>
----@field friendlyBlackList vector<string>
----@field enemyWhiteList vector<string>
----@field enemyBlackList vector<string>
+---@field whiteList vector<String>
+---@field friendlyWhiteList vector<String>
+---@field friendlyBlackList vector<String>
+---@field enemyWhiteList vector<String>
+---@field enemyBlackList vector<String>
 ---@field systemInRoom boolean
 ---@field systemDamaged boolean
 ---@field hasClonebay boolean
@@ -5740,7 +5741,7 @@ function Hyperspace.ActivatedPowerRequirements() end
 function Hyperspace.ActivatedPowerRequirements(unknown) end
 
 ---@class Hyperspace.ActivatedPowerDefinition
----@field name string (Read-only) **read-only**
+---@field name String (Read-only) **read-only**
 ---@field activateGroupIndex uint (Read-only) **read-only**
 ---@field replaceGroupIndex uint (Read-only) **read-only**
 ---@field sortOrder integer
@@ -5763,15 +5764,15 @@ function Hyperspace.ActivatedPowerRequirements(unknown) end
 ---@field hideCharges boolean
 ---@field hideButton boolean
 ---@field powerResources vector<Hyperspace.PowerResourceDefinition>
----@field sounds vector<string>
----@field effectSounds vector<string>
+---@field sounds vector<String>
+---@field effectSounds vector<String>
 ---@field soundsEnemy boolean
 ---@field effectSoundsEnemy boolean
 ---@field buttonLabel Hyperspace.TextString
 ---@field cooldownColor Graphics.GL_Color
 ---@field tooltip Hyperspace.TextString
----@field effectAnim string
----@field effectPostAnim string
+---@field effectAnim String
+---@field effectPostAnim String
 ---@field playerReq Hyperspace.ActivatedPowerRequirements
 ---@field enemyReq Hyperspace.ActivatedPowerRequirements
 ---@field chargeReq Hyperspace.ActivatedPowerRequirements
@@ -5783,11 +5784,11 @@ function Hyperspace.ActivatedPowerRequirements(unknown) end
 ---@field followCrew boolean
 ---@field activateWhenReady boolean
 ---@field activateReadyEnemies boolean
----@field transformRace string
+---@field transformRace String
 ---@field crewSpawns vector<CrewSpawn>
 ---@field statBoosts vector<Hyperspace.StatBoostDefinition>
 ---@field roomStatBoosts vector<Hyperspace.StatBoostDefinition>
----@field event array<string, 2>
+---@field event array<String, 2>
 ---@field tempPower Hyperspace.TemporaryPowerDefinition
 Hyperspace.ActivatedPowerDefinition = {}
 
@@ -5796,29 +5797,29 @@ function Hyperspace.ActivatedPowerDefinition() end
 
 function Hyperspace.ActivatedPowerDefinition:AssignIndex() end
 
----@param _name string
+---@param _name String
 function Hyperspace.ActivatedPowerDefinition:AssignName(_name) end
 
----@param _name string
+---@param _name String
 function Hyperspace.ActivatedPowerDefinition:AssignActivateGroup(_name) end
 
----@param _name string
+---@param _name String
 function Hyperspace.ActivatedPowerDefinition:AssignReplaceGroup(_name) end
 
----@param _name string
+---@param _name String
 function Hyperspace.ActivatedPowerDefinition:AssignGroup(_name) end
 
----@param _name string
+---@param _name String
 ---@return Hyperspace.ActivatedPowerDefinition
 function Hyperspace.ActivatedPowerDefinition.GetPowerByName(_name) end
 
----@param _name string
+---@param _name String
 ---@param copyDef Hyperspace.ActivatedPowerDefinition
 ---@return Hyperspace.ActivatedPowerDefinition
 function Hyperspace.ActivatedPowerDefinition.AddNamedDefinition(_name, copyDef) end
 
 ---@class Hyperspace.PowerResourceDefinition
----@field name string (Read-only) **read-only**
+---@field name String (Read-only) **read-only**
 ---@field groupIndex uint (Read-only) **read-only**
 ---@field sortOrder integer
 ---@field cooldown number
@@ -5845,27 +5846,27 @@ function Hyperspace.PowerResourceDefinition() end
 
 function Hyperspace.PowerResourceDefinition:AssignIndex() end
 
----@param _name string
+---@param _name String
 function Hyperspace.PowerResourceDefinition:AssignName(_name) end
 
----@param _name string
+---@param _name String
 function Hyperspace.PowerResourceDefinition:AssignGroup(_name) end
 
----@param _name string
+---@param _name String
 ---@return Hyperspace.PowerResourceDefinition
 function Hyperspace.PowerResourceDefinition.GetByName(_name) end
 
----@param _name string
+---@param _name String
 ---@param copyDef Hyperspace.PowerResourceDefinition
 ---@return Hyperspace.PowerResourceDefinition
 function Hyperspace.PowerResourceDefinition.AddNamedDefinition(_name, copyDef) end
 
 ---@class Hyperspace.CrewDefinition
----@field race string
----@field deathSounds vector<string>
----@field deathSoundsFemale vector<string>
----@field shootingSounds vector<string>
----@field repairSounds vector<string>
+---@field race String
+---@field deathSounds vector<String>
+---@field deathSoundsFemale vector<String>
+---@field shootingSounds vector<String>
+---@field repairSounds vector<String>
 ---@field repairSoundFrame integer
 ---@field canFight boolean
 ---@field canRepair boolean
@@ -5903,8 +5904,8 @@ function Hyperspace.PowerResourceDefinition.AddNamedDefinition(_name, copyDef) e
 ---@field detectsLifeforms boolean
 ---@field hasCustomDeathAnimation boolean
 ---@field hasDeathExplosion boolean
----@field animBase string
----@field animSheet string
+---@field animBase String
+---@field animSheet String
 ---@field sabotageSpeedMultiplier number
 ---@field allDamageTakenMultiplier number
 ---@field defaultSkillLevel integer
@@ -5938,20 +5939,20 @@ function Hyperspace.PowerResourceDefinition.AddNamedDefinition(_name, copyDef) e
 ---@field explosionDef ExplosionDefinition
 ---@field powerDefs vector<Hyperspace.ActivatedPowerDefinition>
 ---@field passiveStatBoosts vector<Hyperspace.StatBoostDefinition>
----@field nameRace vector<string>
----@field transformName vector<string>
+---@field nameRace vector<String>
+---@field transformName vector<String>
 ---@field changeIfSame boolean
 ---@field skillsDef SkillsDefinition
 Hyperspace.CrewDefinition = {}
 
 ---@class Hyperspace.TriggeredEventDefinition
----@field name string (Read-only)
----@field event string (Read-only)
+---@field name String (Read-only)
+---@field event String (Read-only)
 ---@field defs vector<Hyperspace.TriggeredEventDefinition> (Read-only)
 Hyperspace.TriggeredEventDefinition = {}
 
 ---@class Hyperspace.CustomEvent
----@field unlockShip string
+---@field unlockShip String
 ---@field triggeredEvents vector<uint> (Read-only) **read-only**
 Hyperspace.CustomEvent = {}
 
@@ -5964,7 +5965,7 @@ Hyperspace.CustomEventsParser = {}
 ---@return Hyperspace.CustomEventsParser
 function Hyperspace.CustomEventsParser() end
 
----@param event string
+---@param event String
 ---@return Hyperspace.CustomEvent
 function Hyperspace.CustomEventsParser:GetCustomEvent(event) end
 
@@ -5984,14 +5985,14 @@ function Hyperspace.CustomEventsParser:LoadEvent(world, eventList, seed, parentE
 function Hyperspace.CustomEventsParser:LoadEvent(unknown, unknown1, unknown2) end
 
 ---@param world Hyperspace.WorldManager
----@param eventName string
+---@param eventName String
 ---@param ignoreUnique boolean
 ---@param seed integer
 ---@param parentEvent? Hyperspace.CustomEvent = nullptr
 function Hyperspace.CustomEventsParser:LoadEvent(world, eventName, ignoreUnique, seed, parentEvent) end
 
 ---@param unknown Hyperspace.WorldManager
----@param unknown1 string
+---@param unknown1 String
 ---@param unknown2 boolean
 ---@param unknown3 integer
 function Hyperspace.CustomEventsParser:LoadEvent(unknown, unknown1, unknown2, unknown3) end
@@ -6023,9 +6024,9 @@ Hyperspace.RoomDefinition = {}
 function Hyperspace.RoomDefinition() end
 
 ---@class Hyperspace.CrewPlacementDefinition
----@field species string
+---@field species String
 ---@field roomId integer
----@field name string
+---@field name String
 ---@field isList boolean
 Hyperspace.CrewPlacementDefinition = {}
 
@@ -6033,8 +6034,8 @@ Hyperspace.CrewPlacementDefinition = {}
 function Hyperspace.CrewPlacementDefinition() end
 
 ---@class Hyperspace.CustomShipDefinition
----@field name string
----@field hiddenAugs map<string, integer>
+---@field name String
+---@field hiddenAugs map<String, integer>
 ---@field crewList vector<Hyperspace.CrewPlacementDefinition>
 ---@field noJump boolean
 ---@field noFuelStalemate boolean
@@ -6042,7 +6043,7 @@ function Hyperspace.CrewPlacementDefinition() end
 ---@field startingFuel integer
 ---@field startingScrap integer
 ---@field roomDefs unordered_map<integer, Hyperspace.RoomDefinition>
----@field shipIcons vector<string>
+---@field shipIcons vector<String>
 ---@field forceAutomated ToggleValue<boolean>
 ---@field crewLimit integer
 ---@field systemLimit integer
@@ -6050,7 +6051,7 @@ function Hyperspace.CrewPlacementDefinition() end
 ---@field reactorPrices vector<integer>
 ---@field reactorPriceIncrement integer
 ---@field maxReactorLevel integer
----@field shipGenerator string
+---@field shipGenerator String
 Hyperspace.CustomShipDefinition = {}
 
 ---@return Hyperspace.CustomShipDefinition
@@ -6062,7 +6063,7 @@ Hyperspace.CustomShipSelect = {}
 ---@return Hyperspace.CustomShipSelect
 function Hyperspace.CustomShipSelect() end
 
----@param name string
+---@param name String
 ---@return Hyperspace.CustomShipDefinition
 function Hyperspace.CustomShipSelect:GetDefinition(name) end
 
@@ -6273,7 +6274,7 @@ Hyperspace.CustomTeleport = {}
 
 ---@class Hyperspace.Projectile_Extend
 ---@field orig Hyperspace.Projectile (Read-only)
----@field name string
+---@field name String
 ---@field customDamage Hyperspace.CustomDamage
 ---@field missedDrones vector<integer>
 Hyperspace.Projectile_Extend = {}
@@ -6302,19 +6303,19 @@ Hyperspace.Room_Extend = {}
 ---@field stat Hyperspace.CrewStat
 ---@field amount number
 ---@field value boolean
----@field stringValue string
+---@field stringValue String
 ---@field isBool boolean
 ---@field priority integer
 ---@field duration number
 ---@field jumpClear boolean
 ---@field cloneClear boolean
----@field boostAnim string
+---@field boostAnim String
 ---@field roomAnim RoomAnimDef
 ---@field affectsSelf boolean
----@field whiteList vector<string>
----@field blackList vector<string>
----@field systemRoomReqs vector<string>
----@field systemList vector<string>
+---@field whiteList vector<String>
+---@field blackList vector<String>
+---@field systemRoomReqs vector<String>
+---@field systemList vector<String>
 ---@field providedStatBoosts vector<Hyperspace.StatBoostDefinition>
 ---@field powerChange Hyperspace.ActivatedPowerDefinition
 ---@field powerWhitelist unordered_set<Hyperspace.ActivatedPowerDefinition>
@@ -6350,7 +6351,7 @@ Hyperspace.Room_Extend = {}
 ---@field stackId integer
 ---@field maxStacks integer
 ---@field statBoostDefs vector<Hyperspace.StatBoostDefinition>
----@field savedStatBoostDefs unordered_map<string, Hyperspace.StatBoostDefinition>
+---@field savedStatBoostDefs unordered_map<String, Hyperspace.StatBoostDefinition>
 Hyperspace.StatBoostDefinition = {
     BoostType_MULT = 0,
     BoostType_FLAT = 1,
@@ -6436,28 +6437,28 @@ function Hyperspace.StatBoostManager.GetInstance() end
 ---@field instance Hyperspace.CustomShipUnlocks (Read-only)
 Hyperspace.CustomShipUnlocks = {}
 
----@param shipBlueprint string
+---@param shipBlueprint String
 ---@param silent boolean
 ---@param checkMultiUnlocks? boolean = true
 ---@param isEvent? boolean = false
 function Hyperspace.CustomShipUnlocks:UnlockShip(shipBlueprint, silent, checkMultiUnlocks, isEvent) end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 boolean
 ---@param unknown2 boolean
 function Hyperspace.CustomShipUnlocks:UnlockShip(unknown, unknown1, unknown2) end
 
----@param unknown string
+---@param unknown String
 ---@param unknown1 boolean
 function Hyperspace.CustomShipUnlocks:UnlockShip(unknown, unknown1) end
 
 --- 0 being ship variant A, 1 is ship variant B and 2 is ship variant C
----@param name string
+---@param name String
 ---@param variant? integer = 0
 ---@return boolean
 function Hyperspace.CustomShipUnlocks:GetCustomShipUnlocked(name, variant) end
 
----@param unknown string
+---@param unknown String
 ---@return boolean
 function Hyperspace.CustomShipUnlocks:GetCustomShipUnlocked(unknown) end
 
@@ -6848,19 +6849,19 @@ function Graphics.CSurface_GetColorTint() end
 ---@param unknown1 number
 ---@param unknown2 number
 ---@param unknown3 integer
----@param unknown4 string
+---@param unknown4 String
 ---@return Hyperspace.Pointf
 function Graphics.freetype_easy_measurePrintLines(unknown, unknown1, unknown2, unknown3, unknown4) end
 
 ---@param unknown integer
----@param unknown1 string
+---@param unknown1 String
 ---@return integer
 function Graphics.freetype_easy_measureWidth(unknown, unknown1) end
 
 ---@param unknown integer
 ---@param unknown1 number
 ---@param unknown2 number
----@param unknown3 string
+---@param unknown3 String
 ---@return Hyperspace.Pointf
 function Graphics.freetype_easy_print(unknown, unknown1, unknown2, unknown3) end
 
@@ -6868,7 +6869,7 @@ function Graphics.freetype_easy_print(unknown, unknown1, unknown2, unknown3) end
 ---@param unknown1 number
 ---@param unknown2 number
 ---@param unknown3 integer
----@param unknown4 string
+---@param unknown4 String
 ---@return Hyperspace.Pointf
 function Graphics.freetype_easy_printAutoNewlines(unknown, unknown1, unknown2, unknown3, unknown4) end
 
@@ -6877,14 +6878,14 @@ function Graphics.freetype_easy_printAutoNewlines(unknown, unknown1, unknown2, u
 ---@param unknown2 number
 ---@param unknown3 integer
 ---@param unknown4 boolean
----@param unknown5 string
+---@param unknown5 String
 ---@return unknown
 function Graphics.freetype_easy_printAutoShrink(unknown, unknown1, unknown2, unknown3, unknown4, unknown5) end
 
 ---@param unknown integer
 ---@param unknown1 number
 ---@param unknown2 number
----@param unknown3 string
+---@param unknown3 String
 ---@return Hyperspace.Pointf
 function Graphics.freetype_easy_printCenter(unknown, unknown1, unknown2, unknown3) end
 
@@ -6892,45 +6893,45 @@ function Graphics.freetype_easy_printCenter(unknown, unknown1, unknown2, unknown
 ---@param unknown1 number
 ---@param unknown2 number
 ---@param unknown3 integer
----@param unknown4 string
+---@param unknown4 String
 ---@return Hyperspace.Pointf
 function Graphics.freetype_easy_printNewlinesCentered(unknown, unknown1, unknown2, unknown3, unknown4) end
 
 ---@param unknown integer
 ---@param unknown1 number
 ---@param unknown2 number
----@param unknown3 string
+---@param unknown3 String
 ---@return Hyperspace.Pointf
 function Graphics.freetype_easy_printRightAlign(unknown, unknown1, unknown2, unknown3) end
 
 ---@class Defines.string
 Defines.string = {}
 
----@return string
+---@return String
 function Graphics.string() end
 
----@param unknown string
----@return string
+---@param unknown String
+---@return String
 function Graphics.string(unknown) end
 
 ---@return uint
-function string:size() end
+function String:size() end
 
 ---@return uint
-function string:length() end
+function String:length() end
 
 ---@return boolean
-function string:empty() end
+function String:empty() end
 
 ---@return string
-function string:c_str() end
+function String:c_str() end
 
 ---@return string
-function string:data() end
+function String:data() end
 
----@param unknown string
+---@param unknown String
 ---@return unknown
-function string:assign(unknown) end
+function String:assign(unknown) end
 
 ---@class Graphics.GL_Primitive
 ---@field type integer
@@ -7327,13 +7328,13 @@ Graphics.freetype = {}
 ---@param x number
 ---@param y number
 ---@param line_length integer
----@param text string
+---@param text String
 ---@return Hyperspace.Pointf
 function Graphics.freetype.easy_measurePrintLines(fontSize, x, y, line_length, text) end
 
 --- Return: The horizontal size of the text.
 ---@param fontSize integer
----@param text string
+---@param text String
 ---@return integer
 function Graphics.freetype.easy_measureWidth(fontSize, text) end
 
@@ -7341,7 +7342,7 @@ function Graphics.freetype.easy_measureWidth(fontSize, text) end
 ---@param fontSize integer
 ---@param x number
 ---@param y number
----@param text string
+---@param text String
 ---@return Hyperspace.Pointf
 function Graphics.freetype.easy_print(fontSize, x, y, text) end
 
@@ -7350,7 +7351,7 @@ function Graphics.freetype.easy_print(fontSize, x, y, text) end
 ---@param x number
 ---@param y number
 ---@param line_length integer
----@param text string
+---@param text String
 ---@return Hyperspace.Pointf
 function Graphics.freetype.easy_printAutoNewlines(fontSize, x, y, line_length, text) end
 
@@ -7359,13 +7360,13 @@ function Graphics.freetype.easy_printAutoNewlines(fontSize, x, y, line_length, t
 ---@param y number
 ---@param maxWidth integer
 ---@param centered boolean
----@param text string
+---@param text String
 function Graphics.freetype.easy_printAutoShrink(fontId, x, y, maxWidth, centered, text) end
 
 ---@param fontSize integer
 ---@param x number
 ---@param y number
----@param text string
+---@param text String
 ---@return Hyperspace.Pointf
 function Graphics.freetype.easy_printCenter(fontSize, x, y, text) end
 
@@ -7373,7 +7374,7 @@ function Graphics.freetype.easy_printCenter(fontSize, x, y, text) end
 ---@param x number
 ---@param y number
 ---@param line_length integer
----@param text string
+---@param text String
 ---@return Hyperspace.Pointf
 function Graphics.freetype.easy_printNewlinesCentered(fontSize, x, y, line_length, text) end
 
@@ -7381,7 +7382,7 @@ function Graphics.freetype.easy_printNewlinesCentered(fontSize, x, y, line_lengt
 ---@param fontSize integer
 ---@param x number
 ---@param y number
----@param text string
+---@param text String
 ---@return Hyperspace.Pointf
 function Graphics.freetype.easy_printRightAlign(fontSize, x, y, text) end
 
@@ -7643,31 +7644,31 @@ Defines = {
 ---@class Defines.string
 Defines.string = {}
 
----@return string
+---@return String
 function Defines.string() end
 
----@param unknown string
----@return string
+---@param unknown String
+---@return String
 function Defines.string(unknown) end
 
 ---@return uint
-function string:size() end
+function String:size() end
 
 ---@return uint
-function string:length() end
+function String:length() end
 
 ---@return boolean
-function string:empty() end
+function String:empty() end
 
 ---@return string
-function string:c_str() end
+function String:c_str() end
 
 ---@return string
-function string:data() end
+function String:data() end
 
----@param unknown string
+---@param unknown String
 ---@return unknown
-function string:assign(unknown) end
+function String:assign(unknown) end
 
 ---@enum Defines.InternalEvents
 Defines.InternalEvents = {

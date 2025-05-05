@@ -7,7 +7,7 @@ DESC_PARAM_PRIORITY = "= 0. Determines the order of calling the callbacks. Prior
 
 class EventHookBuilder:
     def __init__(self, info: dict, internalEvents_list_path: str):
-        self.output = "---@meta\n\n"
+        self.output = "---@meta\n"
         self.info = info
         with open(internalEvents_list_path, "r", encoding="utf8") as f:
             self.chain_internalEvents_list = json.load(f)
