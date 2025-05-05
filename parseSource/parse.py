@@ -628,7 +628,7 @@ HSDATA_PATH = "out/hs_base/hs_directory_parse_output.json"
 OUTPUT_PATH = "../library/generated/hs.lua"
 
 ENUM_PARSE_REQUESTS_OUTPUT_PATH = "out/enum_parse_requests.json"
-ENUM_DATA_PATH = "out/enum_parse_output.json"
+ENUM_DATA_PATH = "out/hs_base/hs_enums.json"
 
 EVENTHOOKS_DATA_PATH = "out/wiki/wiki_EventHooks_parse_output.json"
 CHAIN_INTERNAL_EVENT_LIST_PATH = "out/hs_base/hs_chain_internalEvents_list.json"

@@ -1,5 +1,13 @@
 import json
 
+"""
+Use this when you want to check if the static parsing of enum value is correct.
+This script checks if the static parsing is correct by comparing it with the dynamic parsing.
+This script compares the enum values from two different sources: Sastic and Dynamic.
+Static one is from the Sastic parser, and dynamic one is from the GDB script.
+The dynamic one is absolutely correct, so if the static one is not the same as the dynamic one, it means the static one is wrong.
+"""
+
 PARSE_SASTIC_OUTPUT_PATH = "out/hs_base/hs_enums.json"
 PARSE_DYNAMIC_OUTPUT_PATH = "out/enum_parse_output.json"
 
