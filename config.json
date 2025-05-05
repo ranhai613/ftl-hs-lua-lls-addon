@@ -2,6 +2,7 @@
     "name": "ftl-hyperspace",
     "words": [ "Hyperspace." ],
     "settings": {
-        "Lua.runtime.version": "Lua 5.3"
+        "Lua.runtime.version": "Lua 5.3",
+        "Lua.hover.expandAlias": false
     }
 }

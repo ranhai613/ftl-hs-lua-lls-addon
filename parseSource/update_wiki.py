@@ -1,12 +1,13 @@
 from shutil import rmtree, copy
 from os import mkdir
 
-TARGET_DIR = "src/lua_wrap"
-SORCE_DIR = "src/FTL-Hyperspace/build-windows-debug/CMakeFiles/Hyperspace.dir"
+TARGET_DIR = "src/wiki"
+SORCE_DIR = "src/FTL-Hyperspace/wiki"
 SOURCE_FILES = [
-    "definesLUA_wrap.cxx",
-    "graphicsLUA_wrap.cxx",
-    "hyperspaceLUA_wrap.cxx"
+    "Lua-Defines-module.md",
+    "Lua-Graphics-Module.md",
+    "Lua-Hyperspace-Module.md",
+    "Lua-Script-Module.md"
 ]
     
 

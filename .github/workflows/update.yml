@@ -1,0 +1,47 @@
+name: 'Update'
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Target tag name'
+        required: true
+        default: 'v1.x.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+    
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Update files on main branch
+        run: |
+          cd parseSource/src
+          git git clone https://github.com/FTL-Hyperspace/FTL-Hyperspace.git
+          cd FTL-Hyperspace
+          git checkout ${{ inputs.version }}
+          pushd FTL-Hyperspace/buildscripts/windows
+          ./build-debugonly-from-docker.sh
+          popd
+          cd ../..
+          python ci/update.py ${{ inputs.version }}
+          cd ..
+          git add .
+          git commit -m "Bump version to ${{ inputs.version }}"
+          git push origin main
+      
+      - name: Update files on publish branch
+        run: |
+          git checkout publish
+          git pull origin publish
+          git checkout main -- library config.json
+          git add library config.json
+          git commit -m "Bump version to ${{ inputs.version }}"
+          git push origin publish
