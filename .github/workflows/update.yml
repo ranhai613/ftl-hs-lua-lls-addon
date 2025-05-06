@@ -24,7 +24,7 @@ jobs:
       - name: Update files on main branch
         run: |
           cd parseSource/src
-          git git clone https://github.com/FTL-Hyperspace/FTL-Hyperspace.git
+          git clone https://github.com/FTL-Hyperspace/FTL-Hyperspace.git
           cd FTL-Hyperspace
           git checkout ${{ inputs.version }}
           pushd FTL-Hyperspace/buildscripts/windows
