@@ -34,7 +34,7 @@
         }
       ],
       "name": "GetShipAchievements",
-      "return_type": ">",
+      "return_type": "std::vector<CAchievement*>",
       "static": false
     },
     {
@@ -605,7 +605,7 @@
         }
       ],
       "name": "GetPowerByName",
-      "return_type": "ActivatedPowerDefinition",
+      "return_type": "ActivatedPowerDefinition*",
       "static": true
     },
     {
@@ -627,7 +627,7 @@
         }
       ],
       "name": "AddUndefinedPower",
-      "return_type": "ActivatedPowerDefinition",
+      "return_type": "ActivatedPowerDefinition*",
       "static": true
     },
     {
@@ -659,7 +659,7 @@
         }
       ],
       "name": "AddNamedDefinition",
-      "return_type": "ActivatedPowerDefinition",
+      "return_type": "ActivatedPowerDefinition*",
       "static": true
     },
     {
@@ -753,8 +753,8 @@
         }
       ],
       "name": "GetReplaceGroup",
-      "return_type": "int",
-      "static": false
+      "return_type": "uint",
+      "static": true
     },
     {
       "args": [
@@ -1059,7 +1059,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "AlternateOxygenManager",
+      "return_type": "AlternateOxygenManager*",
       "static": true
     }
   ],
@@ -1927,8 +1927,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "i",
+          "type": "uint"
         }
       ],
       "name": "ArmamentHotkey",
@@ -1938,8 +1938,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "i",
+          "type": "uint"
         }
       ],
       "name": "SelectArmament",
@@ -1949,8 +1949,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "i",
+          "type": "uint"
         }
       ],
       "name": "DeselectArmament",
@@ -1960,12 +1960,12 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "a",
+          "type": "uint"
         },
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "b",
+          "type": "uint"
         }
       ],
       "name": "SwapArmaments",
@@ -2909,7 +2909,7 @@
         }
       ],
       "name": "GetRandomAugment",
-      "return_type": ">",
+      "return_type": "std::vector<AugmentBlueprint*>",
       "static": false
     },
     {
@@ -2924,7 +2924,7 @@
         }
       ],
       "name": "GetRandomDrone",
-      "return_type": ">",
+      "return_type": "std::vector<DroneBlueprint*>",
       "static": false
     },
     {
@@ -2939,7 +2939,7 @@
         }
       ],
       "name": "GetRandomWeapon",
-      "return_type": ">",
+      "return_type": "std::vector<WeaponBlueprint*>",
       "static": false
     },
     {
@@ -4402,7 +4402,7 @@
         }
       ],
       "name": "GL_CreateImagePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -4421,7 +4421,7 @@
         }
       ],
       "name": "GL_CreateMultiImagePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -4440,7 +4440,7 @@
         }
       ],
       "name": "GL_CreateMultiLinePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -4455,7 +4455,7 @@
         }
       ],
       "name": "GL_CreateMultiRectPrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -4494,7 +4494,7 @@
         }
       ],
       "name": "GL_CreatePixelImagePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -4525,7 +4525,7 @@
         }
       ],
       "name": "GL_CreateRectOutlinePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -4552,7 +4552,7 @@
         }
       ],
       "name": "GL_CreateRectPrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -5376,7 +5376,7 @@
     {
       "args": [],
       "name": "GetChoices",
-      "return_type": ">",
+      "return_type": "std::vector<ChoiceText*>",
       "static": false
     },
     {
@@ -6638,7 +6638,7 @@
     {
       "args": [],
       "name": "GetTeleportingParty",
-      "return_type": ">",
+      "return_type": "std::vector<CrewMember*>",
       "static": false
     },
     {
@@ -6766,7 +6766,7 @@
         }
       ],
       "name": "TeleportCrew",
-      "return_type": ">",
+      "return_type": "std::vector<CrewMember*>",
       "static": false
     },
     {
@@ -8835,7 +8835,7 @@
     {
       "args": [],
       "name": "GetShipObject",
-      "return_type": "ShipObject",
+      "return_type": "ShipObject*",
       "static": false
     },
     {
@@ -10853,8 +10853,8 @@
         }
       ],
       "name": "SpawnCrew",
-      "return_type": ">",
-      "static": false
+      "return_type": "std::vector<CrewMember*>",
+      "static": true
     },
     {
       "args": [
@@ -11042,7 +11042,7 @@
     {
       "args": [],
       "name": "GetShipObject",
-      "return_type": "ShipObject",
+      "return_type": "ShipObject*",
       "static": false
     },
     {
@@ -11406,7 +11406,7 @@
         }
       ],
       "name": "GetShipAchievementsCustom",
-      "return_type": ">",
+      "return_type": "std::vector<CAchievement*>",
       "static": false
     },
     {
@@ -11425,7 +11425,7 @@
         }
       ],
       "name": "GetShipAchievementsCustom",
-      "return_type": ">",
+      "return_type": "std::vector<CAchievement*>",
       "static": false
     },
     {
@@ -11705,7 +11705,7 @@
         }
       ],
       "name": "GetPotentialAugments",
-      "return_type": ">",
+      "return_type": "AugmentFunction*>*",
       "static": false
     },
     {
@@ -11716,7 +11716,7 @@
         }
       ],
       "name": "GetAugmentDefinition",
-      "return_type": "AugmentDefinition",
+      "return_type": "AugmentDefinition*",
       "static": false
     },
     {
@@ -11770,7 +11770,7 @@
         }
       ],
       "name": "GetShipAugments",
-      "return_type": "int>",
+      "return_type": "int>*",
       "static": false
     },
     {
@@ -11809,7 +11809,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "CustomAugmentManager",
+      "return_type": "CustomAugmentManager*",
       "static": true
     }
   ],
@@ -12067,7 +12067,7 @@
         }
       ],
       "name": "ParseCustomBackgroundObject",
-      "return_type": "CustomBackgroundObjectDefinition",
+      "return_type": "CustomBackgroundObjectDefinition*",
       "static": false
     },
     {
@@ -12084,7 +12084,7 @@
     {
       "args": [],
       "name": "NewDef",
-      "return_type": "CustomBackgroundObjectDefinition",
+      "return_type": "CustomBackgroundObjectDefinition*",
       "static": false
     },
     {
@@ -12225,7 +12225,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "CustomCommandGui",
+      "return_type": "CustomCommandGui*",
       "static": true
     },
     {
@@ -12352,7 +12352,7 @@
         }
       ],
       "name": "ParseAbilityEffect",
-      "return_type": "ActivatedPowerDefinition",
+      "return_type": "ActivatedPowerDefinition*",
       "static": false
     },
     {
@@ -12363,7 +12363,7 @@
         }
       ],
       "name": "ParseAbilityResource",
-      "return_type": "PowerResourceDefinition",
+      "return_type": "PowerResourceDefinition*",
       "static": false
     },
     {
@@ -12427,7 +12427,7 @@
         }
       ],
       "name": "CreateCrewMember",
-      "return_type": "CrewMember",
+      "return_type": "CrewMember*",
       "static": false
     },
     {
@@ -12479,7 +12479,7 @@
         }
       ],
       "name": "GetDefinition",
-      "return_type": "CrewDefinition",
+      "return_type": "CrewDefinition*",
       "static": false
     },
     {
@@ -12490,7 +12490,7 @@
         }
       ],
       "name": "GetDroneRaceDefinition",
-      "return_type": "CrewDefinition",
+      "return_type": "CrewDefinition*",
       "static": false
     },
     {
@@ -12549,7 +12549,7 @@
         }
       ],
       "name": "GetPage",
-      "return_type": ">",
+      "return_type": "std::vector<CrewEquipBox*>",
       "static": false
     },
     {
@@ -12677,7 +12677,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "CustomCrewManifest",
+      "return_type": "CustomCrewManifest*",
       "static": true
     }
   ],
@@ -12800,7 +12800,7 @@
         }
       ],
       "name": "GetDefinition",
-      "return_type": "CustomDroneDefinition",
+      "return_type": "CustomDroneDefinition*",
       "static": false
     },
     {
@@ -12833,7 +12833,7 @@
         }
       ],
       "name": "GetDefinitionByRace",
-      "return_type": "CustomDroneDefinition",
+      "return_type": "CustomDroneDefinition*",
       "static": false
     },
     {
@@ -13446,7 +13446,7 @@
         }
       ],
       "name": "GetEvent",
-      "return_type": "LocationEvent",
+      "return_type": "LocationEvent*",
       "static": false
     },
     {
@@ -13469,7 +13469,7 @@
         }
       ],
       "name": "GetEvent",
-      "return_type": "LocationEvent",
+      "return_type": "LocationEvent*",
       "static": false
     },
     {
@@ -13589,7 +13589,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "CustomMainMenu",
+      "return_type": "CustomMainMenu*",
       "static": true
     }
   ],
@@ -14837,8 +14837,8 @@
           "type": "ShipBlueprint"
         },
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "flags",
+          "type": "uint"
         }
       ],
       "name": "AddWeapons",
@@ -14856,8 +14856,8 @@
           "type": "ShipBlueprint"
         },
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "flags",
+          "type": "uint"
         }
       ],
       "name": "AddDrones",
@@ -14879,8 +14879,8 @@
           "type": "int"
         },
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "flags",
+          "type": "uint"
         }
       ],
       "name": "AddCrew",
@@ -15316,7 +15316,7 @@
         }
       ],
       "name": "GetShipButtonListFromID",
-      "return_type": "ShipButtonList",
+      "return_type": "ShipButtonList*",
       "static": false
     },
     {
@@ -15360,7 +15360,7 @@
         }
       ],
       "name": "GetOrderedShipButtonDefinition",
-      "return_type": "ShipButtonDefinition",
+      "return_type": "ShipButtonDefinition*",
       "static": false
     },
     {
@@ -15472,7 +15472,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "CustomShipSelect",
+      "return_type": "CustomShipSelect*",
       "static": true
     },
     {
@@ -16161,7 +16161,7 @@
         }
       ],
       "name": "GetStoreDefinition",
-      "return_type": "StoreDefinition",
+      "return_type": "StoreDefinition*",
       "static": false
     }
   ],
@@ -16189,7 +16189,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "CustomTabbedWindow",
+      "return_type": "CustomTabbedWindow*",
       "static": true
     },
     {
@@ -16638,7 +16638,7 @@
         }
       ],
       "name": "GetPage",
-      "return_type": ">",
+      "return_type": "std::vector<UpgradeBox*>",
       "static": false
     },
     {
@@ -16751,7 +16751,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "CustomUpgrades",
+      "return_type": "CustomUpgrades*",
       "static": true
     }
   ],
@@ -16897,7 +16897,7 @@
         }
       ],
       "name": "GetWeaponDefinition",
-      "return_type": "CustomWeaponDefinition",
+      "return_type": "CustomWeaponDefinition*",
       "static": false
     },
     {
@@ -18165,7 +18165,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "DiscordHandler",
+      "return_type": "DiscordHandler*",
       "static": true
     }
   ],
@@ -18717,8 +18717,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "i",
+          "type": "uint"
         }
       ],
       "name": "ArmamentHotkey",
@@ -18740,8 +18740,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "i",
+          "type": "uint"
         }
       ],
       "name": "SelectArmament",
@@ -20098,7 +20098,7 @@
         }
       ],
       "name": "ParseEventButton",
-      "return_type": "EventButtonDefinition",
+      "return_type": "EventButtonDefinition*",
       "static": false
     },
     {
@@ -20154,7 +20154,7 @@
     {
       "args": [],
       "name": "NewDef",
-      "return_type": "EventButtonDefinition",
+      "return_type": "EventButtonDefinition*",
       "static": false
     },
     {
@@ -21853,7 +21853,7 @@
     {
       "args": [],
       "name": "getLuaContext",
-      "return_type": "LuaScriptInit",
+      "return_type": "LuaScriptInit*",
       "static": false
     },
     {
@@ -22887,7 +22887,7 @@
     {
       "args": [],
       "name": "GetChoices",
-      "return_type": ">",
+      "return_type": "std::vector<Choice*>",
       "static": false
     },
     {
@@ -24231,7 +24231,7 @@
         }
       ],
       "name": "GetByName",
-      "return_type": "PowerResourceDefinition",
+      "return_type": "PowerResourceDefinition*",
       "static": true
     },
     {
@@ -24253,7 +24253,7 @@
         }
       ],
       "name": "AddUndefined",
-      "return_type": "PowerResourceDefinition",
+      "return_type": "PowerResourceDefinition*",
       "static": true
     },
     {
@@ -24285,7 +24285,7 @@
         }
       ],
       "name": "AddNamedDefinition",
-      "return_type": "PowerResourceDefinition",
+      "return_type": "PowerResourceDefinition*",
       "static": true
     },
     {
@@ -26490,8 +26490,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "s",
+          "type": "uint"
         }
       ],
       "name": "SeededRng",
@@ -26501,8 +26501,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "s",
+          "type": "uint"
         },
         {
           "name": "c",
@@ -26516,8 +26516,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "s",
+          "type": "uint"
         }
       ],
       "name": "g",
@@ -26538,8 +26538,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "s",
+          "type": "uint"
         },
         {
           "name": "c",
@@ -26745,8 +26745,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "s",
+          "type": "uint"
         }
       ],
       "name": "reset",
@@ -26869,7 +26869,7 @@
         }
       ],
       "name": "GetDefinition",
-      "return_type": "ShieldDroneDefinition",
+      "return_type": "ShieldDroneDefinition*",
       "static": false
     }
   ],
@@ -27113,7 +27113,7 @@
     {
       "args": [],
       "name": "GetShards",
-      "return_type": ">",
+      "return_type": "std::vector<LockdownShard*>",
       "static": false
     },
     {
@@ -27250,7 +27250,7 @@
         }
       ],
       "name": "GetHullBreaches",
-      "return_type": ">",
+      "return_type": "std::vector<Repairable*>",
       "static": false
     },
     {
@@ -27761,7 +27761,7 @@
     {
       "args": [],
       "name": "GetInstance",
-      "return_type": "ShipEditor",
+      "return_type": "ShipEditor*",
       "static": true
     }
   ],
@@ -27824,8 +27824,8 @@
           "type": "std::string"
         },
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "flags",
+          "type": "uint"
         }
       ],
       "name": "GetPossibleCrewList",
@@ -27847,8 +27847,8 @@
           "type": "int"
         },
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "flags",
+          "type": "uint"
         },
         {
           "name": "repeat",
@@ -27856,8 +27856,8 @@
         }
       ],
       "name": "GetPossibleDroneList",
-      "return_type": ">",
-      "static": false
+      "return_type": "std::vector<DroneBlueprint*>",
+      "static": true
     },
     {
       "args": [
@@ -27966,13 +27966,13 @@
           "type": "int"
         },
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "flags",
+          "type": "uint"
         }
       ],
       "name": "GetPossibleWeaponList",
-      "return_type": ">",
-      "static": false
+      "return_type": "std::vector<WeaponBlueprint*>",
+      "static": true
     },
     {
       "args": [
@@ -27985,8 +27985,8 @@
           "type": "std::vector<int>"
         },
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "sysId",
+          "type": "uint"
         }
       ],
       "name": "UpgradeSystem",
@@ -28472,7 +28472,7 @@
         }
       ],
       "name": "GetDoors",
-      "return_type": ">",
+      "return_type": "std::vector<Door*>",
       "static": false
     },
     {
@@ -28746,7 +28746,7 @@
         }
       ],
       "name": "GetShipIconDefinition",
-      "return_type": "ShipIconDefinition",
+      "return_type": "ShipIconDefinition*",
       "static": false
     }
   ],
@@ -29527,7 +29527,7 @@
     {
       "args": [],
       "name": "GetDroneList",
-      "return_type": ">",
+      "return_type": "std::vector<Drone*>",
       "static": false
     },
     {
@@ -29549,7 +29549,7 @@
         }
       ],
       "name": "GetLeavingCrew",
-      "return_type": ">",
+      "return_type": "std::vector<CrewMember*>",
       "static": false
     },
     {
@@ -29718,7 +29718,7 @@
     {
       "args": [],
       "name": "GetWeaponList",
-      "return_type": ">",
+      "return_type": "std::vector<ProjectileFactory*>",
       "static": false
     },
     {
@@ -30128,7 +30128,7 @@
         }
       ],
       "name": "TeleportCrew",
-      "return_type": ">",
+      "return_type": "std::vector<CrewMember*>",
       "static": false
     },
     {
@@ -32001,7 +32001,7 @@
         }
       ],
       "name": "CreateLaserBlast",
-      "return_type": "LaserBlast",
+      "return_type": "LaserBlast*",
       "static": false
     },
     {
@@ -32032,7 +32032,7 @@
         }
       ],
       "name": "CreateAsteroid",
-      "return_type": "Asteroid",
+      "return_type": "Asteroid*",
       "static": false
     },
     {
@@ -32067,7 +32067,7 @@
         }
       ],
       "name": "CreateMissile",
-      "return_type": "Missile",
+      "return_type": "Missile*",
       "static": false
     },
     {
@@ -32090,7 +32090,7 @@
         }
       ],
       "name": "CreateBomb",
-      "return_type": "BombProjectile",
+      "return_type": "BombProjectile*",
       "static": false
     },
     {
@@ -32133,7 +32133,7 @@
         }
       ],
       "name": "CreateBeam",
-      "return_type": "BeamWeapon",
+      "return_type": "BeamWeapon*",
       "static": false
     },
     {
@@ -32176,7 +32176,7 @@
         }
       ],
       "name": "CreateBurstProjectile",
-      "return_type": "LaserBlast",
+      "return_type": "LaserBlast*",
       "static": false
     },
     {
@@ -32203,7 +32203,7 @@
         }
       ],
       "name": "CreatePDSFire",
-      "return_type": "PDSFire",
+      "return_type": "PDSFire*",
       "static": false
     },
     {
@@ -32754,7 +32754,7 @@
         }
       ],
       "name": "Dijkstra",
-      "return_type": ">",
+      "return_type": "std::vector<Location*>",
       "static": false
     },
     {
@@ -33553,7 +33553,7 @@
         }
       ],
       "name": "ParseStatBoostNode",
-      "return_type": "StatBoostDefinition",
+      "return_type": "StatBoostDefinition*",
       "static": false
     },
     {
@@ -34430,7 +34430,7 @@
         }
       ],
       "name": "CreateCustomStoreBoxes",
-      "return_type": ">",
+      "return_type": "std::vector<StoreBox*>",
       "static": false
     },
     {
@@ -35132,7 +35132,7 @@
     {
       "args": [],
       "name": "GetGlobalManager",
-      "return_type": "SystemExclusivityManager",
+      "return_type": "SystemExclusivityManager*",
       "static": true
     }
   ],
@@ -35181,7 +35181,7 @@
         }
       ],
       "name": "GetSystemPosition",
-      "return_type": "SystemPosition",
+      "return_type": "SystemPosition*",
       "static": false
     }
   ],
@@ -35378,8 +35378,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "tab",
+          "type": "uint"
         }
       ],
       "name": "SetTab",
@@ -37343,8 +37343,8 @@
         }
       ],
       "name": "PushDef",
-      "return_type": "int",
-      "static": false
+      "return_type": "uint",
+      "static": true
     }
   ],
   "TriggeredEventGui": [
@@ -38547,8 +38547,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "i",
+          "type": "uint"
         }
       ],
       "name": "ArmamentHotkey",
@@ -38699,8 +38699,8 @@
     {
       "args": [
         {
-          "name": "int",
-          "type": "unsigned"
+          "name": "armamentSlot",
+          "type": "uint"
         }
       ],
       "name": "SelectArmament",

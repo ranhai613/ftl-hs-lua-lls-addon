@@ -1,7 +1,7 @@
 import re
 
 def sanitize_type(type_str: str) -> str:
-    return type_str.replace("std::", "").replace("const ", "").replace("*", "").replace("&", "").replace(" ", "")
+    return type_str.replace("std::", "").replace("const ", "").replace("*", "").replace("&", "").replace("unsigned ", "u").replace(" ", "")
 
 def get_scope_content(text: str, current_scope_lvl=1) -> str:
     for i, ch in enumerate(text):

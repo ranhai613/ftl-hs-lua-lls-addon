@@ -12,7 +12,7 @@ git checkout [tag]
 """
 
 STRUCT_MATCH_PATTERN = re.compile(r'(?:struct|class)\s+(?:LIBZHL_INTERFACE\s+)?(\w+)(?:\s*:\s*\w+)?\s*{')
-FUNCTION_PATTERN = re.compile(r'(static\s+)?([\w:<>]+)\s*\*?\s*(\w+)\s*\(([^)]*)\)\s*(?:{|;|LIBZHL_PLACEHOLDER)')
+FUNCTION_PATTERN = re.compile(r'(static\s+)?([\w:<>\*]+)\s*\*?\s*(\w+)\s*\(([^)]*)\)\s*(?:{|;|LIBZHL_PLACEHOLDER)')
 
 def remove_comments(text: str) -> str:
     # Remove multi-line comments
@@ -25,7 +25,7 @@ def remove_comments(text: str) -> str:
 
 def parse_functions(text: str, struct_name: str) -> list:
     functions = []
-    text = text.replace("__stdcall", "")
+    text = text.replace("__stdcall", "").replace("unsigned ", "u")
     for match in re.finditer(rf"{struct_name}\s*\(([^)]*)\)(?:\s*:.+?)?\s*[{{;]", text):
         args = match.group(1)
         functions.append({

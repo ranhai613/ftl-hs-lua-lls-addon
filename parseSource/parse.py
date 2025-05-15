@@ -8,6 +8,10 @@ from collections import defaultdict
 from enum import Enum
 import os
 
+LUA_PRIMITIVES = [
+    "boolean", "number", "string", "table", "function", "userdata", "thread", "nil", "any", "integer"
+]
+
 LUA_KEYWORDS = [
     "and", "break", "do", "else", "elseif", "end", "false", "for", "function",
     "if", "in", "local", "nil", "not", "or", "repeat", "return", "then",
@@ -72,7 +76,6 @@ ADDITIONAL_ENUMS = [
 ]
 
 MODULE_NAME_PATTERN = re.compile(r'#define\s+SWIG_name\s+"(\w+)"')
-# CLASS_NAME_PATTERN = re.compile(r'#define SWIGTYPE_p_(\w+)')
 CLASS_NAME_PATTERN = re.compile(r'static swig_lua_namespace swig_(\w+?)_(?:Sf_)?SwigStatic = {\s*"(\w+)"\s*,')
 
 class FuncType(Enum):
@@ -110,19 +113,21 @@ class FunctionInfo:
         self.args = args
         self.originalName = originalName
         self.overloadNames = []
-        self.HSData = None
+        self.HSData = []
         self.HSDataIsLoaded = False
-        self.wikiData = None
+        self.wikiData = []
         self.wikiDataIsLoaded = False
     
-    def LoadHSData(self, HSData: dict):        
-        self.HSData = self.HSData or HSData
+    def LoadHSData(self, HSData: dict):
+        if HSData is not None:
+            self.HSData.append(HSData)
         for overloadName in self.overloadNames:
             g_functionDataMap[overloadName].LoadHSData(HSData)
         self.HSDataIsLoaded = True
     
     def LoadWikiData(self, wikiData: dict):
-        self.wikiData = self.wikiData or wikiData
+        if wikiData is not None:
+            self.wikiData.append(wikiData)
         for overloadName in self.overloadNames:
             g_functionDataMap[overloadName].LoadWikiData(wikiData)
         self.wikiDataIsLoaded = True
@@ -139,13 +144,13 @@ class FunctionInfo:
                 if ret:
                     return ret
         
-        if self.HSData:
-            for data in self.HSData:
+        for datas in self.HSData:
+            for data in datas:
                 if data["return_type"]:
                     return data["return_type"]
         
-        if self.wikiData:
-            for data in self.wikiData:
+        for datas in self.wikiData:
+            for data in datas:
                 if data["return_type"]:
                     return data["return_type"]
         
@@ -171,13 +176,13 @@ class FunctionInfo:
         return None
     
     def _getArgs(self, args: list[str], name) -> list[dict[str, str]] | None:
-        if self.HSData:
-            for data in self.HSData:
+        for datas in self.HSData:
+            for data in datas:
                 if match_args(args, [i["type"] for i in data["args"]]):
                     return data["args"]
         
-        if self.wikiData:
-            for data in self.wikiData:
+        for datas in self.wikiData:
+            for data in datas:
                 if match_args(args, [i["type"] for i in data["args"]]):
                     return data["args"]
         
@@ -189,8 +194,6 @@ class FunctionInfo:
         return None
     
     def GetArgs(self, isStatic: bool) -> list[list[dict[str, str]]]:
-        assert self.HSDataIsLoaded or self.wikiDataIsLoaded, "FunctionInfo: HSData or wikiData not loaded"
-                
         if not self.overloadNames:
             thisArgs = self.args if isStatic else self.args[1:]
             if not thisArgs:
@@ -229,8 +232,8 @@ class FunctionInfo:
             return ret
         
     def GetWikiDoc(self, args: list[str]) -> str | None:
-        if self.wikiData:
-            for data in self.wikiData:
+        for datas in self.wikiData:
+            for data in datas:
                 if match_args(args, [i["type"] for i in data["args"]]):
                     return data["documentation"]
         
@@ -314,21 +317,27 @@ def format_container_type(className: str) -> str|None:
     return get_lua_type(func.args[0])
 
 def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: AdditionalEnumBuilder, enumMap: dict[str, int], lua_wrap_path: str, HSData_path: str, wikiData_path: str = None) -> str:    
+    def load_HS_and_Wiki_data_to_func(content: str, HSInfo: dict, wikiInfo: dict):
+        for m in re.finditer(r'{\s*"(\w+)"\s*,\s*(\w+)\s*}', content):
+            methodName = m.group(1)
+            func = g_functionDataMap.get(m.group(2), None)
+            if func:
+                HSData = None
+                if HSInfo:
+                    methodName_HS = func.originalName or methodName
+                    HSData = [x for x in HSInfo if x["name"] == methodName_HS]
+                func.LoadHSData(HSData)
+                
+                wikiData = None
+                if wikiInfo:
+                    wikiData = [x for x in wikiInfo["methods"] if x["name"] == methodName]
+                func.LoadWikiData(wikiData)
+    
     def parse_constructor(moduleName: str, className: str, fixedRet=None) -> tuple[str, int]:
         constructor = g_functionDataMap.get(f"_wrap_new_{className}", None)
         if constructor is None:
             return "", 0
-        
-        HSData = None
-        if HSInfo:
-            HSData = [x for x in HSInfo if x["name"] == className]
-        constructor.LoadHSData(HSData)
-        
-        wikiData = None
-        if wikiInfo:
-            wikiData = [x for x in wikiInfo["methods"] if x["name"] == className]
-        constructor.LoadWikiData(wikiData)
-                
+                        
         ret = ""
         count = 0
         for overload in constructor.GetArgs(True):
@@ -367,18 +376,7 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
         for m in re.finditer(r'{\s*"(\w+)"\s*,\s*(\w+)\s*}', content):
             methodName = m.group(1)
             func = g_functionDataMap[m.group(2)]
-            
-            methodName_HS = func.originalName or methodName
-            HSData = None
-            if HSInfo:
-                HSData = [x for x in HSInfo if x["name"] == methodName_HS]
-            func.LoadHSData(HSData)
-            
-            wikiData = None
-            if wikiInfo:
-                wikiData = [x for x in wikiInfo["methods"] if x["name"] == methodName]
-            func.LoadWikiData(wikiData)
-            
+                        
             for overload in func.GetArgs(funcType == FuncType.STATIC):
                 documentation = func.GetWikiDoc([data["type"] for data in overload])
                 if documentation:
@@ -490,6 +488,11 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
     
     overloadNamesBuffer = defaultdict(list)
     
+    globalHSInfo = HSData.get(moduleName, None)
+    globalWikiInfo = wikiData.get(moduleName, None)
+    
+    CLASSNAMES = list(filter(lambda name: name[0] not in LUA_PRIMITIVES, CLASS_NAME_PATTERN.findall(lua_code)))
+    
     # Parse functions
     for m in re.finditer(r'static int (\w+?)\(lua_State\* L\) \{', lua_code, re.DOTALL):
         functionName = m.group(1)
@@ -522,6 +525,29 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
     for name, overloads in overloadNamesBuffer.items():
         g_functionDataMap[name].overloadNames = overloads
     
+    # Load HSData and wikiData for functions
+    globalMethods_m = re.search(r'static\s+swig_lua_method\s+swig_SwigModule_methods\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
+    if globalMethods_m:
+        load_HS_and_Wiki_data_to_func(globalMethods_m.group(1), globalHSInfo, globalWikiInfo)
+    
+    for className, _ in CLASSNAMES:
+        constructor = g_functionDataMap.get(f"_wrap_new_{className}", None)
+        if constructor:
+            HSInfo = HSData.get(className, None)
+            if HSInfo:
+                constructor.LoadHSData([x for x in HSInfo if x["name"] == className])
+            wikiInfo = wikiData.get(className, None)
+            if wikiInfo:
+                constructor.LoadWikiData([x for x in wikiInfo["methods"] if x["name"] == className])
+        
+        methods_m = re.search(rf'static\s+swig_lua_method\s+swig_{className}_methods\[\]\s*=\s*\{{(.*?)\}};', lua_code, re.DOTALL)
+        if methods_m:
+            load_HS_and_Wiki_data_to_func(methods_m.group(1), HSData.get(className, None), wikiData.get(className, None))
+        
+        staticMethods_m = re.search(rf'static\s+swig_lua_method\s+swig_{className}_Sf_SwigStatic_methods\[\]\s*=\s*\{{(.*?)\}};', lua_code, re.DOTALL)
+        if staticMethods_m:
+            load_HS_and_Wiki_data_to_func(staticMethods_m.group(1), HSData.get(className, None), wikiData.get(className, None))
+    
     # Parse "table" member injection
     additionalTableMembersMap = defaultdict(list)
     for match in re.finditer(r'script_add_native_member\(L, "(\w+)", "(\w+)", (\w+)\);', lua_code):
@@ -531,10 +557,7 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
         assert funcName == "hs_Userdata_table_get"
         additionalTableMembersMap[className].append(memberName)
     
-    # Parse global variables
-    globalHSInfo = HSData.get(moduleName, None)
-    globalWikiInfo = wikiData.get(moduleName, None)
-    
+    # Parse variables attributed just under the module
     globalFields = re.search(r'static\s+swig_lua_attribute\s+swig_SwigModule_attributes\[\]\s*=\s*\{(.*?)\};', lua_code, re.DOTALL)
     if globalFields:
         part_module_fields, _ = parse_fields(moduleName, globalWikiInfo, globalFields.group(1))
@@ -564,8 +587,7 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
     result += f"---@class {moduleName}\n{part_module_fields}{moduleName} = {{" + (f"\n{part_module_consts}" if part_module_consts else "") + f"}}\n\n{part_module_methods}"
     
     # Parse classes
-    for m in re.finditer(CLASS_NAME_PATTERN, lua_code):
-        className = m.group(1)
+    for className, _ in CLASSNAMES:
         full_name = get_lua_type(className, True)
         container_type = format_container_type(className)
         if container_type:
