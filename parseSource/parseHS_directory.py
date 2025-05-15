@@ -159,13 +159,13 @@ def main():
         parse(dataMap, path)
 
     with open("out/hs_base/hs_directory_parse_output.json", "w", encoding="utf8") as f:
-        json.dump(dataMap["main"], f, indent=2)
+        json.dump(dataMap["main"], f, indent=2, sort_keys=True)
     
     with open("out/hs_base/hs_chain_internalEvents_list.json", "w", encoding="utf8") as f:
-        json.dump(list(dataMap["chain_internalEvents_set"]), f, indent=2)
+        json.dump(sorted(dataMap["chain_internalEvents_set"]), f, indent=2)
     
     with open("out/hs_base/hs_enums.json", "w", encoding="utf8") as f:
-        json.dump(dataMap["enums"], f, indent=2)
+        json.dump(dataMap["enums"], f, indent=2, sort_keys=True)
 
 if __name__ == "__main__":
     main()
