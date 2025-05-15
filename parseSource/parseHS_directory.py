@@ -12,8 +12,7 @@ git checkout [tag]
 """
 
 STRUCT_MATCH_PATTERN = re.compile(r'(?:struct|class)\s+(?:LIBZHL_INTERFACE\s+)?(\w+)(?:\s*:\s*\w+)?\s*{')
-FUNCTION_PATTERN = re.compile(r'(static\s+)?([\w:<>]+)\s*\*?\s*(\w+)\s*\(([^)]*)\)\s*[{;]')
-
+FUNCTION_PATTERN = re.compile(r'(static\s+)?([\w:<>]+)\s*\*?\s*(\w+)\s*\(([^)]*)\)\s*(?:{|;|LIBZHL_PLACEHOLDER)')
 
 def remove_comments(text: str) -> str:
     # Remove multi-line comments

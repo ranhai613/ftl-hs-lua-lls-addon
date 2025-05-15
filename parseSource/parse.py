@@ -104,10 +104,11 @@ def make_str_list_unique(strings: list[str]) -> list[str]:
     return result
 
 class FunctionInfo:
-    def __init__(self, name: str, returnType: str, args: list[str]):
+    def __init__(self, name: str, returnType: str, args: list[str], originalName: str|None):
         self.name = name
         self.returnType = returnType
         self.args = args
+        self.originalName = originalName
         self.overloadNames = []
         self.HSData = None
         self.HSDataIsLoaded = False
@@ -341,9 +342,10 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
             methodName = m.group(1)
             func = g_functionDataMap[m.group(2)]
             
+            methodName_HS = func.originalName or methodName
             HSData = None
             if HSInfo:
-                HSData = [x for x in HSInfo if x["name"] == methodName]
+                HSData = [x for x in HSInfo if x["name"] == methodName_HS]
             func.LoadHSData(HSData)
             
             wikiData = None
@@ -466,6 +468,12 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
     for m in re.finditer(r'static int (\w+?)\(lua_State\* L\) \{', lua_code, re.DOTALL):
         functionName = m.group(1)
         content = get_scope_content(lua_code[m.end():])
+        
+        originalName = None
+        originalName_match = re.search(r'SWIG_check_num_args\("(.+)",.*,.*\)', content)
+        if originalName_match:
+            originalName = originalName_match.group(1).split("::")[-1]
+        
         return_type = ""
         return_type_match = re.search(RET_TYPE_PATTERN, content)
         if return_type_match:
@@ -483,7 +491,7 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
         if overload_match:
             overloadNamesBuffer[overload_match.group(1)].append(functionName)
         
-        g_functionDataMap[functionName] = FunctionInfo(functionName, return_type, args)
+        g_functionDataMap[functionName] = FunctionInfo(functionName, return_type, args, originalName)
     
     for name, overloads in overloadNamesBuffer.items():
         g_functionDataMap[name].overloadNames = overloads

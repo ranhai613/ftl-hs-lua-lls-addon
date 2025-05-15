@@ -1550,6 +1550,129 @@
       "name": "x",
       "return_type": "ArmamentBo",
       "static": false
+    },
+    {
+      "args": [],
+      "name": "Empty",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Name",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Powered",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "val",
+          "type": "bool"
+        }
+      ],
+      "name": "SetDefaultAutofire",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RealRequiredPower",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetBonusPower",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetType",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "StatusColor",
+      "return_type": "GL_Color",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GenerateTooltip",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "spaceToTop",
+          "type": "int"
+        }
+      ],
+      "name": "RenderTouchTooltip",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "dragging",
+          "type": "bool"
+        },
+        {
+          "name": "flashPowerBox",
+          "type": "bool"
+        }
+      ],
+      "name": "OnRender",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "dragging",
+          "type": "bool"
+        },
+        {
+          "name": "flashPowerBox",
+          "type": "bool"
+        }
+      ],
+      "name": "RenderBox",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RenderLabels",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "p",
+          "type": "Point"
+        }
+      ],
+      "name": "RenderIcon",
+      "return_type": "void",
+      "static": false
     }
   ],
   "ArmamentControl": [
@@ -1563,6 +1686,191 @@
       "args": [],
       "name": "l",
       "return_type": "ArmamentContro",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnLanguageChange",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "front",
+          "type": "bool"
+        }
+      ],
+      "name": "OnRender",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RenderTouchTooltips",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RenderLabels",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RenderWarnings",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RenderDragging",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsDragging",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Restart",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnCleanup",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Close",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "open",
+          "type": "bool"
+        }
+      ],
+      "name": "SetOpen",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "mX",
+          "type": "int"
+        },
+        {
+          "name": "mY",
+          "type": "int"
+        },
+        {
+          "name": "shift",
+          "type": "bool"
+        }
+      ],
+      "name": "LButton",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "mX",
+          "type": "int"
+        },
+        {
+          "name": "mY",
+          "type": "int"
+        },
+        {
+          "name": "shift",
+          "type": "bool"
+        }
+      ],
+      "name": "LButtonUp",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "mX",
+          "type": "int"
+        },
+        {
+          "name": "mY",
+          "type": "int"
+        },
+        {
+          "name": "shift",
+          "type": "bool"
+        }
+      ],
+      "name": "RButton",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "mX",
+          "type": "int"
+        },
+        {
+          "name": "mY",
+          "type": "int"
+        }
+      ],
+      "name": "MouseMove",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "action",
+          "type": "TouchAction"
+        },
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "initialX",
+          "type": "int"
+        },
+        {
+          "name": "initialY",
+          "type": "int"
+        }
+      ],
+      "name": "OnTouch",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -1584,6 +1892,83 @@
         }
       ],
       "name": "LinkShip",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "loc",
+          "type": "Point"
+        }
+      ],
+      "name": "CreateArmamentBox",
+      "return_type": "ArmamentBox",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "NumArmamentSlots",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ArmamentBoxOrigin",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "HolderLabel",
+      "return_type": "TextString",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "int",
+          "type": "unsigned"
+        }
+      ],
+      "name": "ArmamentHotkey",
+      "return_type": "SDLKey",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "int",
+          "type": "unsigned"
+        }
+      ],
+      "name": "SelectArmament",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "int",
+          "type": "unsigned"
+        }
+      ],
+      "name": "DeselectArmament",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "int",
+          "type": "unsigned"
+        },
+        {
+          "name": "int",
+          "type": "unsigned"
+        }
+      ],
+      "name": "SwapArmaments",
       "return_type": "void",
       "static": false
     },
@@ -2399,9 +2784,32 @@
       "static": false
     },
     {
+      "args": [
+        {
+          "name": "unk",
+          "type": "float"
+        }
+      ],
+      "name": "RenderIcon",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetNameLong",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
       "args": [],
       "name": "GetNameShort",
       "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetType",
+      "return_type": "int",
       "static": false
     },
     {
@@ -3741,12 +4149,6 @@
       "static": true
     },
     {
-      "args": [],
-      "name": "FinishFrame",
-      "return_type": "void",
-      "static": true
-    },
-    {
       "args": [
         {
           "name": "tex",
@@ -3991,61 +4393,6 @@
           "type": "float"
         },
         {
-          "name": "start_x",
-          "type": "float"
-        },
-        {
-          "name": "end_x",
-          "type": "float"
-        },
-        {
-          "name": "start_y",
-          "type": "float"
-        },
-        {
-          "name": "end_y",
-          "type": "float"
-        },
-        {
-          "name": "alpha",
-          "type": "float"
-        },
-        {
-          "name": "color",
-          "type": "GL_Color"
-        },
-        {
-          "name": "mirror",
-          "type": "bool"
-        }
-      ],
-      "name": "GL_CreateImagePartialPrimitive",
-      "return_type": "GL_Primitive",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "tex",
-          "type": "GL_Texture"
-        },
-        {
-          "name": "x",
-          "type": "float"
-        },
-        {
-          "name": "y",
-          "type": "float"
-        },
-        {
-          "name": "size_x",
-          "type": "float"
-        },
-        {
-          "name": "size_y",
-          "type": "float"
-        },
-        {
           "name": "rotate",
           "type": "float"
         },
@@ -4108,41 +4455,6 @@
         }
       ],
       "name": "GL_CreateMultiRectPrimitive",
-      "return_type": "GL_Primitive",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "x",
-          "type": "int"
-        },
-        {
-          "name": "y",
-          "type": "int"
-        },
-        {
-          "name": "radius",
-          "type": "float"
-        },
-        {
-          "name": "deg1",
-          "type": "float"
-        },
-        {
-          "name": "deg2",
-          "type": "float"
-        },
-        {
-          "name": "thickness",
-          "type": "float"
-        },
-        {
-          "name": "color",
-          "type": "GL_Color"
-        }
-      ],
-      "name": "GL_CreatePiePartialPrimitive",
       "return_type": "GL_Primitive",
       "static": true
     },
@@ -4264,11 +4576,11 @@
       "args": [
         {
           "name": "x",
-          "type": "int"
+          "type": "float"
         },
         {
           "name": "y",
-          "type": "int"
+          "type": "float"
         },
         {
           "name": "radius",
@@ -4280,33 +4592,6 @@
         }
       ],
       "name": "GL_DrawCircle",
-      "return_type": "bool",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "x",
-          "type": "int"
-        },
-        {
-          "name": "y",
-          "type": "int"
-        },
-        {
-          "name": "w",
-          "type": "int"
-        },
-        {
-          "name": "h",
-          "type": "int"
-        },
-        {
-          "name": "color",
-          "type": "GL_Color"
-        }
-      ],
-      "name": "GL_DrawLaser",
       "return_type": "bool",
       "static": true
     },
@@ -4441,6 +4726,33 @@
     {
       "args": [
         {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "w",
+          "type": "int"
+        },
+        {
+          "name": "h",
+          "type": "int"
+        },
+        {
+          "name": "color",
+          "type": "GL_Color"
+        }
+      ],
+      "name": "GL_DrawLaser",
+      "return_type": "bool",
+      "static": true
+    },
+    {
+      "args": [
+        {
           "name": "vertex1",
           "type": "Point"
         },
@@ -4465,17 +4777,6 @@
       "args": [],
       "name": "GL_EnableBlend",
       "return_type": "bool",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "on",
-          "type": "bool"
-        }
-      ],
-      "name": "GL_ForceAntialias",
-      "return_type": "void",
       "static": true
     },
     {
@@ -4624,29 +4925,6 @@
     {
       "args": [
         {
-          "name": "angle",
-          "type": "float"
-        },
-        {
-          "name": "x",
-          "type": "float"
-        },
-        {
-          "name": "y",
-          "type": "float"
-        },
-        {
-          "name": "z=1.f",
-          "type": "float"
-        }
-      ],
-      "name": "GL_Rotate2",
-      "return_type": "void",
-      "static": true
-    },
-    {
-      "args": [
-        {
           "name": "x",
           "type": "float"
         },
@@ -4727,41 +5005,6 @@
       "args": [],
       "name": "GetColorTint",
       "return_type": "GL_Color",
-      "static": true
-    },
-    {
-      "args": [],
-      "name": "IsFrameBufferSupported",
-      "return_type": "bool",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "left",
-          "type": "int"
-        },
-        {
-          "name": "bottom",
-          "type": "int"
-        },
-        {
-          "name": "h",
-          "type": "int"
-        },
-        {
-          "name": "w",
-          "type": "int"
-        }
-      ],
-      "name": "SetViewPort",
-      "return_type": "int",
-      "static": true
-    },
-    {
-      "args": [],
-      "name": "StartFrame",
-      "return_type": "void",
       "static": true
     }
   ],
@@ -5497,6 +5740,138 @@
       "name": "e",
       "return_type": "Collideabl",
       "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "start",
+          "type": "Pointf"
+        },
+        {
+          "name": "finish",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "raytrace",
+          "type": "bool"
+        }
+      ],
+      "name": "CollisionMoving",
+      "return_type": "CollisionResponse",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "current",
+          "type": "Pointf"
+        },
+        {
+          "name": "last",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        }
+      ],
+      "name": "DamageBeam",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "location",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "forceHit",
+          "type": "bool"
+        }
+      ],
+      "name": "DamageArea",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "location",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "forceHit",
+          "type": "bool"
+        }
+      ],
+      "name": "DamageShield",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetDodged",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSuperShield",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "location",
+          "type": "Pointf"
+        }
+      ],
+      "name": "SetTempVision",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpaceId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSelfId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetOwnerId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "location",
+          "type": "Pointf"
+        }
+      ],
+      "name": "ValidTargetLocation",
+      "return_type": "bool",
+      "static": false
     }
   ],
   "CollisionResponse": [],
@@ -6144,8 +6519,20 @@
     },
     {
       "args": [],
+      "name": "IsBoss",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "Restart",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IncomingFire",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -6974,6 +7361,18 @@
     },
     {
       "args": [],
+      "name": "UpdateFiring",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "UpdateShooting",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "FireShot",
       "return_type": "bool",
       "static": false
@@ -6994,6 +7393,18 @@
       "args": [],
       "name": "GetDeathSound",
       "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Restart",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CustomDeath",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -8584,6 +8995,12 @@
     },
     {
       "args": [],
+      "name": "GetPosition",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "PositionShift",
       "return_type": "float",
       "static": false
@@ -8607,6 +9024,53 @@
         }
       ],
       "name": "ApplyDamage",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetPriority",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unk",
+          "type": "int"
+        }
+      ],
+      "name": "ValidTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "MultiShots",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ExactTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsCrew",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsCloned",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsDrone",
       "return_type": "bool",
       "static": false
     },
@@ -8663,6 +9127,12 @@
     },
     {
       "args": [],
+      "name": "OutOfGame",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "SetOutOfGame",
       "return_type": "void",
       "static": false
@@ -8682,6 +9152,18 @@
     {
       "args": [],
       "name": "GetControllable",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ReadyToFight",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanFight",
       "return_type": "bool",
       "static": false
     },
@@ -8717,8 +9199,145 @@
     },
     {
       "args": [],
+      "name": "CanSuffocate",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanBurn",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetMaxHealth",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsDead",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "PermanentDeath",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "damage",
+          "type": "float"
+        }
+      ],
+      "name": "ShipDamage",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "FireFightingSoundEffect",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "GetUniqueRepairing",
       "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ProvidesVision",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetMoveSpeedMultiplier",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetRepairSpeed",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetDamageMultiplier",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ProvidesPower",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpecies",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetFireRepairMultiplier",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsTelepathic",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetPowerCooldown",
+      "return_type": "float>",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "PowerReady",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ActivatePower",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "HasSpecialPower",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ResetPower",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSuffocationMultiplier",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "BlockRoom",
+      "return_type": "int",
       "static": false
     },
     {
@@ -8729,8 +9348,20 @@
     },
     {
       "args": [],
+      "name": "IsAnaerobic",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "UpdateRepair",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanStim",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -10418,6 +11049,87 @@
       "args": [],
       "name": "t",
       "return_type": "CrewTarge",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetPosition",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "PositionShift",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "roomId",
+          "type": "int"
+        }
+      ],
+      "name": "InsideRoom",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "damage",
+          "type": "float"
+        }
+      ],
+      "name": "ApplyDamage",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetPriority",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unk",
+          "type": "int"
+        }
+      ],
+      "name": "ValidTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "MultiShots",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ExactTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsCrew",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsCloned",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsDrone",
+      "return_type": "bool",
       "static": false
     }
   ],
@@ -17747,6 +18459,242 @@
       "name": "e",
       "return_type": "Dron",
       "static": false
+    },
+    {
+      "args": [],
+      "name": "OnInit",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnDestroy",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "_powered",
+          "type": "bool"
+        }
+      ],
+      "name": "SetPowered",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "SetInstantPowered",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetPowered",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "shipId",
+          "type": "int"
+        }
+      ],
+      "name": "SetCurrentShip",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "_deployed",
+          "type": "bool"
+        }
+      ],
+      "name": "SetDeployed",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "dead",
+          "type": "bool"
+        },
+        {
+          "name": "setTimer",
+          "type": "bool"
+        }
+      ],
+      "name": "SetDestroyed",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "level",
+          "type": "int"
+        }
+      ],
+      "name": "SetHacked",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetDeployed",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "NeedsRoom",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "room",
+          "type": "int"
+        },
+        {
+          "name": "slot",
+          "type": "int"
+        }
+      ],
+      "name": "SetSlot",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Destroyed",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetWorldLocation",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "point",
+          "type": "Point"
+        }
+      ],
+      "name": "SetWorldLocation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "drone",
+          "type": "Drone"
+        }
+      ],
+      "name": "GetDroneSlot",
+      "return_type": "Slot",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetDroneHealth",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetRequiredPower",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RenderIcon",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "drone",
+          "type": "Drone"
+        }
+      ],
+      "name": "GetName",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanBeDeployed",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RecallOnJump",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanBeRecovered",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fh",
+          "type": "int"
+        }
+      ],
+      "name": "SaveState",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fh",
+          "type": "int"
+        }
+      ],
+      "name": "LoadState",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "silent",
+          "type": "bool"
+        }
+      ],
+      "name": "BlowUp",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetStunned",
+      "return_type": "bool",
+      "static": false
     }
   ],
   "DroneAI": [],
@@ -18160,14 +19108,373 @@
     },
     {
       "args": [],
+      "name": "GetPosition",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "PositionShift",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "roomId",
+          "type": "int"
+        }
+      ],
+      "name": "InsideRoom",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "damage",
+          "type": "float"
+        }
+      ],
+      "name": "ApplyDamage",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetPriority",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unk",
+          "type": "int"
+        }
+      ],
+      "name": "ValidTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "MultiShots",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ExactTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsCrew",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsCloned",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsDrone",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Jump",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetIntruder",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fileHelper",
+          "type": "int"
+        }
+      ],
+      "name": "SaveState",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fileHelper",
+          "type": "int"
+        }
+      ],
+      "name": "LoadState",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "OnLoop",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unk",
+          "type": "bool"
+        }
+      ],
+      "name": "OnRender",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OutOfGame",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "SetOutOfGame",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Functional",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CountForVictory",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetControllable",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ReadyToFight",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanFight",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanRepair",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanSabotage",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanMan",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanTeleport",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanHeal",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanSuffocate",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanBurn",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetMaxHealth",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsDead",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "PermanentDeath",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "damage",
+          "type": "float"
+        }
+      ],
+      "name": "ShipDamage",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "FireFightingSoundEffect",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetUniqueRepairing",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ProvidesVision",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetMoveSpeedMultiplier",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetRepairSpeed",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetDamageMultiplier",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ProvidesPower",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpecies",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetFireRepairMultiplier",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsTelepathic",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetPowerCooldown",
+      "return_type": "float>",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "PowerReady",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ActivatePower",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "HasSpecialPower",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ResetPower",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSuffocationMultiplier",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "BlockRoom",
+      "return_type": "int",
       "static": false
     },
     {
       "args": [],
       "name": "GetRoomDamage",
       "return_type": "Damage",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsAnaerobic",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "UpdateRepair",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanStim",
+      "return_type": "bool",
       "static": false
     }
   ],
@@ -18490,6 +19797,17 @@
     {
       "args": [
         {
+          "name": "ship",
+          "type": "ShipManager"
+        }
+      ],
+      "name": "SetShipManager",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "x",
           "type": "int"
         },
@@ -18499,6 +19817,12 @@
         }
       ],
       "name": "MouseMove",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnTouch",
       "return_type": "void",
       "static": false
     },
@@ -18532,6 +19856,12 @@
     },
     {
       "args": [],
+      "name": "RemoveItem",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "CanHoldWeapon",
       "return_type": "bool",
       "static": false
@@ -18543,6 +19873,18 @@
       "static": false
     },
     {
+      "args": [],
+      "name": "CanHoldAugment",
+      "return_type": "char",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CheckContents",
+      "return_type": "void",
+      "static": false
+    },
+    {
       "args": [
         {
           "name": "forcedEmpty",
@@ -18551,6 +19893,24 @@
       ],
       "name": "GetType",
       "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsCargoBox",
+      "return_type": "char",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanHoldCrew",
+      "return_type": "char",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanDoJob",
+      "return_type": "char",
       "static": false
     },
     {
@@ -20332,6 +21692,12 @@
       "static": false
     },
     {
+      "args": [],
+      "name": "Reset",
+      "return_type": "void",
+      "static": false
+    },
+    {
       "args": [
         {
           "name": "pos",
@@ -20345,11 +21711,34 @@
     {
       "args": [
         {
+          "name": "rect",
+          "type": "Globals::Rect"
+        }
+      ],
+      "name": "SetHitBox",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "active",
           "type": "bool"
         }
       ],
       "name": "SetActive",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnRender",
       "return_type": "void",
       "static": false
     },
@@ -20381,6 +21770,12 @@
     {
       "args": [],
       "name": "OnRightClick",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnTouch",
       "return_type": "void",
       "static": false
     },
@@ -23025,6 +24420,28 @@
     {
       "args": [
         {
+          "name": "animation",
+          "type": "WeaponAnimation"
+        }
+      ],
+      "name": "SetWeaponAnimation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "spaceId",
+          "type": "int"
+        }
+      ],
+      "name": "OnRenderSpecific",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "other",
           "type": "Collideable"
         }
@@ -23041,14 +24458,133 @@
     },
     {
       "args": [],
+      "name": "GetWorldCenterPoint",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "valuable",
+          "type": "bool"
+        }
+      ],
+      "name": "GetRandomTargettingPoint",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ComputeHeading",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "space",
+          "type": "int"
+        }
+      ],
+      "name": "SetDestinationSpace",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "EnterDestinationSpace",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Dead",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "ValidTarget",
       "return_type": "bool",
       "static": false
     },
     {
       "args": [],
+      "name": "Kill",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpeed",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "damage",
+          "type": "Damage"
+        }
+      ],
+      "name": "SetDamage",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "ForceRenderLayer",
       "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "spin",
+          "type": "float"
+        }
+      ],
+      "name": "SetSpin",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "SaveProjectile",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "LoadProjectile",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetType",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "target",
+          "type": "Targetable"
+        }
+      ],
+      "name": "SetMovingTarget",
+      "return_type": "void",
       "static": false
     },
     {
@@ -29183,6 +30719,52 @@
     {
       "args": [
         {
+          "name": "selectedState",
+          "type": "int"
+        }
+      ],
+      "name": "SetSelected",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSelected",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CompletelyDestroyed",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetName",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "name",
+          "type": "std::string"
+        }
+      ],
+      "name": "SetName",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Repair",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "speed",
           "type": "float"
         },
@@ -29207,6 +30789,111 @@
       "static": false
     },
     {
+      "args": [],
+      "name": "NeedsRepairing",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Functioning",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanBeSabotaged",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetDamage",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetLocation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetGridLocation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "damage",
+          "type": "float"
+        }
+      ],
+      "name": "SetDamage",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "maxDamage",
+          "type": "float"
+        }
+      ],
+      "name": "SetMaxDamage",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "pos",
+          "type": "Point"
+        }
+      ],
+      "name": "SetLocation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnRenderHighlight",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsRoomBased",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetRoomId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Ioned",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "SetRoomId",
+      "return_type": "void",
+      "static": false
+    },
+    {
       "args": [
         {
           "name": "hackingLevel",
@@ -29215,6 +30902,35 @@
       ],
       "name": "SetHackingLevel",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "power",
+          "type": "int"
+        }
+      ],
+      "name": "ForceBatteryPower",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RemoveBatteryPower",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetWeaponInfo",
+      "return_type": "WeaponBlueprint",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetOverrideTooltip",
+      "return_type": "std::string",
       "static": false
     },
     {
@@ -29261,6 +30977,17 @@
       "static": false
     },
     {
+      "args": [
+        {
+          "name": "power",
+          "type": "int"
+        }
+      ],
+      "name": "ForceIncreasePower",
+      "return_type": "bool",
+      "static": false
+    },
+    {
       "args": [],
       "name": "StopHacking",
       "return_type": "void",
@@ -29268,7 +30995,55 @@
     },
     {
       "args": [],
+      "name": "OnRender",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnRenderFloor",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnRenderEffects",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "OnLoop",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetNeedsPower",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Restart",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Clickable",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Powered",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ShipDestroyed",
       "return_type": "void",
       "static": false
     },
@@ -29885,6 +31660,48 @@
   "SpaceDrone": [
     {
       "args": [],
+      "name": "PickDestination",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "PickTarget",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "HasTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ValidTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetWeaponCooldown",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RandomizeStartingPosition",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "HideUnderOwner",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "GetNextProjectile",
       "return_type": "Projectile",
       "static": false
@@ -29898,6 +31715,134 @@
       ],
       "name": "SetMovementTarget",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "target",
+          "type": "Targetable"
+        }
+      ],
+      "name": "SetWeaponTarget",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "target",
+          "type": "Targetable"
+        }
+      ],
+      "name": "ValidTargetObject",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "space",
+          "type": "int"
+        }
+      ],
+      "name": "OnRender",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RenderDrone",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "drone",
+          "type": "SpaceDrone"
+        }
+      ],
+      "name": "GetTooltip",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetWorldCenterPoint",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "pos",
+          "type": "Pointf"
+        }
+      ],
+      "name": "SetCurrentLocation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "mX",
+          "type": "int"
+        },
+        {
+          "name": "mY",
+          "type": "int"
+        }
+      ],
+      "name": "MouseMove",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unk",
+          "type": "bool"
+        }
+      ],
+      "name": "GetRandomTargettingPoint",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "drone",
+          "type": "SpaceDrone"
+        }
+      ],
+      "name": "GetShieldShape",
+      "return_type": "Globals::Ellipse",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpaceId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpeed",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetOwnerId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSelfId",
+      "return_type": "int",
       "static": false
     },
     {
@@ -29921,6 +31866,50 @@
       ],
       "name": "CollisionMoving",
       "return_type": "CollisionResponse",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "pos1",
+          "type": "Pointf"
+        },
+        {
+          "name": "pos2",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        }
+      ],
+      "name": "DamageBeam",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "pos",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "unk",
+          "type": "bool"
+        }
+      ],
+      "name": "DamageArea",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetBoardingDrone",
+      "return_type": "BoarderDrone",
       "static": false
     },
     {
@@ -32111,6 +34100,21 @@
     {
       "args": [
         {
+          "name": "unknown",
+          "type": "int"
+        },
+        {
+          "name": "unknown",
+          "type": "int"
+        }
+      ],
+      "name": "MouseMove",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "x",
           "type": "int"
         },
@@ -32125,6 +34129,12 @@
     },
     {
       "args": [],
+      "name": "OnTouch",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "Activate",
       "return_type": "void",
       "static": false
@@ -32132,6 +34142,67 @@
     {
       "args": [],
       "name": "Purchase",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unknown",
+          "type": "InfoBox"
+        },
+        {
+          "name": "unknown",
+          "type": "int"
+        }
+      ],
+      "name": "SetInfoBox",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanHold",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "RequiresConfirm",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unknown",
+          "type": "bool"
+        }
+      ],
+      "name": "Confirm",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetConfirmText",
+      "return_type": "TextString",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetExtraData",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unknown",
+          "type": "int"
+        }
+      ],
+      "name": "SetExtraData",
       "return_type": "void",
       "static": false
     },
@@ -32644,8 +34715,38 @@
     },
     {
       "args": [],
+      "name": "destroy",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "x",
       "return_type": "SystemBo",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "HasButton",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetCooldownBarHeight",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetHeightModifier",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
       "static": false
     },
     {
@@ -32657,6 +34758,12 @@
       ],
       "name": "OnRender",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetMouseHover",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -32693,6 +34800,47 @@
         }
       ],
       "name": "MouseRightClick",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnTouch",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CancelTouch",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CloseTapBox",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsTouchTooltipOpen",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsTouchTooltipActive",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unk",
+          "type": "bool"
+        }
+      ],
+      "name": "CloseTouchTooltip",
       "return_type": "void",
       "static": false
     },
@@ -33251,6 +35399,110 @@
       "args": [],
       "name": "e",
       "return_type": "Targetabl",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetWorldCenterPoint",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unk",
+          "type": "bool"
+        }
+      ],
+      "name": "GetRandomTargettingPoint",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetAllTargettingPoints",
+      "return_type": "std::vector<Pointf>",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetShieldShape",
+      "return_type": "Globals::Ellipse",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetShieldPower",
+      "return_type": "ShieldPower",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpaceId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpeed",
+      "return_type": "Pointf",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetOwnerId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSelfId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsCloaked",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "pos",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        }
+      ],
+      "name": "DamageTarget",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetIsDying",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetIsJumping",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ValidTarget",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetShape",
+      "return_type": "Globals::Rect",
       "static": false
     }
   ],

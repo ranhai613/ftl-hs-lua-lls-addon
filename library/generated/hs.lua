@@ -1784,9 +1784,8 @@ Hyperspace.TimerHelper = {}
 ---@return Hyperspace.TimerHelper
 function Hyperspace.TimerHelper(isLoop) end
 
----@param unknown number
----@return unknown
-function Hyperspace.TimerHelper:Start_Float(unknown) end
+---@param goal number
+function Hyperspace.TimerHelper:Start_Float(goal) end
 
 ---@return boolean
 function Hyperspace.TimerHelper:Done() end
@@ -1917,8 +1916,8 @@ function Hyperspace.ShipSystem:SetDamage(damage) end
 ---@param maxDamage number
 function Hyperspace.ShipSystem:SetMaxDamage(maxDamage) end
 
----@param position Hyperspace.Point
-function Hyperspace.ShipSystem:SetLocation(position) end
+---@param pos Hyperspace.Point
+function Hyperspace.ShipSystem:SetLocation(pos) end
 
 ---@return integer
 function Hyperspace.ShipSystem:GetId() end
@@ -2002,12 +2001,12 @@ function Hyperspace.ShipSystem:IncreasePower(amount, force) end
 ---@param amount integer
 function Hyperspace.ShipSystem:IonDamage(amount) end
 
+---@return boolean
+function Hyperspace.ShipSystem:Ioned() end
+
 ---@param num integer
 ---@return boolean
 function Hyperspace.ShipSystem:Ioned(num) end
-
----@return boolean
-function Hyperspace.ShipSystem:Ioned() end
 
 ---@return integer
 function Hyperspace.ShipSystem:IsMannedBoost() end
@@ -2175,9 +2174,9 @@ function Hyperspace.Targetable:GetSelfId() end
 ---@return boolean
 function Hyperspace.Targetable:IsCloaked() end
 
----@param unknown Hyperspace.Pointf
----@param unknown1 Hyperspace.Damage
-function Hyperspace.Targetable:DamageTarget(unknown, unknown1) end
+---@param pos Hyperspace.Pointf
+---@param damage Hyperspace.Damage
+function Hyperspace.Targetable:DamageTarget(pos, damage) end
 
 ---@return boolean
 function Hyperspace.Targetable:GetIsDying() end
