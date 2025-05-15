@@ -176,13 +176,29 @@ class FunctionInfo:
                 return [[{"name": "unknown", "type": type} for type in thisArgs]]
         else:
             ret = []
+            noNameArgs = []
             for name in self.overloadNames:
                 thisArgs = g_functionDataMap[name].args if isStatic else g_functionDataMap[name].args[1:]
                 args = self._getArgs(thisArgs)
                 if args is not None:
                     ret.append(args)
                 else:
-                    ret.append([{"name": "unknown", "type": type} for type in thisArgs])
+                    noNameArgs.append(thisArgs)
+            """
+            SWIG handles function that has default values by generating a function with the default value and a function without the default value.
+            i.g. void original_func(int a, int b = 0) will generate two functions:
+                 void swig_func_a(int a, int b) and void swig_func_b(int a)
+                 This results in generating duplicate functions. So here we remove swig_func_b
+            """
+            for args in ret:
+                for i in range(len(args) - 1, -1, -1):
+                    if "=" not in args[i]["name"]:
+                        break
+                    noNameArgs = [x for x in noNameArgs if x != [arg["type"] for arg in args[:i]]]
+                        
+            for noNameArg in noNameArgs:
+                ret.append([{"name": "unknown", "type": type} for type in noNameArg])
+                    
             return ret
         
     def GetWikiDoc(self, args: list[str]) -> str | None:

@@ -1784,9 +1784,6 @@ Hyperspace.TimerHelper = {}
 ---@return Hyperspace.TimerHelper
 function Hyperspace.TimerHelper(isLoop) end
 
----@return Hyperspace.TimerHelper
-function Hyperspace.TimerHelper() end
-
 ---@param unknown number
 ---@return unknown
 function Hyperspace.TimerHelper:Start_Float(unknown) end
@@ -2005,12 +2002,12 @@ function Hyperspace.ShipSystem:IncreasePower(amount, force) end
 ---@param amount integer
 function Hyperspace.ShipSystem:IonDamage(amount) end
 
----@return boolean
-function Hyperspace.ShipSystem:Ioned() end
-
 ---@param num integer
 ---@return boolean
 function Hyperspace.ShipSystem:Ioned(num) end
+
+---@return boolean
+function Hyperspace.ShipSystem:Ioned() end
 
 ---@return integer
 function Hyperspace.ShipSystem:IsMannedBoost() end
@@ -3241,16 +3238,6 @@ Hyperspace.BeamWeapon = {}
 ---@param _heading? number = 0.0f
 ---@return Hyperspace.BeamWeapon
 function Hyperspace.BeamWeapon(_position, _ownerId, _targetId, _target, _target2, _length, _targetable, _heading) end
-
----@param unknown Hyperspace.Pointf
----@param unknown1 integer
----@param unknown2 integer
----@param unknown3 Hyperspace.Pointf
----@param unknown4 Hyperspace.Pointf
----@param unknown5 integer
----@param unknown6 Hyperspace.Targetable
----@return Hyperspace.BeamWeapon
-function Hyperspace.BeamWeapon(unknown, unknown1, unknown2, unknown3, unknown4, unknown5, unknown6) end
 
 ---@param spaceId integer
 function Hyperspace.BeamWeapon:OnRenderSpecific(spaceId) end
@@ -5571,10 +5558,6 @@ function Hyperspace.CustomAchievementTracker:GetAchievementStatus(name) end
 ---@param inGame? boolean = true
 function Hyperspace.CustomAchievementTracker:UpdateVariableAchievements(varName, varValue, inGame) end
 
----@param unknown String
----@param unknown1 integer
-function Hyperspace.CustomAchievementTracker:UpdateVariableAchievements(unknown, unknown1) end
-
 ---@param name String
 ---@param noPopup boolean
 function Hyperspace.CustomAchievementTracker:SetAchievement(name, noPopup) end
@@ -5979,23 +5962,12 @@ function Hyperspace.CustomEventsParser:GetCustomEvent(loc) end
 ---@param parentEvent? Hyperspace.CustomEvent = nullptr
 function Hyperspace.CustomEventsParser:LoadEvent(world, eventList, seed, parentEvent) end
 
----@param unknown Hyperspace.WorldManager
----@param unknown1 EventLoadList
----@param unknown2 integer
-function Hyperspace.CustomEventsParser:LoadEvent(unknown, unknown1, unknown2) end
-
 ---@param world Hyperspace.WorldManager
 ---@param eventName String
 ---@param ignoreUnique boolean
 ---@param seed integer
 ---@param parentEvent? Hyperspace.CustomEvent = nullptr
 function Hyperspace.CustomEventsParser:LoadEvent(world, eventName, ignoreUnique, seed, parentEvent) end
-
----@param unknown Hyperspace.WorldManager
----@param unknown1 String
----@param unknown2 boolean
----@param unknown3 integer
-function Hyperspace.CustomEventsParser:LoadEvent(unknown, unknown1, unknown2, unknown3) end
 
 ---@return Hyperspace.CustomEventsParser
 function Hyperspace.CustomEventsParser.GetInstance() end
@@ -6234,13 +6206,6 @@ function Hyperspace.CrewMember_Extend() end
 ---@param slotId? integer = -1
 function Hyperspace.CrewMember_Extend:InitiateTeleport(shipId, roomId, slotId) end
 
----@param unknown integer
----@param unknown1 integer
-function Hyperspace.CrewMember_Extend:InitiateTeleport(unknown, unknown1) end
-
----@param unknown integer
-function Hyperspace.CrewMember_Extend:InitiateTeleport(unknown) end
-
 ---@return Hyperspace.CrewDefinition
 function Hyperspace.CrewMember_Extend:GetDefinition() end
 
@@ -6250,20 +6215,11 @@ function Hyperspace.CrewMember_Extend:GetDefinition() end
 ---@return number
 function Hyperspace.CrewMember_Extend:CalculateStat(stat, def, boolValue) end
 
----@param unknown Hyperspace.CrewStat
----@param unknown1 Hyperspace.CrewDefinition
----@return number
-function Hyperspace.CrewMember_Extend:CalculateStat(unknown, unknown1) end
-
 --- Returns the current `float` and `bool` value for the given `CrewStat`.
 ---@param stat Hyperspace.CrewStat
 ---@param boolValue? boolean = nullptr
 ---@return number
 function Hyperspace.CrewMember_Extend:CalculateStat(stat, boolValue) end
-
----@param unknown Hyperspace.CrewStat
----@return number
-function Hyperspace.CrewMember_Extend:CalculateStat(unknown) end
 
 ---@class Hyperspace.CustomTeleport
 ---@field teleporting boolean
@@ -6443,24 +6399,11 @@ Hyperspace.CustomShipUnlocks = {}
 ---@param isEvent? boolean = false
 function Hyperspace.CustomShipUnlocks:UnlockShip(shipBlueprint, silent, checkMultiUnlocks, isEvent) end
 
----@param unknown String
----@param unknown1 boolean
----@param unknown2 boolean
-function Hyperspace.CustomShipUnlocks:UnlockShip(unknown, unknown1, unknown2) end
-
----@param unknown String
----@param unknown1 boolean
-function Hyperspace.CustomShipUnlocks:UnlockShip(unknown, unknown1) end
-
 --- 0 being ship variant A, 1 is ship variant B and 2 is ship variant C
 ---@param name String
 ---@param variant? integer = 0
 ---@return boolean
 function Hyperspace.CustomShipUnlocks:GetCustomShipUnlocked(name, variant) end
-
----@param unknown String
----@return boolean
-function Hyperspace.CustomShipUnlocks:GetCustomShipUnlocked(unknown) end
 
 ---@class Hyperspace.PrintHelper
 ---@field x integer The x coordinate of messages. Default is 100.
@@ -7284,11 +7227,6 @@ function Graphics.CSurface.GL_RenderPrimitiveWithColor(primitive, color) end
 ---@param z? number = 1.f
 function Graphics.CSurface.GL_Rotate(angle, x, y, z) end
 
----@param unknown number
----@param unknown1 number
----@param unknown2 number
-function Graphics.CSurface.GL_Rotate(unknown, unknown1, unknown2) end
-
 ---@param x number
 ---@param y number
 ---@param z number
@@ -7311,11 +7249,6 @@ function Graphics.CSurface.GL_SetStencilMode(stencilMode, ref, mask) end
 ---@param z? number = 0.f
 ---@return boolean
 function Graphics.CSurface.GL_Translate(x, y, z) end
-
----@param unknown number
----@param unknown1 number
----@return boolean
-function Graphics.CSurface.GL_Translate(unknown, unknown1) end
 
 ---@return Graphics.GL_Color
 function Graphics.CSurface.GetColorTint() end
