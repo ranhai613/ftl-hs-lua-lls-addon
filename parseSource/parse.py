@@ -151,7 +151,26 @@ class FunctionInfo:
         
         return "unknown"
     
-    def _getArgs(self, args: list[str]) -> list[dict[str, str]] | None:
+    def _getContainerConstructorArgs(self, args: list[str], name) -> list[dict[str, str]] | None:
+        if name == "vector":
+            if len(args) == 1:
+                if args[0] == "unsigned int":
+                    return [{"name": "size", "type": "unsigned int"}]
+                else:
+                    return [{"name": "other", "type": args[0]}]
+            elif len(args) == 2:
+                return [{"name": "size", "type": "unsigned int"}, {"name": "value", "type": args[1]}]
+        elif name == "map" or name == "unordered_map" or name == "unordered_multimap":
+            if len(args) == 1:
+                return [{"name": "other", "type": args[0]}]
+        elif name == "pair":
+            if len(args) == 1:
+                return [{"name": "other", "type": args[0]}]
+            elif len(args) == 2:
+                return [{"name": "first", "type": args[0]}, {"name": "second", "type": args[1]}]
+        return None
+    
+    def _getArgs(self, args: list[str], name) -> list[dict[str, str]] | None:
         if self.HSData:
             for data in self.HSData:
                 if match_args(args, [i["type"] for i in data["args"]]):
@@ -162,6 +181,10 @@ class FunctionInfo:
                 if match_args(args, [i["type"] for i in data["args"]]):
                     return data["args"]
         
+        ret = self._getContainerConstructorArgs(args, name)
+        if ret:
+            return ret
+        
         # print(f"FunctionInfo: {self.name} args not found")
         return None
     
@@ -170,7 +193,9 @@ class FunctionInfo:
                 
         if not self.overloadNames:
             thisArgs = self.args if isStatic else self.args[1:]
-            ret = self._getArgs(thisArgs)
+            if not thisArgs:
+                return [[]]
+            ret = self._getArgs(thisArgs, self.originalName)
             if ret is not None:
                 return [ret]
             else:
@@ -179,8 +204,9 @@ class FunctionInfo:
             ret = []
             noNameArgs = []
             for name in self.overloadNames:
-                thisArgs = g_functionDataMap[name].args if isStatic else g_functionDataMap[name].args[1:]
-                args = self._getArgs(thisArgs)
+                func = g_functionDataMap[name]
+                thisArgs = func.args if isStatic else func.args[1:]
+                args = self._getArgs(thisArgs, func.originalName)
                 if args is not None:
                     ret.append(args)
                 else:

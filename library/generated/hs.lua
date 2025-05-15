@@ -343,859 +343,859 @@ function String:data() end
 ---@return unknown
 function String:assign(unknown) end
 
+---@param size uint
+---@return vector<integer>
+function Hyperspace.vector_int(size) end
+
+---@param other vector<integer>
+---@return vector<integer>
+function Hyperspace.vector_int(other) end
+
+---@param size uint
+---@param value integer
+---@return vector<integer>
+function Hyperspace.vector_int(size, value) end
+
 ---@return vector<integer>
 function Hyperspace.vector_int() end
 
----@param unknown uint
----@return vector<integer>
-function Hyperspace.vector_int(unknown) end
+---@param size uint
+---@return vector<uint>
+function Hyperspace.vector_unsigned_int(size) end
 
----@param unknown vector<integer>
----@return vector<integer>
-function Hyperspace.vector_int(unknown) end
+---@param other vector<uint>
+---@return vector<uint>
+function Hyperspace.vector_unsigned_int(other) end
 
----@param unknown uint
----@param unknown1 integer
----@return vector<integer>
-function Hyperspace.vector_int(unknown, unknown1) end
+---@param size uint
+---@param value uint
+---@return vector<uint>
+function Hyperspace.vector_unsigned_int(size, value) end
 
 ---@return vector<uint>
 function Hyperspace.vector_unsigned_int() end
 
----@param unknown uint
----@return vector<uint>
-function Hyperspace.vector_unsigned_int(unknown) end
+---@param size uint
+---@return vector<number>
+function Hyperspace.vector_float(size) end
 
----@param unknown vector<uint>
----@return vector<uint>
-function Hyperspace.vector_unsigned_int(unknown) end
+---@param other vector<number>
+---@return vector<number>
+function Hyperspace.vector_float(other) end
 
----@param unknown uint
----@param unknown1 uint
----@return vector<uint>
-function Hyperspace.vector_unsigned_int(unknown, unknown1) end
+---@param size uint
+---@param value number
+---@return vector<number>
+function Hyperspace.vector_float(size, value) end
 
 ---@return vector<number>
 function Hyperspace.vector_float() end
 
----@param unknown uint
----@return vector<number>
-function Hyperspace.vector_float(unknown) end
+---@param size uint
+---@return vector<Hyperspace.ArtillerySystem>
+function Hyperspace.vector_ArtillerySystem(size) end
 
----@param unknown vector<number>
----@return vector<number>
-function Hyperspace.vector_float(unknown) end
+---@param other vector<Hyperspace.ArtillerySystem>
+---@return vector<Hyperspace.ArtillerySystem>
+function Hyperspace.vector_ArtillerySystem(other) end
 
----@param unknown uint
----@param unknown1 number
----@return vector<number>
-function Hyperspace.vector_float(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.ArtillerySystem
+---@return vector<Hyperspace.ArtillerySystem>
+function Hyperspace.vector_ArtillerySystem(size, value) end
 
 ---@return vector<Hyperspace.ArtillerySystem>
 function Hyperspace.vector_ArtillerySystem() end
 
----@param unknown uint
----@return vector<Hyperspace.ArtillerySystem>
-function Hyperspace.vector_ArtillerySystem(unknown) end
+---@param size uint
+---@return vector<Hyperspace.ProjectileFactory>
+function Hyperspace.vector_ProjectileFactory(size) end
 
----@param unknown vector<Hyperspace.ArtillerySystem>
----@return vector<Hyperspace.ArtillerySystem>
-function Hyperspace.vector_ArtillerySystem(unknown) end
+---@param other vector<Hyperspace.ProjectileFactory>
+---@return vector<Hyperspace.ProjectileFactory>
+function Hyperspace.vector_ProjectileFactory(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.ArtillerySystem
----@return vector<Hyperspace.ArtillerySystem>
-function Hyperspace.vector_ArtillerySystem(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.ProjectileFactory
+---@return vector<Hyperspace.ProjectileFactory>
+function Hyperspace.vector_ProjectileFactory(size, value) end
 
 ---@return vector<Hyperspace.ProjectileFactory>
 function Hyperspace.vector_ProjectileFactory() end
 
----@param unknown uint
----@return vector<Hyperspace.ProjectileFactory>
-function Hyperspace.vector_ProjectileFactory(unknown) end
+---@param size uint
+---@return vector<Hyperspace.CrewMember>
+function Hyperspace.vector_CrewMember(size) end
 
----@param unknown vector<Hyperspace.ProjectileFactory>
----@return vector<Hyperspace.ProjectileFactory>
-function Hyperspace.vector_ProjectileFactory(unknown) end
+---@param other vector<Hyperspace.CrewMember>
+---@return vector<Hyperspace.CrewMember>
+function Hyperspace.vector_CrewMember(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.ProjectileFactory
----@return vector<Hyperspace.ProjectileFactory>
-function Hyperspace.vector_ProjectileFactory(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.CrewMember
+---@return vector<Hyperspace.CrewMember>
+function Hyperspace.vector_CrewMember(size, value) end
 
 ---@return vector<Hyperspace.CrewMember>
 function Hyperspace.vector_CrewMember() end
 
----@param unknown uint
----@return vector<Hyperspace.CrewMember>
-function Hyperspace.vector_CrewMember(unknown) end
+---@param size uint
+---@return vector<Hyperspace.ShipSystem>
+function Hyperspace.vector_ShipSystem(size) end
 
----@param unknown vector<Hyperspace.CrewMember>
----@return vector<Hyperspace.CrewMember>
-function Hyperspace.vector_CrewMember(unknown) end
+---@param other vector<Hyperspace.ShipSystem>
+---@return vector<Hyperspace.ShipSystem>
+function Hyperspace.vector_ShipSystem(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.CrewMember
----@return vector<Hyperspace.CrewMember>
-function Hyperspace.vector_CrewMember(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.ShipSystem
+---@return vector<Hyperspace.ShipSystem>
+function Hyperspace.vector_ShipSystem(size, value) end
 
 ---@return vector<Hyperspace.ShipSystem>
 function Hyperspace.vector_ShipSystem() end
 
----@param unknown uint
----@return vector<Hyperspace.ShipSystem>
-function Hyperspace.vector_ShipSystem(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Drone>
+function Hyperspace.vector_Drone(size) end
 
----@param unknown vector<Hyperspace.ShipSystem>
----@return vector<Hyperspace.ShipSystem>
-function Hyperspace.vector_ShipSystem(unknown) end
+---@param other vector<Hyperspace.Drone>
+---@return vector<Hyperspace.Drone>
+function Hyperspace.vector_Drone(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.ShipSystem
----@return vector<Hyperspace.ShipSystem>
-function Hyperspace.vector_ShipSystem(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Drone
+---@return vector<Hyperspace.Drone>
+function Hyperspace.vector_Drone(size, value) end
 
 ---@return vector<Hyperspace.Drone>
 function Hyperspace.vector_Drone() end
 
----@param unknown uint
----@return vector<Hyperspace.Drone>
-function Hyperspace.vector_Drone(unknown) end
+---@param size uint
+---@return vector<Hyperspace.SpaceDrone>
+function Hyperspace.vector_SpaceDrone(size) end
 
----@param unknown vector<Hyperspace.Drone>
----@return vector<Hyperspace.Drone>
-function Hyperspace.vector_Drone(unknown) end
+---@param other vector<Hyperspace.SpaceDrone>
+---@return vector<Hyperspace.SpaceDrone>
+function Hyperspace.vector_SpaceDrone(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Drone
----@return vector<Hyperspace.Drone>
-function Hyperspace.vector_Drone(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.SpaceDrone
+---@return vector<Hyperspace.SpaceDrone>
+function Hyperspace.vector_SpaceDrone(size, value) end
 
 ---@return vector<Hyperspace.SpaceDrone>
 function Hyperspace.vector_SpaceDrone() end
 
----@param unknown uint
----@return vector<Hyperspace.SpaceDrone>
-function Hyperspace.vector_SpaceDrone(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Room>
+function Hyperspace.vector_Room(size) end
 
----@param unknown vector<Hyperspace.SpaceDrone>
----@return vector<Hyperspace.SpaceDrone>
-function Hyperspace.vector_SpaceDrone(unknown) end
+---@param other vector<Hyperspace.Room>
+---@return vector<Hyperspace.Room>
+function Hyperspace.vector_Room(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.SpaceDrone
----@return vector<Hyperspace.SpaceDrone>
-function Hyperspace.vector_SpaceDrone(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Room
+---@return vector<Hyperspace.Room>
+function Hyperspace.vector_Room(size, value) end
 
 ---@return vector<Hyperspace.Room>
 function Hyperspace.vector_Room() end
 
----@param unknown uint
----@return vector<Hyperspace.Room>
-function Hyperspace.vector_Room(unknown) end
-
----@param unknown vector<Hyperspace.Room>
----@return vector<Hyperspace.Room>
-function Hyperspace.vector_Room(unknown) end
-
----@param unknown uint
----@param unknown1 Hyperspace.Room
----@return vector<Hyperspace.Room>
-function Hyperspace.vector_Room(unknown, unknown1) end
+---@param other unordered_map<integer, Hyperspace.RoomDefinition>
+---@return unordered_map<integer, Hyperspace.RoomDefinition>
+function Hyperspace.unordered_map_int_RoomDefinition(other) end
 
 ---@return unordered_map<integer, Hyperspace.RoomDefinition>
 function Hyperspace.unordered_map_int_RoomDefinition() end
 
----@param unknown unordered_map<integer, Hyperspace.RoomDefinition>
----@return unordered_map<integer, Hyperspace.RoomDefinition>
-function Hyperspace.unordered_map_int_RoomDefinition(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Door>
+function Hyperspace.vector_Door(size) end
+
+---@param other vector<Hyperspace.Door>
+---@return vector<Hyperspace.Door>
+function Hyperspace.vector_Door(other) end
+
+---@param size uint
+---@param value Hyperspace.Door
+---@return vector<Hyperspace.Door>
+function Hyperspace.vector_Door(size, value) end
 
 ---@return vector<Hyperspace.Door>
 function Hyperspace.vector_Door() end
 
----@param unknown uint
----@return vector<Hyperspace.Door>
-function Hyperspace.vector_Door(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Repairable>
+function Hyperspace.vector_Repairable(size) end
 
----@param unknown vector<Hyperspace.Door>
----@return vector<Hyperspace.Door>
-function Hyperspace.vector_Door(unknown) end
+---@param other vector<Hyperspace.Repairable>
+---@return vector<Hyperspace.Repairable>
+function Hyperspace.vector_Repairable(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Door
----@return vector<Hyperspace.Door>
-function Hyperspace.vector_Door(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Repairable
+---@return vector<Hyperspace.Repairable>
+function Hyperspace.vector_Repairable(size, value) end
 
 ---@return vector<Hyperspace.Repairable>
 function Hyperspace.vector_Repairable() end
 
----@param unknown uint
----@return vector<Hyperspace.Repairable>
-function Hyperspace.vector_Repairable(unknown) end
+---@param size uint
+---@return vector<Hyperspace.OuterHull>
+function Hyperspace.vector_OuterHull(size) end
 
----@param unknown vector<Hyperspace.Repairable>
----@return vector<Hyperspace.Repairable>
-function Hyperspace.vector_Repairable(unknown) end
+---@param other vector<Hyperspace.OuterHull>
+---@return vector<Hyperspace.OuterHull>
+function Hyperspace.vector_OuterHull(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Repairable
----@return vector<Hyperspace.Repairable>
-function Hyperspace.vector_Repairable(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.OuterHull
+---@return vector<Hyperspace.OuterHull>
+function Hyperspace.vector_OuterHull(size, value) end
 
 ---@return vector<Hyperspace.OuterHull>
 function Hyperspace.vector_OuterHull() end
 
----@param unknown uint
----@return vector<Hyperspace.OuterHull>
-function Hyperspace.vector_OuterHull(unknown) end
+---@param size uint
+---@return vector<Hyperspace.WeaponMount>
+function Hyperspace.vector_WeaponMount(size) end
 
----@param unknown vector<Hyperspace.OuterHull>
----@return vector<Hyperspace.OuterHull>
-function Hyperspace.vector_OuterHull(unknown) end
+---@param other vector<Hyperspace.WeaponMount>
+---@return vector<Hyperspace.WeaponMount>
+function Hyperspace.vector_WeaponMount(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.OuterHull
----@return vector<Hyperspace.OuterHull>
-function Hyperspace.vector_OuterHull(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.WeaponMount
+---@return vector<Hyperspace.WeaponMount>
+function Hyperspace.vector_WeaponMount(size, value) end
 
 ---@return vector<Hyperspace.WeaponMount>
 function Hyperspace.vector_WeaponMount() end
 
----@param unknown uint
----@return vector<Hyperspace.WeaponMount>
-function Hyperspace.vector_WeaponMount(unknown) end
+---@param size uint
+---@return vector<DamageMessage>
+function Hyperspace.vector_DamageMessage(size) end
 
----@param unknown vector<Hyperspace.WeaponMount>
----@return vector<Hyperspace.WeaponMount>
-function Hyperspace.vector_WeaponMount(unknown) end
+---@param other vector<DamageMessage>
+---@return vector<DamageMessage>
+function Hyperspace.vector_DamageMessage(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.WeaponMount
----@return vector<Hyperspace.WeaponMount>
-function Hyperspace.vector_WeaponMount(unknown, unknown1) end
+---@param size uint
+---@param value DamageMessage
+---@return vector<DamageMessage>
+function Hyperspace.vector_DamageMessage(size, value) end
 
 ---@return vector<DamageMessage>
 function Hyperspace.vector_DamageMessage() end
 
----@param unknown uint
----@return vector<DamageMessage>
-function Hyperspace.vector_DamageMessage(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Projectile>
+function Hyperspace.vector_Projectile(size) end
 
----@param unknown vector<DamageMessage>
----@return vector<DamageMessage>
-function Hyperspace.vector_DamageMessage(unknown) end
+---@param other vector<Hyperspace.Projectile>
+---@return vector<Hyperspace.Projectile>
+function Hyperspace.vector_Projectile(other) end
 
----@param unknown uint
----@param unknown1 DamageMessage
----@return vector<DamageMessage>
-function Hyperspace.vector_DamageMessage(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Projectile
+---@return vector<Hyperspace.Projectile>
+function Hyperspace.vector_Projectile(size, value) end
 
 ---@return vector<Hyperspace.Projectile>
 function Hyperspace.vector_Projectile() end
 
----@param unknown uint
----@return vector<Hyperspace.Projectile>
-function Hyperspace.vector_Projectile(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Animation>
+function Hyperspace.vector_Animation(size) end
 
----@param unknown vector<Hyperspace.Projectile>
----@return vector<Hyperspace.Projectile>
-function Hyperspace.vector_Projectile(unknown) end
+---@param other vector<Hyperspace.Animation>
+---@return vector<Hyperspace.Animation>
+function Hyperspace.vector_Animation(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Projectile
----@return vector<Hyperspace.Projectile>
-function Hyperspace.vector_Projectile(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Animation
+---@return vector<Hyperspace.Animation>
+function Hyperspace.vector_Animation(size, value) end
 
 ---@return vector<Hyperspace.Animation>
 function Hyperspace.vector_Animation() end
 
----@param unknown uint
----@return vector<Hyperspace.Animation>
-function Hyperspace.vector_Animation(unknown) end
+---@param size uint
+---@return vector<Hyperspace.MiniProjectile>
+function Hyperspace.vector_MiniProjectile(size) end
 
----@param unknown vector<Hyperspace.Animation>
----@return vector<Hyperspace.Animation>
-function Hyperspace.vector_Animation(unknown) end
+---@param other vector<Hyperspace.MiniProjectile>
+---@return vector<Hyperspace.MiniProjectile>
+function Hyperspace.vector_MiniProjectile(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Animation
----@return vector<Hyperspace.Animation>
-function Hyperspace.vector_Animation(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.MiniProjectile
+---@return vector<Hyperspace.MiniProjectile>
+function Hyperspace.vector_MiniProjectile(size, value) end
 
 ---@return vector<Hyperspace.MiniProjectile>
 function Hyperspace.vector_MiniProjectile() end
 
----@param unknown uint
----@return vector<Hyperspace.MiniProjectile>
-function Hyperspace.vector_MiniProjectile(unknown) end
+---@param first integer
+---@param second integer
+---@return pair<integer, integer>
+function Hyperspace.pair_int_int(first, second) end
 
----@param unknown vector<Hyperspace.MiniProjectile>
----@return vector<Hyperspace.MiniProjectile>
-function Hyperspace.vector_MiniProjectile(unknown) end
-
----@param unknown uint
----@param unknown1 Hyperspace.MiniProjectile
----@return vector<Hyperspace.MiniProjectile>
-function Hyperspace.vector_MiniProjectile(unknown, unknown1) end
+---@param other pair<integer, integer>
+---@return pair<integer, integer>
+function Hyperspace.pair_int_int(other) end
 
 ---@return pair<integer, integer>
 function Hyperspace.pair_int_int() end
 
----@param unknown integer
----@param unknown1 integer
----@return pair<integer, integer>
-function Hyperspace.pair_int_int(unknown, unknown1) end
+---@param first number
+---@param second number
+---@return pair<number, number>
+function Hyperspace.pair_float_float(first, second) end
 
----@param unknown pair<integer, integer>
----@return pair<integer, integer>
-function Hyperspace.pair_int_int(unknown) end
+---@param other pair<number, number>
+---@return pair<number, number>
+function Hyperspace.pair_float_float(other) end
 
 ---@return pair<number, number>
 function Hyperspace.pair_float_float() end
 
----@param unknown number
----@param unknown1 number
----@return pair<number, number>
-function Hyperspace.pair_float_float(unknown, unknown1) end
+---@param size uint
+---@return vector<Hyperspace.Pointf>
+function Hyperspace.vector_Pointf(size) end
 
----@param unknown pair<number, number>
----@return pair<number, number>
-function Hyperspace.pair_float_float(unknown) end
+---@param other vector<Hyperspace.Pointf>
+---@return vector<Hyperspace.Pointf>
+function Hyperspace.vector_Pointf(other) end
+
+---@param size uint
+---@param value Hyperspace.Pointf
+---@return vector<Hyperspace.Pointf>
+function Hyperspace.vector_Pointf(size, value) end
 
 ---@return vector<Hyperspace.Pointf>
 function Hyperspace.vector_Pointf() end
 
----@param unknown uint
----@return vector<Hyperspace.Pointf>
-function Hyperspace.vector_Pointf(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Point>
+function Hyperspace.vector_Point(size) end
 
----@param unknown vector<Hyperspace.Pointf>
----@return vector<Hyperspace.Pointf>
-function Hyperspace.vector_Pointf(unknown) end
+---@param other vector<Hyperspace.Point>
+---@return vector<Hyperspace.Point>
+function Hyperspace.vector_Point(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Pointf
----@return vector<Hyperspace.Pointf>
-function Hyperspace.vector_Pointf(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Point
+---@return vector<Hyperspace.Point>
+function Hyperspace.vector_Point(size, value) end
 
 ---@return vector<Hyperspace.Point>
 function Hyperspace.vector_Point() end
 
----@param unknown uint
----@return vector<Hyperspace.Point>
-function Hyperspace.vector_Point(unknown) end
-
----@param unknown vector<Hyperspace.Point>
----@return vector<Hyperspace.Point>
-function Hyperspace.vector_Point(unknown) end
-
----@param unknown uint
----@param unknown1 Hyperspace.Point
----@return vector<Hyperspace.Point>
-function Hyperspace.vector_Point(unknown, unknown1) end
+---@param other map<String, integer>
+---@return map<String, integer>
+function Hyperspace.map_string_int(other) end
 
 ---@return map<String, integer>
 function Hyperspace.map_string_int() end
 
----@param unknown map<String, integer>
----@return map<String, integer>
-function Hyperspace.map_string_int(unknown) end
+---@param other map<integer, Hyperspace.SystemTemplate>
+---@return map<integer, Hyperspace.SystemTemplate>
+function Hyperspace.map_int_SystemTemplate(other) end
 
 ---@return map<integer, Hyperspace.SystemTemplate>
 function Hyperspace.map_int_SystemTemplate() end
 
----@param unknown map<integer, Hyperspace.SystemTemplate>
----@return map<integer, Hyperspace.SystemTemplate>
-function Hyperspace.map_int_SystemTemplate(unknown) end
+---@param other unordered_map<String, integer>
+---@return unordered_map<String, integer>
+function Hyperspace.unordered_map_string_int(other) end
 
 ---@return unordered_map<String, integer>
 function Hyperspace.unordered_map_string_int() end
 
----@param unknown unordered_map<String, integer>
----@return unordered_map<String, integer>
-function Hyperspace.unordered_map_string_int(unknown) end
+---@param size uint
+---@return vector<Hyperspace.ActivatedPower>
+function Hyperspace.vector_ActivatedPower(size) end
+
+---@param other vector<Hyperspace.ActivatedPower>
+---@return vector<Hyperspace.ActivatedPower>
+function Hyperspace.vector_ActivatedPower(other) end
+
+---@param size uint
+---@param value Hyperspace.ActivatedPower
+---@return vector<Hyperspace.ActivatedPower>
+function Hyperspace.vector_ActivatedPower(size, value) end
 
 ---@return vector<Hyperspace.ActivatedPower>
 function Hyperspace.vector_ActivatedPower() end
 
----@param unknown uint
----@return vector<Hyperspace.ActivatedPower>
-function Hyperspace.vector_ActivatedPower(unknown) end
+---@param size uint
+---@return vector<Hyperspace.ActivatedPowerResource>
+function Hyperspace.vector_ActivatedPowerResource(size) end
 
----@param unknown vector<Hyperspace.ActivatedPower>
----@return vector<Hyperspace.ActivatedPower>
-function Hyperspace.vector_ActivatedPower(unknown) end
+---@param other vector<Hyperspace.ActivatedPowerResource>
+---@return vector<Hyperspace.ActivatedPowerResource>
+function Hyperspace.vector_ActivatedPowerResource(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.ActivatedPower
----@return vector<Hyperspace.ActivatedPower>
-function Hyperspace.vector_ActivatedPower(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.ActivatedPowerResource
+---@return vector<Hyperspace.ActivatedPowerResource>
+function Hyperspace.vector_ActivatedPowerResource(size, value) end
 
 ---@return vector<Hyperspace.ActivatedPowerResource>
 function Hyperspace.vector_ActivatedPowerResource() end
 
----@param unknown uint
----@return vector<Hyperspace.ActivatedPowerResource>
-function Hyperspace.vector_ActivatedPowerResource(unknown) end
-
----@param unknown vector<Hyperspace.ActivatedPowerResource>
----@return vector<Hyperspace.ActivatedPowerResource>
-function Hyperspace.vector_ActivatedPowerResource(unknown) end
-
----@param unknown uint
----@param unknown1 Hyperspace.ActivatedPowerResource
----@return vector<Hyperspace.ActivatedPowerResource>
-function Hyperspace.vector_ActivatedPowerResource(unknown, unknown1) end
+---@param other unordered_map<uint, Hyperspace.ActivatedPowerResource>
+---@return unordered_map<uint, Hyperspace.ActivatedPowerResource>
+function Hyperspace.unordered_map_unsigned_int_ActivatedPowerResource(other) end
 
 ---@return unordered_map<uint, Hyperspace.ActivatedPowerResource>
 function Hyperspace.unordered_map_unsigned_int_ActivatedPowerResource() end
 
----@param unknown unordered_map<uint, Hyperspace.ActivatedPowerResource>
----@return unordered_map<uint, Hyperspace.ActivatedPowerResource>
-function Hyperspace.unordered_map_unsigned_int_ActivatedPowerResource(unknown) end
+---@param first Hyperspace.CrewExtraCondition
+---@param second boolean
+---@return pair<Hyperspace.CrewExtraCondition, boolean>
+function Hyperspace.pair_CrewExtraCondition_bool(first, second) end
+
+---@param other pair<Hyperspace.CrewExtraCondition, boolean>
+---@return pair<Hyperspace.CrewExtraCondition, boolean>
+function Hyperspace.pair_CrewExtraCondition_bool(other) end
 
 ---@return pair<Hyperspace.CrewExtraCondition, boolean>
 function Hyperspace.pair_CrewExtraCondition_bool() end
 
----@param unknown Hyperspace.CrewExtraCondition
----@param unknown1 boolean
----@return pair<Hyperspace.CrewExtraCondition, boolean>
-function Hyperspace.pair_CrewExtraCondition_bool(unknown, unknown1) end
+---@param size uint
+---@return vector<pair<Hyperspace.CrewExtraCondition, boolean>>
+function Hyperspace.vector_pair_CrewExtraCondition_bool(size) end
 
----@param unknown pair<Hyperspace.CrewExtraCondition, boolean>
----@return pair<Hyperspace.CrewExtraCondition, boolean>
-function Hyperspace.pair_CrewExtraCondition_bool(unknown) end
+---@param other vector<pair<Hyperspace.CrewExtraCondition, boolean>>
+---@return vector<pair<Hyperspace.CrewExtraCondition, boolean>>
+function Hyperspace.vector_pair_CrewExtraCondition_bool(other) end
+
+---@param size uint
+---@param value pair<Hyperspace.CrewExtraCondition, boolean>
+---@return vector<pair<Hyperspace.CrewExtraCondition, boolean>>
+function Hyperspace.vector_pair_CrewExtraCondition_bool(size, value) end
 
 ---@return vector<pair<Hyperspace.CrewExtraCondition, boolean>>
 function Hyperspace.vector_pair_CrewExtraCondition_bool() end
 
----@param unknown uint
----@return vector<pair<Hyperspace.CrewExtraCondition, boolean>>
-function Hyperspace.vector_pair_CrewExtraCondition_bool(unknown) end
+---@param size uint
+---@return vector<Hyperspace.CrewBlueprint>
+function Hyperspace.vector_CrewBlueprint(size) end
 
----@param unknown vector<pair<Hyperspace.CrewExtraCondition, boolean>>
----@return vector<pair<Hyperspace.CrewExtraCondition, boolean>>
-function Hyperspace.vector_pair_CrewExtraCondition_bool(unknown) end
+---@param other vector<Hyperspace.CrewBlueprint>
+---@return vector<Hyperspace.CrewBlueprint>
+function Hyperspace.vector_CrewBlueprint(other) end
 
----@param unknown uint
----@param unknown1 pair<Hyperspace.CrewExtraCondition, boolean>
----@return vector<pair<Hyperspace.CrewExtraCondition, boolean>>
-function Hyperspace.vector_pair_CrewExtraCondition_bool(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.CrewBlueprint
+---@return vector<Hyperspace.CrewBlueprint>
+function Hyperspace.vector_CrewBlueprint(size, value) end
 
 ---@return vector<Hyperspace.CrewBlueprint>
 function Hyperspace.vector_CrewBlueprint() end
 
----@param unknown uint
----@return vector<Hyperspace.CrewBlueprint>
-function Hyperspace.vector_CrewBlueprint(unknown) end
+---@param size uint
+---@return vector<Hyperspace.DroneBlueprint>
+function Hyperspace.vector_DroneBlueprint(size) end
 
----@param unknown vector<Hyperspace.CrewBlueprint>
----@return vector<Hyperspace.CrewBlueprint>
-function Hyperspace.vector_CrewBlueprint(unknown) end
+---@param other vector<Hyperspace.DroneBlueprint>
+---@return vector<Hyperspace.DroneBlueprint>
+function Hyperspace.vector_DroneBlueprint(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.CrewBlueprint
----@return vector<Hyperspace.CrewBlueprint>
-function Hyperspace.vector_CrewBlueprint(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.DroneBlueprint
+---@return vector<Hyperspace.DroneBlueprint>
+function Hyperspace.vector_DroneBlueprint(size, value) end
 
 ---@return vector<Hyperspace.DroneBlueprint>
 function Hyperspace.vector_DroneBlueprint() end
 
----@param unknown uint
----@return vector<Hyperspace.DroneBlueprint>
-function Hyperspace.vector_DroneBlueprint(unknown) end
+---@param size uint
+---@return vector<Hyperspace.WeaponBlueprint>
+function Hyperspace.vector_WeaponBlueprint(size) end
 
----@param unknown vector<Hyperspace.DroneBlueprint>
----@return vector<Hyperspace.DroneBlueprint>
-function Hyperspace.vector_DroneBlueprint(unknown) end
+---@param other vector<Hyperspace.WeaponBlueprint>
+---@return vector<Hyperspace.WeaponBlueprint>
+function Hyperspace.vector_WeaponBlueprint(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.DroneBlueprint
----@return vector<Hyperspace.DroneBlueprint>
-function Hyperspace.vector_DroneBlueprint(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.WeaponBlueprint
+---@return vector<Hyperspace.WeaponBlueprint>
+function Hyperspace.vector_WeaponBlueprint(size, value) end
 
 ---@return vector<Hyperspace.WeaponBlueprint>
 function Hyperspace.vector_WeaponBlueprint() end
 
----@param unknown uint
----@return vector<Hyperspace.WeaponBlueprint>
-function Hyperspace.vector_WeaponBlueprint(unknown) end
+---@param size uint
+---@return vector<pair<integer, integer>>
+function Hyperspace.vector_pair_int_int(size) end
 
----@param unknown vector<Hyperspace.WeaponBlueprint>
----@return vector<Hyperspace.WeaponBlueprint>
-function Hyperspace.vector_WeaponBlueprint(unknown) end
+---@param other vector<pair<integer, integer>>
+---@return vector<pair<integer, integer>>
+function Hyperspace.vector_pair_int_int(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.WeaponBlueprint
----@return vector<Hyperspace.WeaponBlueprint>
-function Hyperspace.vector_WeaponBlueprint(unknown, unknown1) end
+---@param size uint
+---@param value pair<integer, integer>
+---@return vector<pair<integer, integer>>
+function Hyperspace.vector_pair_int_int(size, value) end
 
 ---@return vector<pair<integer, integer>>
 function Hyperspace.vector_pair_int_int() end
 
----@param unknown uint
----@return vector<pair<integer, integer>>
-function Hyperspace.vector_pair_int_int(unknown) end
+---@param size uint
+---@return vector<Hyperspace.TextString>
+function Hyperspace.vector_TextString(size) end
 
----@param unknown vector<pair<integer, integer>>
----@return vector<pair<integer, integer>>
-function Hyperspace.vector_pair_int_int(unknown) end
+---@param other vector<Hyperspace.TextString>
+---@return vector<Hyperspace.TextString>
+function Hyperspace.vector_TextString(other) end
 
----@param unknown uint
----@param unknown1 pair<integer, integer>
----@return vector<pair<integer, integer>>
-function Hyperspace.vector_pair_int_int(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.TextString
+---@return vector<Hyperspace.TextString>
+function Hyperspace.vector_TextString(size, value) end
 
 ---@return vector<Hyperspace.TextString>
 function Hyperspace.vector_TextString() end
 
----@param unknown uint
----@return vector<Hyperspace.TextString>
-function Hyperspace.vector_TextString(unknown) end
+---@param size uint
+---@return vector<Graphics.GL_Color>
+function Hyperspace.vector_GL_Color(size) end
 
----@param unknown vector<Hyperspace.TextString>
----@return vector<Hyperspace.TextString>
-function Hyperspace.vector_TextString(unknown) end
+---@param other vector<Graphics.GL_Color>
+---@return vector<Graphics.GL_Color>
+function Hyperspace.vector_GL_Color(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.TextString
----@return vector<Hyperspace.TextString>
-function Hyperspace.vector_TextString(unknown, unknown1) end
+---@param size uint
+---@param value Graphics.GL_Color
+---@return vector<Graphics.GL_Color>
+function Hyperspace.vector_GL_Color(size, value) end
 
 ---@return vector<Graphics.GL_Color>
 function Hyperspace.vector_GL_Color() end
 
----@param unknown uint
----@return vector<Graphics.GL_Color>
-function Hyperspace.vector_GL_Color(unknown) end
+---@param size uint
+---@return vector<vector<Graphics.GL_Color>>
+function Hyperspace.vector_vector_GL_Color(size) end
 
----@param unknown vector<Graphics.GL_Color>
----@return vector<Graphics.GL_Color>
-function Hyperspace.vector_GL_Color(unknown) end
+---@param other vector<vector<Graphics.GL_Color>>
+---@return vector<vector<Graphics.GL_Color>>
+function Hyperspace.vector_vector_GL_Color(other) end
 
----@param unknown uint
----@param unknown1 Graphics.GL_Color
----@return vector<Graphics.GL_Color>
-function Hyperspace.vector_GL_Color(unknown, unknown1) end
+---@param size uint
+---@param value vector<Graphics.GL_Color>
+---@return vector<vector<Graphics.GL_Color>>
+function Hyperspace.vector_vector_GL_Color(size, value) end
 
 ---@return vector<vector<Graphics.GL_Color>>
 function Hyperspace.vector_vector_GL_Color() end
 
----@param unknown uint
----@return vector<vector<Graphics.GL_Color>>
-function Hyperspace.vector_vector_GL_Color(unknown) end
+---@param size uint
+---@return vector<Hyperspace.CrewDesc>
+function Hyperspace.vector_CrewDesc(size) end
 
----@param unknown vector<vector<Graphics.GL_Color>>
----@return vector<vector<Graphics.GL_Color>>
-function Hyperspace.vector_vector_GL_Color(unknown) end
+---@param other vector<Hyperspace.CrewDesc>
+---@return vector<Hyperspace.CrewDesc>
+function Hyperspace.vector_CrewDesc(other) end
 
----@param unknown uint
----@param unknown1 vector<Graphics.GL_Color>
----@return vector<vector<Graphics.GL_Color>>
-function Hyperspace.vector_vector_GL_Color(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.CrewDesc
+---@return vector<Hyperspace.CrewDesc>
+function Hyperspace.vector_CrewDesc(size, value) end
 
 ---@return vector<Hyperspace.CrewDesc>
 function Hyperspace.vector_CrewDesc() end
 
----@param unknown uint
----@return vector<Hyperspace.CrewDesc>
-function Hyperspace.vector_CrewDesc(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Fire>
+function Hyperspace.vector_Fire(size) end
 
----@param unknown vector<Hyperspace.CrewDesc>
----@return vector<Hyperspace.CrewDesc>
-function Hyperspace.vector_CrewDesc(unknown) end
+---@param other vector<Hyperspace.Fire>
+---@return vector<Hyperspace.Fire>
+function Hyperspace.vector_Fire(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.CrewDesc
----@return vector<Hyperspace.CrewDesc>
-function Hyperspace.vector_CrewDesc(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Fire
+---@return vector<Hyperspace.Fire>
+function Hyperspace.vector_Fire(size, value) end
 
 ---@return vector<Hyperspace.Fire>
 function Hyperspace.vector_Fire() end
 
----@param unknown uint
----@return vector<Hyperspace.Fire>
-function Hyperspace.vector_Fire(unknown) end
+---@param size uint
+---@return vector<vector<Hyperspace.Fire>>
+function Hyperspace.vector_vector_Fire(size) end
 
----@param unknown vector<Hyperspace.Fire>
----@return vector<Hyperspace.Fire>
-function Hyperspace.vector_Fire(unknown) end
+---@param other vector<vector<Hyperspace.Fire>>
+---@return vector<vector<Hyperspace.Fire>>
+function Hyperspace.vector_vector_Fire(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Fire
----@return vector<Hyperspace.Fire>
-function Hyperspace.vector_Fire(unknown, unknown1) end
+---@param size uint
+---@param value vector<Hyperspace.Fire>
+---@return vector<vector<Hyperspace.Fire>>
+function Hyperspace.vector_vector_Fire(size, value) end
 
 ---@return vector<vector<Hyperspace.Fire>>
 function Hyperspace.vector_vector_Fire() end
 
----@param unknown uint
----@return vector<vector<Hyperspace.Fire>>
-function Hyperspace.vector_vector_Fire(unknown) end
+---@param size uint
+---@return vector<Hyperspace.CrewPlacementDefinition>
+function Hyperspace.vector_CrewPlacementDefinition(size) end
 
----@param unknown vector<vector<Hyperspace.Fire>>
----@return vector<vector<Hyperspace.Fire>>
-function Hyperspace.vector_vector_Fire(unknown) end
+---@param other vector<Hyperspace.CrewPlacementDefinition>
+---@return vector<Hyperspace.CrewPlacementDefinition>
+function Hyperspace.vector_CrewPlacementDefinition(other) end
 
----@param unknown uint
----@param unknown1 vector<Hyperspace.Fire>
----@return vector<vector<Hyperspace.Fire>>
-function Hyperspace.vector_vector_Fire(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.CrewPlacementDefinition
+---@return vector<Hyperspace.CrewPlacementDefinition>
+function Hyperspace.vector_CrewPlacementDefinition(size, value) end
 
 ---@return vector<Hyperspace.CrewPlacementDefinition>
 function Hyperspace.vector_CrewPlacementDefinition() end
 
----@param unknown uint
----@return vector<Hyperspace.CrewPlacementDefinition>
-function Hyperspace.vector_CrewPlacementDefinition(unknown) end
+---@param size uint
+---@return vector<String>
+function Hyperspace.vector_string(size) end
 
----@param unknown vector<Hyperspace.CrewPlacementDefinition>
----@return vector<Hyperspace.CrewPlacementDefinition>
-function Hyperspace.vector_CrewPlacementDefinition(unknown) end
+---@param other vector<String>
+---@return vector<String>
+function Hyperspace.vector_string(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.CrewPlacementDefinition
----@return vector<Hyperspace.CrewPlacementDefinition>
-function Hyperspace.vector_CrewPlacementDefinition(unknown, unknown1) end
+---@param size uint
+---@param value String
+---@return vector<String>
+function Hyperspace.vector_string(size, value) end
 
 ---@return vector<String>
 function Hyperspace.vector_string() end
 
----@param unknown uint
----@return vector<String>
-function Hyperspace.vector_string(unknown) end
+---@param size uint
+---@return vector<Hyperspace.StatBoostDefinition>
+function Hyperspace.vector_StatBoostDefinition(size) end
 
----@param unknown vector<String>
----@return vector<String>
-function Hyperspace.vector_string(unknown) end
+---@param other vector<Hyperspace.StatBoostDefinition>
+---@return vector<Hyperspace.StatBoostDefinition>
+function Hyperspace.vector_StatBoostDefinition(other) end
 
----@param unknown uint
----@param unknown1 String
----@return vector<String>
-function Hyperspace.vector_string(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.StatBoostDefinition
+---@return vector<Hyperspace.StatBoostDefinition>
+function Hyperspace.vector_StatBoostDefinition(size, value) end
 
 ---@return vector<Hyperspace.StatBoostDefinition>
 function Hyperspace.vector_StatBoostDefinition() end
 
----@param unknown uint
----@return vector<Hyperspace.StatBoostDefinition>
-function Hyperspace.vector_StatBoostDefinition(unknown) end
+---@param size uint
+---@return vector<Hyperspace.TriggeredEventDefinition>
+function Hyperspace.vector_TriggeredEventDefinition(size) end
 
----@param unknown vector<Hyperspace.StatBoostDefinition>
----@return vector<Hyperspace.StatBoostDefinition>
-function Hyperspace.vector_StatBoostDefinition(unknown) end
+---@param other vector<Hyperspace.TriggeredEventDefinition>
+---@return vector<Hyperspace.TriggeredEventDefinition>
+function Hyperspace.vector_TriggeredEventDefinition(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.StatBoostDefinition
----@return vector<Hyperspace.StatBoostDefinition>
-function Hyperspace.vector_StatBoostDefinition(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.TriggeredEventDefinition
+---@return vector<Hyperspace.TriggeredEventDefinition>
+function Hyperspace.vector_TriggeredEventDefinition(size, value) end
 
 ---@return vector<Hyperspace.TriggeredEventDefinition>
 function Hyperspace.vector_TriggeredEventDefinition() end
 
----@param unknown uint
----@return vector<Hyperspace.TriggeredEventDefinition>
-function Hyperspace.vector_TriggeredEventDefinition(unknown) end
+---@param first Hyperspace.Animation
+---@param second integer
+---@return pair<Hyperspace.Animation, integer>
+function Hyperspace.pair_Animation_int8_t(first, second) end
 
----@param unknown vector<Hyperspace.TriggeredEventDefinition>
----@return vector<Hyperspace.TriggeredEventDefinition>
-function Hyperspace.vector_TriggeredEventDefinition(unknown) end
-
----@param unknown uint
----@param unknown1 Hyperspace.TriggeredEventDefinition
----@return vector<Hyperspace.TriggeredEventDefinition>
-function Hyperspace.vector_TriggeredEventDefinition(unknown, unknown1) end
+---@param other pair<Hyperspace.Animation, integer>
+---@return pair<Hyperspace.Animation, integer>
+function Hyperspace.pair_Animation_int8_t(other) end
 
 ---@return pair<Hyperspace.Animation, integer>
 function Hyperspace.pair_Animation_int8_t() end
 
----@param unknown Hyperspace.Animation
----@param unknown1 integer
----@return pair<Hyperspace.Animation, integer>
-function Hyperspace.pair_Animation_int8_t(unknown, unknown1) end
+---@param size uint
+---@return vector<pair<Hyperspace.Animation, integer>>
+function Hyperspace.vector_pair_Animation_int8_t(size) end
 
----@param unknown pair<Hyperspace.Animation, integer>
----@return pair<Hyperspace.Animation, integer>
-function Hyperspace.pair_Animation_int8_t(unknown) end
+---@param other vector<pair<Hyperspace.Animation, integer>>
+---@return vector<pair<Hyperspace.Animation, integer>>
+function Hyperspace.vector_pair_Animation_int8_t(other) end
+
+---@param size uint
+---@param value pair<Hyperspace.Animation, integer>
+---@return vector<pair<Hyperspace.Animation, integer>>
+function Hyperspace.vector_pair_Animation_int8_t(size, value) end
 
 ---@return vector<pair<Hyperspace.Animation, integer>>
 function Hyperspace.vector_pair_Animation_int8_t() end
 
----@param unknown uint
----@return vector<pair<Hyperspace.Animation, integer>>
-function Hyperspace.vector_pair_Animation_int8_t(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Location>
+function Hyperspace.vector_location(size) end
 
----@param unknown vector<pair<Hyperspace.Animation, integer>>
----@return vector<pair<Hyperspace.Animation, integer>>
-function Hyperspace.vector_pair_Animation_int8_t(unknown) end
+---@param other vector<Hyperspace.Location>
+---@return vector<Hyperspace.Location>
+function Hyperspace.vector_location(other) end
 
----@param unknown uint
----@param unknown1 pair<Hyperspace.Animation, integer>
----@return vector<pair<Hyperspace.Animation, integer>>
-function Hyperspace.vector_pair_Animation_int8_t(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Location
+---@return vector<Hyperspace.Location>
+function Hyperspace.vector_location(size, value) end
 
 ---@return vector<Hyperspace.Location>
 function Hyperspace.vector_location() end
 
----@param unknown uint
----@return vector<Hyperspace.Location>
-function Hyperspace.vector_location(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Choice>
+function Hyperspace.vector_locationEventChoice(size) end
 
----@param unknown vector<Hyperspace.Location>
----@return vector<Hyperspace.Location>
-function Hyperspace.vector_location(unknown) end
+---@param other vector<Hyperspace.Choice>
+---@return vector<Hyperspace.Choice>
+function Hyperspace.vector_locationEventChoice(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Location
----@return vector<Hyperspace.Location>
-function Hyperspace.vector_location(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Choice
+---@return vector<Hyperspace.Choice>
+function Hyperspace.vector_locationEventChoice(size, value) end
 
 ---@return vector<Hyperspace.Choice>
 function Hyperspace.vector_locationEventChoice() end
 
----@param unknown uint
+---@param size uint
 ---@return vector<Hyperspace.Choice>
-function Hyperspace.vector_locationEventChoice(unknown) end
+function Hyperspace.vector_p_locationEventChoice(size) end
 
----@param unknown vector<Hyperspace.Choice>
+---@param other vector<Hyperspace.Choice>
 ---@return vector<Hyperspace.Choice>
-function Hyperspace.vector_locationEventChoice(unknown) end
+function Hyperspace.vector_p_locationEventChoice(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Choice
+---@param size uint
+---@param value Hyperspace.Choice
 ---@return vector<Hyperspace.Choice>
-function Hyperspace.vector_locationEventChoice(unknown, unknown1) end
+function Hyperspace.vector_p_locationEventChoice(size, value) end
 
 ---@return vector<Hyperspace.Choice>
 function Hyperspace.vector_p_locationEventChoice() end
 
----@param unknown uint
----@return vector<Hyperspace.Choice>
-function Hyperspace.vector_p_locationEventChoice(unknown) end
+---@param size uint
+---@return vector<Hyperspace.ChoiceText>
+function Hyperspace.vector_choiceText(size) end
 
----@param unknown vector<Hyperspace.Choice>
----@return vector<Hyperspace.Choice>
-function Hyperspace.vector_p_locationEventChoice(unknown) end
+---@param other vector<Hyperspace.ChoiceText>
+---@return vector<Hyperspace.ChoiceText>
+function Hyperspace.vector_choiceText(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Choice
----@return vector<Hyperspace.Choice>
-function Hyperspace.vector_p_locationEventChoice(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.ChoiceText
+---@return vector<Hyperspace.ChoiceText>
+function Hyperspace.vector_choiceText(size, value) end
 
 ---@return vector<Hyperspace.ChoiceText>
 function Hyperspace.vector_choiceText() end
 
----@param unknown uint
+---@param size uint
 ---@return vector<Hyperspace.ChoiceText>
-function Hyperspace.vector_choiceText(unknown) end
+function Hyperspace.vector_p_choiceText(size) end
 
----@param unknown vector<Hyperspace.ChoiceText>
+---@param other vector<Hyperspace.ChoiceText>
 ---@return vector<Hyperspace.ChoiceText>
-function Hyperspace.vector_choiceText(unknown) end
+function Hyperspace.vector_p_choiceText(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.ChoiceText
+---@param size uint
+---@param value Hyperspace.ChoiceText
 ---@return vector<Hyperspace.ChoiceText>
-function Hyperspace.vector_choiceText(unknown, unknown1) end
+function Hyperspace.vector_p_choiceText(size, value) end
 
 ---@return vector<Hyperspace.ChoiceText>
 function Hyperspace.vector_p_choiceText() end
 
----@param unknown uint
----@return vector<Hyperspace.ChoiceText>
-function Hyperspace.vector_p_choiceText(unknown) end
+---@param size uint
+---@return vector<Hyperspace.Sector>
+function Hyperspace.vector_Sector(size) end
 
----@param unknown vector<Hyperspace.ChoiceText>
----@return vector<Hyperspace.ChoiceText>
-function Hyperspace.vector_p_choiceText(unknown) end
+---@param other vector<Hyperspace.Sector>
+---@return vector<Hyperspace.Sector>
+function Hyperspace.vector_Sector(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.ChoiceText
----@return vector<Hyperspace.ChoiceText>
-function Hyperspace.vector_p_choiceText(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.Sector
+---@return vector<Hyperspace.Sector>
+function Hyperspace.vector_Sector(size, value) end
 
 ---@return vector<Hyperspace.Sector>
 function Hyperspace.vector_Sector() end
 
----@param unknown uint
----@return vector<Hyperspace.Sector>
-function Hyperspace.vector_Sector(unknown) end
+---@param size uint
+---@return vector<Hyperspace.LockdownShard>
+function Hyperspace.vector_LockdownShard(size) end
 
----@param unknown vector<Hyperspace.Sector>
----@return vector<Hyperspace.Sector>
-function Hyperspace.vector_Sector(unknown) end
+---@param other vector<Hyperspace.LockdownShard>
+---@return vector<Hyperspace.LockdownShard>
+function Hyperspace.vector_LockdownShard(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.Sector
----@return vector<Hyperspace.Sector>
-function Hyperspace.vector_Sector(unknown, unknown1) end
+---@param size uint
+---@param value Hyperspace.LockdownShard
+---@return vector<Hyperspace.LockdownShard>
+function Hyperspace.vector_LockdownShard(size, value) end
 
 ---@return vector<Hyperspace.LockdownShard>
 function Hyperspace.vector_LockdownShard() end
 
----@param unknown uint
+---@param size uint
 ---@return vector<Hyperspace.LockdownShard>
-function Hyperspace.vector_LockdownShard(unknown) end
+function Hyperspace.vector_p_LockdownShard(size) end
 
----@param unknown vector<Hyperspace.LockdownShard>
+---@param other vector<Hyperspace.LockdownShard>
 ---@return vector<Hyperspace.LockdownShard>
-function Hyperspace.vector_LockdownShard(unknown) end
+function Hyperspace.vector_p_LockdownShard(other) end
 
----@param unknown uint
----@param unknown1 Hyperspace.LockdownShard
+---@param size uint
+---@param value Hyperspace.LockdownShard
 ---@return vector<Hyperspace.LockdownShard>
-function Hyperspace.vector_LockdownShard(unknown, unknown1) end
+function Hyperspace.vector_p_LockdownShard(size, value) end
 
 ---@return vector<Hyperspace.LockdownShard>
 function Hyperspace.vector_p_LockdownShard() end
 
----@param unknown uint
----@return vector<Hyperspace.LockdownShard>
-function Hyperspace.vector_p_LockdownShard(unknown) end
-
----@param unknown vector<Hyperspace.LockdownShard>
----@return vector<Hyperspace.LockdownShard>
-function Hyperspace.vector_p_LockdownShard(unknown) end
-
----@param unknown uint
----@param unknown1 Hyperspace.LockdownShard
----@return vector<Hyperspace.LockdownShard>
-function Hyperspace.vector_p_LockdownShard(unknown, unknown1) end
+---@param other unordered_multimap<String, Hyperspace.AugmentFunction>
+---@return unordered_multimap<String, Hyperspace.AugmentFunction>
+function Hyperspace.unordered_multimap_string_AugmentFunction(other) end
 
 ---@return unordered_multimap<String, Hyperspace.AugmentFunction>
 function Hyperspace.unordered_multimap_string_AugmentFunction() end
 
----@param unknown unordered_multimap<String, Hyperspace.AugmentFunction>
----@return unordered_multimap<String, Hyperspace.AugmentFunction>
-function Hyperspace.unordered_multimap_string_AugmentFunction(unknown) end
+---@param first String
+---@param second Hyperspace.AugmentFunction
+---@return pair<String, Hyperspace.AugmentFunction>
+function Hyperspace.pair_string_AugmentFunction(first, second) end
+
+---@param other pair<String, Hyperspace.AugmentFunction>
+---@return pair<String, Hyperspace.AugmentFunction>
+function Hyperspace.pair_string_AugmentFunction(other) end
 
 ---@return pair<String, Hyperspace.AugmentFunction>
 function Hyperspace.pair_string_AugmentFunction() end
 
----@param unknown String
----@param unknown1 Hyperspace.AugmentFunction
----@return pair<String, Hyperspace.AugmentFunction>
-function Hyperspace.pair_string_AugmentFunction(unknown, unknown1) end
+---@param size uint
+---@return vector<Hyperspace.AugmentCrystalShard>
+function Hyperspace.vector_AugmentCrystalShard(size) end
 
----@param unknown pair<String, Hyperspace.AugmentFunction>
----@return pair<String, Hyperspace.AugmentFunction>
-function Hyperspace.pair_string_AugmentFunction(unknown) end
+---@param other vector<Hyperspace.AugmentCrystalShard>
+---@return vector<Hyperspace.AugmentCrystalShard>
+function Hyperspace.vector_AugmentCrystalShard(other) end
+
+---@param size uint
+---@param value Hyperspace.AugmentCrystalShard
+---@return vector<Hyperspace.AugmentCrystalShard>
+function Hyperspace.vector_AugmentCrystalShard(size, value) end
 
 ---@return vector<Hyperspace.AugmentCrystalShard>
 function Hyperspace.vector_AugmentCrystalShard() end
-
----@param unknown uint
----@return vector<Hyperspace.AugmentCrystalShard>
-function Hyperspace.vector_AugmentCrystalShard(unknown) end
-
----@param unknown vector<Hyperspace.AugmentCrystalShard>
----@return vector<Hyperspace.AugmentCrystalShard>
-function Hyperspace.vector_AugmentCrystalShard(unknown) end
-
----@param unknown uint
----@param unknown1 Hyperspace.AugmentCrystalShard
----@return vector<Hyperspace.AugmentCrystalShard>
-function Hyperspace.vector_AugmentCrystalShard(unknown, unknown1) end
 
 ---@class Hyperspace.ToggleValue_int
 ---@field value integer
