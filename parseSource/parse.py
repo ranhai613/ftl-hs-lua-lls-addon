@@ -316,7 +316,7 @@ def format_container_type(className: str) -> str|None:
     
     return get_lua_type(func.args[0])
 
-def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: AdditionalEnumBuilder, enumMap: dict[str, int], lua_wrap_path: str, HSData_path: str, wikiData_path: str = None) -> str:    
+def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: AdditionalEnumBuilder, enumMap: dict[str, int], lua_wrap_path: str, HSData: dict, wikiData_path: str = None) -> str:    
     def load_HS_and_Wiki_data_to_func(content: str, HSInfo: dict, wikiInfo: dict):
         for m in re.finditer(r'{\s*"(\w+)"\s*,\s*(\w+)\s*}', content):
             methodName = m.group(1)
@@ -466,11 +466,6 @@ def parse_LUA_wrap(eventHookBuilder: EventHookBuilder, additionalEnumBuilder: Ad
     
     result = ""
     
-    HSData = {}
-    if HSData_path:
-        with open(HSData_path, 'r', encoding='utf8') as f:
-            HSData = json.load(f)
-
     wikiData = {}
     if wikiData_path:
         with open(wikiData_path, 'r', encoding='utf8') as f:
@@ -737,9 +732,20 @@ def main():
     
     additionalEnumBuilder = AdditionalEnumBuilder(ADDITIONAL_ENUMS)
     
+    with open(HSDATA_PATH, 'r', encoding='utf8') as f:
+        rawData = json.load(f)
+        HSData = {k: v for k, v in rawData.items() if "::" not in k}
+        internalStructs = {k: v for k, v in rawData.items() if "::" in k}
+        for k, v in internalStructs.items():
+            name = k.split("::")[-1]
+            if name in HSData:
+                continue
+            
+            HSData[name] = v
+    
     result = "---@meta\n"
     for data in DATA_LIST:
-        result += parse_LUA_wrap(eventHookBuilder, additionalEnumBuilder, enumMap, data["luaWrap"], HSDATA_PATH, data["wikiData"])
+        result += parse_LUA_wrap(eventHookBuilder, additionalEnumBuilder, enumMap, data["luaWrap"], HSData, data["wikiData"])
 
     result += "\n" + additionalEnumBuilder.output()
     result = "\n".join([line.rstrip() for line in result.split("\n")]).strip()

@@ -1678,12 +1678,12 @@ Hyperspace.Rect = {}
 ---@return Hyperspace.Rect
 function Hyperspace.Rect() end
 
----@param unknown integer
----@param unknown1 integer
----@param unknown2 integer
----@param unknown3 integer
+---@param _x integer
+---@param _y integer
+---@param _w integer
+---@param _h integer
 ---@return Hyperspace.Rect
-function Hyperspace.Rect(unknown, unknown1, unknown2, unknown3) end
+function Hyperspace.Rect(_x, _y, _w, _h) end
 
 ---@class Hyperspace.SystemBox
 ---@field location Hyperspace.Point The location of the SystemBox.
@@ -3598,11 +3598,11 @@ Hyperspace.ChoiceText = {}
 ---@return Hyperspace.ChoiceText
 function Hyperspace.ChoiceText() end
 
----@param unknown integer
----@param unknown1 String
----@param unknown2 Hyperspace.ResourceEvent
+---@param _type integer
+---@param _text String
+---@param _rewards Hyperspace.ResourceEvent
 ---@return Hyperspace.ChoiceText
-function Hyperspace.ChoiceText(unknown, unknown1, unknown2) end
+function Hyperspace.ChoiceText(_type, _text, _rewards) end
 
 ---@class Hyperspace.ChoiceBox: Hyperspace.FocusWindow
 ---@field mainText String

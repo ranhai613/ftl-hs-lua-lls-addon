@@ -12,7 +12,7 @@ git checkout [tag]
 """
 
 STRUCT_MATCH_PATTERN = re.compile(r'(?:struct|class)\s+(?:LIBZHL_INTERFACE\s+)?(\w+)(?:\s*:\s*\w+)?\s*{')
-FUNCTION_PATTERN = re.compile(r'(static\s+)?([\w:<>\*]+)\s*\*?\s*(\w+)\s*\(([^)]*)\)\s*(?:{|;|LIBZHL_PLACEHOLDER)')
+FUNCTION_PATTERN = re.compile(r'(static\s+)?([\w:<>\*]+)\s*\*?\s+\*?\s*(\w+)\s*\(([^)]*)\)\s*(?:{|;|LIBZHL_PLACEHOLDER)')
 
 def remove_comments(text: str) -> str:
     # Remove multi-line comments
@@ -26,7 +26,8 @@ def remove_comments(text: str) -> str:
 def parse_functions(text: str, struct_name: str) -> list:
     functions = []
     text = text.replace("__stdcall", "").replace("unsigned ", "u")
-    for match in re.finditer(rf"{struct_name}\s*\(([^)]*)\)(?:\s*:.+?)?\s*[{{;]", text):
+    # Parse constructors
+    for match in re.finditer(rf"{struct_name}\s*\(([^)]*)\)(?:\s*:.+?)?\s*[{{;]", text, re.DOTALL):
         args = match.group(1)
         functions.append({
             "static": True,
@@ -48,7 +49,7 @@ def parse_functions(text: str, struct_name: str) -> list:
         })
     return functions
 
-def parse_internal_structs(text: str) -> str:
+def parse_internal_structs(dataMap: dict, text: str, parent_name: str) -> str:
     position = 0
     ret = text
     while position < len(text):
@@ -56,8 +57,11 @@ def parse_internal_structs(text: str) -> str:
         if not match:
             break
         
+        struct_name = match.group(1)
+        struct_name_full = parent_name + "::" + struct_name
         struct_content = get_scope_content(text[match.end():])
-        parse_internal_structs(struct_content)
+        real_struct_content = parse_internal_structs(dataMap, struct_content, struct_name_full)
+        dataMap["main"][struct_name_full] = parse_functions(real_struct_content, struct_name)
         ret = ret.replace(struct_content, "", 1)
         position = match.end() + len(struct_content) + 1  # Move to the end of the current struct definition
     return ret
@@ -121,7 +125,7 @@ def parse(dataMap: dict, path: str):
             break
         
         struct_name = match.group(1)
-        struct_content = parse_internal_structs(get_scope_content(content[match.end():]))
+        struct_content = parse_internal_structs(dataMap, get_scope_content(content[match.end():]), struct_name)
         dataMap["main"][struct_name] = parse_functions(struct_content, struct_name)
         position = match.end() + len(struct_content) + 1  # Move to the end of the current struct definition
 
