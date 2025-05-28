@@ -23,6 +23,8 @@ jobs:
 
       - name: Update files on main branch
         run: |
+          git config --global user.email "update-bot@github.com"
+          git config --global user.name "Update Bot"
           cd parseSource/src
           git clone https://github.com/FTL-Hyperspace/FTL-Hyperspace.git
           cd FTL-Hyperspace
