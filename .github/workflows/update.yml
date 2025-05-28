@@ -31,7 +31,7 @@ jobs:
           ./build-debugonly-from-docker.sh
           popd
           cd ../..
-          python ci/update.py ${{ inputs.version }}
+          python -m ci.update ${{ inputs.version }}
           cd ..
           git add .
           git commit -m "Bump version to ${{ inputs.version }}"
