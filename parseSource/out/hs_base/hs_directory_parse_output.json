@@ -3141,12 +3141,6 @@
       "static": true
     },
     {
-      "args": [],
-      "name": "FinishFrame",
-      "return_type": "void",
-      "static": true
-    },
-    {
       "args": [
         {
           "name": "tex",
@@ -3391,61 +3385,6 @@
           "type": "float"
         },
         {
-          "name": "start_x",
-          "type": "float"
-        },
-        {
-          "name": "end_x",
-          "type": "float"
-        },
-        {
-          "name": "start_y",
-          "type": "float"
-        },
-        {
-          "name": "end_y",
-          "type": "float"
-        },
-        {
-          "name": "alpha",
-          "type": "float"
-        },
-        {
-          "name": "color",
-          "type": "GL_Color"
-        },
-        {
-          "name": "mirror",
-          "type": "bool"
-        }
-      ],
-      "name": "GL_CreateImagePartialPrimitive",
-      "return_type": "GL_Primitive",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "tex",
-          "type": "GL_Texture"
-        },
-        {
-          "name": "x",
-          "type": "float"
-        },
-        {
-          "name": "y",
-          "type": "float"
-        },
-        {
-          "name": "size_x",
-          "type": "float"
-        },
-        {
-          "name": "size_y",
-          "type": "float"
-        },
-        {
           "name": "rotate",
           "type": "float"
         },
@@ -3455,7 +3394,7 @@
         }
       ],
       "name": "GL_CreateImagePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -3474,7 +3413,7 @@
         }
       ],
       "name": "GL_CreateMultiImagePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -3493,7 +3432,7 @@
         }
       ],
       "name": "GL_CreateMultiLinePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -3508,42 +3447,7 @@
         }
       ],
       "name": "GL_CreateMultiRectPrimitive",
-      "return_type": "GL_Primitive",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "x",
-          "type": "int"
-        },
-        {
-          "name": "y",
-          "type": "int"
-        },
-        {
-          "name": "radius",
-          "type": "float"
-        },
-        {
-          "name": "deg1",
-          "type": "float"
-        },
-        {
-          "name": "deg2",
-          "type": "float"
-        },
-        {
-          "name": "thickness",
-          "type": "float"
-        },
-        {
-          "name": "color",
-          "type": "GL_Color"
-        }
-      ],
-      "name": "GL_CreatePiePartialPrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -3582,7 +3486,7 @@
         }
       ],
       "name": "GL_CreatePixelImagePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -3613,7 +3517,7 @@
         }
       ],
       "name": "GL_CreateRectOutlinePrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -3640,7 +3544,7 @@
         }
       ],
       "name": "GL_CreateRectPrimitive",
-      "return_type": "GL_Primitive",
+      "return_type": "GL_Primitive*",
       "static": true
     },
     {
@@ -3664,11 +3568,11 @@
       "args": [
         {
           "name": "x",
-          "type": "int"
+          "type": "float"
         },
         {
           "name": "y",
-          "type": "int"
+          "type": "float"
         },
         {
           "name": "radius",
@@ -3680,33 +3584,6 @@
         }
       ],
       "name": "GL_DrawCircle",
-      "return_type": "bool",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "x",
-          "type": "int"
-        },
-        {
-          "name": "y",
-          "type": "int"
-        },
-        {
-          "name": "w",
-          "type": "int"
-        },
-        {
-          "name": "h",
-          "type": "int"
-        },
-        {
-          "name": "color",
-          "type": "GL_Color"
-        }
-      ],
-      "name": "GL_DrawLaser",
       "return_type": "bool",
       "static": true
     },
@@ -3841,6 +3718,33 @@
     {
       "args": [
         {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "w",
+          "type": "int"
+        },
+        {
+          "name": "h",
+          "type": "int"
+        },
+        {
+          "name": "color",
+          "type": "GL_Color"
+        }
+      ],
+      "name": "GL_DrawLaser",
+      "return_type": "bool",
+      "static": true
+    },
+    {
+      "args": [
+        {
           "name": "vertex1",
           "type": "Point"
         },
@@ -3865,17 +3769,6 @@
       "args": [],
       "name": "GL_EnableBlend",
       "return_type": "bool",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "on",
-          "type": "bool"
-        }
-      ],
-      "name": "GL_ForceAntialias",
-      "return_type": "void",
       "static": true
     },
     {
@@ -4024,29 +3917,6 @@
     {
       "args": [
         {
-          "name": "angle",
-          "type": "float"
-        },
-        {
-          "name": "x",
-          "type": "float"
-        },
-        {
-          "name": "y",
-          "type": "float"
-        },
-        {
-          "name": "z=1.f",
-          "type": "float"
-        }
-      ],
-      "name": "GL_Rotate2",
-      "return_type": "void",
-      "static": true
-    },
-    {
-      "args": [
-        {
           "name": "x",
           "type": "float"
         },
@@ -4127,41 +3997,6 @@
       "args": [],
       "name": "GetColorTint",
       "return_type": "GL_Color",
-      "static": true
-    },
-    {
-      "args": [],
-      "name": "IsFrameBufferSupported",
-      "return_type": "bool",
-      "static": true
-    },
-    {
-      "args": [
-        {
-          "name": "left",
-          "type": "int"
-        },
-        {
-          "name": "bottom",
-          "type": "int"
-        },
-        {
-          "name": "h",
-          "type": "int"
-        },
-        {
-          "name": "w",
-          "type": "int"
-        }
-      ],
-      "name": "SetViewPort",
-      "return_type": "int",
-      "static": true
-    },
-    {
-      "args": [],
-      "name": "StartFrame",
-      "return_type": "void",
       "static": true
     }
   ],
