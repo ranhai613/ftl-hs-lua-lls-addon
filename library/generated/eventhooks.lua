@@ -415,7 +415,7 @@ function script.on_internal_event(eventId, callback, priority) end
 
 --- Called once per ship every game tick to calculate a multiplier to the rate at which airlocks and breaches drain oxygen.
 ---@param eventId 70 --[[@as Defines.InternalEvents.CALCULATE_LEAK_MODIFIER]]
----@param callback fun(ship?: Hyperspace.ShipManager, modifier?: number): modifier: Defines.Chain? Callback to be called when the event occurs.
+---@param callback fun(ship?: Hyperspace.ShipManager, modifier?: number): chain: Defines.Chain, modifier: number Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
