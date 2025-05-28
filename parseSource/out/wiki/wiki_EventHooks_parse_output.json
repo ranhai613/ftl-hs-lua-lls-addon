@@ -1483,7 +1483,7 @@
       "args": [
         {
           "name": "currentTabName",
-          "type": "std::string"
+          "type": "string"
         }
       ],
       "returns": []
@@ -1493,7 +1493,7 @@
       "args": [
         {
           "name": "currentTabName",
-          "type": "std::string"
+          "type": "string"
         }
       ],
       "returns": []
@@ -1630,8 +1630,12 @@
       ],
       "returns": [
         {
+          "name": "chain",
+          "type": "Defines.Chain"
+        },
+        {
           "name": "modifier",
-          "type": "Chain"
+          "type": "float"
         }
       ]
     },

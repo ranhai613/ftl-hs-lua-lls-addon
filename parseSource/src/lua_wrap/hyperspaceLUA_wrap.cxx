@@ -3303,6 +3303,15 @@ SWIGINTERN void SWIG_write_ptr_array(lua_State* L,void **array,int size,swig_typ
 #include "CustomDamage.h"
 
 
+    #define SWIG_exception(a, b)\
+    {\
+        luaL_where(L, 2);\
+        lua_pushfstring(L,"%s:%s",#a,b);\
+        lua_concat(L, 2);\
+        SWIG_fail;\
+    }\
+
+
     static swig_type_info* SpaceDrone_dynamic_cast(SpaceDrone** ppSpaceDrone)
     {
         //Normally we would be expected to adjust the SpaceDrone* pointed to by ppSpaceDrone using something like
@@ -4435,8 +4444,10 @@ static int _wrap_new_vector_int__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< int >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< int >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< int > *)new std::vector< int >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_int_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -4482,8 +4493,10 @@ static int _wrap_new_vector_int__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< int >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< int >::vector",1,"unsigned int");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< int >::vector",2,"int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   arg2 = (int)lua_tonumber(L, 2);
   result = (std::vector< int > *)new std::vector< int >(arg1,arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_int_t,1); SWIG_arg++; 
@@ -4761,8 +4774,10 @@ static int _wrap_vector_int___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_int___getitem",1,SWIGTYPE_p_std__vectorT_int_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (int)std_vector_Sl_int_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -4794,8 +4809,10 @@ static int _wrap_vector_int___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_int___setitem",1,SWIGTYPE_p_std__vectorT_int_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   arg3 = (int)lua_tonumber(L, 3);
   try {
     std_vector_Sl_int_Sg____setitem__(arg1,arg2,arg3);
@@ -4896,8 +4913,10 @@ static int _wrap_new_vector_unsigned_int__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< unsigned int >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned int >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< unsigned int > *)new std::vector< unsigned int >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_int_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -4943,10 +4962,14 @@ static int _wrap_new_vector_unsigned_int__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< unsigned int >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< unsigned int >::vector",1,"unsigned int");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< unsigned int >::vector",2,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   result = (std::vector< unsigned int > *)new std::vector< unsigned int >(arg1,arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_unsigned_int_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -5125,8 +5148,10 @@ static int _wrap_vector_unsigned_int_push_back(lua_State* L) {
     SWIG_fail_ptr("vector_unsigned_int_push_back",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   (arg1)->push_back(arg2);
   
   return SWIG_arg;
@@ -5224,8 +5249,10 @@ static int _wrap_vector_unsigned_int___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_unsigned_int___getitem",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (unsigned int)std_vector_Sl_unsigned_SS_int_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -5257,10 +5284,14 @@ static int _wrap_vector_unsigned_int___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_unsigned_int___setitem",1,SWIGTYPE_p_std__vectorT_unsigned_int_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative")
-  arg3 = (unsigned int)lua_tonumber(L, 3);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
+  
+  if (lua_tonumber(L, 3) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg3 = (unsigned int) lua_tonumber(L, 3);
+  
   try {
     std_vector_Sl_unsigned_SS_int_Sg____setitem__(arg1,arg2,arg3);
   } catch(std::out_of_range &_e) {
@@ -5360,8 +5391,10 @@ static int _wrap_new_vector_float__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< float >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< float >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< float > *)new std::vector< float >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -5407,8 +5440,10 @@ static int _wrap_new_vector_float__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< float >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< float >::vector",1,"unsigned int");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< float >::vector",2,"float");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   arg2 = (float)lua_tonumber(L, 2);
   result = (std::vector< float > *)new std::vector< float >(arg1,arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_float_t,1); SWIG_arg++; 
@@ -5686,8 +5721,10 @@ static int _wrap_vector_float___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_float___getitem",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (float)std_vector_Sl_float_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -5719,8 +5756,10 @@ static int _wrap_vector_float___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_float___setitem",1,SWIGTYPE_p_std__vectorT_float_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   arg3 = (float)lua_tonumber(L, 3);
   try {
     std_vector_Sl_float_Sg____setitem__(arg1,arg2,arg3);
@@ -5821,8 +5860,10 @@ static int _wrap_new_vector_ArtillerySystem__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< ArtillerySystem * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ArtillerySystem * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< ArtillerySystem * > *)new std::vector< ArtillerySystem * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ArtillerySystem_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -5868,8 +5909,10 @@ static int _wrap_new_vector_ArtillerySystem__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< ArtillerySystem * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ArtillerySystem * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< ArtillerySystem * >::vector",2,"ArtillerySystem *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ArtillerySystem,0))){
     SWIG_fail_ptr("new_vector_ArtillerySystem",2,SWIGTYPE_p_ArtillerySystem);
@@ -6160,8 +6203,10 @@ static int _wrap_vector_ArtillerySystem___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_ArtillerySystem___getitem",1,SWIGTYPE_p_std__vectorT_ArtillerySystem_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (ArtillerySystem *)std_vector_Sl_ArtillerySystem_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -6193,8 +6238,10 @@ static int _wrap_vector_ArtillerySystem___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_ArtillerySystem___setitem",1,SWIGTYPE_p_std__vectorT_ArtillerySystem_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ArtillerySystem,0))){
     SWIG_fail_ptr("vector_ArtillerySystem___setitem",3,SWIGTYPE_p_ArtillerySystem);
@@ -6299,8 +6346,10 @@ static int _wrap_new_vector_ProjectileFactory__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< ProjectileFactory * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ProjectileFactory * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< ProjectileFactory * > *)new std::vector< ProjectileFactory * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ProjectileFactory_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -6346,8 +6395,10 @@ static int _wrap_new_vector_ProjectileFactory__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< ProjectileFactory * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ProjectileFactory * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< ProjectileFactory * >::vector",2,"ProjectileFactory *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ProjectileFactory,0))){
     SWIG_fail_ptr("new_vector_ProjectileFactory",2,SWIGTYPE_p_ProjectileFactory);
@@ -6638,8 +6689,10 @@ static int _wrap_vector_ProjectileFactory___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_ProjectileFactory___getitem",1,SWIGTYPE_p_std__vectorT_ProjectileFactory_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (ProjectileFactory *)std_vector_Sl_ProjectileFactory_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -6671,8 +6724,10 @@ static int _wrap_vector_ProjectileFactory___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_ProjectileFactory___setitem",1,SWIGTYPE_p_std__vectorT_ProjectileFactory_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ProjectileFactory,0))){
     SWIG_fail_ptr("vector_ProjectileFactory___setitem",3,SWIGTYPE_p_ProjectileFactory);
@@ -6777,8 +6832,10 @@ static int _wrap_new_vector_CrewMember__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< CrewMember * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< CrewMember * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< CrewMember * > *)new std::vector< CrewMember * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_CrewMember_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -6824,8 +6881,10 @@ static int _wrap_new_vector_CrewMember__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< CrewMember * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< CrewMember * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< CrewMember * >::vector",2,"CrewMember *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_CrewMember,0))){
     SWIG_fail_ptr("new_vector_CrewMember",2,SWIGTYPE_p_CrewMember);
@@ -7116,8 +7175,10 @@ static int _wrap_vector_CrewMember___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_CrewMember___getitem",1,SWIGTYPE_p_std__vectorT_CrewMember_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (CrewMember *)std_vector_Sl_CrewMember_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -7149,8 +7210,10 @@ static int _wrap_vector_CrewMember___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_CrewMember___setitem",1,SWIGTYPE_p_std__vectorT_CrewMember_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_CrewMember,0))){
     SWIG_fail_ptr("vector_CrewMember___setitem",3,SWIGTYPE_p_CrewMember);
@@ -7255,8 +7318,10 @@ static int _wrap_new_vector_ShipSystem__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< ShipSystem * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ShipSystem * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< ShipSystem * > *)new std::vector< ShipSystem * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ShipSystem_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -7302,8 +7367,10 @@ static int _wrap_new_vector_ShipSystem__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< ShipSystem * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ShipSystem * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< ShipSystem * >::vector",2,"ShipSystem *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ShipSystem,0))){
     SWIG_fail_ptr("new_vector_ShipSystem",2,SWIGTYPE_p_ShipSystem);
@@ -7594,8 +7661,10 @@ static int _wrap_vector_ShipSystem___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_ShipSystem___getitem",1,SWIGTYPE_p_std__vectorT_ShipSystem_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (ShipSystem *)std_vector_Sl_ShipSystem_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -7627,8 +7696,10 @@ static int _wrap_vector_ShipSystem___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_ShipSystem___setitem",1,SWIGTYPE_p_std__vectorT_ShipSystem_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ShipSystem,0))){
     SWIG_fail_ptr("vector_ShipSystem___setitem",3,SWIGTYPE_p_ShipSystem);
@@ -7733,8 +7804,10 @@ static int _wrap_new_vector_Drone__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Drone * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Drone * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Drone * > *)new std::vector< Drone * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Drone_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -7780,8 +7853,10 @@ static int _wrap_new_vector_Drone__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Drone * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Drone * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< Drone * >::vector",2,"Drone *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Drone,0))){
     SWIG_fail_ptr("new_vector_Drone",2,SWIGTYPE_p_Drone);
@@ -8072,8 +8147,10 @@ static int _wrap_vector_Drone___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Drone___getitem",1,SWIGTYPE_p_std__vectorT_Drone_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (Drone *)std_vector_Sl_Drone_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -8105,8 +8182,10 @@ static int _wrap_vector_Drone___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Drone___setitem",1,SWIGTYPE_p_std__vectorT_Drone_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_Drone,0))){
     SWIG_fail_ptr("vector_Drone___setitem",3,SWIGTYPE_p_Drone);
@@ -8211,8 +8290,10 @@ static int _wrap_new_vector_SpaceDrone__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< SpaceDrone * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< SpaceDrone * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< SpaceDrone * > *)new std::vector< SpaceDrone * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_SpaceDrone_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -8258,8 +8339,10 @@ static int _wrap_new_vector_SpaceDrone__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< SpaceDrone * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< SpaceDrone * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< SpaceDrone * >::vector",2,"SpaceDrone *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SpaceDrone,0))){
     SWIG_fail_ptr("new_vector_SpaceDrone",2,SWIGTYPE_p_SpaceDrone);
@@ -8556,8 +8639,10 @@ static int _wrap_vector_SpaceDrone___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_SpaceDrone___getitem",1,SWIGTYPE_p_std__vectorT_SpaceDrone_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (SpaceDrone *)std_vector_Sl_SpaceDrone_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -8592,8 +8677,10 @@ static int _wrap_vector_SpaceDrone___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_SpaceDrone___setitem",1,SWIGTYPE_p_std__vectorT_SpaceDrone_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_SpaceDrone,0))){
     SWIG_fail_ptr("vector_SpaceDrone___setitem",3,SWIGTYPE_p_SpaceDrone);
@@ -8698,8 +8785,10 @@ static int _wrap_new_vector_Room__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Room * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Room * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Room * > *)new std::vector< Room * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Room_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -8745,8 +8834,10 @@ static int _wrap_new_vector_Room__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Room * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Room * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< Room * >::vector",2,"Room *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Room,0))){
     SWIG_fail_ptr("new_vector_Room",2,SWIGTYPE_p_Room);
@@ -9037,8 +9128,10 @@ static int _wrap_vector_Room___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Room___getitem",1,SWIGTYPE_p_std__vectorT_Room_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (Room *)std_vector_Sl_Room_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -9070,8 +9163,10 @@ static int _wrap_vector_Room___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Room___setitem",1,SWIGTYPE_p_std__vectorT_Room_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_Room,0))){
     SWIG_fail_ptr("vector_Room___setitem",3,SWIGTYPE_p_Room);
@@ -9594,8 +9689,10 @@ static int _wrap_new_vector_Door__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Door * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Door * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Door * > *)new std::vector< Door * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Door_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -9641,8 +9738,10 @@ static int _wrap_new_vector_Door__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Door * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Door * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< Door * >::vector",2,"Door *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Door,0))){
     SWIG_fail_ptr("new_vector_Door",2,SWIGTYPE_p_Door);
@@ -9933,8 +10032,10 @@ static int _wrap_vector_Door___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Door___getitem",1,SWIGTYPE_p_std__vectorT_Door_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (Door *)std_vector_Sl_Door_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -9966,8 +10067,10 @@ static int _wrap_vector_Door___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Door___setitem",1,SWIGTYPE_p_std__vectorT_Door_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_Door,0))){
     SWIG_fail_ptr("vector_Door___setitem",3,SWIGTYPE_p_Door);
@@ -10072,8 +10175,10 @@ static int _wrap_new_vector_Repairable__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Repairable * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Repairable * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Repairable * > *)new std::vector< Repairable * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Repairable_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -10119,8 +10224,10 @@ static int _wrap_new_vector_Repairable__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Repairable * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Repairable * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< Repairable * >::vector",2,"Repairable *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Repairable,0))){
     SWIG_fail_ptr("new_vector_Repairable",2,SWIGTYPE_p_Repairable);
@@ -10411,8 +10518,10 @@ static int _wrap_vector_Repairable___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Repairable___getitem",1,SWIGTYPE_p_std__vectorT_Repairable_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (Repairable *)std_vector_Sl_Repairable_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -10444,8 +10553,10 @@ static int _wrap_vector_Repairable___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Repairable___setitem",1,SWIGTYPE_p_std__vectorT_Repairable_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_Repairable,0))){
     SWIG_fail_ptr("vector_Repairable___setitem",3,SWIGTYPE_p_Repairable);
@@ -10550,8 +10661,10 @@ static int _wrap_new_vector_OuterHull__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< OuterHull * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< OuterHull * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< OuterHull * > *)new std::vector< OuterHull * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_OuterHull_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -10597,8 +10710,10 @@ static int _wrap_new_vector_OuterHull__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< OuterHull * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< OuterHull * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< OuterHull * >::vector",2,"OuterHull *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_OuterHull,0))){
     SWIG_fail_ptr("new_vector_OuterHull",2,SWIGTYPE_p_OuterHull);
@@ -10889,8 +11004,10 @@ static int _wrap_vector_OuterHull___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_OuterHull___getitem",1,SWIGTYPE_p_std__vectorT_OuterHull_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (OuterHull *)std_vector_Sl_OuterHull_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -10922,8 +11039,10 @@ static int _wrap_vector_OuterHull___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_OuterHull___setitem",1,SWIGTYPE_p_std__vectorT_OuterHull_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_OuterHull,0))){
     SWIG_fail_ptr("vector_OuterHull___setitem",3,SWIGTYPE_p_OuterHull);
@@ -11028,8 +11147,10 @@ static int _wrap_new_vector_WeaponMount__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< WeaponMount >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< WeaponMount >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< WeaponMount > *)new std::vector< WeaponMount >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_WeaponMount_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -11076,8 +11197,10 @@ static int _wrap_new_vector_WeaponMount__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< WeaponMount >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< WeaponMount >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< WeaponMount >::vector",2,"WeaponMount");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_WeaponMount,0))){
     SWIG_fail_ptr("new_vector_WeaponMount",2,SWIGTYPE_p_WeaponMount);
@@ -11377,8 +11500,10 @@ static int _wrap_vector_WeaponMount___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_WeaponMount___getitem",1,SWIGTYPE_p_std__vectorT_WeaponMount_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_WeaponMount_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -11414,8 +11539,10 @@ static int _wrap_vector_WeaponMount___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_WeaponMount___setitem",1,SWIGTYPE_p_std__vectorT_WeaponMount_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_WeaponMount,0))){
     SWIG_fail_ptr("vector_WeaponMount___setitem",3,SWIGTYPE_p_WeaponMount);
@@ -11521,8 +11648,10 @@ static int _wrap_new_vector_DamageMessage__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< DamageMessage * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< DamageMessage * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< DamageMessage * > *)new std::vector< DamageMessage * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_DamageMessage_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -11568,8 +11697,10 @@ static int _wrap_new_vector_DamageMessage__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< DamageMessage * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< DamageMessage * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< DamageMessage * >::vector",2,"DamageMessage *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_DamageMessage,0))){
     SWIG_fail_ptr("new_vector_DamageMessage",2,SWIGTYPE_p_DamageMessage);
@@ -11860,8 +11991,10 @@ static int _wrap_vector_DamageMessage___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_DamageMessage___getitem",1,SWIGTYPE_p_std__vectorT_DamageMessage_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (DamageMessage *)std_vector_Sl_DamageMessage_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -11893,8 +12026,10 @@ static int _wrap_vector_DamageMessage___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_DamageMessage___setitem",1,SWIGTYPE_p_std__vectorT_DamageMessage_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_DamageMessage,0))){
     SWIG_fail_ptr("vector_DamageMessage___setitem",3,SWIGTYPE_p_DamageMessage);
@@ -11999,8 +12134,10 @@ static int _wrap_new_vector_Projectile__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Projectile * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Projectile * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Projectile * > *)new std::vector< Projectile * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Projectile_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -12046,8 +12183,10 @@ static int _wrap_new_vector_Projectile__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Projectile * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Projectile * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< Projectile * >::vector",2,"Projectile *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Projectile,0))){
     SWIG_fail_ptr("new_vector_Projectile",2,SWIGTYPE_p_Projectile);
@@ -12344,8 +12483,10 @@ static int _wrap_vector_Projectile___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Projectile___getitem",1,SWIGTYPE_p_std__vectorT_Projectile_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (Projectile *)std_vector_Sl_Projectile_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -12380,8 +12521,10 @@ static int _wrap_vector_Projectile___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Projectile___setitem",1,SWIGTYPE_p_std__vectorT_Projectile_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_Projectile,0))){
     SWIG_fail_ptr("vector_Projectile___setitem",3,SWIGTYPE_p_Projectile);
@@ -12486,8 +12629,10 @@ static int _wrap_new_vector_Animation__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Animation >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Animation >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Animation > *)new std::vector< Animation >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Animation_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -12534,8 +12679,10 @@ static int _wrap_new_vector_Animation__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Animation >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Animation >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< Animation >::vector",2,"Animation");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_Animation,0))){
     SWIG_fail_ptr("new_vector_Animation",2,SWIGTYPE_p_Animation);
@@ -12835,8 +12982,10 @@ static int _wrap_vector_Animation___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Animation___getitem",1,SWIGTYPE_p_std__vectorT_Animation_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_Animation_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -12872,8 +13021,10 @@ static int _wrap_vector_Animation___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Animation___setitem",1,SWIGTYPE_p_std__vectorT_Animation_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Animation,0))){
     SWIG_fail_ptr("vector_Animation___setitem",3,SWIGTYPE_p_Animation);
@@ -12979,8 +13130,10 @@ static int _wrap_new_vector_MiniProjectile__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< WeaponBlueprint::MiniProjectile >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< WeaponBlueprint::MiniProjectile >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< WeaponBlueprint::MiniProjectile > *)new std::vector< WeaponBlueprint::MiniProjectile >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_WeaponBlueprint__MiniProjectile_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -13027,8 +13180,10 @@ static int _wrap_new_vector_MiniProjectile__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< WeaponBlueprint::MiniProjectile >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< WeaponBlueprint::MiniProjectile >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< WeaponBlueprint::MiniProjectile >::vector",2,"WeaponBlueprint::MiniProjectile");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_WeaponBlueprint__MiniProjectile,0))){
     SWIG_fail_ptr("new_vector_MiniProjectile",2,SWIGTYPE_p_WeaponBlueprint__MiniProjectile);
@@ -13328,8 +13483,10 @@ static int _wrap_vector_MiniProjectile___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_MiniProjectile___getitem",1,SWIGTYPE_p_std__vectorT_WeaponBlueprint__MiniProjectile_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_WeaponBlueprint_MiniProjectile_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -13365,8 +13522,10 @@ static int _wrap_vector_MiniProjectile___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_MiniProjectile___setitem",1,SWIGTYPE_p_std__vectorT_WeaponBlueprint__MiniProjectile_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_WeaponBlueprint__MiniProjectile,0))){
     SWIG_fail_ptr("vector_MiniProjectile___setitem",3,SWIGTYPE_p_WeaponBlueprint__MiniProjectile);
@@ -13994,8 +14153,10 @@ static int _wrap_new_vector_Pointf__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Pointf >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Pointf >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Pointf > *)new std::vector< Pointf >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Pointf_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -14042,8 +14203,10 @@ static int _wrap_new_vector_Pointf__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Pointf >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Pointf >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< Pointf >::vector",2,"Pointf");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_Pointf,0))){
     SWIG_fail_ptr("new_vector_Pointf",2,SWIGTYPE_p_Pointf);
@@ -14343,8 +14506,10 @@ static int _wrap_vector_Pointf___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Pointf___getitem",1,SWIGTYPE_p_std__vectorT_Pointf_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_Pointf_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -14380,8 +14545,10 @@ static int _wrap_vector_Pointf___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Pointf___setitem",1,SWIGTYPE_p_std__vectorT_Pointf_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Pointf,0))){
     SWIG_fail_ptr("vector_Pointf___setitem",3,SWIGTYPE_p_Pointf);
@@ -14487,8 +14654,10 @@ static int _wrap_new_vector_Point__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Point >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Point >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Point > *)new std::vector< Point >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Point_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -14535,8 +14704,10 @@ static int _wrap_new_vector_Point__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Point >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Point >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< Point >::vector",2,"Point");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_Point,0))){
     SWIG_fail_ptr("new_vector_Point",2,SWIGTYPE_p_Point);
@@ -14836,8 +15007,10 @@ static int _wrap_vector_Point___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Point___getitem",1,SWIGTYPE_p_std__vectorT_Point_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_Point_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -14873,8 +15046,10 @@ static int _wrap_vector_Point___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Point___setitem",1,SWIGTYPE_p_std__vectorT_Point_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Point,0))){
     SWIG_fail_ptr("vector_Point___setitem",3,SWIGTYPE_p_Point);
@@ -16234,8 +16409,10 @@ static int _wrap_new_vector_ActivatedPower__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< ActivatedPower * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ActivatedPower * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< ActivatedPower * > *)new std::vector< ActivatedPower * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ActivatedPower_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -16281,8 +16458,10 @@ static int _wrap_new_vector_ActivatedPower__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< ActivatedPower * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ActivatedPower * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< ActivatedPower * >::vector",2,"ActivatedPower *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ActivatedPower,0))){
     SWIG_fail_ptr("new_vector_ActivatedPower",2,SWIGTYPE_p_ActivatedPower);
@@ -16573,8 +16752,10 @@ static int _wrap_vector_ActivatedPower___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_ActivatedPower___getitem",1,SWIGTYPE_p_std__vectorT_ActivatedPower_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (ActivatedPower *)std_vector_Sl_ActivatedPower_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -16606,8 +16787,10 @@ static int _wrap_vector_ActivatedPower___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_ActivatedPower___setitem",1,SWIGTYPE_p_std__vectorT_ActivatedPower_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ActivatedPower,0))){
     SWIG_fail_ptr("vector_ActivatedPower___setitem",3,SWIGTYPE_p_ActivatedPower);
@@ -16712,8 +16895,10 @@ static int _wrap_new_vector_ActivatedPowerResource__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< ActivatedPowerResource * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ActivatedPowerResource * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< ActivatedPowerResource * > *)new std::vector< ActivatedPowerResource * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ActivatedPowerResource_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -16759,8 +16944,10 @@ static int _wrap_new_vector_ActivatedPowerResource__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< ActivatedPowerResource * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ActivatedPowerResource * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< ActivatedPowerResource * >::vector",2,"ActivatedPowerResource *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ActivatedPowerResource,0))){
     SWIG_fail_ptr("new_vector_ActivatedPowerResource",2,SWIGTYPE_p_ActivatedPowerResource);
@@ -17051,8 +17238,10 @@ static int _wrap_vector_ActivatedPowerResource___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_ActivatedPowerResource___getitem",1,SWIGTYPE_p_std__vectorT_ActivatedPowerResource_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (ActivatedPowerResource *)std_vector_Sl_ActivatedPowerResource_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -17084,8 +17273,10 @@ static int _wrap_vector_ActivatedPowerResource___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_ActivatedPowerResource___setitem",1,SWIGTYPE_p_std__vectorT_ActivatedPowerResource_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ActivatedPowerResource,0))){
     SWIG_fail_ptr("vector_ActivatedPowerResource___setitem",3,SWIGTYPE_p_ActivatedPowerResource);
@@ -17875,8 +18066,10 @@ static int _wrap_new_vector_pair_CrewExtraCondition_bool__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< std::pair< CrewExtraCondition,bool > >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::pair< CrewExtraCondition,bool > >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< std::pair< CrewExtraCondition,bool > > *)new std::vector< std::pair< CrewExtraCondition,bool > >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__pairT_CrewExtraCondition_bool_t_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -17923,8 +18116,10 @@ static int _wrap_new_vector_pair_CrewExtraCondition_bool__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< std::pair< CrewExtraCondition,bool > >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::pair< CrewExtraCondition,bool > >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::pair< CrewExtraCondition,bool > >::vector",2,"std::pair< CrewExtraCondition,bool >");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__pairT_CrewExtraCondition_bool_t,0))){
     SWIG_fail_ptr("new_vector_pair_CrewExtraCondition_bool",2,SWIGTYPE_p_std__pairT_CrewExtraCondition_bool_t);
@@ -18224,8 +18419,10 @@ static int _wrap_vector_pair_CrewExtraCondition_bool___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_pair_CrewExtraCondition_bool___getitem",1,SWIGTYPE_p_std__vectorT_std__pairT_CrewExtraCondition_bool_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_std_pair_Sl_CrewExtraCondition_Sc_bool_Sg__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -18261,8 +18458,10 @@ static int _wrap_vector_pair_CrewExtraCondition_bool___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_pair_CrewExtraCondition_bool___setitem",1,SWIGTYPE_p_std__vectorT_std__pairT_CrewExtraCondition_bool_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__pairT_CrewExtraCondition_bool_t,0))){
     SWIG_fail_ptr("vector_pair_CrewExtraCondition_bool___setitem",3,SWIGTYPE_p_std__pairT_CrewExtraCondition_bool_t);
@@ -18368,8 +18567,10 @@ static int _wrap_new_vector_CrewBlueprint__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< CrewBlueprint >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< CrewBlueprint >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< CrewBlueprint > *)new std::vector< CrewBlueprint >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_CrewBlueprint_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -18416,8 +18617,10 @@ static int _wrap_new_vector_CrewBlueprint__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< CrewBlueprint >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< CrewBlueprint >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< CrewBlueprint >::vector",2,"CrewBlueprint");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_CrewBlueprint,0))){
     SWIG_fail_ptr("new_vector_CrewBlueprint",2,SWIGTYPE_p_CrewBlueprint);
@@ -18717,8 +18920,10 @@ static int _wrap_vector_CrewBlueprint___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_CrewBlueprint___getitem",1,SWIGTYPE_p_std__vectorT_CrewBlueprint_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_CrewBlueprint_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -18754,8 +18959,10 @@ static int _wrap_vector_CrewBlueprint___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_CrewBlueprint___setitem",1,SWIGTYPE_p_std__vectorT_CrewBlueprint_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_CrewBlueprint,0))){
     SWIG_fail_ptr("vector_CrewBlueprint___setitem",3,SWIGTYPE_p_CrewBlueprint);
@@ -18861,8 +19068,10 @@ static int _wrap_new_vector_DroneBlueprint__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< DroneBlueprint * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< DroneBlueprint * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< DroneBlueprint * > *)new std::vector< DroneBlueprint * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_DroneBlueprint_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -18908,8 +19117,10 @@ static int _wrap_new_vector_DroneBlueprint__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< DroneBlueprint * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< DroneBlueprint * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< DroneBlueprint * >::vector",2,"DroneBlueprint *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_DroneBlueprint,0))){
     SWIG_fail_ptr("new_vector_DroneBlueprint",2,SWIGTYPE_p_DroneBlueprint);
@@ -19200,8 +19411,10 @@ static int _wrap_vector_DroneBlueprint___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_DroneBlueprint___getitem",1,SWIGTYPE_p_std__vectorT_DroneBlueprint_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (DroneBlueprint *)std_vector_Sl_DroneBlueprint_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -19233,8 +19446,10 @@ static int _wrap_vector_DroneBlueprint___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_DroneBlueprint___setitem",1,SWIGTYPE_p_std__vectorT_DroneBlueprint_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_DroneBlueprint,0))){
     SWIG_fail_ptr("vector_DroneBlueprint___setitem",3,SWIGTYPE_p_DroneBlueprint);
@@ -19339,8 +19554,10 @@ static int _wrap_new_vector_WeaponBlueprint__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< WeaponBlueprint * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< WeaponBlueprint * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< WeaponBlueprint * > *)new std::vector< WeaponBlueprint * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_WeaponBlueprint_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -19386,8 +19603,10 @@ static int _wrap_new_vector_WeaponBlueprint__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< WeaponBlueprint * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< WeaponBlueprint * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< WeaponBlueprint * >::vector",2,"WeaponBlueprint *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_WeaponBlueprint,0))){
     SWIG_fail_ptr("new_vector_WeaponBlueprint",2,SWIGTYPE_p_WeaponBlueprint);
@@ -19678,8 +19897,10 @@ static int _wrap_vector_WeaponBlueprint___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_WeaponBlueprint___getitem",1,SWIGTYPE_p_std__vectorT_WeaponBlueprint_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (WeaponBlueprint *)std_vector_Sl_WeaponBlueprint_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -19711,8 +19932,10 @@ static int _wrap_vector_WeaponBlueprint___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_WeaponBlueprint___setitem",1,SWIGTYPE_p_std__vectorT_WeaponBlueprint_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_WeaponBlueprint,0))){
     SWIG_fail_ptr("vector_WeaponBlueprint___setitem",3,SWIGTYPE_p_WeaponBlueprint);
@@ -19817,8 +20040,10 @@ static int _wrap_new_vector_pair_int_int__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< std::pair< int,int > >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::pair< int,int > >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< std::pair< int,int > > *)new std::vector< std::pair< int,int > >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__pairT_int_int_t_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -19865,8 +20090,10 @@ static int _wrap_new_vector_pair_int_int__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< std::pair< int,int > >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::pair< int,int > >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::pair< int,int > >::vector",2,"std::pair< int,int >");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__pairT_int_int_t,0))){
     SWIG_fail_ptr("new_vector_pair_int_int",2,SWIGTYPE_p_std__pairT_int_int_t);
@@ -20166,8 +20393,10 @@ static int _wrap_vector_pair_int_int___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_pair_int_int___getitem",1,SWIGTYPE_p_std__vectorT_std__pairT_int_int_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_std_pair_Sl_int_Sc_int_Sg__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -20203,8 +20432,10 @@ static int _wrap_vector_pair_int_int___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_pair_int_int___setitem",1,SWIGTYPE_p_std__vectorT_std__pairT_int_int_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__pairT_int_int_t,0))){
     SWIG_fail_ptr("vector_pair_int_int___setitem",3,SWIGTYPE_p_std__pairT_int_int_t);
@@ -20310,8 +20541,10 @@ static int _wrap_new_vector_TextString__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< TextString >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< TextString >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< TextString > *)new std::vector< TextString >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_TextString_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -20358,8 +20591,10 @@ static int _wrap_new_vector_TextString__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< TextString >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< TextString >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< TextString >::vector",2,"TextString");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_TextString,0))){
     SWIG_fail_ptr("new_vector_TextString",2,SWIGTYPE_p_TextString);
@@ -20659,8 +20894,10 @@ static int _wrap_vector_TextString___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_TextString___getitem",1,SWIGTYPE_p_std__vectorT_TextString_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_TextString_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -20696,8 +20933,10 @@ static int _wrap_vector_TextString___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_TextString___setitem",1,SWIGTYPE_p_std__vectorT_TextString_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_TextString,0))){
     SWIG_fail_ptr("vector_TextString___setitem",3,SWIGTYPE_p_TextString);
@@ -20803,8 +21042,10 @@ static int _wrap_new_vector_GL_Color__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< GL_Color >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< GL_Color >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< GL_Color > *)new std::vector< GL_Color >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_GL_Color_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -20851,8 +21092,10 @@ static int _wrap_new_vector_GL_Color__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< GL_Color >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< GL_Color >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< GL_Color >::vector",2,"GL_Color");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_GL_Color,0))){
     SWIG_fail_ptr("new_vector_GL_Color",2,SWIGTYPE_p_GL_Color);
@@ -21152,8 +21395,10 @@ static int _wrap_vector_GL_Color___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_GL_Color___getitem",1,SWIGTYPE_p_std__vectorT_GL_Color_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_GL_Color_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -21189,8 +21434,10 @@ static int _wrap_vector_GL_Color___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_GL_Color___setitem",1,SWIGTYPE_p_std__vectorT_GL_Color_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_GL_Color,0))){
     SWIG_fail_ptr("vector_GL_Color___setitem",3,SWIGTYPE_p_GL_Color);
@@ -21296,8 +21543,10 @@ static int _wrap_new_vector_vector_GL_Color__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< std::vector< GL_Color > >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::vector< GL_Color > >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< std::vector< GL_Color > > *)new std::vector< std::vector< GL_Color > >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__vectorT_GL_Color_t_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -21344,8 +21593,10 @@ static int _wrap_new_vector_vector_GL_Color__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< std::vector< GL_Color > >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::vector< GL_Color > >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::vector< GL_Color > >::vector",2,"std::vector< GL_Color >");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__vectorT_GL_Color_t,0))){
     SWIG_fail_ptr("new_vector_vector_GL_Color",2,SWIGTYPE_p_std__vectorT_GL_Color_t);
@@ -21645,8 +21896,10 @@ static int _wrap_vector_vector_GL_Color___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_vector_GL_Color___getitem",1,SWIGTYPE_p_std__vectorT_std__vectorT_GL_Color_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_std_vector_Sl_GL_Color_Sg__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -21682,8 +21935,10 @@ static int _wrap_vector_vector_GL_Color___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_vector_GL_Color___setitem",1,SWIGTYPE_p_std__vectorT_std__vectorT_GL_Color_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__vectorT_GL_Color_t,0))){
     SWIG_fail_ptr("vector_vector_GL_Color___setitem",3,SWIGTYPE_p_std__vectorT_GL_Color_t);
@@ -21789,8 +22044,10 @@ static int _wrap_new_vector_CrewDesc__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< CrewDesc >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< CrewDesc >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< CrewDesc > *)new std::vector< CrewDesc >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_CrewDesc_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -21837,8 +22094,10 @@ static int _wrap_new_vector_CrewDesc__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< CrewDesc >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< CrewDesc >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< CrewDesc >::vector",2,"CrewDesc");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_CrewDesc,0))){
     SWIG_fail_ptr("new_vector_CrewDesc",2,SWIGTYPE_p_CrewDesc);
@@ -22138,8 +22397,10 @@ static int _wrap_vector_CrewDesc___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_CrewDesc___getitem",1,SWIGTYPE_p_std__vectorT_CrewDesc_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_CrewDesc_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -22175,8 +22436,10 @@ static int _wrap_vector_CrewDesc___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_CrewDesc___setitem",1,SWIGTYPE_p_std__vectorT_CrewDesc_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_CrewDesc,0))){
     SWIG_fail_ptr("vector_CrewDesc___setitem",3,SWIGTYPE_p_CrewDesc);
@@ -22282,8 +22545,10 @@ static int _wrap_new_vector_Fire__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Fire >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Fire >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Fire > *)new std::vector< Fire >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Fire_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -22330,8 +22595,10 @@ static int _wrap_new_vector_Fire__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Fire >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Fire >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< Fire >::vector",2,"Fire");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_Fire,0))){
     SWIG_fail_ptr("new_vector_Fire",2,SWIGTYPE_p_Fire);
@@ -22631,8 +22898,10 @@ static int _wrap_vector_Fire___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Fire___getitem",1,SWIGTYPE_p_std__vectorT_Fire_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_Fire_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -22668,8 +22937,10 @@ static int _wrap_vector_Fire___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Fire___setitem",1,SWIGTYPE_p_std__vectorT_Fire_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Fire,0))){
     SWIG_fail_ptr("vector_Fire___setitem",3,SWIGTYPE_p_Fire);
@@ -22775,8 +23046,10 @@ static int _wrap_new_vector_vector_Fire__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< std::vector< Fire > >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::vector< Fire > >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< std::vector< Fire > > *)new std::vector< std::vector< Fire > >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__vectorT_Fire_t_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -22823,8 +23096,10 @@ static int _wrap_new_vector_vector_Fire__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< std::vector< Fire > >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::vector< Fire > >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::vector< Fire > >::vector",2,"std::vector< Fire >");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__vectorT_Fire_t,0))){
     SWIG_fail_ptr("new_vector_vector_Fire",2,SWIGTYPE_p_std__vectorT_Fire_t);
@@ -23124,8 +23399,10 @@ static int _wrap_vector_vector_Fire___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_vector_Fire___getitem",1,SWIGTYPE_p_std__vectorT_std__vectorT_Fire_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_std_vector_Sl_Fire_Sg__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -23161,8 +23438,10 @@ static int _wrap_vector_vector_Fire___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_vector_Fire___setitem",1,SWIGTYPE_p_std__vectorT_std__vectorT_Fire_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__vectorT_Fire_t,0))){
     SWIG_fail_ptr("vector_vector_Fire___setitem",3,SWIGTYPE_p_std__vectorT_Fire_t);
@@ -23268,8 +23547,10 @@ static int _wrap_new_vector_CrewPlacementDefinition__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< CrewPlacementDefinition >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< CrewPlacementDefinition >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< CrewPlacementDefinition > *)new std::vector< CrewPlacementDefinition >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_CrewPlacementDefinition_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -23316,8 +23597,10 @@ static int _wrap_new_vector_CrewPlacementDefinition__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< CrewPlacementDefinition >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< CrewPlacementDefinition >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< CrewPlacementDefinition >::vector",2,"CrewPlacementDefinition");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_CrewPlacementDefinition,0))){
     SWIG_fail_ptr("new_vector_CrewPlacementDefinition",2,SWIGTYPE_p_CrewPlacementDefinition);
@@ -23617,8 +23900,10 @@ static int _wrap_vector_CrewPlacementDefinition___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_CrewPlacementDefinition___getitem",1,SWIGTYPE_p_std__vectorT_CrewPlacementDefinition_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_CrewPlacementDefinition_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -23654,8 +23939,10 @@ static int _wrap_vector_CrewPlacementDefinition___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_CrewPlacementDefinition___setitem",1,SWIGTYPE_p_std__vectorT_CrewPlacementDefinition_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_CrewPlacementDefinition,0))){
     SWIG_fail_ptr("vector_CrewPlacementDefinition___setitem",3,SWIGTYPE_p_CrewPlacementDefinition);
@@ -23761,8 +24048,10 @@ static int _wrap_new_vector_string__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< std::string >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::string >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< std::string > *)new std::vector< std::string >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__string_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -23808,8 +24097,10 @@ static int _wrap_new_vector_string__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< std::string >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::string >::vector",1,"unsigned int");
   if(!lua_isstring(L,2)) SWIG_fail_arg("std::vector< std::string >::vector",2,"std::string");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   (&arg2)->assign(lua_tostring(L,2),lua_rawlen(L,2));
   result = (std::vector< std::string > *)new std::vector< std::string >(arg1,arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__string_t,1); SWIG_arg++; 
@@ -24087,8 +24378,10 @@ static int _wrap_vector_string___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_string___getitem",1,SWIGTYPE_p_std__vectorT_std__string_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_std_string_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -24120,8 +24413,10 @@ static int _wrap_vector_string___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_string___setitem",1,SWIGTYPE_p_std__vectorT_std__string_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   (&arg3)->assign(lua_tostring(L,3),lua_rawlen(L,3));
   try {
     std_vector_Sl_std_string_Sg____setitem__(arg1,arg2,arg3);
@@ -24222,8 +24517,10 @@ static int _wrap_new_vector_StatBoostDefinition__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< StatBoostDefinition * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< StatBoostDefinition * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< StatBoostDefinition * > *)new std::vector< StatBoostDefinition * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_StatBoostDefinition_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -24269,8 +24566,10 @@ static int _wrap_new_vector_StatBoostDefinition__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< StatBoostDefinition * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< StatBoostDefinition * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< StatBoostDefinition * >::vector",2,"StatBoostDefinition *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_StatBoostDefinition,0))){
     SWIG_fail_ptr("new_vector_StatBoostDefinition",2,SWIGTYPE_p_StatBoostDefinition);
@@ -24561,8 +24860,10 @@ static int _wrap_vector_StatBoostDefinition___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_StatBoostDefinition___getitem",1,SWIGTYPE_p_std__vectorT_StatBoostDefinition_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (StatBoostDefinition *)std_vector_Sl_StatBoostDefinition_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -24594,8 +24895,10 @@ static int _wrap_vector_StatBoostDefinition___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_StatBoostDefinition___setitem",1,SWIGTYPE_p_std__vectorT_StatBoostDefinition_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_StatBoostDefinition,0))){
     SWIG_fail_ptr("vector_StatBoostDefinition___setitem",3,SWIGTYPE_p_StatBoostDefinition);
@@ -24700,8 +25003,10 @@ static int _wrap_new_vector_TriggeredEventDefinition__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< TriggeredEventDefinition >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< TriggeredEventDefinition >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< TriggeredEventDefinition > *)new std::vector< TriggeredEventDefinition >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_TriggeredEventDefinition_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -24748,8 +25053,10 @@ static int _wrap_new_vector_TriggeredEventDefinition__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< TriggeredEventDefinition >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< TriggeredEventDefinition >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< TriggeredEventDefinition >::vector",2,"TriggeredEventDefinition");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_TriggeredEventDefinition,0))){
     SWIG_fail_ptr("new_vector_TriggeredEventDefinition",2,SWIGTYPE_p_TriggeredEventDefinition);
@@ -25049,8 +25356,10 @@ static int _wrap_vector_TriggeredEventDefinition___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_TriggeredEventDefinition___getitem",1,SWIGTYPE_p_std__vectorT_TriggeredEventDefinition_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_TriggeredEventDefinition_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -25086,8 +25395,10 @@ static int _wrap_vector_TriggeredEventDefinition___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_TriggeredEventDefinition___setitem",1,SWIGTYPE_p_std__vectorT_TriggeredEventDefinition_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_TriggeredEventDefinition,0))){
     SWIG_fail_ptr("vector_TriggeredEventDefinition___setitem",3,SWIGTYPE_p_TriggeredEventDefinition);
@@ -25469,8 +25780,10 @@ static int _wrap_new_vector_pair_Animation_int8_t__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< std::pair< Animation,int8_t > >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::pair< Animation,int8_t > >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< std::pair< Animation,int8_t > > *)new std::vector< std::pair< Animation,int8_t > >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__pairT_Animation_int8_t_t_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -25517,8 +25830,10 @@ static int _wrap_new_vector_pair_Animation_int8_t__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< std::pair< Animation,int8_t > >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< std::pair< Animation,int8_t > >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< std::pair< Animation,int8_t > >::vector",2,"std::pair< Animation,int8_t >");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_std__pairT_Animation_signed_char_t,0))){
     SWIG_fail_ptr("new_vector_pair_Animation_int8_t",2,SWIGTYPE_p_std__pairT_Animation_signed_char_t);
@@ -25818,8 +26133,10 @@ static int _wrap_vector_pair_Animation_int8_t___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_pair_Animation_int8_t___getitem",1,SWIGTYPE_p_std__vectorT_std__pairT_Animation_int8_t_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_std_pair_Sl_Animation_Sc_int8_t_Sg__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -25855,8 +26172,10 @@ static int _wrap_vector_pair_Animation_int8_t___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_pair_Animation_int8_t___setitem",1,SWIGTYPE_p_std__vectorT_std__pairT_Animation_int8_t_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_std__pairT_Animation_signed_char_t,0))){
     SWIG_fail_ptr("vector_pair_Animation_int8_t___setitem",3,SWIGTYPE_p_std__pairT_Animation_signed_char_t);
@@ -25962,8 +26281,10 @@ static int _wrap_new_vector_location__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Location * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Location * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Location * > *)new std::vector< Location * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Location_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -26009,8 +26330,10 @@ static int _wrap_new_vector_location__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Location * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Location * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< Location * >::vector",2,"Location *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Location,0))){
     SWIG_fail_ptr("new_vector_location",2,SWIGTYPE_p_Location);
@@ -26301,8 +26624,10 @@ static int _wrap_vector_location___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_location___getitem",1,SWIGTYPE_p_std__vectorT_Location_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (Location *)std_vector_Sl_Location_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -26334,8 +26659,10 @@ static int _wrap_vector_location___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_location___setitem",1,SWIGTYPE_p_std__vectorT_Location_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_Location,0))){
     SWIG_fail_ptr("vector_location___setitem",3,SWIGTYPE_p_Location);
@@ -26440,8 +26767,10 @@ static int _wrap_new_vector_locationEventChoice__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< LocationEvent::Choice >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< LocationEvent::Choice >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< LocationEvent::Choice > *)new std::vector< LocationEvent::Choice >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_LocationEvent__Choice_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -26488,8 +26817,10 @@ static int _wrap_new_vector_locationEventChoice__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< LocationEvent::Choice >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< LocationEvent::Choice >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< LocationEvent::Choice >::vector",2,"LocationEvent::Choice");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_LocationEvent__Choice,0))){
     SWIG_fail_ptr("new_vector_locationEventChoice",2,SWIGTYPE_p_LocationEvent__Choice);
@@ -26789,8 +27120,10 @@ static int _wrap_vector_locationEventChoice___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_locationEventChoice___getitem",1,SWIGTYPE_p_std__vectorT_LocationEvent__Choice_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_LocationEvent_Choice_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -26826,8 +27159,10 @@ static int _wrap_vector_locationEventChoice___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_locationEventChoice___setitem",1,SWIGTYPE_p_std__vectorT_LocationEvent__Choice_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_LocationEvent__Choice,0))){
     SWIG_fail_ptr("vector_locationEventChoice___setitem",3,SWIGTYPE_p_LocationEvent__Choice);
@@ -26933,8 +27268,10 @@ static int _wrap_new_vector_p_locationEventChoice__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< LocationEvent::Choice * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< LocationEvent::Choice * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< LocationEvent::Choice * > *)new std::vector< LocationEvent::Choice * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_LocationEvent__Choice_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -26980,8 +27317,10 @@ static int _wrap_new_vector_p_locationEventChoice__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< LocationEvent::Choice * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< LocationEvent::Choice * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< LocationEvent::Choice * >::vector",2,"LocationEvent::Choice *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_LocationEvent__Choice,0))){
     SWIG_fail_ptr("new_vector_p_locationEventChoice",2,SWIGTYPE_p_LocationEvent__Choice);
@@ -27272,8 +27611,10 @@ static int _wrap_vector_p_locationEventChoice___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_p_locationEventChoice___getitem",1,SWIGTYPE_p_std__vectorT_LocationEvent__Choice_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (LocationEvent::Choice *)std_vector_Sl_LocationEvent_Choice_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -27305,8 +27646,10 @@ static int _wrap_vector_p_locationEventChoice___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_p_locationEventChoice___setitem",1,SWIGTYPE_p_std__vectorT_LocationEvent__Choice_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_LocationEvent__Choice,0))){
     SWIG_fail_ptr("vector_p_locationEventChoice___setitem",3,SWIGTYPE_p_LocationEvent__Choice);
@@ -27411,8 +27754,10 @@ static int _wrap_new_vector_choiceText__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< ChoiceText >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ChoiceText >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< ChoiceText > *)new std::vector< ChoiceText >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ChoiceText_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -27459,8 +27804,10 @@ static int _wrap_new_vector_choiceText__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< ChoiceText >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ChoiceText >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< ChoiceText >::vector",2,"ChoiceText");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_ChoiceText,0))){
     SWIG_fail_ptr("new_vector_choiceText",2,SWIGTYPE_p_ChoiceText);
@@ -27760,8 +28107,10 @@ static int _wrap_vector_choiceText___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_choiceText___getitem",1,SWIGTYPE_p_std__vectorT_ChoiceText_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_ChoiceText_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -27797,8 +28146,10 @@ static int _wrap_vector_choiceText___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_choiceText___setitem",1,SWIGTYPE_p_std__vectorT_ChoiceText_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_ChoiceText,0))){
     SWIG_fail_ptr("vector_choiceText___setitem",3,SWIGTYPE_p_ChoiceText);
@@ -27904,8 +28255,10 @@ static int _wrap_new_vector_p_choiceText__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< ChoiceText * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ChoiceText * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< ChoiceText * > *)new std::vector< ChoiceText * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ChoiceText_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -27951,8 +28304,10 @@ static int _wrap_new_vector_p_choiceText__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< ChoiceText * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ChoiceText * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< ChoiceText * >::vector",2,"ChoiceText *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ChoiceText,0))){
     SWIG_fail_ptr("new_vector_p_choiceText",2,SWIGTYPE_p_ChoiceText);
@@ -28243,8 +28598,10 @@ static int _wrap_vector_p_choiceText___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_p_choiceText___getitem",1,SWIGTYPE_p_std__vectorT_ChoiceText_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (ChoiceText *)std_vector_Sl_ChoiceText_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -28276,8 +28633,10 @@ static int _wrap_vector_p_choiceText___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_p_choiceText___setitem",1,SWIGTYPE_p_std__vectorT_ChoiceText_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ChoiceText,0))){
     SWIG_fail_ptr("vector_p_choiceText___setitem",3,SWIGTYPE_p_ChoiceText);
@@ -28382,8 +28741,10 @@ static int _wrap_new_vector_Sector__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< Sector * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Sector * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< Sector * > *)new std::vector< Sector * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_Sector_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -28429,8 +28790,10 @@ static int _wrap_new_vector_Sector__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< Sector * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< Sector * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< Sector * >::vector",2,"Sector *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Sector,0))){
     SWIG_fail_ptr("new_vector_Sector",2,SWIGTYPE_p_Sector);
@@ -28721,8 +29084,10 @@ static int _wrap_vector_Sector___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_Sector___getitem",1,SWIGTYPE_p_std__vectorT_Sector_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (Sector *)std_vector_Sl_Sector_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -28754,8 +29119,10 @@ static int _wrap_vector_Sector___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_Sector___setitem",1,SWIGTYPE_p_std__vectorT_Sector_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_Sector,0))){
     SWIG_fail_ptr("vector_Sector___setitem",3,SWIGTYPE_p_Sector);
@@ -28860,8 +29227,10 @@ static int _wrap_new_vector_LockdownShard__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< LockdownShard >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< LockdownShard >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< LockdownShard > *)new std::vector< LockdownShard >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_LockdownShard_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -28908,8 +29277,10 @@ static int _wrap_new_vector_LockdownShard__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< LockdownShard >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< LockdownShard >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< LockdownShard >::vector",2,"LockdownShard");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_LockdownShard,0))){
     SWIG_fail_ptr("new_vector_LockdownShard",2,SWIGTYPE_p_LockdownShard);
@@ -29209,8 +29580,10 @@ static int _wrap_vector_LockdownShard___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_LockdownShard___getitem",1,SWIGTYPE_p_std__vectorT_LockdownShard_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_LockdownShard_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -29246,8 +29619,10 @@ static int _wrap_vector_LockdownShard___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_LockdownShard___setitem",1,SWIGTYPE_p_std__vectorT_LockdownShard_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_LockdownShard,0))){
     SWIG_fail_ptr("vector_LockdownShard___setitem",3,SWIGTYPE_p_LockdownShard);
@@ -29353,8 +29728,10 @@ static int _wrap_new_vector_p_LockdownShard__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< LockdownShard * >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< LockdownShard * >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< LockdownShard * > *)new std::vector< LockdownShard * >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_LockdownShard_p_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -29400,8 +29777,10 @@ static int _wrap_new_vector_p_LockdownShard__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< LockdownShard * >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< LockdownShard * >::vector",1,"unsigned int");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< LockdownShard * >::vector",2,"LockdownShard *");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_LockdownShard,0))){
     SWIG_fail_ptr("new_vector_p_LockdownShard",2,SWIGTYPE_p_LockdownShard);
@@ -29692,8 +30071,10 @@ static int _wrap_vector_p_LockdownShard___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_p_LockdownShard___getitem",1,SWIGTYPE_p_std__vectorT_LockdownShard_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (LockdownShard *)std_vector_Sl_LockdownShard_Sm__Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -29725,8 +30106,10 @@ static int _wrap_vector_p_LockdownShard___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_p_LockdownShard___setitem",1,SWIGTYPE_p_std__vectorT_LockdownShard_p_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_LockdownShard,0))){
     SWIG_fail_ptr("vector_p_LockdownShard___setitem",3,SWIGTYPE_p_LockdownShard);
@@ -30091,8 +30474,10 @@ static int _wrap_unordered_multimap_string_AugmentFunction___getitem(lua_State* 
     SWIG_fail_ptr("unordered_multimap_string_AugmentFunction___getitem",1,SWIGTYPE_p_std__unordered_multimapT_std__string_AugmentFunction_std__hashT_std__string_t_std__equal_toT_std__string_t_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = (std::pair< std::string,AugmentFunction > *)std_unordered_multimap_Sl_std_string_Sc_AugmentFunction_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -30502,8 +30887,10 @@ static int _wrap_new_vector_AugmentCrystalShard__SWIG_1(lua_State* L) {
   
   SWIG_check_num_args("std::vector< AugmentCrystalShard >::vector",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< AugmentCrystalShard >::vector",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (std::vector< AugmentCrystalShard > *)new std::vector< AugmentCrystalShard >(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_AugmentCrystalShard_t,1); SWIG_arg++; 
   return SWIG_arg;
@@ -30550,8 +30937,10 @@ static int _wrap_new_vector_AugmentCrystalShard__SWIG_3(lua_State* L) {
   SWIG_check_num_args("std::vector< AugmentCrystalShard >::vector",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< AugmentCrystalShard >::vector",1,"unsigned int");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("std::vector< AugmentCrystalShard >::vector",2,"AugmentCrystalShard");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_AugmentCrystalShard,0))){
     SWIG_fail_ptr("new_vector_AugmentCrystalShard",2,SWIGTYPE_p_AugmentCrystalShard);
@@ -30851,8 +31240,10 @@ static int _wrap_vector_AugmentCrystalShard___getitem(lua_State* L) {
     SWIG_fail_ptr("vector_AugmentCrystalShard___getitem",1,SWIGTYPE_p_std__vectorT_AugmentCrystalShard_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   try {
     result = std_vector_Sl_AugmentCrystalShard_Sg____getitem__(arg1,arg2);
   } catch(std::out_of_range &_e) {
@@ -30888,8 +31279,10 @@ static int _wrap_vector_AugmentCrystalShard___setitem(lua_State* L) {
     SWIG_fail_ptr("vector_AugmentCrystalShard___setitem",1,SWIGTYPE_p_std__vectorT_AugmentCrystalShard_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_AugmentCrystalShard,0))){
     SWIG_fail_ptr("vector_AugmentCrystalShard___setitem",3,SWIGTYPE_p_AugmentCrystalShard);
@@ -31689,8 +32082,10 @@ static int _wrap_setRandomSeed(lua_State* L) {
   
   SWIG_check_num_args("srandom32",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("srandom32",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   srandom32(arg1);
   
   return SWIG_arg;
@@ -77994,8 +78389,10 @@ static int _wrap_ChoiceBox_columnSize_set(lua_State* L) {
     SWIG_fail_ptr("ChoiceBox_columnSize_set",1,SWIGTYPE_p_ChoiceBox);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
   if (arg1) (arg1)->columnSize = arg2;
   
   return SWIG_arg;
@@ -93110,10 +93507,6 @@ fail:
 }
 
 
-static void swig_delete_HackingSystem(void *obj) {
-HackingSystem *arg1 = (HackingSystem *) obj;
-delete arg1;
-}
 static swig_lua_attribute swig_HackingSystem_attributes[] = {
     { "bHacking", _wrap_HackingSystem_bHacking_get, _wrap_HackingSystem_bHacking_set },
     { "drone", _wrap_HackingSystem_drone_get, _wrap_HackingSystem_drone_set },
@@ -93157,7 +93550,7 @@ static swig_lua_namespace swig_HackingSystem_Sf_SwigStatic = {
 };
 static swig_lua_class *swig_HackingSystem_bases[] = {0,0};
 static const char *swig_HackingSystem_base_names[] = {"ShipSystem *",0};
-static swig_lua_class _wrap_class_HackingSystem = { "HackingSystem", "HackingSystem", &SWIGTYPE_p_HackingSystem,0, swig_delete_HackingSystem, swig_HackingSystem_methods, swig_HackingSystem_attributes, &swig_HackingSystem_Sf_SwigStatic, swig_HackingSystem_meta, swig_HackingSystem_bases, swig_HackingSystem_base_names };
+static swig_lua_class _wrap_class_HackingSystem = { "HackingSystem", "HackingSystem", &SWIGTYPE_p_HackingSystem,0,0, swig_HackingSystem_methods, swig_HackingSystem_attributes, &swig_HackingSystem_Sf_SwigStatic, swig_HackingSystem_meta, swig_HackingSystem_bases, swig_HackingSystem_base_names };
 
 static int _wrap_new_LaserBlast(lua_State* L) {
   int SWIG_arg = 0;
@@ -106056,8 +106449,10 @@ static int _wrap_ShipGenerator_GetPossibleCrewList(lua_State* L) {
   }
   
   temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative")
-  arg3 = (unsigned int)lua_tonumber(L, 3);
+  
+  if (lua_tonumber(L, 3) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg3 = (unsigned int) lua_tonumber(L, 3);
+  
   result = ShipGenerator::GetPossibleCrewList(arg1,(std::string const &)*arg2,arg3);
   {
     std::vector< CrewBlueprint > * resultptr = new std::vector< CrewBlueprint >((const std::vector< CrewBlueprint > &) result);
@@ -106096,8 +106491,10 @@ static int _wrap_ShipGenerator_GetPossibleDroneList(lua_State* L) {
   
   temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
   arg3 = (int)lua_tonumber(L, 3);
-  SWIG_contract_assert((lua_tonumber(L,4)>=0),"number must not be negative")
-  arg4 = (unsigned int)lua_tonumber(L, 4);
+  
+  if (lua_tonumber(L, 4) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg4 = (unsigned int) lua_tonumber(L, 4);
+  
   arg5 = (lua_toboolean(L, 5)!=0);
   result = ShipGenerator::GetPossibleDroneList(arg1,(std::string const &)*arg2,arg3,arg4,arg5);
   {
@@ -106175,8 +106572,10 @@ static int _wrap_ShipGenerator_GetPossibleWeaponList(lua_State* L) {
   
   temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
   arg3 = (int)lua_tonumber(L, 3);
-  SWIG_contract_assert((lua_tonumber(L,4)>=0),"number must not be negative")
-  arg4 = (unsigned int)lua_tonumber(L, 4);
+  
+  if (lua_tonumber(L, 4) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg4 = (unsigned int) lua_tonumber(L, 4);
+  
   result = ShipGenerator::GetPossibleWeaponList(arg1,(std::string const &)*arg2,arg3,arg4);
   {
     std::vector< WeaponBlueprint * > * resultptr = new std::vector< WeaponBlueprint * >((const std::vector< WeaponBlueprint * > &) result);
@@ -106213,8 +106612,10 @@ static int _wrap_ShipGenerator_UpgradeSystem(lua_State* L) {
     SWIG_fail_ptr("ShipGenerator_UpgradeSystem",2,SWIGTYPE_p_std__vectorT_int_t);
   }
   
-  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative")
-  arg3 = (unsigned int)lua_tonumber(L, 3);
+  
+  if (lua_tonumber(L, 3) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg3 = (unsigned int) lua_tonumber(L, 3);
+  
   result = (bool)ShipGenerator::UpgradeSystem(arg1,*arg2,arg3);
   lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
   return SWIG_arg;
@@ -132399,8 +132800,10 @@ static int _wrap_GetNextPowerReadyState(lua_State* L) {
   
   SWIG_check_num_args("GetNextPowerReadyState",1,1)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("GetNextPowerReadyState",1,"unsigned int");
-  SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
-  arg1 = (unsigned int)lua_tonumber(L, 1);
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
   result = (unsigned int)GetNextPowerReadyState(arg1);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;

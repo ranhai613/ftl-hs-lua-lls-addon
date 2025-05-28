@@ -2299,7 +2299,7 @@ Hyperspace.Description = {}
 ---@class Hyperspace.Blueprint
 ---@field name String
 ---@field desc Hyperspace.Description
----@field type integer
+---@field type integer [`ShipGraph`](#ShipGraph) `.GetShipInfo(int shipId)`
 Hyperspace.Blueprint = {}
 
 ---@return Hyperspace.Blueprint
@@ -3811,7 +3811,7 @@ Hyperspace.TabbedWindow = {}
 ---@field spaceStatus Hyperspace.SpaceStatus
 ---@field pauseTextLoc Hyperspace.Point
 ---@field shipPosition Hyperspace.Point
----@field choiceBox Hyperspace.ChoiceBox (Read-only)
+---@field choiceBox Hyperspace.ChoiceBox (Read-only) **Read-only**
 ---@field outOfFuel boolean (Read-only) **Read-only**
 ---@field bPaused boolean Only true for spacebar pauses, NOT event pauses or ESC menu pauses.<br>Modifying this variable during event pauses and ESC menu pauses does not unfreeze the game; it will only change whether or not the game remains paused when the event or ESC menu closes.
 ---@field bAutoPaused boolean (Read-only) **Read-only**<br>Maybe true for event pauses and ESC menu pauses? Not sure.
@@ -3837,7 +3837,7 @@ Hyperspace.CrewDesc = {}
 function Hyperspace.CrewDesc() end
 
 ---@class Hyperspace.CrewMemberFactory
----@field crewMembers vector<Hyperspace.CrewMember> (Read-only)
+---@field crewMembers vector<Hyperspace.CrewMember> (Read-only) **read-only**
 Hyperspace.CrewMemberFactory = {}
 
 ---@param vec vector<Hyperspace.CrewMember>
@@ -4171,7 +4171,7 @@ Hyperspace.SectorDescription = {}
 
 ---@class Hyperspace.Sector
 ---@field visited boolean
----@field level integer (Read-only)
+---@field level integer (Read-only) **Read-only**
 ---@field description Hyperspace.SectorDescription (Read-only) Field is **read-only** but fields under this object may still be mutable.
 Hyperspace.Sector = {}
 
@@ -4386,10 +4386,10 @@ Hyperspace.MouseControl = {}
 
 function Hyperspace.MouseControl:InstantTooltip() end
 
---- `tooltipName` should be an id of the text without prefix `tooltip_`.
 ---@param tooltipName String
 function Hyperspace.MouseControl:LoadTooltip(tooltipName) end
 
+--- `tooltipName` should be an id of the text without prefix `tooltip_`.
 ---@param unk integer
 ---@return Hyperspace.Point
 function Hyperspace.MouseControl:MeasureTooltip(unk) end
@@ -5532,6 +5532,7 @@ function Hyperspace.CustomAchievementTracker:GetAchievementStatus(name) end
 ---@param inGame? boolean = true
 function Hyperspace.CustomAchievementTracker:UpdateVariableAchievements(varName, varValue, inGame) end
 
+--- Used to award achievements (CheckShipAchievement is automatically called if needed)
 ---@param name String
 ---@param noPopup boolean
 function Hyperspace.CustomAchievementTracker:SetAchievement(name, noPopup) end

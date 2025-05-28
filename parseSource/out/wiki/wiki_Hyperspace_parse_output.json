@@ -767,17 +767,6 @@
                 "documentation": ""
             },
             {
-                "name": "LoadTooltip",
-                "return_type": "void",
-                "args": [
-                    {
-                        "name": "tooltipName",
-                        "type": "std::string"
-                    }
-                ],
-                "documentation": "`tooltipName` should be an id of the text without prefix `tooltip_`."
-            },
-            {
                 "name": "MeasureTooltip",
                 "return_type": "Point",
                 "args": [
@@ -786,7 +775,7 @@
                         "type": "int"
                     }
                 ],
-                "documentation": ""
+                "documentation": "`tooltipName` should be an id of the text without prefix `tooltip_`."
             },
             {
                 "name": "OnLoop",
@@ -6102,7 +6091,7 @@
             },
             {
                 "name": "GetCloneReadyList",
-                "return_type": "void",
+                "return_type": "std::vector<CrewMember>",
                 "args": [
                     {
                         "name": "player",
@@ -6116,7 +6105,7 @@
             {
                 "name": "crewMembers",
                 "type": "std::vector<CrewMember>",
-                "documentation": ""
+                "documentation": "**read-only**"
             }
         ],
         "constants": []
@@ -6716,17 +6705,6 @@
                 "documentation": ""
             },
             {
-                "name": "GetSkillFromSystem",
-                "return_type": "int",
-                "args": [
-                    {
-                        "name": "systemId",
-                        "type": "int"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
                 "name": "GetSkillLevel",
                 "return_type": "int",
                 "args": [
@@ -6755,33 +6733,6 @@
                     {
                         "name": "skillId",
                         "type": "int"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
-                "name": "GetSkillTooltip",
-                "return_type": "std::string",
-                "args": [
-                    {
-                        "name": "skillId",
-                        "type": "int"
-                    },
-                    {
-                        "name": "skillLevel",
-                        "type": "int"
-                    },
-                    {
-                        "name": "unknown",
-                        "type": "std::pair<int"
-                    },
-                    {
-                        "name": "progress",
-                        "type": "int>"
-                    },
-                    {
-                        "name": "infoScreen",
-                        "type": "bool"
                     }
                 ],
                 "documentation": ""
@@ -8997,32 +8948,6 @@
                     }
                 ],
                 "documentation": ""
-            },
-            {
-                "name": "GetPowerByName",
-                "return_type": "ActivatedPowerDefinition",
-                "args": [
-                    {
-                        "name": "name",
-                        "type": "std::string"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
-                "name": "AddNamedDefinition",
-                "return_type": "ActivatedPowerDefinition",
-                "args": [
-                    {
-                        "name": "name",
-                        "type": "std::string"
-                    },
-                    {
-                        "name": "copyDef",
-                        "type": "ActivatedPowerDefinition"
-                    }
-                ],
-                "documentation": ""
             }
         ],
         "fields": [
@@ -9300,32 +9225,6 @@
                     {
                         "name": "name",
                         "type": "std::string"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
-                "name": "GetByName",
-                "return_type": "PowerResourceDefinition",
-                "args": [
-                    {
-                        "name": "name",
-                        "type": "std::string"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
-                "name": "AddNamedDefinition",
-                "return_type": "PowerResourceDefinition",
-                "args": [
-                    {
-                        "name": "name",
-                        "type": "std::string"
-                    },
-                    {
-                        "name": "copyDef",
-                        "type": "PowerResourceDefinition"
                     }
                 ],
                 "documentation": ""
@@ -10265,6 +10164,11 @@
                 "documentation": "**Read-only**"
             },
             {
+                "name": "choiceBox",
+                "type": "ChoiceBox",
+                "documentation": "**Read-only**"
+            },
+            {
                 "name": "choiceBoxOpen",
                 "type": "bool",
                 "documentation": "**Read-only**"
@@ -11183,7 +11087,7 @@
             {
                 "name": "level",
                 "type": "int",
-                "documentation": ""
+                "documentation": "**Read-only**"
             },
             {
                 "name": "description",
@@ -11747,17 +11651,6 @@
                 "return_type": "int",
                 "args": [],
                 "documentation": ""
-            },
-            {
-                "name": "GetPowerManager",
-                "return_type": "PowerManager",
-                "args": [
-                    {
-                        "name": "iShipId",
-                        "type": "int"
-                    }
-                ],
-                "documentation": ""
             }
         ],
         "fields": [
@@ -11811,12 +11704,6 @@
     },
     "CustomAugmentManager": {
         "methods": [
-            {
-                "name": "GetInstance",
-                "return_type": "CustomAugmentManager",
-                "args": [],
-                "documentation": ""
-            },
             {
                 "name": "GetAugmentDefinition",
                 "return_type": "AugmentDefinition",
@@ -13623,7 +13510,7 @@
             {
                 "name": "type",
                 "type": "int",
-                "documentation": ""
+                "documentation": "[`ShipGraph`](#ShipGraph) `.GetShipInfo(int shipId)`"
             }
         ],
         "constants": []
@@ -13980,17 +13867,6 @@
                     {
                         "name": "unk",
                         "type": "bool"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
-                "name": "GetShipInfo",
-                "return_type": "ShipGraph",
-                "args": [
-                    {
-                        "name": "shipId",
-                        "type": "int"
                     }
                 ],
                 "documentation": ""
@@ -14574,17 +14450,6 @@
                 "documentation": ""
             },
             {
-                "name": "RandomSidePoint",
-                "return_type": "Pointf",
-                "args": [
-                    {
-                        "name": "side",
-                        "type": "int"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
                 "name": "constructor",
                 "return_type": "void",
                 "args": [
@@ -14922,10 +14787,26 @@
     },
     "Asteroid": {
         "methods": [],
+        "fields": [
+            {
+                "name": "imageId",
+                "type": "GL_Texture`](./Lua-Graphics-Module#GL_Texture)",
+                "documentation": ""
+            },
+            {
+                "name": "angle",
+                "type": "float",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
+    "Missile": {
+        "methods": [],
         "fields": [],
         "constants": []
     },
-    "Methods": {
+    "BombProjectile": {
         "methods": [],
         "fields": [
             {
@@ -14954,16 +14835,6 @@
                 "documentation": ""
             }
         ],
-        "constants": []
-    },
-    "Missile": {
-        "methods": [],
-        "fields": [],
-        "constants": []
-    },
-    "BombProjectile": {
-        "methods": [],
-        "fields": [],
         "constants": []
     },
     "BeamWeapon": {
@@ -15484,17 +15355,6 @@
     "TimerHelper": {
         "methods": [
             {
-                "name": "TimerHelper",
-                "return_type": "TimerHelper",
-                "args": [
-                    {
-                        "name": "isLoop=false",
-                        "type": "bool"
-                    }
-                ],
-                "documentation": ""
-            },
-            {
                 "name": "Start",
                 "return_type": "void",
                 "args": [
@@ -15985,6 +15845,17 @@
                     }
                 ],
                 "documentation": ""
+            },
+            {
+                "name": "LoadFile",
+                "return_type": "char",
+                "args": [
+                    {
+                        "name": "fileName",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": ""
             }
         ],
         "fields": [],
@@ -15992,21 +15863,6 @@
     },
     "Point": {
         "methods": [
-            {
-                "name": "Point",
-                "return_type": "Point",
-                "args": [
-                    {
-                        "name": "x",
-                        "type": "int"
-                    },
-                    {
-                        "name": "y",
-                        "type": "int"
-                    }
-                ],
-                "documentation": ""
-            },
             {
                 "name": "Distance",
                 "return_type": "int",
@@ -16046,27 +15902,6 @@
     },
     "Pointf": {
         "methods": [
-            {
-                "name": "Pointf",
-                "return_type": "Pointf",
-                "args": [],
-                "documentation": ""
-            },
-            {
-                "name": "Pointf",
-                "return_type": "Pointf",
-                "args": [
-                    {
-                        "name": "x",
-                        "type": "int"
-                    },
-                    {
-                        "name": "y",
-                        "type": "int"
-                    }
-                ],
-                "documentation": ""
-            },
             {
                 "name": "Normalize",
                 "return_type": "Pointf",
@@ -16144,7 +15979,7 @@
                         "type": "bool"
                     }
                 ],
-                "documentation": ""
+                "documentation": "Used to award achievements (CheckShipAchievement is automatically called if needed)"
             }
         ],
         "fields": [
@@ -16158,12 +15993,6 @@
     },
     "CustomEventsParser": {
         "methods": [
-            {
-                "name": "GetInstance",
-                "return_type": "CustomEventsParser",
-                "args": [],
-                "documentation": ""
-            },
             {
                 "name": "LoadEvent",
                 "return_type": "void",
@@ -16219,7 +16048,7 @@
                 "return_type": "CustomEvent",
                 "args": [
                     {
-                        "name": "eventName",
+                        "name": "event",
                         "type": "std::string"
                     }
                 ],
@@ -16436,12 +16265,6 @@
     },
     "CustomShipSelect": {
         "methods": [
-            {
-                "name": "GetInstance",
-                "return_type": "CustomShipSelect",
-                "args": [],
-                "documentation": ""
-            },
             {
                 "name": "GetDefinition",
                 "return_type": "CustomShipDefinition",
