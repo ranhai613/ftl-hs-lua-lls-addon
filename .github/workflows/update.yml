@@ -27,7 +27,7 @@ jobs:
           git clone https://github.com/FTL-Hyperspace/FTL-Hyperspace.git
           cd FTL-Hyperspace
           git checkout ${{ inputs.version }}
-          pushd FTL-Hyperspace/buildscripts/windows
+          pushd buildscripts/windows
           ./build-debugonly-from-docker.sh
           popd
           cd ../..
