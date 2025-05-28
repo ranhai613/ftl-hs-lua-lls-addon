@@ -41,8 +41,8 @@ jobs:
       
       - name: Update files on publish branch
         run: |
+          git fetch origin publish:publish
           git checkout publish
-          git pull origin publish
           git checkout main -- library config.json
           git add library config.json
           git commit -m "Bump version to ${{ inputs.version }}"
