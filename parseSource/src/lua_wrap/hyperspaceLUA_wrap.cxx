@@ -2792,280 +2792,285 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_CustomDamageDefinition swig_types[80]
 #define SWIGTYPE_p_CustomEvent swig_types[81]
 #define SWIGTYPE_p_CustomEventsParser swig_types[82]
-#define SWIGTYPE_p_CustomShipDefinition swig_types[83]
-#define SWIGTYPE_p_CustomShipGenerator swig_types[84]
-#define SWIGTYPE_p_CustomShipSelect swig_types[85]
-#define SWIGTYPE_p_CustomShipUnlocks swig_types[86]
-#define SWIGTYPE_p_Damage swig_types[87]
-#define SWIGTYPE_p_DamageMessage swig_types[88]
-#define SWIGTYPE_p_DefenseDrone swig_types[89]
-#define SWIGTYPE_p_Description swig_types[90]
-#define SWIGTYPE_p_DistressButton swig_types[91]
-#define SWIGTYPE_p_Door swig_types[92]
-#define SWIGTYPE_p_DoorBox swig_types[93]
-#define SWIGTYPE_p_Drone swig_types[94]
-#define SWIGTYPE_p_DroneAI swig_types[95]
-#define SWIGTYPE_p_DroneBlueprint swig_types[96]
-#define SWIGTYPE_p_DroneBox swig_types[97]
-#define SWIGTYPE_p_DroneControl swig_types[98]
-#define SWIGTYPE_p_DroneEquipBox swig_types[99]
-#define SWIGTYPE_p_DroneStoreBox swig_types[100]
-#define SWIGTYPE_p_DroneSystem swig_types[101]
-#define SWIGTYPE_p_EffectsBlueprint swig_types[102]
-#define SWIGTYPE_p_EngineSystem swig_types[103]
-#define SWIGTYPE_p_Equipment swig_types[104]
-#define SWIGTYPE_p_EquipmentBox swig_types[105]
-#define SWIGTYPE_p_ErosionEffect swig_types[106]
-#define SWIGTYPE_p_EventGenerator swig_types[107]
-#define SWIGTYPE_p_EventLoadList swig_types[108]
-#define SWIGTYPE_p_ExplosionAnimation swig_types[109]
-#define SWIGTYPE_p_ExplosionDefinition swig_types[110]
-#define SWIGTYPE_p_FTLButton swig_types[111]
-#define SWIGTYPE_p_Fire swig_types[112]
-#define SWIGTYPE_p_FocusWindow swig_types[113]
-#define SWIGTYPE_p_GL_Color swig_types[114]
-#define SWIGTYPE_p_GL_Primitive swig_types[115]
-#define SWIGTYPE_p_GL_Primitive_Pointer_Array_Size_3_Wrapper swig_types[116]
-#define SWIGTYPE_p_GL_Texture swig_types[117]
-#define SWIGTYPE_p_GL_Texture_Pointer_Array_Size_3_Wrapper swig_types[118]
-#define SWIGTYPE_p_GameOver swig_types[119]
-#define SWIGTYPE_p_GenericButton swig_types[120]
-#define SWIGTYPE_p_Global swig_types[121]
-#define SWIGTYPE_p_Globals swig_types[122]
-#define SWIGTYPE_p_Globals__Ellipse swig_types[123]
-#define SWIGTYPE_p_Globals__Rect swig_types[124]
-#define SWIGTYPE_p_HackBox swig_types[125]
-#define SWIGTYPE_p_HackingDrone swig_types[126]
-#define SWIGTYPE_p_HackingSystem swig_types[127]
-#define SWIGTYPE_p_HyperspaceVersion swig_types[128]
-#define SWIGTYPE_p_ImageDesc swig_types[129]
-#define SWIGTYPE_p_InputBox swig_types[130]
-#define SWIGTYPE_p_IonDrone swig_types[131]
-#define SWIGTYPE_p_IonDroneAnimation swig_types[132]
-#define SWIGTYPE_p_ItemBlueprint swig_types[133]
-#define SWIGTYPE_p_ItemStoreBox swig_types[134]
-#define SWIGTYPE_p_LanguageChooser swig_types[135]
-#define SWIGTYPE_p_LaserBlast swig_types[136]
-#define SWIGTYPE_p_Location swig_types[137]
-#define SWIGTYPE_p_LocationEvent swig_types[138]
-#define SWIGTYPE_p_LocationEvent__Choice swig_types[139]
-#define SWIGTYPE_p_LockdownShard swig_types[140]
-#define SWIGTYPE_p_MainMenu swig_types[141]
-#define SWIGTYPE_p_MantisAnimation swig_types[142]
-#define SWIGTYPE_p_MedbaySystem swig_types[143]
-#define SWIGTYPE_p_MenuScreen swig_types[144]
-#define SWIGTYPE_p_MindBox swig_types[145]
-#define SWIGTYPE_p_MindSystem swig_types[146]
-#define SWIGTYPE_p_Missile swig_types[147]
-#define SWIGTYPE_p_MouseControl swig_types[148]
-#define SWIGTYPE_p_OptionsScreen swig_types[149]
-#define SWIGTYPE_p_OuterHull swig_types[150]
-#define SWIGTYPE_p_OxygenSystem swig_types[151]
-#define SWIGTYPE_p_PDSFire swig_types[152]
-#define SWIGTYPE_p_ParticleEmitter swig_types[153]
-#define SWIGTYPE_p_Path swig_types[154]
-#define SWIGTYPE_p_Point swig_types[155]
-#define SWIGTYPE_p_Pointf swig_types[156]
-#define SWIGTYPE_p_PowerManager swig_types[157]
-#define SWIGTYPE_p_PowerResourceDefinition swig_types[158]
-#define SWIGTYPE_p_PrintHelper swig_types[159]
-#define SWIGTYPE_p_Projectile swig_types[160]
-#define SWIGTYPE_p_ProjectileFactory swig_types[161]
-#define SWIGTYPE_p_Projectile_Extend swig_types[162]
-#define SWIGTYPE_p_ReactorButton swig_types[163]
-#define SWIGTYPE_p_RepairAnimation swig_types[164]
-#define SWIGTYPE_p_RepairDrone swig_types[165]
-#define SWIGTYPE_p_RepairStoreBox swig_types[166]
-#define SWIGTYPE_p_Repairable swig_types[167]
-#define SWIGTYPE_p_ResourceControl swig_types[168]
-#define SWIGTYPE_p_ResourceEvent swig_types[169]
-#define SWIGTYPE_p_RockAnimation swig_types[170]
-#define SWIGTYPE_p_Room swig_types[171]
-#define SWIGTYPE_p_RoomAnimDef swig_types[172]
-#define SWIGTYPE_p_RoomDefinition swig_types[173]
-#define SWIGTYPE_p_Room_Extend swig_types[174]
-#define SWIGTYPE_p_SCrewStats swig_types[175]
-#define SWIGTYPE_p_ScoreKeeper swig_types[176]
-#define SWIGTYPE_p_Sector swig_types[177]
-#define SWIGTYPE_p_SectorDescription swig_types[178]
-#define SWIGTYPE_p_Selectable swig_types[179]
-#define SWIGTYPE_p_SettingValues swig_types[180]
-#define SWIGTYPE_p_ShieldPower swig_types[181]
-#define SWIGTYPE_p_Shields swig_types[182]
-#define SWIGTYPE_p_Shields__Shield swig_types[183]
-#define SWIGTYPE_p_Ship swig_types[184]
-#define SWIGTYPE_p_ShipBlueprint swig_types[185]
-#define SWIGTYPE_p_ShipBlueprint__SystemTemplate swig_types[186]
-#define SWIGTYPE_p_ShipBuilder swig_types[187]
-#define SWIGTYPE_p_ShipButton swig_types[188]
-#define SWIGTYPE_p_ShipEvent swig_types[189]
-#define SWIGTYPE_p_ShipGenerator swig_types[190]
-#define SWIGTYPE_p_ShipGraph swig_types[191]
-#define SWIGTYPE_p_ShipInfo swig_types[192]
-#define SWIGTYPE_p_ShipManager swig_types[193]
-#define SWIGTYPE_p_ShipManager_Extend swig_types[194]
-#define SWIGTYPE_p_ShipObject swig_types[195]
-#define SWIGTYPE_p_ShipRepairDrone swig_types[196]
-#define SWIGTYPE_p_ShipStatus swig_types[197]
-#define SWIGTYPE_p_ShipSystem swig_types[198]
-#define SWIGTYPE_p_ShipSystem_Extend swig_types[199]
-#define SWIGTYPE_p_SkillsDefinition swig_types[200]
-#define SWIGTYPE_p_Slot swig_types[201]
-#define SWIGTYPE_p_SoundControl swig_types[202]
-#define SWIGTYPE_p_SpaceDrone swig_types[203]
-#define SWIGTYPE_p_SpaceManager swig_types[204]
-#define SWIGTYPE_p_SpaceStatus swig_types[205]
-#define SWIGTYPE_p_Spreadable swig_types[206]
-#define SWIGTYPE_p_Spreader_Fire swig_types[207]
-#define SWIGTYPE_p_StarMap swig_types[208]
-#define SWIGTYPE_p_StatBoost swig_types[209]
-#define SWIGTYPE_p_StatBoostDefinition swig_types[210]
-#define SWIGTYPE_p_StatBoostManager swig_types[211]
-#define SWIGTYPE_p_Store swig_types[212]
-#define SWIGTYPE_p_StoreBox swig_types[213]
-#define SWIGTYPE_p_SuperShieldDrone swig_types[214]
-#define SWIGTYPE_p_SystemBlueprint swig_types[215]
-#define SWIGTYPE_p_SystemBox swig_types[216]
-#define SWIGTYPE_p_SystemBox_Extend swig_types[217]
-#define SWIGTYPE_p_SystemControl swig_types[218]
-#define SWIGTYPE_p_SystemCustomBox swig_types[219]
-#define SWIGTYPE_p_SystemStoreBox swig_types[220]
-#define SWIGTYPE_p_TabbedWindow swig_types[221]
-#define SWIGTYPE_p_Targetable swig_types[222]
-#define SWIGTYPE_p_TeleportBox swig_types[223]
-#define SWIGTYPE_p_TeleportSystem swig_types[224]
-#define SWIGTYPE_p_TemporalBox swig_types[225]
-#define SWIGTYPE_p_TemporalSystem swig_types[226]
-#define SWIGTYPE_p_TemporalSystemParser swig_types[227]
-#define SWIGTYPE_p_TemporaryPowerDefinition swig_types[228]
-#define SWIGTYPE_p_TextButton swig_types[229]
-#define SWIGTYPE_p_TextButton0 swig_types[230]
-#define SWIGTYPE_p_TextLibrary swig_types[231]
-#define SWIGTYPE_p_TextString swig_types[232]
-#define SWIGTYPE_p_TimerHelper swig_types[233]
-#define SWIGTYPE_p_ToggleValueT_bool_t swig_types[234]
-#define SWIGTYPE_p_ToggleValueT_float_t swig_types[235]
-#define SWIGTYPE_p_ToggleValueT_int_t swig_types[236]
-#define SWIGTYPE_p_TopScore swig_types[237]
-#define SWIGTYPE_p_TriggeredEventDefinition swig_types[238]
-#define SWIGTYPE_p_TutorialArrow swig_types[239]
-#define SWIGTYPE_p_TutorialManager swig_types[240]
-#define SWIGTYPE_p_Upgrades swig_types[241]
-#define SWIGTYPE_p_WarningMessage swig_types[242]
-#define SWIGTYPE_p_WarningWithLines swig_types[243]
-#define SWIGTYPE_p_WeaponAnimation swig_types[244]
-#define SWIGTYPE_p_WeaponBlueprint swig_types[245]
-#define SWIGTYPE_p_WeaponBlueprint__BoostPower swig_types[246]
-#define SWIGTYPE_p_WeaponBlueprint__MiniProjectile swig_types[247]
-#define SWIGTYPE_p_WeaponBox swig_types[248]
-#define SWIGTYPE_p_WeaponControl swig_types[249]
-#define SWIGTYPE_p_WeaponEquipBox swig_types[250]
-#define SWIGTYPE_p_WeaponMount swig_types[251]
-#define SWIGTYPE_p_WeaponStoreBox swig_types[252]
-#define SWIGTYPE_p_WeaponSystem swig_types[253]
-#define SWIGTYPE_p_WeaponSystemBox swig_types[254]
-#define SWIGTYPE_p_WindowFrame swig_types[255]
-#define SWIGTYPE_p_WorldManager swig_types[256]
-#define SWIGTYPE_p_bool swig_types[257]
-#define SWIGTYPE_p_difference_type swig_types[258]
-#define SWIGTYPE_p_first_type swig_types[259]
-#define SWIGTYPE_p_freetype__font_data swig_types[260]
-#define SWIGTYPE_p_int swig_types[261]
-#define SWIGTYPE_p_key_type swig_types[262]
-#define SWIGTYPE_p_long_long swig_types[263]
-#define SWIGTYPE_p_mapped_type swig_types[264]
-#define SWIGTYPE_p_p_GL_Primitive swig_types[265]
-#define SWIGTYPE_p_p_GL_Texture swig_types[266]
-#define SWIGTYPE_p_playerVariableType swig_types[267]
-#define SWIGTYPE_p_second_type swig_types[268]
-#define SWIGTYPE_p_short swig_types[269]
-#define SWIGTYPE_p_signed_char swig_types[270]
-#define SWIGTYPE_p_size_type swig_types[271]
-#define SWIGTYPE_p_std__arrayT_std__string_2_t swig_types[272]
-#define SWIGTYPE_p_std__mapT_int_ShipBlueprint__SystemTemplate_std__lessT_int_t_t swig_types[273]
-#define SWIGTYPE_p_std__mapT_std__string_int_std__lessT_std__string_t_t swig_types[274]
-#define SWIGTYPE_p_std__pairT_Animation_signed_char_t swig_types[275]
-#define SWIGTYPE_p_std__pairT_CrewExtraCondition_bool_t swig_types[276]
-#define SWIGTYPE_p_std__pairT_float_float_t swig_types[277]
-#define SWIGTYPE_p_std__pairT_int_int_t swig_types[278]
-#define SWIGTYPE_p_std__pairT_std__string_AugmentFunction_t swig_types[279]
-#define SWIGTYPE_p_std__string swig_types[280]
-#define SWIGTYPE_p_std__unique_ptrT_Animation_t swig_types[281]
-#define SWIGTYPE_p_std__unordered_mapT_int_RoomDefinition_p_std__hashT_int_t_std__equal_toT_int_t_t swig_types[282]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_StatBoostDefinition_p_std__hashT_std__string_t_std__equal_toT_std__string_t_t swig_types[283]
-#define SWIGTYPE_p_std__unordered_mapT_std__string_int_std__hashT_std__string_t_std__equal_toT_std__string_t_t swig_types[284]
-#define SWIGTYPE_p_std__unordered_mapT_unsigned_int_ActivatedPowerResource_p_std__hashT_unsigned_int_t_std__equal_toT_unsigned_int_t_t swig_types[285]
-#define SWIGTYPE_p_std__unordered_multimapT_std__string_AugmentFunction_std__hashT_std__string_t_std__equal_toT_std__string_t_t swig_types[286]
-#define SWIGTYPE_p_std__unordered_setT_ActivatedPowerDefinition_p_t swig_types[287]
-#define SWIGTYPE_p_std__unordered_setT_PowerResourceDefinition_p_t swig_types[288]
-#define SWIGTYPE_p_std__unordered_setT_unsigned_int_t swig_types[289]
-#define SWIGTYPE_p_std__vectorT_ActivatedPowerDefinition_p_t swig_types[290]
-#define SWIGTYPE_p_std__vectorT_ActivatedPowerResource_p_t swig_types[291]
-#define SWIGTYPE_p_std__vectorT_ActivatedPower_p_t swig_types[292]
-#define SWIGTYPE_p_std__vectorT_Animation_t swig_types[293]
-#define SWIGTYPE_p_std__vectorT_ArtillerySystem_p_t swig_types[294]
-#define SWIGTYPE_p_std__vectorT_AugmentCrystalShard_t swig_types[295]
-#define SWIGTYPE_p_std__vectorT_ChoiceText_p_t swig_types[296]
-#define SWIGTYPE_p_std__vectorT_ChoiceText_t swig_types[297]
-#define SWIGTYPE_p_std__vectorT_CrewBlueprint_t swig_types[298]
-#define SWIGTYPE_p_std__vectorT_CrewDesc_t swig_types[299]
-#define SWIGTYPE_p_std__vectorT_CrewMember_p_t swig_types[300]
-#define SWIGTYPE_p_std__vectorT_CrewPlacementDefinition_t swig_types[301]
-#define SWIGTYPE_p_std__vectorT_CrewSpawn_p_t swig_types[302]
-#define SWIGTYPE_p_std__vectorT_DamageMessage_p_t swig_types[303]
-#define SWIGTYPE_p_std__vectorT_Door_p_t swig_types[304]
-#define SWIGTYPE_p_std__vectorT_DroneBlueprint_p_t swig_types[305]
-#define SWIGTYPE_p_std__vectorT_Drone_p_t swig_types[306]
-#define SWIGTYPE_p_std__vectorT_Fire_t swig_types[307]
-#define SWIGTYPE_p_std__vectorT_GL_Color_t swig_types[308]
-#define SWIGTYPE_p_std__vectorT_GL_Texture_p_t swig_types[309]
-#define SWIGTYPE_p_std__vectorT_Globals__Rect_t swig_types[310]
-#define SWIGTYPE_p_std__vectorT_LocationEvent__Choice_p_t swig_types[311]
-#define SWIGTYPE_p_std__vectorT_LocationEvent__Choice_t swig_types[312]
-#define SWIGTYPE_p_std__vectorT_Location_p_t swig_types[313]
-#define SWIGTYPE_p_std__vectorT_LockdownShard_p_t swig_types[314]
-#define SWIGTYPE_p_std__vectorT_LockdownShard_t swig_types[315]
-#define SWIGTYPE_p_std__vectorT_OuterHull_p_t swig_types[316]
-#define SWIGTYPE_p_std__vectorT_Point_t swig_types[317]
-#define SWIGTYPE_p_std__vectorT_Pointf_t swig_types[318]
-#define SWIGTYPE_p_std__vectorT_PowerResourceDefinition_p_t swig_types[319]
-#define SWIGTYPE_p_std__vectorT_ProjectileFactory_p_t swig_types[320]
-#define SWIGTYPE_p_std__vectorT_Projectile_p_t swig_types[321]
-#define SWIGTYPE_p_std__vectorT_Repairable_p_t swig_types[322]
-#define SWIGTYPE_p_std__vectorT_Room_p_t swig_types[323]
-#define SWIGTYPE_p_std__vectorT_Sector_p_t swig_types[324]
-#define SWIGTYPE_p_std__vectorT_Shields__ShieldAnimation_t swig_types[325]
-#define SWIGTYPE_p_std__vectorT_ShipSystem_p_t swig_types[326]
-#define SWIGTYPE_p_std__vectorT_Ship__DoorState_t swig_types[327]
-#define SWIGTYPE_p_std__vectorT_SpaceDrone_p_t swig_types[328]
-#define SWIGTYPE_p_std__vectorT_StatBoostDefinition_p_t swig_types[329]
-#define SWIGTYPE_p_std__vectorT_TextString_t swig_types[330]
-#define SWIGTYPE_p_std__vectorT_TriggeredEventDefinition_t swig_types[331]
-#define SWIGTYPE_p_std__vectorT_WeaponBlueprint__MiniProjectile_t swig_types[332]
-#define SWIGTYPE_p_std__vectorT_WeaponBlueprint_p_t swig_types[333]
-#define SWIGTYPE_p_std__vectorT_WeaponMount_t swig_types[334]
-#define SWIGTYPE_p_std__vectorT_bool_t swig_types[335]
-#define SWIGTYPE_p_std__vectorT_float_t swig_types[336]
-#define SWIGTYPE_p_std__vectorT_int_t swig_types[337]
-#define SWIGTYPE_p_std__vectorT_std__pairT_Animation_int8_t_t_t swig_types[338]
-#define SWIGTYPE_p_std__vectorT_std__pairT_CrewExtraCondition_bool_t_t swig_types[339]
-#define SWIGTYPE_p_std__vectorT_std__pairT_int_int_t_t swig_types[340]
-#define SWIGTYPE_p_std__vectorT_std__string_t swig_types[341]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_AnimationTracker_t_t swig_types[342]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_Animation_t_t swig_types[343]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_Fire_t_t swig_types[344]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_GL_Color_t_t swig_types[345]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_bool_t_t swig_types[346]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_int_t_t swig_types[347]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_std__string_t_t swig_types[348]
-#define SWIGTYPE_p_std__vectorT_unsigned_int_t swig_types[349]
-#define SWIGTYPE_p_unsigned_char swig_types[350]
-#define SWIGTYPE_p_unsigned_int swig_types[351]
-#define SWIGTYPE_p_unsigned_long_long swig_types[352]
-#define SWIGTYPE_p_unsigned_short swig_types[353]
-#define SWIGTYPE_p_value_type swig_types[354]
-static swig_type_info *swig_types[356];
-static swig_module_info swig_module = {swig_types, 355, 0, 0, 0, 0};
+#define SWIGTYPE_p_CustomLockdownDefinition swig_types[83]
+#define SWIGTYPE_p_CustomShipDefinition swig_types[84]
+#define SWIGTYPE_p_CustomShipGenerator swig_types[85]
+#define SWIGTYPE_p_CustomShipSelect swig_types[86]
+#define SWIGTYPE_p_CustomShipUnlocks swig_types[87]
+#define SWIGTYPE_p_Damage swig_types[88]
+#define SWIGTYPE_p_DamageMessage swig_types[89]
+#define SWIGTYPE_p_DefenseDrone swig_types[90]
+#define SWIGTYPE_p_Description swig_types[91]
+#define SWIGTYPE_p_DistressButton swig_types[92]
+#define SWIGTYPE_p_Door swig_types[93]
+#define SWIGTYPE_p_DoorBox swig_types[94]
+#define SWIGTYPE_p_Drone swig_types[95]
+#define SWIGTYPE_p_DroneAI swig_types[96]
+#define SWIGTYPE_p_DroneBlueprint swig_types[97]
+#define SWIGTYPE_p_DroneBox swig_types[98]
+#define SWIGTYPE_p_DroneControl swig_types[99]
+#define SWIGTYPE_p_DroneEquipBox swig_types[100]
+#define SWIGTYPE_p_DroneStoreBox swig_types[101]
+#define SWIGTYPE_p_DroneSystem swig_types[102]
+#define SWIGTYPE_p_EffectsBlueprint swig_types[103]
+#define SWIGTYPE_p_EngineSystem swig_types[104]
+#define SWIGTYPE_p_Equipment swig_types[105]
+#define SWIGTYPE_p_EquipmentBox swig_types[106]
+#define SWIGTYPE_p_ErosionEffect swig_types[107]
+#define SWIGTYPE_p_EventGenerator swig_types[108]
+#define SWIGTYPE_p_EventLoadList swig_types[109]
+#define SWIGTYPE_p_ExplosionAnimation swig_types[110]
+#define SWIGTYPE_p_ExplosionDefinition swig_types[111]
+#define SWIGTYPE_p_FTLButton swig_types[112]
+#define SWIGTYPE_p_Fire swig_types[113]
+#define SWIGTYPE_p_FocusWindow swig_types[114]
+#define SWIGTYPE_p_GL_Color swig_types[115]
+#define SWIGTYPE_p_GL_Primitive swig_types[116]
+#define SWIGTYPE_p_GL_Primitive_Pointer_Array_Size_3_Wrapper swig_types[117]
+#define SWIGTYPE_p_GL_Texture swig_types[118]
+#define SWIGTYPE_p_GL_Texture_Pointer_Array_Size_3_Wrapper swig_types[119]
+#define SWIGTYPE_p_GameOver swig_types[120]
+#define SWIGTYPE_p_GenericButton swig_types[121]
+#define SWIGTYPE_p_Global swig_types[122]
+#define SWIGTYPE_p_Globals swig_types[123]
+#define SWIGTYPE_p_Globals__Ellipse swig_types[124]
+#define SWIGTYPE_p_Globals__Rect swig_types[125]
+#define SWIGTYPE_p_HackBox swig_types[126]
+#define SWIGTYPE_p_HackingDrone swig_types[127]
+#define SWIGTYPE_p_HackingSystem swig_types[128]
+#define SWIGTYPE_p_HyperspaceVersion swig_types[129]
+#define SWIGTYPE_p_ImageDesc swig_types[130]
+#define SWIGTYPE_p_InputBox swig_types[131]
+#define SWIGTYPE_p_IonDrone swig_types[132]
+#define SWIGTYPE_p_IonDroneAnimation swig_types[133]
+#define SWIGTYPE_p_ItemBlueprint swig_types[134]
+#define SWIGTYPE_p_ItemStoreBox swig_types[135]
+#define SWIGTYPE_p_LanguageChooser swig_types[136]
+#define SWIGTYPE_p_LaserBlast swig_types[137]
+#define SWIGTYPE_p_Location swig_types[138]
+#define SWIGTYPE_p_LocationEvent swig_types[139]
+#define SWIGTYPE_p_LocationEvent__Choice swig_types[140]
+#define SWIGTYPE_p_LockdownShard swig_types[141]
+#define SWIGTYPE_p_LockdownShard_Extend swig_types[142]
+#define SWIGTYPE_p_MainMenu swig_types[143]
+#define SWIGTYPE_p_MantisAnimation swig_types[144]
+#define SWIGTYPE_p_MedbaySystem swig_types[145]
+#define SWIGTYPE_p_MenuScreen swig_types[146]
+#define SWIGTYPE_p_MindBox swig_types[147]
+#define SWIGTYPE_p_MindSystem swig_types[148]
+#define SWIGTYPE_p_Missile swig_types[149]
+#define SWIGTYPE_p_MouseControl swig_types[150]
+#define SWIGTYPE_p_OptionsScreen swig_types[151]
+#define SWIGTYPE_p_OuterHull swig_types[152]
+#define SWIGTYPE_p_OxygenSystem swig_types[153]
+#define SWIGTYPE_p_PDSFire swig_types[154]
+#define SWIGTYPE_p_ParticleEmitter swig_types[155]
+#define SWIGTYPE_p_Path swig_types[156]
+#define SWIGTYPE_p_Point swig_types[157]
+#define SWIGTYPE_p_Pointf swig_types[158]
+#define SWIGTYPE_p_PowerManager swig_types[159]
+#define SWIGTYPE_p_PowerResourceDefinition swig_types[160]
+#define SWIGTYPE_p_PrintHelper swig_types[161]
+#define SWIGTYPE_p_Projectile swig_types[162]
+#define SWIGTYPE_p_ProjectileFactory swig_types[163]
+#define SWIGTYPE_p_Projectile_Extend swig_types[164]
+#define SWIGTYPE_p_ReactorButton swig_types[165]
+#define SWIGTYPE_p_RepairAnimation swig_types[166]
+#define SWIGTYPE_p_RepairDrone swig_types[167]
+#define SWIGTYPE_p_RepairStoreBox swig_types[168]
+#define SWIGTYPE_p_Repairable swig_types[169]
+#define SWIGTYPE_p_ResourceControl swig_types[170]
+#define SWIGTYPE_p_ResourceEvent swig_types[171]
+#define SWIGTYPE_p_RockAnimation swig_types[172]
+#define SWIGTYPE_p_Room swig_types[173]
+#define SWIGTYPE_p_RoomAnimDef swig_types[174]
+#define SWIGTYPE_p_RoomDefinition swig_types[175]
+#define SWIGTYPE_p_Room_Extend swig_types[176]
+#define SWIGTYPE_p_SCrewStats swig_types[177]
+#define SWIGTYPE_p_ScoreKeeper swig_types[178]
+#define SWIGTYPE_p_Sector swig_types[179]
+#define SWIGTYPE_p_SectorDescription swig_types[180]
+#define SWIGTYPE_p_Selectable swig_types[181]
+#define SWIGTYPE_p_SettingValues swig_types[182]
+#define SWIGTYPE_p_ShieldPower swig_types[183]
+#define SWIGTYPE_p_Shields swig_types[184]
+#define SWIGTYPE_p_Shields__Shield swig_types[185]
+#define SWIGTYPE_p_Ship swig_types[186]
+#define SWIGTYPE_p_ShipBlueprint swig_types[187]
+#define SWIGTYPE_p_ShipBlueprint__SystemTemplate swig_types[188]
+#define SWIGTYPE_p_ShipBuilder swig_types[189]
+#define SWIGTYPE_p_ShipButton swig_types[190]
+#define SWIGTYPE_p_ShipButtonDefinition swig_types[191]
+#define SWIGTYPE_p_ShipButtonList swig_types[192]
+#define SWIGTYPE_p_ShipEvent swig_types[193]
+#define SWIGTYPE_p_ShipGenerator swig_types[194]
+#define SWIGTYPE_p_ShipGraph swig_types[195]
+#define SWIGTYPE_p_ShipInfo swig_types[196]
+#define SWIGTYPE_p_ShipManager swig_types[197]
+#define SWIGTYPE_p_ShipManager_Extend swig_types[198]
+#define SWIGTYPE_p_ShipObject swig_types[199]
+#define SWIGTYPE_p_ShipRepairDrone swig_types[200]
+#define SWIGTYPE_p_ShipStatus swig_types[201]
+#define SWIGTYPE_p_ShipSystem swig_types[202]
+#define SWIGTYPE_p_ShipSystem_Extend swig_types[203]
+#define SWIGTYPE_p_SkillsDefinition swig_types[204]
+#define SWIGTYPE_p_Slot swig_types[205]
+#define SWIGTYPE_p_SoundControl swig_types[206]
+#define SWIGTYPE_p_SpaceDrone swig_types[207]
+#define SWIGTYPE_p_SpaceManager swig_types[208]
+#define SWIGTYPE_p_SpaceStatus swig_types[209]
+#define SWIGTYPE_p_Spreadable swig_types[210]
+#define SWIGTYPE_p_Spreader_Fire swig_types[211]
+#define SWIGTYPE_p_StarMap swig_types[212]
+#define SWIGTYPE_p_StatBoost swig_types[213]
+#define SWIGTYPE_p_StatBoostDefinition swig_types[214]
+#define SWIGTYPE_p_StatBoostManager swig_types[215]
+#define SWIGTYPE_p_Store swig_types[216]
+#define SWIGTYPE_p_StoreBox swig_types[217]
+#define SWIGTYPE_p_SuperShieldDrone swig_types[218]
+#define SWIGTYPE_p_SystemBlueprint swig_types[219]
+#define SWIGTYPE_p_SystemBox swig_types[220]
+#define SWIGTYPE_p_SystemBox_Extend swig_types[221]
+#define SWIGTYPE_p_SystemControl swig_types[222]
+#define SWIGTYPE_p_SystemCustomBox swig_types[223]
+#define SWIGTYPE_p_SystemStoreBox swig_types[224]
+#define SWIGTYPE_p_TabbedWindow swig_types[225]
+#define SWIGTYPE_p_Targetable swig_types[226]
+#define SWIGTYPE_p_TeleportBox swig_types[227]
+#define SWIGTYPE_p_TeleportSystem swig_types[228]
+#define SWIGTYPE_p_TemporalBox swig_types[229]
+#define SWIGTYPE_p_TemporalSystem swig_types[230]
+#define SWIGTYPE_p_TemporalSystemParser swig_types[231]
+#define SWIGTYPE_p_TemporaryPowerDefinition swig_types[232]
+#define SWIGTYPE_p_TextButton swig_types[233]
+#define SWIGTYPE_p_TextButton0 swig_types[234]
+#define SWIGTYPE_p_TextLibrary swig_types[235]
+#define SWIGTYPE_p_TextString swig_types[236]
+#define SWIGTYPE_p_TimerHelper swig_types[237]
+#define SWIGTYPE_p_ToggleValueT_bool_t swig_types[238]
+#define SWIGTYPE_p_ToggleValueT_float_t swig_types[239]
+#define SWIGTYPE_p_ToggleValueT_int_t swig_types[240]
+#define SWIGTYPE_p_TopScore swig_types[241]
+#define SWIGTYPE_p_TriggeredEventDefinition swig_types[242]
+#define SWIGTYPE_p_TutorialArrow swig_types[243]
+#define SWIGTYPE_p_TutorialManager swig_types[244]
+#define SWIGTYPE_p_Upgrades swig_types[245]
+#define SWIGTYPE_p_WarningMessage swig_types[246]
+#define SWIGTYPE_p_WarningWithLines swig_types[247]
+#define SWIGTYPE_p_WeaponAnimation swig_types[248]
+#define SWIGTYPE_p_WeaponBlueprint swig_types[249]
+#define SWIGTYPE_p_WeaponBlueprint__BoostPower swig_types[250]
+#define SWIGTYPE_p_WeaponBlueprint__MiniProjectile swig_types[251]
+#define SWIGTYPE_p_WeaponBox swig_types[252]
+#define SWIGTYPE_p_WeaponControl swig_types[253]
+#define SWIGTYPE_p_WeaponEquipBox swig_types[254]
+#define SWIGTYPE_p_WeaponMount swig_types[255]
+#define SWIGTYPE_p_WeaponStoreBox swig_types[256]
+#define SWIGTYPE_p_WeaponSystem swig_types[257]
+#define SWIGTYPE_p_WeaponSystemBox swig_types[258]
+#define SWIGTYPE_p_WindowFrame swig_types[259]
+#define SWIGTYPE_p_WorldManager swig_types[260]
+#define SWIGTYPE_p_bool swig_types[261]
+#define SWIGTYPE_p_difference_type swig_types[262]
+#define SWIGTYPE_p_first_type swig_types[263]
+#define SWIGTYPE_p_freetype__font_data swig_types[264]
+#define SWIGTYPE_p_int swig_types[265]
+#define SWIGTYPE_p_key_type swig_types[266]
+#define SWIGTYPE_p_long_long swig_types[267]
+#define SWIGTYPE_p_mapped_type swig_types[268]
+#define SWIGTYPE_p_p_GL_Primitive swig_types[269]
+#define SWIGTYPE_p_p_GL_Texture swig_types[270]
+#define SWIGTYPE_p_playerVariableType swig_types[271]
+#define SWIGTYPE_p_second_type swig_types[272]
+#define SWIGTYPE_p_short swig_types[273]
+#define SWIGTYPE_p_signed_char swig_types[274]
+#define SWIGTYPE_p_size_type swig_types[275]
+#define SWIGTYPE_p_std__arrayT_std__string_2_t swig_types[276]
+#define SWIGTYPE_p_std__mapT_int_ShipBlueprint__SystemTemplate_std__lessT_int_t_t swig_types[277]
+#define SWIGTYPE_p_std__mapT_std__string_int_std__lessT_std__string_t_t swig_types[278]
+#define SWIGTYPE_p_std__pairT_Animation_signed_char_t swig_types[279]
+#define SWIGTYPE_p_std__pairT_CrewExtraCondition_bool_t swig_types[280]
+#define SWIGTYPE_p_std__pairT_float_float_t swig_types[281]
+#define SWIGTYPE_p_std__pairT_int_int_t swig_types[282]
+#define SWIGTYPE_p_std__pairT_std__string_AugmentFunction_t swig_types[283]
+#define SWIGTYPE_p_std__string swig_types[284]
+#define SWIGTYPE_p_std__unique_ptrT_Animation_t swig_types[285]
+#define SWIGTYPE_p_std__unordered_mapT_int_RoomDefinition_p_std__hashT_int_t_std__equal_toT_int_t_t swig_types[286]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_StatBoostDefinition_p_std__hashT_std__string_t_std__equal_toT_std__string_t_t swig_types[287]
+#define SWIGTYPE_p_std__unordered_mapT_std__string_int_std__hashT_std__string_t_std__equal_toT_std__string_t_t swig_types[288]
+#define SWIGTYPE_p_std__unordered_mapT_unsigned_int_ActivatedPowerResource_p_std__hashT_unsigned_int_t_std__equal_toT_unsigned_int_t_t swig_types[289]
+#define SWIGTYPE_p_std__unordered_multimapT_std__string_AugmentFunction_std__hashT_std__string_t_std__equal_toT_std__string_t_t swig_types[290]
+#define SWIGTYPE_p_std__unordered_setT_ActivatedPowerDefinition_p_t swig_types[291]
+#define SWIGTYPE_p_std__unordered_setT_PowerResourceDefinition_p_t swig_types[292]
+#define SWIGTYPE_p_std__unordered_setT_unsigned_int_t swig_types[293]
+#define SWIGTYPE_p_std__vectorT_ActivatedPowerDefinition_p_t swig_types[294]
+#define SWIGTYPE_p_std__vectorT_ActivatedPowerResource_p_t swig_types[295]
+#define SWIGTYPE_p_std__vectorT_ActivatedPower_p_t swig_types[296]
+#define SWIGTYPE_p_std__vectorT_Animation_t swig_types[297]
+#define SWIGTYPE_p_std__vectorT_ArtillerySystem_p_t swig_types[298]
+#define SWIGTYPE_p_std__vectorT_AugmentCrystalShard_t swig_types[299]
+#define SWIGTYPE_p_std__vectorT_ChoiceText_p_t swig_types[300]
+#define SWIGTYPE_p_std__vectorT_ChoiceText_t swig_types[301]
+#define SWIGTYPE_p_std__vectorT_CrewBlueprint_t swig_types[302]
+#define SWIGTYPE_p_std__vectorT_CrewDesc_t swig_types[303]
+#define SWIGTYPE_p_std__vectorT_CrewMember_p_t swig_types[304]
+#define SWIGTYPE_p_std__vectorT_CrewPlacementDefinition_t swig_types[305]
+#define SWIGTYPE_p_std__vectorT_CrewSpawn_p_t swig_types[306]
+#define SWIGTYPE_p_std__vectorT_DamageMessage_p_t swig_types[307]
+#define SWIGTYPE_p_std__vectorT_Door_p_t swig_types[308]
+#define SWIGTYPE_p_std__vectorT_DroneBlueprint_p_t swig_types[309]
+#define SWIGTYPE_p_std__vectorT_Drone_p_t swig_types[310]
+#define SWIGTYPE_p_std__vectorT_Fire_t swig_types[311]
+#define SWIGTYPE_p_std__vectorT_GL_Color_t swig_types[312]
+#define SWIGTYPE_p_std__vectorT_GL_Texture_p_t swig_types[313]
+#define SWIGTYPE_p_std__vectorT_Globals__Rect_t swig_types[314]
+#define SWIGTYPE_p_std__vectorT_LocationEvent__Choice_p_t swig_types[315]
+#define SWIGTYPE_p_std__vectorT_LocationEvent__Choice_t swig_types[316]
+#define SWIGTYPE_p_std__vectorT_Location_p_t swig_types[317]
+#define SWIGTYPE_p_std__vectorT_LockdownShard_p_t swig_types[318]
+#define SWIGTYPE_p_std__vectorT_LockdownShard_t swig_types[319]
+#define SWIGTYPE_p_std__vectorT_OuterHull_p_t swig_types[320]
+#define SWIGTYPE_p_std__vectorT_Point_t swig_types[321]
+#define SWIGTYPE_p_std__vectorT_Pointf_t swig_types[322]
+#define SWIGTYPE_p_std__vectorT_PowerResourceDefinition_p_t swig_types[323]
+#define SWIGTYPE_p_std__vectorT_ProjectileFactory_p_t swig_types[324]
+#define SWIGTYPE_p_std__vectorT_Projectile_p_t swig_types[325]
+#define SWIGTYPE_p_std__vectorT_Repairable_p_t swig_types[326]
+#define SWIGTYPE_p_std__vectorT_Room_p_t swig_types[327]
+#define SWIGTYPE_p_std__vectorT_Sector_p_t swig_types[328]
+#define SWIGTYPE_p_std__vectorT_Shields__ShieldAnimation_t swig_types[329]
+#define SWIGTYPE_p_std__vectorT_ShipButtonList_p_t swig_types[330]
+#define SWIGTYPE_p_std__vectorT_ShipSystem_p_t swig_types[331]
+#define SWIGTYPE_p_std__vectorT_Ship__DoorState_t swig_types[332]
+#define SWIGTYPE_p_std__vectorT_SpaceDrone_p_t swig_types[333]
+#define SWIGTYPE_p_std__vectorT_StatBoostDefinition_p_t swig_types[334]
+#define SWIGTYPE_p_std__vectorT_TextString_t swig_types[335]
+#define SWIGTYPE_p_std__vectorT_TriggeredEventDefinition_t swig_types[336]
+#define SWIGTYPE_p_std__vectorT_WeaponBlueprint__MiniProjectile_t swig_types[337]
+#define SWIGTYPE_p_std__vectorT_WeaponBlueprint_p_t swig_types[338]
+#define SWIGTYPE_p_std__vectorT_WeaponMount_t swig_types[339]
+#define SWIGTYPE_p_std__vectorT_bool_t swig_types[340]
+#define SWIGTYPE_p_std__vectorT_float_t swig_types[341]
+#define SWIGTYPE_p_std__vectorT_int_t swig_types[342]
+#define SWIGTYPE_p_std__vectorT_std__pairT_Animation_int8_t_t_t swig_types[343]
+#define SWIGTYPE_p_std__vectorT_std__pairT_CrewExtraCondition_bool_t_t swig_types[344]
+#define SWIGTYPE_p_std__vectorT_std__pairT_int_int_t_t swig_types[345]
+#define SWIGTYPE_p_std__vectorT_std__string_t swig_types[346]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_AnimationTracker_t_t swig_types[347]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_Animation_t_t swig_types[348]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_Fire_t_t swig_types[349]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_GL_Color_t_t swig_types[350]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_bool_t_t swig_types[351]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_int_t_t swig_types[352]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_std__string_t_t swig_types[353]
+#define SWIGTYPE_p_std__vectorT_unsigned_int_t swig_types[354]
+#define SWIGTYPE_p_unsigned_char swig_types[355]
+#define SWIGTYPE_p_unsigned_int swig_types[356]
+#define SWIGTYPE_p_unsigned_long_long swig_types[357]
+#define SWIGTYPE_p_unsigned_short swig_types[358]
+#define SWIGTYPE_p_value_type swig_types[359]
+static swig_type_info *swig_types[361];
+static swig_module_info swig_module = {swig_types, 360, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3301,11 +3306,20 @@ SWIGINTERN void SWIG_write_ptr_array(lua_State* L,void **array,int size,swig_typ
 #include "TemporalSystem.h"
 #include "Misc.h"
 #include "CustomDamage.h"
+#include "CustomLockdowns.h"
+
 
 
     #define SWIG_exception(a, b)\
     {\
-        luaL_where(L, 2);\
+        int errorLevel = 0;\
+        size_t len = 0;\
+        do {\
+            luaL_where(L, errorLevel++);\
+            lua_tolstring(L, -1, &len);\
+            if (len == 0) lua_pop(L, 1);\
+            else break;\
+        } while (true);\
         lua_pushfstring(L,"%s:%s",#a,b);\
         lua_concat(L, 2);\
         SWIG_fail;\
@@ -4022,6 +4036,26 @@ SWIGINTERN void std_vector_Sl_AugmentCrystalShard_Sg____setitem__(std::vector< A
 					throw std::out_of_range("in vector::__setitem__()");
 				(*self)[idx]=val;
 			}
+SWIGINTERN ShipButtonList *std_vector_Sl_ShipButtonList_Sm__Sg____getitem__(std::vector< ShipButtonList * > *self,unsigned int idx){
+				if (idx>=self->size())
+					throw std::out_of_range("in vector::__getitem__()");
+				return (*self)[idx];
+			}
+SWIGINTERN void std_vector_Sl_ShipButtonList_Sm__Sg____setitem__(std::vector< ShipButtonList * > *self,unsigned int idx,ShipButtonList *val){
+				if (idx>=self->size())
+					throw std::out_of_range("in vector::__setitem__()");
+				(*self)[idx]=val;
+			}
+SWIGINTERN GL_Texture *std_vector_Sl_GL_Texture_Sm__Sg____getitem__(std::vector< GL_Texture * > *self,unsigned int idx){
+				if (idx>=self->size())
+					throw std::out_of_range("in vector::__getitem__()");
+				return (*self)[idx];
+			}
+SWIGINTERN void std_vector_Sl_GL_Texture_Sm__Sg____setitem__(std::vector< GL_Texture * > *self,unsigned int idx,GL_Texture *val){
+				if (idx>=self->size())
+					throw std::out_of_range("in vector::__setitem__()");
+				(*self)[idx]=val;
+			}
 SWIGINTERN char const *HyperspaceVersion___str__(HyperspaceVersion const *self){
         static std::string ret;
         ret = self->toVersionString();
@@ -4084,6 +4118,12 @@ SWIGINTERN void GL_Primitive_Pointer_Array_Size_3_Wrapper___setitem__(GL_Primiti
                 (*self)[idx] = value;
             }
 
+    static bool Fire_Coordinates_Valid(ShipManager* shipManager, int x, int y)
+    {
+        return (x >= 0 && x < shipManager->fireSpreader.grid.size() && y >= 0 && y < shipManager->fireSpreader.grid[x].size());
+    }
+
+
     static int hs_Userdata_table_get(lua_State* lua)
     {
         luaL_argcheck(lua, lua_isuserdata(lua, 1), 1, "Expected argument of type 'Userdata'");
@@ -4111,6 +4151,34 @@ SWIGINTERN std::vector< CrewMember * > CrewMemberFactory_GetCloneReadyList__SWIG
         self->GetCloneReadyList(ret, player);
         return ret;
     }
+SWIGINTERN void OxygenSystem_ModifyRoomOxygen(OxygenSystem *self,int roomId,float amount){
+        if (roomId < 0 || roomId >= self->oxygenLevels.size())
+        {
+            std::string error = (boost::format("Invalid roomId: %i") % roomId).str();
+            throw std::invalid_argument(error);
+        }
+        self->ModifyRoomOxygen(roomId, amount);
+    }
+SWIGINTERN void OxygenSystem_EmptyOxygen(OxygenSystem *self,int roomId){
+        if (roomId < 0 || roomId >= self->oxygenLevels.size())
+        {
+            std::string error = (boost::format("Invalid roomId: %i") % roomId).str();
+            throw std::invalid_argument(error);
+        }
+        self->EmptyOxygen(roomId);
+    }
+SWIGINTERN void Ship_LockdownRoom__SWIG_0(Ship *self,int roomId,Pointf pos){
+        CustomLockdownDefinition* oldLockdown = CustomLockdownDefinition::currentLockdown;
+        CustomLockdownDefinition::currentLockdown = &CustomLockdownDefinition::defaultLockdown;
+        self->LockdownRoom(roomId, pos);
+        CustomLockdownDefinition::currentLockdown = oldLockdown;
+    }
+SWIGINTERN void Ship_LockdownRoom__SWIG_1(Ship *self,int roomId,Pointf pos,CustomLockdownDefinition &def){
+        CustomLockdownDefinition* oldLockdown = CustomLockdownDefinition::currentLockdown;
+        CustomLockdownDefinition::currentLockdown = &def;
+        self->LockdownRoom(roomId, pos);
+        CustomLockdownDefinition::currentLockdown = oldLockdown;
+    }
 SWIGINTERN void ShipManager_RemoveItem__SWIG_0(ShipManager *self,std::string const &item,bool checkCargo=false){
         bool old_checkCargo = g_checkCargo;
         g_checkCargo = checkCargo;
@@ -4119,17 +4187,37 @@ SWIGINTERN void ShipManager_RemoveItem__SWIG_0(ShipManager *self,std::string con
     }
 SWIGINTERN Fire &ShipManager_GetFireAtPoint__SWIG_0(ShipManager *self,float x,float y){
         Point fireCoordinates = ShipGraph::TranslateToGrid(x, y);
+        if (!Fire_Coordinates_Valid(self, fireCoordinates.x, fireCoordinates.y))
+        {
+            std::string error = (boost::format("Invalid fire coordinates: (%f, %f)") % x % y).str();
+            throw std::invalid_argument(error);
+        }
         return self->fireSpreader.grid[fireCoordinates.x][fireCoordinates.y];
     }
 SWIGINTERN Fire &ShipManager_GetFireAtPoint__SWIG_1(ShipManager *self,Point p){
         Point fireCoordinates = ShipGraph::TranslateToGrid(p.x, p.y);
+        if (!Fire_Coordinates_Valid(self, fireCoordinates.x, fireCoordinates.y))
+        {
+            std::string error = (boost::format("Invalid fire coordinates: Point(%i, %i)") % p.x % p.y).str();
+            throw std::invalid_argument(error);
+        }
         return self->fireSpreader.grid[fireCoordinates.x][fireCoordinates.y];
     }
 SWIGINTERN Fire &ShipManager_GetFireAtPoint__SWIG_2(ShipManager *self,Pointf p){
         Point fireCoordinates = ShipGraph::TranslateToGrid(p.x, p.y);
+        if (!Fire_Coordinates_Valid(self, fireCoordinates.x, fireCoordinates.y))
+        {
+            std::string error = (boost::format("Invalid fire coordinates: Pointf(%f, %f)") % p.x % p.y).str();
+            throw std::invalid_argument(error);
+        }
         return self->fireSpreader.grid[fireCoordinates.x][fireCoordinates.y];
     }
 SWIGINTERN Fire &ShipManager_GetFire(ShipManager *self,int x,int y){
+        if (!Fire_Coordinates_Valid(self, x, y))
+        {
+            std::string error = (boost::format("Invalid fire coordinates: (%i, %i)") % x % y).str();
+            throw std::invalid_argument(error);
+        }
         return self->fireSpreader.grid[x][y];
     }
 SWIGINTERN void StarMap_ForceWaitMessage__SWIG_0(StarMap *self,GL_Primitive *waitMessage=nullptr){
@@ -31364,6 +31452,978 @@ static swig_lua_class *swig_vector_AugmentCrystalShard_bases[] = {0};
 static const char *swig_vector_AugmentCrystalShard_base_names[] = {0};
 static swig_lua_class _wrap_class_vector_AugmentCrystalShard = { "vector_AugmentCrystalShard", "vector_AugmentCrystalShard", &SWIGTYPE_p_std__vectorT_AugmentCrystalShard_t,_proxy__wrap_new_vector_AugmentCrystalShard, swig_delete_vector_AugmentCrystalShard, swig_vector_AugmentCrystalShard_methods, swig_vector_AugmentCrystalShard_attributes, &swig_vector_AugmentCrystalShard_Sf_SwigStatic, swig_vector_AugmentCrystalShard_meta, swig_vector_AugmentCrystalShard_bases, swig_vector_AugmentCrystalShard_base_names };
 
+static int _wrap_new_vector_p_ShipButtonList__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::vector",0,0)
+  result = (std::vector< ShipButtonList * > *)new std::vector< ShipButtonList * >();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_vector_p_ShipButtonList__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  unsigned int arg1 ;
+  std::vector< ShipButtonList * > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::vector",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::vector",1,"unsigned int");
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
+  result = (std::vector< ShipButtonList * > *)new std::vector< ShipButtonList * >(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_vector_p_ShipButtonList__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = 0 ;
+  std::vector< ShipButtonList * > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::vector",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::vector",1,"std::vector< ShipButtonList * > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("new_vector_p_ShipButtonList",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  result = (std::vector< ShipButtonList * > *)new std::vector< ShipButtonList * >((std::vector< ShipButtonList * > const &)*arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_vector_p_ShipButtonList__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  unsigned int arg1 ;
+  ShipButtonList *arg2 = (ShipButtonList *) 0 ;
+  std::vector< ShipButtonList * > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::vector",1,"unsigned int");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< ShipButtonList * >::vector",2,"ShipButtonList *");
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ShipButtonList,0))){
+    SWIG_fail_ptr("new_vector_p_ShipButtonList",2,SWIGTYPE_p_ShipButtonList);
+  }
+  
+  result = (std::vector< ShipButtonList * > *)new std::vector< ShipButtonList * >(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_vector_p_ShipButtonList(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 0) {
+    return _wrap_new_vector_p_ShipButtonList__SWIG_0(L);
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_ShipButtonList_p_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_new_vector_p_ShipButtonList__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      return _wrap_new_vector_p_ShipButtonList__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (SWIG_isptrtype(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_ShipButtonList, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_new_vector_p_ShipButtonList__SWIG_3(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_vector_p_ShipButtonList'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< ShipButtonList * >::vector()\n"
+    "    std::vector< ShipButtonList * >::vector(unsigned int)\n"
+    "    std::vector< ShipButtonList * >::vector(std::vector< ShipButtonList * > const &)\n"
+    "    std::vector< ShipButtonList * >::vector(unsigned int,ShipButtonList *)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_vector_p_ShipButtonList_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::size",1,"std::vector< ShipButtonList * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_size",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  result = (unsigned int)((std::vector< ShipButtonList * > const *)arg1)->size();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList_max_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::max_size",1,"std::vector< ShipButtonList * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_max_size",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  result = (unsigned int)((std::vector< ShipButtonList * > const *)arg1)->max_size();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList_empty(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::empty",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::empty",1,"std::vector< ShipButtonList * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_empty",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  result = (bool)((std::vector< ShipButtonList * > const *)arg1)->empty();
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList_clear(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::clear",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::clear",1,"std::vector< ShipButtonList * > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_clear",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  (arg1)->clear();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  ShipButtonList *arg2 = (ShipButtonList *) 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::push_back",1,"std::vector< ShipButtonList * > *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< ShipButtonList * >::push_back",2,"ShipButtonList *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_push_back",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ShipButtonList,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_push_back",2,SWIGTYPE_p_ShipButtonList);
+  }
+  
+  (arg1)->push_back(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::pop_back",1,"std::vector< ShipButtonList * > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_pop_back",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  ShipButtonList *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::front",1,"std::vector< ShipButtonList * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_front",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  result = (ShipButtonList *)((std::vector< ShipButtonList * > const *)arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonList,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  ShipButtonList *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::back",1,"std::vector< ShipButtonList * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList_back",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  result = (ShipButtonList *)((std::vector< ShipButtonList * > const *)arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonList,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList___getitem(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  unsigned int arg2 ;
+  ShipButtonList *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::__getitem__",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::__getitem__",1,"std::vector< ShipButtonList * > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< ShipButtonList * >::__getitem__",2,"unsigned int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList___getitem",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
+  try {
+    result = (ShipButtonList *)std_vector_Sl_ShipButtonList_Sm__Sg____getitem__(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  }
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonList,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_ShipButtonList___setitem(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) 0 ;
+  unsigned int arg2 ;
+  ShipButtonList *arg3 = (ShipButtonList *) 0 ;
+  
+  SWIG_check_num_args("std::vector< ShipButtonList * >::__setitem__",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< ShipButtonList * >::__setitem__",1,"std::vector< ShipButtonList * > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< ShipButtonList * >::__setitem__",2,"unsigned int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("std::vector< ShipButtonList * >::__setitem__",3,"ShipButtonList *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList___setitem",1,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t);
+  }
+  
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ShipButtonList,0))){
+    SWIG_fail_ptr("vector_p_ShipButtonList___setitem",3,SWIGTYPE_p_ShipButtonList);
+  }
+  
+  try {
+    std_vector_Sl_ShipButtonList_Sm__Sg____setitem__(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  }
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_vector_p_ShipButtonList(void *obj) {
+std::vector< ShipButtonList * > *arg1 = (std::vector< ShipButtonList * > *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_vector_p_ShipButtonList(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_vector_p_ShipButtonList);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_vector_p_ShipButtonList_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_vector_p_ShipButtonList_methods[]= {
+    { "size", _wrap_vector_p_ShipButtonList_size},
+    { "max_size", _wrap_vector_p_ShipButtonList_max_size},
+    { "empty", _wrap_vector_p_ShipButtonList_empty},
+    { "clear", _wrap_vector_p_ShipButtonList_clear},
+    { "push_back", _wrap_vector_p_ShipButtonList_push_back},
+    { "pop_back", _wrap_vector_p_ShipButtonList_pop_back},
+    { "front", _wrap_vector_p_ShipButtonList_front},
+    { "back", _wrap_vector_p_ShipButtonList_back},
+    { "__getitem", _wrap_vector_p_ShipButtonList___getitem},
+    { "__setitem", _wrap_vector_p_ShipButtonList___setitem},
+    {0,0}
+};
+static swig_lua_method swig_vector_p_ShipButtonList_meta[] = {
+    { "__getitem", _wrap_vector_p_ShipButtonList___getitem},
+    { "__setitem", _wrap_vector_p_ShipButtonList___setitem},
+    {0,0}
+};
+
+static swig_lua_attribute swig_vector_p_ShipButtonList_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_vector_p_ShipButtonList_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_vector_p_ShipButtonList_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_vector_p_ShipButtonList_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_vector_p_ShipButtonList_Sf_SwigStatic = {
+    "vector_p_ShipButtonList",
+    swig_vector_p_ShipButtonList_Sf_SwigStatic_methods,
+    swig_vector_p_ShipButtonList_Sf_SwigStatic_attributes,
+    swig_vector_p_ShipButtonList_Sf_SwigStatic_constants,
+    swig_vector_p_ShipButtonList_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_vector_p_ShipButtonList_bases[] = {0};
+static const char *swig_vector_p_ShipButtonList_base_names[] = {0};
+static swig_lua_class _wrap_class_vector_p_ShipButtonList = { "vector_p_ShipButtonList", "vector_p_ShipButtonList", &SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,_proxy__wrap_new_vector_p_ShipButtonList, swig_delete_vector_p_ShipButtonList, swig_vector_p_ShipButtonList_methods, swig_vector_p_ShipButtonList_attributes, &swig_vector_p_ShipButtonList_Sf_SwigStatic, swig_vector_p_ShipButtonList_meta, swig_vector_p_ShipButtonList_bases, swig_vector_p_ShipButtonList_base_names };
+
+static int _wrap_new_vector_p_GL_Texture__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::vector",0,0)
+  result = (std::vector< GL_Texture * > *)new std::vector< GL_Texture * >();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_vector_p_GL_Texture__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  unsigned int arg1 ;
+  std::vector< GL_Texture * > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::vector",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::vector",1,"unsigned int");
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
+  result = (std::vector< GL_Texture * > *)new std::vector< GL_Texture * >(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_vector_p_GL_Texture__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = 0 ;
+  std::vector< GL_Texture * > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::vector",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::vector",1,"std::vector< GL_Texture * > const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("new_vector_p_GL_Texture",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  result = (std::vector< GL_Texture * > *)new std::vector< GL_Texture * >((std::vector< GL_Texture * > const &)*arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_vector_p_GL_Texture__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  unsigned int arg1 ;
+  GL_Texture *arg2 = (GL_Texture *) 0 ;
+  std::vector< GL_Texture * > *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::vector",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::vector",1,"unsigned int");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< GL_Texture * >::vector",2,"GL_Texture *");
+  
+  if (lua_tonumber(L, 1) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg1 = (unsigned int) lua_tonumber(L, 1);
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_GL_Texture,0))){
+    SWIG_fail_ptr("new_vector_p_GL_Texture",2,SWIGTYPE_p_GL_Texture);
+  }
+  
+  result = (std::vector< GL_Texture * > *)new std::vector< GL_Texture * >(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_vector_p_GL_Texture(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 0) {
+    return _wrap_new_vector_p_GL_Texture__SWIG_0(L);
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      void *ptr;
+      if (lua_isuserdata(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_std__vectorT_GL_Texture_p_t, SWIG_POINTER_NO_NULL)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_new_vector_p_GL_Texture__SWIG_2(L);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      return _wrap_new_vector_p_GL_Texture__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (SWIG_isptrtype(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_GL_Texture, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_new_vector_p_GL_Texture__SWIG_3(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_vector_p_GL_Texture'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< GL_Texture * >::vector()\n"
+    "    std::vector< GL_Texture * >::vector(unsigned int)\n"
+    "    std::vector< GL_Texture * >::vector(std::vector< GL_Texture * > const &)\n"
+    "    std::vector< GL_Texture * >::vector(unsigned int,GL_Texture *)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_vector_p_GL_Texture_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::size",1,"std::vector< GL_Texture * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_size",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  result = (unsigned int)((std::vector< GL_Texture * > const *)arg1)->size();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture_max_size(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::max_size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::max_size",1,"std::vector< GL_Texture * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_max_size",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  result = (unsigned int)((std::vector< GL_Texture * > const *)arg1)->max_size();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture_empty(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::empty",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::empty",1,"std::vector< GL_Texture * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_empty",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  result = (bool)((std::vector< GL_Texture * > const *)arg1)->empty();
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture_clear(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::clear",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::clear",1,"std::vector< GL_Texture * > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_clear",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  (arg1)->clear();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture_push_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  GL_Texture *arg2 = (GL_Texture *) 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::push_back",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::push_back",1,"std::vector< GL_Texture * > *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("std::vector< GL_Texture * >::push_back",2,"GL_Texture *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_push_back",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_GL_Texture,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_push_back",2,SWIGTYPE_p_GL_Texture);
+  }
+  
+  (arg1)->push_back(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture_pop_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::pop_back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::pop_back",1,"std::vector< GL_Texture * > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_pop_back",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  (arg1)->pop_back();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture_front(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  GL_Texture *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::front",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::front",1,"std::vector< GL_Texture * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_front",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  result = (GL_Texture *)((std::vector< GL_Texture * > const *)arg1)->front();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_GL_Texture,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture_back(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  GL_Texture *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::back",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::back",1,"std::vector< GL_Texture * > const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture_back",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  result = (GL_Texture *)((std::vector< GL_Texture * > const *)arg1)->back();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_GL_Texture,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture___getitem(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  unsigned int arg2 ;
+  GL_Texture *result = 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::__getitem__",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::__getitem__",1,"std::vector< GL_Texture * > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< GL_Texture * >::__getitem__",2,"unsigned int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture___getitem",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
+  try {
+    result = (GL_Texture *)std_vector_Sl_GL_Texture_Sm__Sg____getitem__(arg1,arg2);
+  } catch(std::out_of_range &_e) {
+    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  }
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_GL_Texture,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_vector_p_GL_Texture___setitem(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) 0 ;
+  unsigned int arg2 ;
+  GL_Texture *arg3 = (GL_Texture *) 0 ;
+  
+  SWIG_check_num_args("std::vector< GL_Texture * >::__setitem__",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("std::vector< GL_Texture * >::__setitem__",1,"std::vector< GL_Texture * > *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("std::vector< GL_Texture * >::__setitem__",2,"unsigned int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("std::vector< GL_Texture * >::__setitem__",3,"GL_Texture *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture___setitem",1,SWIGTYPE_p_std__vectorT_GL_Texture_p_t);
+  }
+  
+  
+  if (lua_tonumber(L, 2) < 0) SWIG_exception(SWIG_ValueError, "number must not be negative");
+  arg2 = (unsigned int) lua_tonumber(L, 2);
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_GL_Texture,0))){
+    SWIG_fail_ptr("vector_p_GL_Texture___setitem",3,SWIGTYPE_p_GL_Texture);
+  }
+  
+  try {
+    std_vector_Sl_GL_Texture_Sm__Sg____setitem__(arg1,arg2,arg3);
+  } catch(std::out_of_range &_e) {
+    SWIG_exception(SWIG_IndexError, (&_e)->what());
+  }
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_vector_p_GL_Texture(void *obj) {
+std::vector< GL_Texture * > *arg1 = (std::vector< GL_Texture * > *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_vector_p_GL_Texture(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_vector_p_GL_Texture);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_vector_p_GL_Texture_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_vector_p_GL_Texture_methods[]= {
+    { "size", _wrap_vector_p_GL_Texture_size},
+    { "max_size", _wrap_vector_p_GL_Texture_max_size},
+    { "empty", _wrap_vector_p_GL_Texture_empty},
+    { "clear", _wrap_vector_p_GL_Texture_clear},
+    { "push_back", _wrap_vector_p_GL_Texture_push_back},
+    { "pop_back", _wrap_vector_p_GL_Texture_pop_back},
+    { "front", _wrap_vector_p_GL_Texture_front},
+    { "back", _wrap_vector_p_GL_Texture_back},
+    { "__getitem", _wrap_vector_p_GL_Texture___getitem},
+    { "__setitem", _wrap_vector_p_GL_Texture___setitem},
+    {0,0}
+};
+static swig_lua_method swig_vector_p_GL_Texture_meta[] = {
+    { "__getitem", _wrap_vector_p_GL_Texture___getitem},
+    { "__setitem", _wrap_vector_p_GL_Texture___setitem},
+    {0,0}
+};
+
+static swig_lua_attribute swig_vector_p_GL_Texture_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_vector_p_GL_Texture_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_vector_p_GL_Texture_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_vector_p_GL_Texture_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_vector_p_GL_Texture_Sf_SwigStatic = {
+    "vector_p_GL_Texture",
+    swig_vector_p_GL_Texture_Sf_SwigStatic_methods,
+    swig_vector_p_GL_Texture_Sf_SwigStatic_attributes,
+    swig_vector_p_GL_Texture_Sf_SwigStatic_constants,
+    swig_vector_p_GL_Texture_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_vector_p_GL_Texture_bases[] = {0};
+static const char *swig_vector_p_GL_Texture_base_names[] = {0};
+static swig_lua_class _wrap_class_vector_p_GL_Texture = { "vector_p_GL_Texture", "vector_p_GL_Texture", &SWIGTYPE_p_std__vectorT_GL_Texture_p_t,_proxy__wrap_new_vector_p_GL_Texture, swig_delete_vector_p_GL_Texture, swig_vector_p_GL_Texture_methods, swig_vector_p_GL_Texture_attributes, &swig_vector_p_GL_Texture_Sf_SwigStatic, swig_vector_p_GL_Texture_meta, swig_vector_p_GL_Texture_bases, swig_vector_p_GL_Texture_base_names };
+
 static int _wrap_ToggleValue_int_value_set(lua_State* L) {
   int SWIG_arg = 0;
   ToggleValue< int > *arg1 = (ToggleValue< int > *) 0 ;
@@ -33778,6 +34838,12 @@ static swig_lua_class _wrap_class_GL_Primitive_Pointer_Array_Size_3_Wrapper = { 
     };
 
 
+    static LockdownShard_Extend *LockdownShard_extend_get(LockdownShard* LockdownShard)
+    {
+        return Get_LockdownShard_Extend(LockdownShard);
+    };
+
+
     static Room_Extend *Room_extend_get(Room* room)
     {
         return Get_Room_Extend(room);
@@ -34020,6 +35086,37 @@ fail:
 }
 
 
+static int _wrap_Point___lt(lua_State* L) {
+  int SWIG_arg = 0;
+  Point *arg1 = (Point *) 0 ;
+  Point *arg2 = 0 ;
+  bool result;
+  
+  SWIG_check_num_args("Point::operator <",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Point::operator <",1,"Point const *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("Point::operator <",2,"Point const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Point,0))){
+    SWIG_fail_ptr("Point___lt",1,SWIGTYPE_p_Point);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Point,0))){
+    SWIG_fail_ptr("Point___lt",2,SWIGTYPE_p_Point);
+  }
+  
+  result = (bool)((Point const *)arg1)->operator <((Point const &)*arg2);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_Point_Distance(lua_State* L) {
   int SWIG_arg = 0;
   Point *arg1 = (Point *) 0 ;
@@ -34208,6 +35305,7 @@ static swig_lua_method swig_Point_methods[]= {
     { "__sub", _wrap_Point___sub},
     { "__div", _wrap_Point___div},
     { "__mul", _wrap_Point___mul},
+    { "__lt", _wrap_Point___lt},
     { "Distance", _wrap_Point_Distance},
     { "RelativeDistance", _wrap_Point_RelativeDistance},
     {0,0}
@@ -34217,6 +35315,7 @@ static swig_lua_method swig_Point_meta[] = {
     { "__sub", _wrap_Point___sub},
     { "__div", _wrap_Point___div},
     { "__mul", _wrap_Point___mul},
+    { "__lt", _wrap_Point___lt},
     {0,0}
 };
 
@@ -85053,6 +86152,10 @@ fail:
 }
 
 
+static void swig_delete_Selectable(void *obj) {
+Selectable *arg1 = (Selectable *) obj;
+delete arg1;
+}
 static swig_lua_attribute swig_Selectable_attributes[] = {
     { "selectedState", _wrap_Selectable_selectedState_get, _wrap_Selectable_selectedState_set },
     {0,0,0}
@@ -85087,7 +86190,7 @@ static swig_lua_namespace swig_Selectable_Sf_SwigStatic = {
 };
 static swig_lua_class *swig_Selectable_bases[] = {0};
 static const char *swig_Selectable_base_names[] = {0};
-static swig_lua_class _wrap_class_Selectable = { "Selectable", "Selectable", &SWIGTYPE_p_Selectable,0,0, swig_Selectable_methods, swig_Selectable_attributes, &swig_Selectable_Sf_SwigStatic, swig_Selectable_meta, swig_Selectable_bases, swig_Selectable_base_names };
+static swig_lua_class _wrap_class_Selectable = { "Selectable", "Selectable", &SWIGTYPE_p_Selectable,0, swig_delete_Selectable, swig_Selectable_methods, swig_Selectable_attributes, &swig_Selectable_Sf_SwigStatic, swig_Selectable_meta, swig_Selectable_bases, swig_Selectable_base_names };
 
 static int _wrap_Room_FillSlot(lua_State* L) {
   int SWIG_arg = 0;
@@ -91637,6 +92740,10 @@ fail:
 }
 
 
+static void swig_delete_Repairable(void *obj) {
+Repairable *arg1 = (Repairable *) obj;
+delete arg1;
+}
 static swig_lua_attribute swig_Repairable_attributes[] = {
     { "shipObj", _wrap_Repairable_shipObj_get, _wrap_Repairable_shipObj_set },
     { "fDamage", _wrap_Repairable_fDamage_get, _wrap_Repairable_fDamage_set },
@@ -91677,7 +92784,7 @@ static swig_lua_namespace swig_Repairable_Sf_SwigStatic = {
 };
 static swig_lua_class *swig_Repairable_bases[] = {0,0};
 static const char *swig_Repairable_base_names[] = {"Selectable *",0};
-static swig_lua_class _wrap_class_Repairable = { "Repairable", "Repairable", &SWIGTYPE_p_Repairable,0,0, swig_Repairable_methods, swig_Repairable_attributes, &swig_Repairable_Sf_SwigStatic, swig_Repairable_meta, swig_Repairable_bases, swig_Repairable_base_names };
+static swig_lua_class _wrap_class_Repairable = { "Repairable", "Repairable", &SWIGTYPE_p_Repairable,0, swig_delete_Repairable, swig_Repairable_methods, swig_Repairable_attributes, &swig_Repairable_Sf_SwigStatic, swig_Repairable_meta, swig_Repairable_bases, swig_Repairable_base_names };
 
 static int _wrap_Spreadable_soundName_set(lua_State* L) {
   int SWIG_arg = 0;
@@ -94572,6 +95679,147 @@ static swig_lua_class *swig_Location_bases[] = {0};
 static const char *swig_Location_base_names[] = {0};
 static swig_lua_class _wrap_class_Location = { "Location", "Location", &SWIGTYPE_p_Location,0, swig_delete_Location, swig_Location_methods, swig_Location_attributes, &swig_Location_Sf_SwigStatic, swig_Location_meta, swig_Location_bases, swig_Location_base_names };
 
+static int _wrap_new_LockdownShard__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard *result = 0 ;
+  
+  SWIG_check_num_args("LockdownShard::LockdownShard",0,0)
+  result = (LockdownShard *)new LockdownShard();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_LockdownShard,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_LockdownShard__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  Pointf arg2 ;
+  Point arg3 ;
+  bool arg4 ;
+  Pointf *argp2 ;
+  Point *argp3 ;
+  LockdownShard *result = 0 ;
+  
+  SWIG_check_num_args("LockdownShard::LockdownShard",4,4)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("LockdownShard::LockdownShard",1,"int");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("LockdownShard::LockdownShard",2,"Pointf");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("LockdownShard::LockdownShard",3,"Point");
+  if(!lua_isboolean(L,4)) SWIG_fail_arg("LockdownShard::LockdownShard",4,"bool");
+  arg1 = (int)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_Pointf,0))){
+    SWIG_fail_ptr("new_LockdownShard",2,SWIGTYPE_p_Pointf);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Point,0))){
+    SWIG_fail_ptr("new_LockdownShard",3,SWIGTYPE_p_Point);
+  }
+  arg3 = *argp3;
+  
+  arg4 = (lua_toboolean(L, 4)!=0);
+  result = (LockdownShard *)new LockdownShard(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_LockdownShard,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_LockdownShard__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  LockdownShard *result = 0 ;
+  
+  SWIG_check_num_args("LockdownShard::LockdownShard",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("LockdownShard::LockdownShard",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  result = (LockdownShard *)new LockdownShard(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_LockdownShard,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_LockdownShard(lua_State* L) {
+  int argc;
+  int argv[5]={
+    1,2,3,4,5
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 0) {
+    return _wrap_new_LockdownShard__SWIG_0(L);
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      return _wrap_new_LockdownShard__SWIG_2(L);
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_Pointf, SWIG_POINTER_NO_NULL)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_Point, SWIG_POINTER_NO_NULL)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            _v = lua_isboolean(L,argv[3]);
+          }
+          if (_v) {
+            return _wrap_new_LockdownShard__SWIG_1(L);
+          }
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_LockdownShard'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    LockdownShard::LockdownShard()\n"
+    "    LockdownShard::LockdownShard(int,Pointf,Point,bool)\n"
+    "    LockdownShard::LockdownShard(int)\n");
+  lua_error(L);return 0;
+}
+
+
 static int _wrap_LockdownShard_Update(lua_State* L) {
   int SWIG_arg = 0;
   LockdownShard *arg1 = (LockdownShard *) 0 ;
@@ -94857,32 +96105,6 @@ fail:
 }
 
 
-static int _wrap_LockdownShard_bDone_set(lua_State* L) {
-  int SWIG_arg = 0;
-  LockdownShard *arg1 = (LockdownShard *) 0 ;
-  bool arg2 ;
-  
-  SWIG_check_num_args("LockdownShard::bDone",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard::bDone",1,"LockdownShard *");
-  if(!lua_isboolean(L,2)) SWIG_fail_arg("LockdownShard::bDone",2,"bool");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard,0))){
-    SWIG_fail_ptr("LockdownShard_bDone_set",1,SWIGTYPE_p_LockdownShard);
-  }
-  
-  arg2 = (lua_toboolean(L, 2)!=0);
-  if (arg1) (arg1)->bDone = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_LockdownShard_bDone_get(lua_State* L) {
   int SWIG_arg = 0;
   LockdownShard *arg1 = (LockdownShard *) 0 ;
@@ -95007,32 +96229,6 @@ fail:
 }
 
 
-static int _wrap_LockdownShard_lockingRoom_set(lua_State* L) {
-  int SWIG_arg = 0;
-  LockdownShard *arg1 = (LockdownShard *) 0 ;
-  int arg2 ;
-  
-  SWIG_check_num_args("LockdownShard::lockingRoom",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard::lockingRoom",1,"LockdownShard *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("LockdownShard::lockingRoom",2,"int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard,0))){
-    SWIG_fail_ptr("LockdownShard_lockingRoom_set",1,SWIGTYPE_p_LockdownShard);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  if (arg1) (arg1)->lockingRoom = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_LockdownShard_lockingRoom_get(lua_State* L) {
   int SWIG_arg = 0;
   LockdownShard *arg1 = (LockdownShard *) 0 ;
@@ -95057,9 +96253,41 @@ fail:
 }
 
 
+static int _wrap_LockdownShard_extend_get(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard *arg1 = (LockdownShard *) 0 ;
+  LockdownShard_Extend *result = 0 ;
+  
+  SWIG_check_num_args("LockdownShard::extend",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard::extend",1,"LockdownShard *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard,0))){
+    SWIG_fail_ptr("LockdownShard_extend_get",1,SWIGTYPE_p_LockdownShard);
+  }
+  
+  result = (LockdownShard_Extend *)LockdownShard_extend_get(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_LockdownShard_Extend,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static void swig_delete_LockdownShard(void *obj) {
 LockdownShard *arg1 = (LockdownShard *) obj;
 delete arg1;
+}
+static int _proxy__wrap_new_LockdownShard(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_LockdownShard);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
 }
 static swig_lua_attribute swig_LockdownShard_attributes[] = {
     { "shard", _wrap_LockdownShard_shard_get, _wrap_LockdownShard_shard_set },
@@ -95067,10 +96295,11 @@ static swig_lua_attribute swig_LockdownShard_attributes[] = {
     { "goal", _wrap_LockdownShard_goal_get, _wrap_LockdownShard_goal_set },
     { "speed", _wrap_LockdownShard_speed_get, _wrap_LockdownShard_speed_set },
     { "bArrived", _wrap_LockdownShard_bArrived_get, _wrap_LockdownShard_bArrived_set },
-    { "bDone", _wrap_LockdownShard_bDone_get, _wrap_LockdownShard_bDone_set },
+    { "bDone", _wrap_LockdownShard_bDone_get, SWIG_Lua_set_immutable },
     { "lifeTime", _wrap_LockdownShard_lifeTime_get, _wrap_LockdownShard_lifeTime_set },
     { "superFreeze", _wrap_LockdownShard_superFreeze_get, _wrap_LockdownShard_superFreeze_set },
-    { "lockingRoom", _wrap_LockdownShard_lockingRoom_get, _wrap_LockdownShard_lockingRoom_set },
+    { "lockingRoom", _wrap_LockdownShard_lockingRoom_get, SWIG_Lua_set_immutable },
+    { "extend", _wrap_LockdownShard_extend_get, SWIG_Lua_set_immutable },
     {0,0,0}
 };
 static swig_lua_method swig_LockdownShard_methods[]= {
@@ -95104,7 +96333,7 @@ static swig_lua_namespace swig_LockdownShard_Sf_SwigStatic = {
 };
 static swig_lua_class *swig_LockdownShard_bases[] = {0};
 static const char *swig_LockdownShard_base_names[] = {0};
-static swig_lua_class _wrap_class_LockdownShard = { "LockdownShard", "LockdownShard", &SWIGTYPE_p_LockdownShard,0, swig_delete_LockdownShard, swig_LockdownShard_methods, swig_LockdownShard_attributes, &swig_LockdownShard_Sf_SwigStatic, swig_LockdownShard_meta, swig_LockdownShard_bases, swig_LockdownShard_base_names };
+static swig_lua_class _wrap_class_LockdownShard = { "LockdownShard", "LockdownShard", &SWIGTYPE_p_LockdownShard,_proxy__wrap_new_LockdownShard, swig_delete_LockdownShard, swig_LockdownShard_methods, swig_LockdownShard_attributes, &swig_LockdownShard_Sf_SwigStatic, swig_LockdownShard_meta, swig_LockdownShard_bases, swig_LockdownShard_base_names };
 
 static swig_lua_attribute swig_MedbaySystem_attributes[] = {
     {0,0,0}
@@ -97697,32 +98926,6 @@ fail:
 }
 
 
-static int _wrap_OxygenSystem_EmptyOxygen(lua_State* L) {
-  int SWIG_arg = 0;
-  OxygenSystem *arg1 = (OxygenSystem *) 0 ;
-  int arg2 ;
-  
-  SWIG_check_num_args("OxygenSystem::EmptyOxygen",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("OxygenSystem::EmptyOxygen",1,"OxygenSystem *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("OxygenSystem::EmptyOxygen",2,"int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_OxygenSystem,0))){
-    SWIG_fail_ptr("OxygenSystem_EmptyOxygen",1,SWIGTYPE_p_OxygenSystem);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  (arg1)->EmptyOxygen(arg2);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_OxygenSystem_GetRefillSpeed(lua_State* L) {
   int SWIG_arg = 0;
   OxygenSystem *arg1 = (OxygenSystem *) 0 ;
@@ -97737,35 +98940,6 @@ static int _wrap_OxygenSystem_GetRefillSpeed(lua_State* L) {
   
   result = (float)(arg1)->GetRefillSpeed();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_OxygenSystem_ModifyRoomOxygen(lua_State* L) {
-  int SWIG_arg = 0;
-  OxygenSystem *arg1 = (OxygenSystem *) 0 ;
-  int arg2 ;
-  float arg3 ;
-  
-  SWIG_check_num_args("OxygenSystem::ModifyRoomOxygen",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("OxygenSystem::ModifyRoomOxygen",1,"OxygenSystem *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("OxygenSystem::ModifyRoomOxygen",2,"int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("OxygenSystem::ModifyRoomOxygen",3,"float");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_OxygenSystem,0))){
-    SWIG_fail_ptr("OxygenSystem_ModifyRoomOxygen",1,SWIGTYPE_p_OxygenSystem);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  arg3 = (float)lua_tonumber(L, 3);
-  (arg1)->ModifyRoomOxygen(arg2,arg3);
-  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -97954,6 +99128,69 @@ fail:
 }
 
 
+static int _wrap_OxygenSystem_ModifyRoomOxygen(lua_State* L) {
+  int SWIG_arg = 0;
+  OxygenSystem *arg1 = (OxygenSystem *) 0 ;
+  int arg2 ;
+  float arg3 ;
+  
+  SWIG_check_num_args("OxygenSystem::ModifyRoomOxygen",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("OxygenSystem::ModifyRoomOxygen",1,"OxygenSystem *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("OxygenSystem::ModifyRoomOxygen",2,"int");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("OxygenSystem::ModifyRoomOxygen",3,"float");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_OxygenSystem,0))){
+    SWIG_fail_ptr("OxygenSystem_ModifyRoomOxygen",1,SWIGTYPE_p_OxygenSystem);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  arg3 = (float)lua_tonumber(L, 3);
+  try {
+    OxygenSystem_ModifyRoomOxygen(arg1,arg2,arg3);
+  } catch(std::invalid_argument &_e) {
+    SWIG_exception(SWIG_ValueError, (&_e)->what());
+  }
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_OxygenSystem_EmptyOxygen(lua_State* L) {
+  int SWIG_arg = 0;
+  OxygenSystem *arg1 = (OxygenSystem *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("OxygenSystem::EmptyOxygen",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("OxygenSystem::EmptyOxygen",1,"OxygenSystem *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("OxygenSystem::EmptyOxygen",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_OxygenSystem,0))){
+    SWIG_fail_ptr("OxygenSystem_EmptyOxygen",1,SWIGTYPE_p_OxygenSystem);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  try {
+    OxygenSystem_EmptyOxygen(arg1,arg2);
+  } catch(std::invalid_argument &_e) {
+    SWIG_exception(SWIG_ValueError, (&_e)->what());
+  }
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_OxygenSystem_leakModifier_get(lua_State* L) {
   int SWIG_arg = 0;
   OxygenSystem *arg1 = (OxygenSystem *) 0 ;
@@ -97995,9 +99232,9 @@ static swig_lua_attribute swig_OxygenSystem_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_OxygenSystem_methods[]= {
-    { "EmptyOxygen", _wrap_OxygenSystem_EmptyOxygen},
     { "GetRefillSpeed", _wrap_OxygenSystem_GetRefillSpeed},
     { "ModifyRoomOxygen", _wrap_OxygenSystem_ModifyRoomOxygen},
+    { "EmptyOxygen", _wrap_OxygenSystem_EmptyOxygen},
     {0,0}
 };
 static swig_lua_method swig_OxygenSystem_meta[] = {
@@ -104345,41 +105582,6 @@ fail:
 }
 
 
-static int _wrap_Ship_LockdownRoom(lua_State* L) {
-  int SWIG_arg = 0;
-  Ship *arg1 = (Ship *) 0 ;
-  int arg2 ;
-  Pointf arg3 ;
-  Pointf *argp3 ;
-  
-  SWIG_check_num_args("Ship::LockdownRoom",3,3)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Ship::LockdownRoom",1,"Ship *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Ship::LockdownRoom",2,"int");
-  if(!lua_isuserdata(L,3)) SWIG_fail_arg("Ship::LockdownRoom",3,"Pointf");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Ship,0))){
-    SWIG_fail_ptr("Ship_LockdownRoom",1,SWIGTYPE_p_Ship);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Pointf,0))){
-    SWIG_fail_ptr("Ship_LockdownRoom",3,SWIGTYPE_p_Pointf);
-  }
-  arg3 = *argp3;
-  
-  (arg1)->LockdownRoom(arg2,arg3);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_Ship_RoomLocked(lua_State* L) {
   int SWIG_arg = 0;
   Ship *arg1 = (Ship *) 0 ;
@@ -106208,36 +107410,6 @@ fail:
 }
 
 
-static int _wrap_Ship_lockdowns_set(lua_State* L) {
-  int SWIG_arg = 0;
-  Ship *arg1 = (Ship *) 0 ;
-  std::vector< LockdownShard > *arg2 = (std::vector< LockdownShard > *) 0 ;
-  
-  SWIG_check_num_args("Ship::lockdowns",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Ship::lockdowns",1,"Ship *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Ship::lockdowns",2,"std::vector< LockdownShard > *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Ship,0))){
-    SWIG_fail_ptr("Ship_lockdowns_set",1,SWIGTYPE_p_Ship);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_LockdownShard_t,0))){
-    SWIG_fail_ptr("Ship_lockdowns_set",2,SWIGTYPE_p_std__vectorT_LockdownShard_t);
-  }
-  
-  if (arg1) (arg1)->lockdowns = *arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_Ship_lockdowns_get(lua_State* L) {
   int SWIG_arg = 0;
   Ship *arg1 = (Ship *) 0 ;
@@ -106259,6 +107431,167 @@ static int _wrap_Ship_lockdowns_get(lua_State* L) {
 fail:
   lua_error(L);
   return SWIG_arg;
+}
+
+
+static int _wrap_Ship_LockdownRoom__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  Ship *arg1 = (Ship *) 0 ;
+  int arg2 ;
+  Pointf arg3 ;
+  Pointf *argp3 ;
+  
+  SWIG_check_num_args("Ship::LockdownRoom",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Ship::LockdownRoom",1,"Ship *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Ship::LockdownRoom",2,"int");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("Ship::LockdownRoom",3,"Pointf");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Ship,0))){
+    SWIG_fail_ptr("Ship_LockdownRoom",1,SWIGTYPE_p_Ship);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Pointf,0))){
+    SWIG_fail_ptr("Ship_LockdownRoom",3,SWIGTYPE_p_Pointf);
+  }
+  arg3 = *argp3;
+  
+  Ship_LockdownRoom__SWIG_0(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Ship_LockdownRoom__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  Ship *arg1 = (Ship *) 0 ;
+  int arg2 ;
+  Pointf arg3 ;
+  CustomLockdownDefinition *arg4 = 0 ;
+  Pointf *argp3 ;
+  
+  SWIG_check_num_args("Ship::LockdownRoom",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Ship::LockdownRoom",1,"Ship *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Ship::LockdownRoom",2,"int");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("Ship::LockdownRoom",3,"Pointf");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("Ship::LockdownRoom",4,"CustomLockdownDefinition &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Ship,0))){
+    SWIG_fail_ptr("Ship_LockdownRoom",1,SWIGTYPE_p_Ship);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Pointf,0))){
+    SWIG_fail_ptr("Ship_LockdownRoom",3,SWIGTYPE_p_Pointf);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("Ship_LockdownRoom",4,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  Ship_LockdownRoom__SWIG_1(arg1,arg2,arg3,*arg4);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Ship_LockdownRoom(lua_State* L) {
+  int argc;
+  int argv[5]={
+    1,2,3,4,5
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 3) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_Ship, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_Pointf, SWIG_POINTER_NO_NULL)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          return _wrap_Ship_LockdownRoom__SWIG_0(L);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_Ship, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_Pointf, SWIG_POINTER_NO_NULL)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            void *ptr;
+            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_CustomLockdownDefinition, SWIG_POINTER_NO_NULL)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            return _wrap_Ship_LockdownRoom__SWIG_1(L);
+          }
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'Ship_LockdownRoom'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    Ship::LockdownRoom(int,Pointf)\n"
+    "    Ship::LockdownRoom(int,Pointf,CustomLockdownDefinition &)\n");
+  lua_error(L);return 0;
 }
 
 
@@ -106320,7 +107653,7 @@ static swig_lua_attribute swig_Ship_attributes[] = {
     { "bCloaked", _wrap_Ship_bCloaked_get, _wrap_Ship_bCloaked_set },
     { "bExperiment", _wrap_Ship_bExperiment_get, _wrap_Ship_bExperiment_set },
     { "bShowEngines", _wrap_Ship_bShowEngines_get, _wrap_Ship_bShowEngines_set },
-    { "lockdowns", _wrap_Ship_lockdowns_get, _wrap_Ship_lockdowns_set },
+    { "lockdowns", _wrap_Ship_lockdowns_get, SWIG_Lua_set_immutable },
     { "extraEngineAnim", _wrap_Ship_extraEngineAnim_get, SWIG_Lua_set_immutable },
     {0,0,0}
 };
@@ -106335,10 +107668,10 @@ static swig_lua_method swig_Ship_methods[]= {
     { "GetBaseEllipse", _wrap_Ship_GetBaseEllipse},
     { "GetHullBreaches", _wrap_Ship_GetHullBreaches},
     { "GetSelectedRoomId", _wrap_Ship_GetSelectedRoomId},
-    { "LockdownRoom", _wrap_Ship_LockdownRoom},
     { "RoomLocked", _wrap_Ship_RoomLocked},
     { "SetRoomBlackout", _wrap_Ship_SetRoomBlackout},
     { "SetSelectedRoom", _wrap_Ship_SetSelectedRoom},
+    { "LockdownRoom", _wrap_Ship_LockdownRoom},
     {0,0}
 };
 static swig_lua_method swig_Ship_meta[] = {
@@ -110401,7 +111734,11 @@ static int _wrap_ShipManager_GetFireAtPoint__SWIG_0(lua_State* L) {
   
   arg2 = (float)lua_tonumber(L, 2);
   arg3 = (float)lua_tonumber(L, 3);
-  result = (Fire *) &ShipManager_GetFireAtPoint__SWIG_0(arg1,arg2,arg3);
+  try {
+    result = (Fire *) &ShipManager_GetFireAtPoint__SWIG_0(arg1,arg2,arg3);
+  } catch(std::invalid_argument &_e) {
+    SWIG_exception(SWIG_ValueError, (&_e)->what());
+  }
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Fire,0); SWIG_arg++; 
   return SWIG_arg;
   
@@ -110434,7 +111771,11 @@ static int _wrap_ShipManager_GetFireAtPoint__SWIG_1(lua_State* L) {
   }
   arg2 = *argp2;
   
-  result = (Fire *) &ShipManager_GetFireAtPoint__SWIG_1(arg1,arg2);
+  try {
+    result = (Fire *) &ShipManager_GetFireAtPoint__SWIG_1(arg1,arg2);
+  } catch(std::invalid_argument &_e) {
+    SWIG_exception(SWIG_ValueError, (&_e)->what());
+  }
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Fire,0); SWIG_arg++; 
   return SWIG_arg;
   
@@ -110467,7 +111808,11 @@ static int _wrap_ShipManager_GetFireAtPoint__SWIG_2(lua_State* L) {
   }
   arg2 = *argp2;
   
-  result = (Fire *) &ShipManager_GetFireAtPoint__SWIG_2(arg1,arg2);
+  try {
+    result = (Fire *) &ShipManager_GetFireAtPoint__SWIG_2(arg1,arg2);
+  } catch(std::invalid_argument &_e) {
+    SWIG_exception(SWIG_ValueError, (&_e)->what());
+  }
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Fire,0); SWIG_arg++; 
   return SWIG_arg;
   
@@ -110586,7 +111931,11 @@ static int _wrap_ShipManager_GetFire(lua_State* L) {
   
   arg2 = (int)lua_tonumber(L, 2);
   arg3 = (int)lua_tonumber(L, 3);
-  result = (Fire *) &ShipManager_GetFire(arg1,arg2,arg3);
+  try {
+    result = (Fire *) &ShipManager_GetFire(arg1,arg2,arg3);
+  } catch(std::invalid_argument &_e) {
+    SWIG_exception(SWIG_ValueError, (&_e)->what());
+  }
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Fire,0); SWIG_arg++; 
   return SWIG_arg;
   
@@ -131085,6 +132434,66 @@ static swig_lua_class *swig_CustomShipGenerator_bases[] = {0};
 static const char *swig_CustomShipGenerator_base_names[] = {0};
 static swig_lua_class _wrap_class_CustomShipGenerator = { "CustomShipGenerator", "CustomShipGenerator", &SWIGTYPE_p_CustomShipGenerator,_proxy__wrap_new_CustomShipGenerator, swig_delete_CustomShipGenerator, swig_CustomShipGenerator_methods, swig_CustomShipGenerator_attributes, &swig_CustomShipGenerator_Sf_SwigStatic, swig_CustomShipGenerator_meta, swig_CustomShipGenerator_bases, swig_CustomShipGenerator_base_names };
 
+static int _wrap_ShipButtonDefinition_name_get(lua_State* L) {
+  int SWIG_arg = 0;
+  ShipButtonDefinition *arg1 = (ShipButtonDefinition *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("ShipButtonDefinition::name",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ShipButtonDefinition::name",1,"ShipButtonDefinition *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ShipButtonDefinition,0))){
+    SWIG_fail_ptr("ShipButtonDefinition_name_get",1,SWIGTYPE_p_ShipButtonDefinition);
+  }
+  
+  result = (std::string *) & ((arg1)->name);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static swig_lua_attribute swig_ShipButtonDefinition_attributes[] = {
+    { "name", _wrap_ShipButtonDefinition_name_get, SWIG_Lua_set_immutable },
+    {0,0,0}
+};
+static swig_lua_method swig_ShipButtonDefinition_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_ShipButtonDefinition_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_ShipButtonDefinition_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_ShipButtonDefinition_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_ShipButtonDefinition_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_ShipButtonDefinition_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_ShipButtonDefinition_Sf_SwigStatic = {
+    "ShipButtonDefinition",
+    swig_ShipButtonDefinition_Sf_SwigStatic_methods,
+    swig_ShipButtonDefinition_Sf_SwigStatic_attributes,
+    swig_ShipButtonDefinition_Sf_SwigStatic_constants,
+    swig_ShipButtonDefinition_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_ShipButtonDefinition_bases[] = {0};
+static const char *swig_ShipButtonDefinition_base_names[] = {0};
+static swig_lua_class _wrap_class_ShipButtonDefinition = { "ShipButtonDefinition", "ShipButtonDefinition", &SWIGTYPE_p_ShipButtonDefinition,0,0, swig_ShipButtonDefinition_methods, swig_ShipButtonDefinition_attributes, &swig_ShipButtonDefinition_Sf_SwigStatic, swig_ShipButtonDefinition_meta, swig_ShipButtonDefinition_bases, swig_ShipButtonDefinition_base_names };
+
 static int _wrap_RoomDefinition_roomId_set(lua_State* L) {
   int SWIG_arg = 0;
   RoomDefinition *arg1 = (RoomDefinition *) 0 ;
@@ -132617,10 +134026,6 @@ fail:
 }
 
 
-static void swig_delete_CustomShipDefinition(void *obj) {
-CustomShipDefinition *arg1 = (CustomShipDefinition *) obj;
-delete arg1;
-}
 static int _proxy__wrap_new_CustomShipDefinition(lua_State *L) {
     assert(lua_istable(L,1));
     lua_pushcfunction(L,_wrap_new_CustomShipDefinition);
@@ -132680,7 +134085,355 @@ static swig_lua_namespace swig_CustomShipDefinition_Sf_SwigStatic = {
 };
 static swig_lua_class *swig_CustomShipDefinition_bases[] = {0};
 static const char *swig_CustomShipDefinition_base_names[] = {0};
-static swig_lua_class _wrap_class_CustomShipDefinition = { "CustomShipDefinition", "CustomShipDefinition", &SWIGTYPE_p_CustomShipDefinition,_proxy__wrap_new_CustomShipDefinition, swig_delete_CustomShipDefinition, swig_CustomShipDefinition_methods, swig_CustomShipDefinition_attributes, &swig_CustomShipDefinition_Sf_SwigStatic, swig_CustomShipDefinition_meta, swig_CustomShipDefinition_bases, swig_CustomShipDefinition_base_names };
+static swig_lua_class _wrap_class_CustomShipDefinition = { "CustomShipDefinition", "CustomShipDefinition", &SWIGTYPE_p_CustomShipDefinition,_proxy__wrap_new_CustomShipDefinition,0, swig_CustomShipDefinition_methods, swig_CustomShipDefinition_attributes, &swig_CustomShipDefinition_Sf_SwigStatic, swig_CustomShipDefinition_meta, swig_CustomShipDefinition_bases, swig_CustomShipDefinition_base_names };
+
+static int _wrap_new_ShipButtonList__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  int arg2 ;
+  ShipButton *arg3 = (ShipButton *) 0 ;
+  ShipButton *arg4 = (ShipButton *) 0 ;
+  ShipButton *arg5 = (ShipButton *) 0 ;
+  ShipButtonList *result = 0 ;
+  
+  SWIG_check_num_args("ShipButtonList::ShipButtonList",5,5)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("ShipButtonList::ShipButtonList",1,"int");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("ShipButtonList::ShipButtonList",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("ShipButtonList::ShipButtonList",3,"ShipButton *");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("ShipButtonList::ShipButtonList",4,"ShipButton *");
+  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("ShipButtonList::ShipButtonList",5,"ShipButton *");
+  arg1 = (int)lua_tonumber(L, 1);
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ShipButton,0))){
+    SWIG_fail_ptr("new_ShipButtonList",3,SWIGTYPE_p_ShipButton);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_ShipButton,0))){
+    SWIG_fail_ptr("new_ShipButtonList",4,SWIGTYPE_p_ShipButton);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&arg5,SWIGTYPE_p_ShipButton,0))){
+    SWIG_fail_ptr("new_ShipButtonList",5,SWIGTYPE_p_ShipButton);
+  }
+  
+  result = (ShipButtonList *)new ShipButtonList(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonList,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_ShipButtonList__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  int arg2 ;
+  ShipButton *arg3 = (ShipButton *) 0 ;
+  ShipButton *arg4 = (ShipButton *) 0 ;
+  ShipButtonList *result = 0 ;
+  
+  SWIG_check_num_args("ShipButtonList::ShipButtonList",4,4)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("ShipButtonList::ShipButtonList",1,"int");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("ShipButtonList::ShipButtonList",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("ShipButtonList::ShipButtonList",3,"ShipButton *");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("ShipButtonList::ShipButtonList",4,"ShipButton *");
+  arg1 = (int)lua_tonumber(L, 1);
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ShipButton,0))){
+    SWIG_fail_ptr("new_ShipButtonList",3,SWIGTYPE_p_ShipButton);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_ShipButton,0))){
+    SWIG_fail_ptr("new_ShipButtonList",4,SWIGTYPE_p_ShipButton);
+  }
+  
+  result = (ShipButtonList *)new ShipButtonList(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonList,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_ShipButtonList__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  int arg2 ;
+  ShipButton *arg3 = (ShipButton *) 0 ;
+  ShipButtonList *result = 0 ;
+  
+  SWIG_check_num_args("ShipButtonList::ShipButtonList",3,3)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("ShipButtonList::ShipButtonList",1,"int");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("ShipButtonList::ShipButtonList",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("ShipButtonList::ShipButtonList",3,"ShipButton *");
+  arg1 = (int)lua_tonumber(L, 1);
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_ShipButton,0))){
+    SWIG_fail_ptr("new_ShipButtonList",3,SWIGTYPE_p_ShipButton);
+  }
+  
+  result = (ShipButtonList *)new ShipButtonList(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonList,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_ShipButtonList(lua_State* L) {
+  int argc;
+  int argv[6]={
+    1,2,3,4,5,6
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 3) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (SWIG_isptrtype(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_ShipButton, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          return _wrap_new_ShipButtonList__SWIG_2(L);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (SWIG_isptrtype(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_ShipButton, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            void *ptr;
+            if (SWIG_isptrtype(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_ShipButton, 0)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            return _wrap_new_ShipButtonList__SWIG_1(L);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (SWIG_isptrtype(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_ShipButton, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            void *ptr;
+            if (SWIG_isptrtype(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_ShipButton, 0)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            {
+              void *ptr;
+              if (SWIG_isptrtype(L,argv[4])==0 || SWIG_ConvertPtr(L,argv[4], (void **) &ptr, SWIGTYPE_p_ShipButton, 0)) {
+                _v = 0;
+              } else {
+                _v = 1;
+              }
+            }
+            if (_v) {
+              return _wrap_new_ShipButtonList__SWIG_0(L);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_ShipButtonList'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    ShipButtonList::ShipButtonList(int,int,ShipButton *,ShipButton *,ShipButton *)\n"
+    "    ShipButtonList::ShipButtonList(int,int,ShipButton *,ShipButton *)\n"
+    "    ShipButtonList::ShipButtonList(int,int,ShipButton *)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_ShipButtonList_GetPage(lua_State* L) {
+  int SWIG_arg = 0;
+  ShipButtonList *arg1 = (ShipButtonList *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("ShipButtonList::GetPage",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ShipButtonList::GetPage",1,"ShipButtonList *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ShipButtonList,0))){
+    SWIG_fail_ptr("ShipButtonList_GetPage",1,SWIGTYPE_p_ShipButtonList);
+  }
+  
+  result = (int)(arg1)->GetPage();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ShipButtonList_GetId(lua_State* L) {
+  int SWIG_arg = 0;
+  ShipButtonList *arg1 = (ShipButtonList *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("ShipButtonList::GetId",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ShipButtonList::GetId",1,"ShipButtonList *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ShipButtonList,0))){
+    SWIG_fail_ptr("ShipButtonList_GetId",1,SWIGTYPE_p_ShipButtonList);
+  }
+  
+  result = (int)(arg1)->GetId();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ShipButtonList_GetIndex(lua_State* L) {
+  int SWIG_arg = 0;
+  ShipButtonList *arg1 = (ShipButtonList *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("ShipButtonList::GetIndex",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ShipButtonList::GetIndex",1,"ShipButtonList *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ShipButtonList,0))){
+    SWIG_fail_ptr("ShipButtonList_GetIndex",1,SWIGTYPE_p_ShipButtonList);
+  }
+  
+  result = (int)(arg1)->GetIndex();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _proxy__wrap_new_ShipButtonList(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_ShipButtonList);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_ShipButtonList_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_ShipButtonList_methods[]= {
+    { "GetPage", _wrap_ShipButtonList_GetPage},
+    { "GetId", _wrap_ShipButtonList_GetId},
+    { "GetIndex", _wrap_ShipButtonList_GetIndex},
+    {0,0}
+};
+static swig_lua_method swig_ShipButtonList_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_ShipButtonList_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_ShipButtonList_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_ShipButtonList_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_ShipButtonList_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_ShipButtonList_Sf_SwigStatic = {
+    "ShipButtonList",
+    swig_ShipButtonList_Sf_SwigStatic_methods,
+    swig_ShipButtonList_Sf_SwigStatic_attributes,
+    swig_ShipButtonList_Sf_SwigStatic_constants,
+    swig_ShipButtonList_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_ShipButtonList_bases[] = {0};
+static const char *swig_ShipButtonList_base_names[] = {0};
+static swig_lua_class _wrap_class_ShipButtonList = { "ShipButtonList", "ShipButtonList", &SWIGTYPE_p_ShipButtonList,_proxy__wrap_new_ShipButtonList,0, swig_ShipButtonList_methods, swig_ShipButtonList_attributes, &swig_ShipButtonList_Sf_SwigStatic, swig_ShipButtonList_meta, swig_ShipButtonList_bases, swig_ShipButtonList_base_names };
 
 static int _wrap_new_CustomShipSelect(lua_State* L) {
   int SWIG_arg = 0;
@@ -132689,6 +134442,418 @@ static int _wrap_new_CustomShipSelect(lua_State* L) {
   SWIG_check_num_args("CustomShipSelect::CustomShipSelect",0,0)
   result = (CustomShipSelect *)new CustomShipSelect();
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_CustomShipSelect,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetShipBlueprint(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int arg2 ;
+  std::string result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetShipBlueprint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetShipBlueprint",1,"CustomShipSelect *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomShipSelect::GetShipBlueprint",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetShipBlueprint",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (arg1)->GetShipBlueprint(arg2);
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_CountUnlockedShips(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int arg2 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::CountUnlockedShips",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::CountUnlockedShips",1,"CustomShipSelect *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomShipSelect::CountUnlockedShips",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_CountUnlockedShips",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (int)(arg1)->CountUnlockedShips(arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_IsOpen(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("CustomShipSelect::IsOpen",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::IsOpen",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_IsOpen",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (bool)(arg1)->IsOpen();
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetCurrentPage(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetCurrentPage",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetCurrentPage",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetCurrentPage",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (int)(arg1)->GetCurrentPage();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetMaxPages(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetMaxPages",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetMaxPages",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetMaxPages",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (int)(arg1)->GetMaxPages();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_FirstPage(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("CustomShipSelect::FirstPage",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::FirstPage",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_FirstPage",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (bool)(arg1)->FirstPage();
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetSelection(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetSelection",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetSelection",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetSelection",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (int)(arg1)->GetSelection();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetSelectedId(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetSelectedId",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetSelectedId",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetSelectedId",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (int)(arg1)->GetSelectedId();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetLastSelected(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetLastSelected",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetLastSelected",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetLastSelected",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (int)(arg1)->GetLastSelected();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_ClearSelection(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  
+  SWIG_check_num_args("CustomShipSelect::ClearSelection",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::ClearSelection",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_ClearSelection",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  (arg1)->ClearSelection();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetShipButtonIdFromName(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetShipButtonIdFromName",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetShipButtonIdFromName",1,"CustomShipSelect *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("CustomShipSelect::GetShipButtonIdFromName",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetShipButtonIdFromName",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (int)(arg1)->GetShipButtonIdFromName((std::string const &)*arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetShipButtonListFromID(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int arg2 ;
+  ShipButtonList *result = 0 ;
+  
+  SWIG_check_num_args("CustomShipSelect::GetShipButtonListFromID",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetShipButtonListFromID",1,"CustomShipSelect *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomShipSelect::GetShipButtonListFromID",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetShipButtonListFromID",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (ShipButtonList *)(arg1)->GetShipButtonListFromID(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonList,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetShipIdAndVariantFromName(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  std::pair< int,int > result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetShipIdAndVariantFromName",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetShipIdAndVariantFromName",1,"CustomShipSelect *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("CustomShipSelect::GetShipIdAndVariantFromName",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetShipIdAndVariantFromName",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (arg1)->GetShipIdAndVariantFromName((std::string const &)*arg2);
+  {
+    std::pair< int,int > * resultptr = new std::pair< int,int >((const std::pair< int,int > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__pairT_int_int_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetOrderedShipButtonDefinition(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int arg2 ;
+  ShipButtonDefinition *result = 0 ;
+  
+  SWIG_check_num_args("CustomShipSelect::GetOrderedShipButtonDefinition",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetOrderedShipButtonDefinition",1,"CustomShipSelect *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomShipSelect::GetOrderedShipButtonDefinition",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetOrderedShipButtonDefinition",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (ShipButtonDefinition *)(arg1)->GetOrderedShipButtonDefinition(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonDefinition,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetShipButtonOrderIndex(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int arg2 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetShipButtonOrderIndex",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetShipButtonOrderIndex",1,"CustomShipSelect *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomShipSelect::GetShipButtonOrderIndex",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetShipButtonOrderIndex",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (int)(arg1)->GetShipButtonOrderIndex(arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetShipButtonDefinition(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int arg2 ;
+  ShipButtonDefinition *result = 0 ;
+  
+  SWIG_check_num_args("CustomShipSelect::GetShipButtonDefinition",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetShipButtonDefinition",1,"CustomShipSelect *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomShipSelect::GetShipButtonDefinition",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetShipButtonDefinition",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (ShipButtonDefinition *) &(arg1)->GetShipButtonDefinition(arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_ShipButtonDefinition,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -132727,6 +134892,154 @@ fail:
 }
 
 
+static int _wrap_CustomShipSelect_GetDefaultDefinition(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  CustomShipDefinition *result = 0 ;
+  
+  SWIG_check_num_args("CustomShipSelect::GetDefaultDefinition",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetDefaultDefinition",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetDefaultDefinition",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (CustomShipDefinition *) &(arg1)->GetDefaultDefinition();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_CustomShipDefinition,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetRandomShipIndex(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetRandomShipIndex",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetRandomShipIndex",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetRandomShipIndex",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (int)(arg1)->GetRandomShipIndex();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_ShipCount__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int arg2 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::ShipCount",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::ShipCount",1,"CustomShipSelect *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomShipSelect::ShipCount",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_ShipCount",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = (int)(arg1)->ShipCount(arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_ShipCount__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("CustomShipSelect::ShipCount",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::ShipCount",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_ShipCount",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (int)(arg1)->ShipCount();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_ShipCount(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_CustomShipSelect, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_CustomShipSelect_ShipCount__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_CustomShipSelect, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_CustomShipSelect_ShipCount__SWIG_0(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'CustomShipSelect_ShipCount'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    CustomShipSelect::ShipCount(int)\n"
+    "    CustomShipSelect::ShipCount()\n");
+  lua_error(L);return 0;
+}
+
+
 static int _wrap_CustomShipSelect_GetInstance(lua_State* L) {
   int SWIG_arg = 0;
   CustomShipSelect *result = 0 ;
@@ -132744,10 +135057,87 @@ fail:
 }
 
 
-static void swig_delete_CustomShipSelect(void *obj) {
-CustomShipSelect *arg1 = (CustomShipSelect *) obj;
-delete arg1;
+static int _wrap_CustomShipSelect_customShipOrder_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  std::vector< std::string > *arg2 = (std::vector< std::string > *) 0 ;
+  
+  SWIG_check_num_args("CustomShipSelect::customShipOrder",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::customShipOrder",1,"CustomShipSelect *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("CustomShipSelect::customShipOrder",2,"std::vector< std::string > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_customShipOrder_set",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_std__string_t,0))){
+    SWIG_fail_ptr("CustomShipSelect_customShipOrder_set",2,SWIGTYPE_p_std__vectorT_std__string_t);
+  }
+  
+  if (arg1) (arg1)->customShipOrder = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
 }
+
+
+static int _wrap_CustomShipSelect_customShipOrder_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  std::vector< std::string > *result = 0 ;
+  
+  SWIG_check_num_args("CustomShipSelect::customShipOrder",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::customShipOrder",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_customShipOrder_get",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (std::vector< std::string > *)& ((arg1)->customShipOrder);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__string_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomShipSelect_GetShipButtonLists(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomShipSelect *arg1 = (CustomShipSelect *) 0 ;
+  std::vector< ShipButtonList * > result;
+  
+  SWIG_check_num_args("CustomShipSelect::GetShipButtonLists",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomShipSelect::GetShipButtonLists",1,"CustomShipSelect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomShipSelect,0))){
+    SWIG_fail_ptr("CustomShipSelect_GetShipButtonLists",1,SWIGTYPE_p_CustomShipSelect);
+  }
+  
+  result = (arg1)->GetShipButtonLists();
+  {
+    std::vector< ShipButtonList * > * resultptr = new std::vector< ShipButtonList * >((const std::vector< ShipButtonList * > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_ShipButtonList_p_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _proxy__wrap_new_CustomShipSelect(lua_State *L) {
     assert(lua_istable(L,1));
     lua_pushcfunction(L,_wrap_new_CustomShipSelect);
@@ -132757,10 +135147,31 @@ static int _proxy__wrap_new_CustomShipSelect(lua_State *L) {
     return 1;
 }
 static swig_lua_attribute swig_CustomShipSelect_attributes[] = {
+    { "customShipOrder", _wrap_CustomShipSelect_customShipOrder_get, _wrap_CustomShipSelect_customShipOrder_set },
     {0,0,0}
 };
 static swig_lua_method swig_CustomShipSelect_methods[]= {
+    { "GetShipBlueprint", _wrap_CustomShipSelect_GetShipBlueprint},
+    { "CountUnlockedShips", _wrap_CustomShipSelect_CountUnlockedShips},
+    { "IsOpen", _wrap_CustomShipSelect_IsOpen},
+    { "GetCurrentPage", _wrap_CustomShipSelect_GetCurrentPage},
+    { "GetMaxPages", _wrap_CustomShipSelect_GetMaxPages},
+    { "FirstPage", _wrap_CustomShipSelect_FirstPage},
+    { "GetSelection", _wrap_CustomShipSelect_GetSelection},
+    { "GetSelectedId", _wrap_CustomShipSelect_GetSelectedId},
+    { "GetLastSelected", _wrap_CustomShipSelect_GetLastSelected},
+    { "ClearSelection", _wrap_CustomShipSelect_ClearSelection},
+    { "GetShipButtonIdFromName", _wrap_CustomShipSelect_GetShipButtonIdFromName},
+    { "GetShipButtonListFromID", _wrap_CustomShipSelect_GetShipButtonListFromID},
+    { "GetShipIdAndVariantFromName", _wrap_CustomShipSelect_GetShipIdAndVariantFromName},
+    { "GetOrderedShipButtonDefinition", _wrap_CustomShipSelect_GetOrderedShipButtonDefinition},
+    { "GetShipButtonOrderIndex", _wrap_CustomShipSelect_GetShipButtonOrderIndex},
+    { "GetShipButtonDefinition", _wrap_CustomShipSelect_GetShipButtonDefinition},
     { "GetDefinition", _wrap_CustomShipSelect_GetDefinition},
+    { "GetDefaultDefinition", _wrap_CustomShipSelect_GetDefaultDefinition},
+    { "GetRandomShipIndex", _wrap_CustomShipSelect_GetRandomShipIndex},
+    { "ShipCount", _wrap_CustomShipSelect_ShipCount},
+    { "GetShipButtonLists", _wrap_CustomShipSelect_GetShipButtonLists},
     {0,0}
 };
 static swig_lua_method swig_CustomShipSelect_meta[] = {
@@ -132791,7 +135202,7 @@ static swig_lua_namespace swig_CustomShipSelect_Sf_SwigStatic = {
 };
 static swig_lua_class *swig_CustomShipSelect_bases[] = {0};
 static const char *swig_CustomShipSelect_base_names[] = {0};
-static swig_lua_class _wrap_class_CustomShipSelect = { "CustomShipSelect", "CustomShipSelect", &SWIGTYPE_p_CustomShipSelect,_proxy__wrap_new_CustomShipSelect, swig_delete_CustomShipSelect, swig_CustomShipSelect_methods, swig_CustomShipSelect_attributes, &swig_CustomShipSelect_Sf_SwigStatic, swig_CustomShipSelect_meta, swig_CustomShipSelect_bases, swig_CustomShipSelect_base_names };
+static swig_lua_class _wrap_class_CustomShipSelect = { "CustomShipSelect", "CustomShipSelect", &SWIGTYPE_p_CustomShipSelect,_proxy__wrap_new_CustomShipSelect,0, swig_CustomShipSelect_methods, swig_CustomShipSelect_attributes, &swig_CustomShipSelect_Sf_SwigStatic, swig_CustomShipSelect_meta, swig_CustomShipSelect_bases, swig_CustomShipSelect_base_names };
 
 static int _wrap_GetNextPowerReadyState(lua_State* L) {
   int SWIG_arg = 0;
@@ -136058,6 +138469,57 @@ fail:
 }
 
 
+static int _wrap_CrewMember_Extend_transformRace_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CrewMember_Extend *arg1 = (CrewMember_Extend *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("CrewMember_Extend::transformRace",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CrewMember_Extend::transformRace",1,"CrewMember_Extend *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("CrewMember_Extend::transformRace",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CrewMember_Extend,0))){
+    SWIG_fail_ptr("CrewMember_Extend_transformRace_set",1,SWIGTYPE_p_CrewMember_Extend);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  if (arg1) (arg1)->transformRace = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CrewMember_Extend_transformRace_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CrewMember_Extend *arg1 = (CrewMember_Extend *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("CrewMember_Extend::transformRace",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CrewMember_Extend::transformRace",1,"CrewMember_Extend *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CrewMember_Extend,0))){
+    SWIG_fail_ptr("CrewMember_Extend_transformRace_get",1,SWIGTYPE_p_CrewMember_Extend);
+  }
+  
+  result = (std::string *) & ((arg1)->transformRace);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_CrewMember_Extend_customTele_set(lua_State* L) {
   int SWIG_arg = 0;
   CrewMember_Extend *arg1 = (CrewMember_Extend *) 0 ;
@@ -136603,6 +139065,7 @@ static swig_lua_attribute swig_CrewMember_Extend_attributes[] = {
     { "powerChange", _wrap_CrewMember_Extend_powerChange_get, _wrap_CrewMember_Extend_powerChange_set },
     { "noSlot", _wrap_CrewMember_Extend_noSlot_get, _wrap_CrewMember_Extend_noSlot_set },
     { "noClone", _wrap_CrewMember_Extend_noClone_get, _wrap_CrewMember_Extend_noClone_set },
+    { "transformRace", _wrap_CrewMember_Extend_transformRace_get, _wrap_CrewMember_Extend_transformRace_set },
     { "customTele", _wrap_CrewMember_Extend_customTele_get, _wrap_CrewMember_Extend_customTele_set },
     {0,0,0}
 };
@@ -143285,6 +145748,579 @@ static swig_lua_class *swig_CustomDamage_bases[] = {0};
 static const char *swig_CustomDamage_base_names[] = {0};
 static swig_lua_class _wrap_class_CustomDamage = { "CustomDamage", "CustomDamage", &SWIGTYPE_p_CustomDamage,_proxy__wrap_new_CustomDamage, swig_delete_CustomDamage, swig_CustomDamage_methods, swig_CustomDamage_attributes, &swig_CustomDamage_Sf_SwigStatic, swig_CustomDamage_meta, swig_CustomDamage_bases, swig_CustomDamage_base_names };
 
+static int _wrap_new_CustomLockdownDefinition(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *result = 0 ;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::CustomLockdownDefinition",0,0)
+  result = (CustomLockdownDefinition *)new CustomLockdownDefinition();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_CustomLockdownDefinition,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_duration_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  float arg2 ;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::duration",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::duration",1,"CustomLockdownDefinition *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomLockdownDefinition::duration",2,"float");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_duration_set",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  arg2 = (float)lua_tonumber(L, 2);
+  if (arg1) (arg1)->duration = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_duration_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  float result;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::duration",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::duration",1,"CustomLockdownDefinition *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_duration_get",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  result = (float) ((arg1)->duration);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_health_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::health",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::health",1,"CustomLockdownDefinition *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CustomLockdownDefinition::health",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_health_set",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->health = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_health_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::health",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::health",1,"CustomLockdownDefinition *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_health_get",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  result = (int) ((arg1)->health);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_color_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  GL_Color *arg2 = (GL_Color *) 0 ;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::color",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::color",1,"CustomLockdownDefinition *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("CustomLockdownDefinition::color",2,"GL_Color *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_color_set",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_GL_Color,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_color_set",2,SWIGTYPE_p_GL_Color);
+  }
+  
+  if (arg1) (arg1)->color = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_color_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  GL_Color *result = 0 ;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::color",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::color",1,"CustomLockdownDefinition *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_color_get",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  result = (GL_Color *)& ((arg1)->color);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_GL_Color,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_anims_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  std::vector< std::string > *arg2 = (std::vector< std::string > *) 0 ;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::anims",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::anims",1,"CustomLockdownDefinition *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("CustomLockdownDefinition::anims",2,"std::vector< std::string > *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_anims_set",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__vectorT_std__string_t,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_anims_set",2,SWIGTYPE_p_std__vectorT_std__string_t);
+  }
+  
+  if (arg1) (arg1)->anims = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_anims_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  std::vector< std::string > *result = 0 ;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::anims",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::anims",1,"CustomLockdownDefinition *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_anims_get",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  result = (std::vector< std::string > *)& ((arg1)->anims);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_std__string_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_canDilate_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  bool arg2 ;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::canDilate",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::canDilate",1,"CustomLockdownDefinition *");
+  if(!lua_isboolean(L,2)) SWIG_fail_arg("CustomLockdownDefinition::canDilate",2,"bool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_canDilate_set",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  arg2 = (lua_toboolean(L, 2)!=0);
+  if (arg1) (arg1)->canDilate = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CustomLockdownDefinition_canDilate_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("CustomLockdownDefinition::canDilate",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CustomLockdownDefinition::canDilate",1,"CustomLockdownDefinition *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CustomLockdownDefinition,0))){
+    SWIG_fail_ptr("CustomLockdownDefinition_canDilate_get",1,SWIGTYPE_p_CustomLockdownDefinition);
+  }
+  
+  result = (bool) ((arg1)->canDilate);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_CustomLockdownDefinition(void *obj) {
+CustomLockdownDefinition *arg1 = (CustomLockdownDefinition *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_CustomLockdownDefinition(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_CustomLockdownDefinition);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_CustomLockdownDefinition_attributes[] = {
+    { "duration", _wrap_CustomLockdownDefinition_duration_get, _wrap_CustomLockdownDefinition_duration_set },
+    { "health", _wrap_CustomLockdownDefinition_health_get, _wrap_CustomLockdownDefinition_health_set },
+    { "color", _wrap_CustomLockdownDefinition_color_get, _wrap_CustomLockdownDefinition_color_set },
+    { "anims", _wrap_CustomLockdownDefinition_anims_get, _wrap_CustomLockdownDefinition_anims_set },
+    { "canDilate", _wrap_CustomLockdownDefinition_canDilate_get, _wrap_CustomLockdownDefinition_canDilate_set },
+    {0,0,0}
+};
+static swig_lua_method swig_CustomLockdownDefinition_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_CustomLockdownDefinition_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_CustomLockdownDefinition_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_CustomLockdownDefinition_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_CustomLockdownDefinition_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_CustomLockdownDefinition_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_CustomLockdownDefinition_Sf_SwigStatic = {
+    "CustomLockdownDefinition",
+    swig_CustomLockdownDefinition_Sf_SwigStatic_methods,
+    swig_CustomLockdownDefinition_Sf_SwigStatic_attributes,
+    swig_CustomLockdownDefinition_Sf_SwigStatic_constants,
+    swig_CustomLockdownDefinition_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_CustomLockdownDefinition_bases[] = {0};
+static const char *swig_CustomLockdownDefinition_base_names[] = {0};
+static swig_lua_class _wrap_class_CustomLockdownDefinition = { "CustomLockdownDefinition", "CustomLockdownDefinition", &SWIGTYPE_p_CustomLockdownDefinition,_proxy__wrap_new_CustomLockdownDefinition, swig_delete_CustomLockdownDefinition, swig_CustomLockdownDefinition_methods, swig_CustomLockdownDefinition_attributes, &swig_CustomLockdownDefinition_Sf_SwigStatic, swig_CustomLockdownDefinition_meta, swig_CustomLockdownDefinition_bases, swig_CustomLockdownDefinition_base_names };
+
+static int _wrap_LockdownShard_Extend_health_set(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard_Extend *arg1 = (LockdownShard_Extend *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("LockdownShard_Extend::health",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard_Extend::health",1,"LockdownShard_Extend *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("LockdownShard_Extend::health",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard_Extend,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_health_set",1,SWIGTYPE_p_LockdownShard_Extend);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->health = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LockdownShard_Extend_health_get(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard_Extend *arg1 = (LockdownShard_Extend *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("LockdownShard_Extend::health",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard_Extend::health",1,"LockdownShard_Extend *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard_Extend,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_health_get",1,SWIGTYPE_p_LockdownShard_Extend);
+  }
+  
+  result = (int) ((arg1)->health);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LockdownShard_Extend_door_get(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard_Extend *arg1 = (LockdownShard_Extend *) 0 ;
+  Door *result = 0 ;
+  
+  SWIG_check_num_args("LockdownShard_Extend::door",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard_Extend::door",1,"LockdownShard_Extend *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard_Extend,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_door_get",1,SWIGTYPE_p_LockdownShard_Extend);
+  }
+  
+  result = (Door *) ((arg1)->door);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Door,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LockdownShard_Extend_color_set(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard_Extend *arg1 = (LockdownShard_Extend *) 0 ;
+  GL_Color *arg2 = (GL_Color *) 0 ;
+  
+  SWIG_check_num_args("LockdownShard_Extend::color",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard_Extend::color",1,"LockdownShard_Extend *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("LockdownShard_Extend::color",2,"GL_Color *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard_Extend,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_color_set",1,SWIGTYPE_p_LockdownShard_Extend);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_GL_Color,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_color_set",2,SWIGTYPE_p_GL_Color);
+  }
+  
+  if (arg1) (arg1)->color = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LockdownShard_Extend_color_get(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard_Extend *arg1 = (LockdownShard_Extend *) 0 ;
+  GL_Color *result = 0 ;
+  
+  SWIG_check_num_args("LockdownShard_Extend::color",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard_Extend::color",1,"LockdownShard_Extend *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard_Extend,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_color_get",1,SWIGTYPE_p_LockdownShard_Extend);
+  }
+  
+  result = (GL_Color *)& ((arg1)->color);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_GL_Color,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LockdownShard_Extend_anim_get(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard_Extend *arg1 = (LockdownShard_Extend *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("LockdownShard_Extend::anim",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard_Extend::anim",1,"LockdownShard_Extend *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard_Extend,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_anim_get",1,SWIGTYPE_p_LockdownShard_Extend);
+  }
+  
+  result = (std::string *) & ((arg1)->anim);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LockdownShard_Extend_canDilate_set(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard_Extend *arg1 = (LockdownShard_Extend *) 0 ;
+  bool arg2 ;
+  
+  SWIG_check_num_args("LockdownShard_Extend::canDilate",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard_Extend::canDilate",1,"LockdownShard_Extend *");
+  if(!lua_isboolean(L,2)) SWIG_fail_arg("LockdownShard_Extend::canDilate",2,"bool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard_Extend,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_canDilate_set",1,SWIGTYPE_p_LockdownShard_Extend);
+  }
+  
+  arg2 = (lua_toboolean(L, 2)!=0);
+  if (arg1) (arg1)->canDilate = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LockdownShard_Extend_canDilate_get(lua_State* L) {
+  int SWIG_arg = 0;
+  LockdownShard_Extend *arg1 = (LockdownShard_Extend *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("LockdownShard_Extend::canDilate",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LockdownShard_Extend::canDilate",1,"LockdownShard_Extend *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LockdownShard_Extend,0))){
+    SWIG_fail_ptr("LockdownShard_Extend_canDilate_get",1,SWIGTYPE_p_LockdownShard_Extend);
+  }
+  
+  result = (bool) ((arg1)->canDilate);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_LockdownShard_Extend(void *obj) {
+LockdownShard_Extend *arg1 = (LockdownShard_Extend *) obj;
+delete arg1;
+}
+static swig_lua_attribute swig_LockdownShard_Extend_attributes[] = {
+    { "health", _wrap_LockdownShard_Extend_health_get, _wrap_LockdownShard_Extend_health_set },
+    { "door", _wrap_LockdownShard_Extend_door_get, SWIG_Lua_set_immutable },
+    { "color", _wrap_LockdownShard_Extend_color_get, _wrap_LockdownShard_Extend_color_set },
+    { "anim", _wrap_LockdownShard_Extend_anim_get, SWIG_Lua_set_immutable },
+    { "canDilate", _wrap_LockdownShard_Extend_canDilate_get, _wrap_LockdownShard_Extend_canDilate_set },
+    {0,0,0}
+};
+static swig_lua_method swig_LockdownShard_Extend_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_LockdownShard_Extend_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_LockdownShard_Extend_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_LockdownShard_Extend_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_LockdownShard_Extend_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_LockdownShard_Extend_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_LockdownShard_Extend_Sf_SwigStatic = {
+    "LockdownShard_Extend",
+    swig_LockdownShard_Extend_Sf_SwigStatic_methods,
+    swig_LockdownShard_Extend_Sf_SwigStatic_attributes,
+    swig_LockdownShard_Extend_Sf_SwigStatic_constants,
+    swig_LockdownShard_Extend_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_LockdownShard_Extend_bases[] = {0};
+static const char *swig_LockdownShard_Extend_base_names[] = {0};
+static swig_lua_class _wrap_class_LockdownShard_Extend = { "LockdownShard_Extend", "LockdownShard_Extend", &SWIGTYPE_p_LockdownShard_Extend,0, swig_delete_LockdownShard_Extend, swig_LockdownShard_Extend_methods, swig_LockdownShard_Extend_attributes, &swig_LockdownShard_Extend_Sf_SwigStatic, swig_LockdownShard_Extend_meta, swig_LockdownShard_Extend_bases, swig_LockdownShard_Extend_base_names };
+
 static swig_lua_attribute swig_SwigModule_attributes[] = {
     { "version", _wrap_version_get, SWIG_Lua_set_immutable },
     { "Global_currentSeed", _wrap_Global_currentSeed_get, SWIG_Lua_set_immutable },
@@ -143533,6 +146569,8 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_unordered_multimap_string_AugmentFunction,
 &_wrap_class_pair_string_AugmentFunction,
 &_wrap_class_vector_AugmentCrystalShard,
+&_wrap_class_vector_p_ShipButtonList,
+&_wrap_class_vector_p_GL_Texture,
 &_wrap_class_ToggleValue_int,
 &_wrap_class_ToggleValue_float,
 &_wrap_class_ToggleValue_bool,
@@ -143682,9 +146720,11 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_CustomEvent,
 &_wrap_class_CustomEventsParser,
 &_wrap_class_CustomShipGenerator,
+&_wrap_class_ShipButtonDefinition,
 &_wrap_class_RoomDefinition,
 &_wrap_class_CrewPlacementDefinition,
 &_wrap_class_CustomShipDefinition,
+&_wrap_class_ShipButtonList,
 &_wrap_class_CustomShipSelect,
 &_wrap_class_ActivatedPowerResource,
 &_wrap_class_ActivatedPower,
@@ -143704,6 +146744,8 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_TemporalSystemParser,
 &_wrap_class_CustomDamageDefinition,
 &_wrap_class_CustomDamage,
+&_wrap_class_CustomLockdownDefinition,
+&_wrap_class_LockdownShard_Extend,
     0
 };
 static swig_lua_namespace* swig_SwigModule_namespaces[] = {
@@ -144210,7 +147252,6 @@ static swig_type_info _swigt__p_BoardingGoal = {"_p_BoardingGoal", "BoardingGoal
 static swig_type_info _swigt__p_BombProjectile = {"_p_BombProjectile", "BombProjectile *", 0, 0, (void*)&_wrap_class_BombProjectile, 0};
 static swig_type_info _swigt__p_Button = {"_p_Button", "Button *", 0, 0, (void*)&_wrap_class_Button, 0};
 static swig_type_info _swigt__p_ReactorButton = {"_p_ReactorButton", 0, 0, 0, 0, 0};
-static swig_type_info _swigt__p_ShipButton = {"_p_ShipButton", 0, 0, 0, 0, 0};
 static swig_type_info _swigt__p_CApp = {"_p_CApp", "CApp *", 0, 0, (void*)&_wrap_class_CApp, 0};
 static swig_type_info _swigt__p_CEvent = {"_p_CEvent", "CEvent *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_CFPS = {"_p_CFPS", "CFPS *", 0, 0, (void*)&_wrap_class_CFPS, 0};
@@ -144268,6 +147309,7 @@ static swig_type_info _swigt__p_CustomDamage = {"_p_CustomDamage", "CustomDamage
 static swig_type_info _swigt__p_CustomDamageDefinition = {"_p_CustomDamageDefinition", "CustomDamageDefinition *", 0, 0, (void*)&_wrap_class_CustomDamageDefinition, 0};
 static swig_type_info _swigt__p_CustomEvent = {"_p_CustomEvent", "CustomEvent *", 0, 0, (void*)&_wrap_class_CustomEvent, 0};
 static swig_type_info _swigt__p_CustomEventsParser = {"_p_CustomEventsParser", "CustomEventsParser *", 0, 0, (void*)&_wrap_class_CustomEventsParser, 0};
+static swig_type_info _swigt__p_CustomLockdownDefinition = {"_p_CustomLockdownDefinition", "CustomLockdownDefinition *", 0, 0, (void*)&_wrap_class_CustomLockdownDefinition, 0};
 static swig_type_info _swigt__p_CustomShipDefinition = {"_p_CustomShipDefinition", "CustomShipDefinition *", 0, 0, (void*)&_wrap_class_CustomShipDefinition, 0};
 static swig_type_info _swigt__p_CustomShipGenerator = {"_p_CustomShipGenerator", "CustomShipGenerator *", 0, 0, (void*)&_wrap_class_CustomShipGenerator, 0};
 static swig_type_info _swigt__p_CustomShipSelect = {"_p_CustomShipSelect", "CustomShipSelect *", 0, 0, (void*)&_wrap_class_CustomShipSelect, 0};
@@ -144323,6 +147365,7 @@ static swig_type_info _swigt__p_Location = {"_p_Location", "Location *", 0, 0, (
 static swig_type_info _swigt__p_LocationEvent = {"_p_LocationEvent", "LocationEvent *", 0, 0, (void*)&_wrap_class_LocationEvent, 0};
 static swig_type_info _swigt__p_LocationEvent__Choice = {"_p_LocationEvent__Choice", "LocationEvent::Choice *", 0, 0, (void*)&_wrap_class_Choice, 0};
 static swig_type_info _swigt__p_LockdownShard = {"_p_LockdownShard", "LockdownShard *", 0, 0, (void*)&_wrap_class_LockdownShard, 0};
+static swig_type_info _swigt__p_LockdownShard_Extend = {"_p_LockdownShard_Extend", "LockdownShard_Extend *", 0, 0, (void*)&_wrap_class_LockdownShard_Extend, 0};
 static swig_type_info _swigt__p_MainMenu = {"_p_MainMenu", "MainMenu *", 0, 0, (void*)&_wrap_class_MainMenu, 0};
 static swig_type_info _swigt__p_MedbaySystem = {"_p_MedbaySystem", "MedbaySystem *", 0, 0, (void*)&_wrap_class_MedbaySystem, 0};
 static swig_type_info _swigt__p_MindSystem = {"_p_MindSystem", "MindSystem *", 0, 0, (void*)&_wrap_class_MindSystem, 0};
@@ -144361,6 +147404,9 @@ static swig_type_info _swigt__p_Ship = {"_p_Ship", "Ship *", 0, 0, (void*)&_wrap
 static swig_type_info _swigt__p_ShipBlueprint = {"_p_ShipBlueprint", "ShipBlueprint *", 0, 0, (void*)&_wrap_class_ShipBlueprint, 0};
 static swig_type_info _swigt__p_ShipBlueprint__SystemTemplate = {"_p_ShipBlueprint__SystemTemplate", "ShipBlueprint::SystemTemplate *", 0, 0, (void*)&_wrap_class_SystemTemplate, 0};
 static swig_type_info _swigt__p_ShipBuilder = {"_p_ShipBuilder", "ShipBuilder *", 0, 0, (void*)&_wrap_class_ShipBuilder, 0};
+static swig_type_info _swigt__p_ShipButton = {"_p_ShipButton", "ShipButton *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_ShipButtonDefinition = {"_p_ShipButtonDefinition", "ShipButtonDefinition *", 0, 0, (void*)&_wrap_class_ShipButtonDefinition, 0};
+static swig_type_info _swigt__p_ShipButtonList = {"_p_ShipButtonList", "ShipButtonList *", 0, 0, (void*)&_wrap_class_ShipButtonList, 0};
 static swig_type_info _swigt__p_ShipEvent = {"_p_ShipEvent", "ShipEvent *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ShipGenerator = {"_p_ShipGenerator", "ShipGenerator *", 0, 0, (void*)&_wrap_class_ShipGenerator, 0};
 static swig_type_info _swigt__p_ShipGraph = {"_p_ShipGraph", "ShipGraph *", 0, 0, (void*)&_wrap_class_ShipGraph, 0};
@@ -144483,7 +147529,7 @@ static swig_type_info _swigt__p_std__vectorT_DroneBlueprint_p_t = {"_p_std__vect
 static swig_type_info _swigt__p_std__vectorT_Drone_p_t = {"_p_std__vectorT_Drone_p_t", "std::vector< Drone * > *", 0, 0, (void*)&_wrap_class_vector_Drone, 0};
 static swig_type_info _swigt__p_std__vectorT_Fire_t = {"_p_std__vectorT_Fire_t", "std::vector< Fire > *", 0, 0, (void*)&_wrap_class_vector_Fire, 0};
 static swig_type_info _swigt__p_std__vectorT_GL_Color_t = {"_p_std__vectorT_GL_Color_t", "std::vector< GL_Color > *", 0, 0, (void*)&_wrap_class_vector_GL_Color, 0};
-static swig_type_info _swigt__p_std__vectorT_GL_Texture_p_t = {"_p_std__vectorT_GL_Texture_p_t", "std::vector< GL_Texture * > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_GL_Texture_p_t = {"_p_std__vectorT_GL_Texture_p_t", "std::vector< GL_Texture * > *", 0, 0, (void*)&_wrap_class_vector_p_GL_Texture, 0};
 static swig_type_info _swigt__p_std__vectorT_Globals__Rect_t = {"_p_std__vectorT_Globals__Rect_t", "std::vector< Globals::Rect > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_LocationEvent__Choice_p_t = {"_p_std__vectorT_LocationEvent__Choice_p_t", "std::vector< LocationEvent::Choice * > *", 0, 0, (void*)&_wrap_class_vector_p_locationEventChoice, 0};
 static swig_type_info _swigt__p_std__vectorT_LocationEvent__Choice_t = {"_p_std__vectorT_LocationEvent__Choice_t", "std::vector< LocationEvent::Choice > *", 0, 0, (void*)&_wrap_class_vector_locationEventChoice, 0};
@@ -144500,6 +147546,7 @@ static swig_type_info _swigt__p_std__vectorT_Repairable_p_t = {"_p_std__vectorT_
 static swig_type_info _swigt__p_std__vectorT_Room_p_t = {"_p_std__vectorT_Room_p_t", "std::vector< Room * > *", 0, 0, (void*)&_wrap_class_vector_Room, 0};
 static swig_type_info _swigt__p_std__vectorT_Sector_p_t = {"_p_std__vectorT_Sector_p_t", "std::vector< Sector * > *", 0, 0, (void*)&_wrap_class_vector_Sector, 0};
 static swig_type_info _swigt__p_std__vectorT_Shields__ShieldAnimation_t = {"_p_std__vectorT_Shields__ShieldAnimation_t", "std::vector< Shields::ShieldAnimation > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_ShipButtonList_p_t = {"_p_std__vectorT_ShipButtonList_p_t", "std::vector< ShipButtonList * > *", 0, 0, (void*)&_wrap_class_vector_p_ShipButtonList, 0};
 static swig_type_info _swigt__p_std__vectorT_ShipSystem_p_t = {"_p_std__vectorT_ShipSystem_p_t", "std::vector< ShipSystem * > *", 0, 0, (void*)&_wrap_class_vector_ShipSystem, 0};
 static swig_type_info _swigt__p_std__vectorT_Ship__DoorState_t = {"_p_std__vectorT_Ship__DoorState_t", "std::vector< Ship::DoorState > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_SpaceDrone_p_t = {"_p_std__vectorT_SpaceDrone_p_t", "std::vector< SpaceDrone * > *", 0, 0, (void*)&_wrap_class_vector_SpaceDrone, 0};
@@ -144614,6 +147661,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_CustomDamageDefinition,
   &_swigt__p_CustomEvent,
   &_swigt__p_CustomEventsParser,
+  &_swigt__p_CustomLockdownDefinition,
   &_swigt__p_CustomShipDefinition,
   &_swigt__p_CustomShipGenerator,
   &_swigt__p_CustomShipSelect,
@@ -144672,6 +147720,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_LocationEvent,
   &_swigt__p_LocationEvent__Choice,
   &_swigt__p_LockdownShard,
+  &_swigt__p_LockdownShard_Extend,
   &_swigt__p_MainMenu,
   &_swigt__p_MantisAnimation,
   &_swigt__p_MedbaySystem,
@@ -144720,6 +147769,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_ShipBlueprint__SystemTemplate,
   &_swigt__p_ShipBuilder,
   &_swigt__p_ShipButton,
+  &_swigt__p_ShipButtonDefinition,
+  &_swigt__p_ShipButtonList,
   &_swigt__p_ShipEvent,
   &_swigt__p_ShipGenerator,
   &_swigt__p_ShipGraph,
@@ -144857,6 +147908,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__vectorT_Room_p_t,
   &_swigt__p_std__vectorT_Sector_p_t,
   &_swigt__p_std__vectorT_Shields__ShieldAnimation_t,
+  &_swigt__p_std__vectorT_ShipButtonList_p_t,
   &_swigt__p_std__vectorT_ShipSystem_p_t,
   &_swigt__p_std__vectorT_Ship__DoorState_t,
   &_swigt__p_std__vectorT_SpaceDrone_p_t,
@@ -144923,7 +147975,6 @@ static swig_cast_info _swigc__p_BoardingEvent[] = {  {&_swigt__p_BoardingEvent, 
 static swig_cast_info _swigc__p_BoardingGoal[] = {  {&_swigt__p_BoardingGoal, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_BombProjectile[] = {  {&_swigt__p_BombProjectile, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ReactorButton[] = {{&_swigt__p_ReactorButton, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_ShipButton[] = {{&_swigt__p_ShipButton, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Button[] = {  {&_swigt__p_ReactorButton, _p_ReactorButtonTo_p_Button, 0, 0},  {&_swigt__p_ShipButton, _p_ShipButtonTo_p_Button, 0, 0},  {&_swigt__p_Button, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CApp[] = {  {&_swigt__p_CApp, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CEvent[] = {  {&_swigt__p_CApp, _p_CAppTo_p_CEvent, 0, 0},  {&_swigt__p_CEvent, 0, 0, 0},{0, 0, 0, 0}};
@@ -144982,6 +148033,7 @@ static swig_cast_info _swigc__p_CustomDamage[] = {  {&_swigt__p_CustomDamage, 0,
 static swig_cast_info _swigc__p_CustomDamageDefinition[] = {  {&_swigt__p_CustomDamageDefinition, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CustomEvent[] = {  {&_swigt__p_CustomEvent, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CustomEventsParser[] = {  {&_swigt__p_CustomEventsParser, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_CustomLockdownDefinition[] = {  {&_swigt__p_CustomLockdownDefinition, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CustomShipDefinition[] = {  {&_swigt__p_CustomShipDefinition, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CustomShipGenerator[] = {  {&_swigt__p_CustomShipGenerator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CustomShipSelect[] = {  {&_swigt__p_CustomShipSelect, 0, 0, 0},{0, 0, 0, 0}};
@@ -145037,6 +148089,7 @@ static swig_cast_info _swigc__p_Location[] = {  {&_swigt__p_Location, 0, 0, 0},{
 static swig_cast_info _swigc__p_LocationEvent[] = {  {&_swigt__p_LocationEvent, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_LocationEvent__Choice[] = {  {&_swigt__p_LocationEvent__Choice, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_LockdownShard[] = {  {&_swigt__p_LockdownShard, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LockdownShard_Extend[] = {  {&_swigt__p_LockdownShard_Extend, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_MainMenu[] = {  {&_swigt__p_MainMenu, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_MedbaySystem[] = {  {&_swigt__p_MedbaySystem, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_MindSystem[] = {  {&_swigt__p_MindSystem, 0, 0, 0},{0, 0, 0, 0}};
@@ -145075,6 +148128,9 @@ static swig_cast_info _swigc__p_Ship[] = {  {&_swigt__p_Ship, 0, 0, 0},{0, 0, 0,
 static swig_cast_info _swigc__p_ShipBlueprint[] = {  {&_swigt__p_ShipBlueprint, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ShipBlueprint__SystemTemplate[] = {  {&_swigt__p_ShipBlueprint__SystemTemplate, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ShipBuilder[] = {  {&_swigt__p_ShipBuilder, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_ShipButton[] = {  {&_swigt__p_ShipButton, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_ShipButtonDefinition[] = {  {&_swigt__p_ShipButtonDefinition, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_ShipButtonList[] = {  {&_swigt__p_ShipButtonList, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ShipEvent[] = {  {&_swigt__p_ShipEvent, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ShipGenerator[] = {  {&_swigt__p_ShipGenerator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ShipGraph[] = {  {&_swigt__p_ShipGraph, 0, 0, 0},{0, 0, 0, 0}};
@@ -145214,6 +148270,7 @@ static swig_cast_info _swigc__p_std__vectorT_Repairable_p_t[] = {  {&_swigt__p_s
 static swig_cast_info _swigc__p_std__vectorT_Room_p_t[] = {  {&_swigt__p_std__vectorT_Room_p_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_Sector_p_t[] = {  {&_swigt__p_std__vectorT_Sector_p_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_Shields__ShieldAnimation_t[] = {  {&_swigt__p_std__vectorT_Shields__ShieldAnimation_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_ShipButtonList_p_t[] = {  {&_swigt__p_std__vectorT_ShipButtonList_p_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_ShipSystem_p_t[] = {  {&_swigt__p_std__vectorT_ShipSystem_p_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_Ship__DoorState_t[] = {  {&_swigt__p_std__vectorT_Ship__DoorState_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_SpaceDrone_p_t[] = {  {&_swigt__p_std__vectorT_SpaceDrone_p_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -145328,6 +148385,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_CustomDamageDefinition,
   _swigc__p_CustomEvent,
   _swigc__p_CustomEventsParser,
+  _swigc__p_CustomLockdownDefinition,
   _swigc__p_CustomShipDefinition,
   _swigc__p_CustomShipGenerator,
   _swigc__p_CustomShipSelect,
@@ -145386,6 +148444,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_LocationEvent,
   _swigc__p_LocationEvent__Choice,
   _swigc__p_LockdownShard,
+  _swigc__p_LockdownShard_Extend,
   _swigc__p_MainMenu,
   _swigc__p_MantisAnimation,
   _swigc__p_MedbaySystem,
@@ -145434,6 +148493,8 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_ShipBlueprint__SystemTemplate,
   _swigc__p_ShipBuilder,
   _swigc__p_ShipButton,
+  _swigc__p_ShipButtonDefinition,
+  _swigc__p_ShipButtonList,
   _swigc__p_ShipEvent,
   _swigc__p_ShipGenerator,
   _swigc__p_ShipGraph,
@@ -145571,6 +148632,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__vectorT_Room_p_t,
   _swigc__p_std__vectorT_Sector_p_t,
   _swigc__p_std__vectorT_Shields__ShieldAnimation_t,
+  _swigc__p_std__vectorT_ShipButtonList_p_t,
   _swigc__p_std__vectorT_ShipSystem_p_t,
   _swigc__p_std__vectorT_Ship__DoorState_t,
   _swigc__p_std__vectorT_SpaceDrone_p_t,

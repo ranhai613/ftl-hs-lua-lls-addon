@@ -2264,7 +2264,26 @@
                         "type": "Pointf"
                     }
                 ],
-                "documentation": "Locks down the room, and spawns the crystal animation at `pos`. Does not play the lockdown sound. Note: For a \"normal\" animation, `pos` can be set to the room's center, but it can be set outside of the room as well."
+                "documentation": "Locks down the room, and spawns the crystal animation at `pos`. Does not play the lockdown sound. Note: For a \"normal\" animation, `pos` can be set to the room's center, but it can be set outside of the room as well. Uses the default lockdown type."
+            },
+            {
+                "name": "LockdownRoom",
+                "return_type": "void",
+                "args": [
+                    {
+                        "name": "roomId",
+                        "type": "int"
+                    },
+                    {
+                        "name": "pos",
+                        "type": "Pointf"
+                    },
+                    {
+                        "name": "def",
+                        "type": "CustomLockdownDefinition"
+                    }
+                ],
+                "documentation": "Does the same thing as the other version of LockdownRoom, and allows a custom lockdown type to be defined with a [`CustomLockdownDefinition`](#CustomLockdownDefinition)."
             },
             {
                 "name": "RoomLocked",
@@ -2478,7 +2497,7 @@
             {
                 "name": "lockdowns",
                 "type": "std::vector<LockdownShard>",
-                "documentation": "Does not give a pointer to the LockdownShard, so any changes to the LockdownShard will not be reflected. Use GetShards() instead."
+                "documentation": "**Read-only**\nDoes not give a pointer to the LockdownShard, so any changes to the LockdownShard will not be reflected. Use GetShards() instead.\nWARNING: Shards should not be removed from this vector! This will result in a memory leak. If this is absolutely necessary, set the `.bDone` field to true instead."
             },
             {
                 "name": "int8_t>>",
@@ -2501,47 +2520,114 @@
             {
                 "name": "shard",
                 "type": "Animation",
-                "documentation": ""
+                "documentation": "The animation used for the shard visual."
             },
             {
                 "name": "position",
                 "type": "Pointf",
-                "documentation": ""
+                "documentation": "The current position of the shard."
             },
             {
                 "name": "goal",
                 "type": "Pointf",
-                "documentation": ""
+                "documentation": "The location where the shard is heading, if it is not already there."
             },
             {
                 "name": "speed",
                 "type": "float",
-                "documentation": ""
+                "documentation": "The rate at which the shard is moving."
             },
             {
                 "name": "bArrived",
                 "type": "bool",
-                "documentation": ""
+                "documentation": "If the shard has reached its destination."
             },
             {
                 "name": "bDone",
                 "type": "bool",
-                "documentation": ""
+                "documentation": "**Read-only**\nIf the shard has completed its lifetime and is marked for removal."
             },
             {
                 "name": "lifeTime",
                 "type": "float",
-                "documentation": ""
+                "documentation": "The remaining time in seconds until this shard disappears."
             },
             {
                 "name": "superFreeze",
                 "type": "bool",
-                "documentation": ""
+                "documentation": "If false, the shard will gradually complete its animation over the course of its lifetime. If true, the shard will not animation until the end of its lifetime, and will start the animation then at a faster pace."
             },
             {
                 "name": "lockingRoom",
                 "type": "int",
-                "documentation": ""
+                "documentation": "**Read-only**\nThe room that this shard is locking down."
+            },
+            {
+                "name": "extend",
+                "type": "LockdownShard_Extend",
+                "documentation": "**Read-only**\nThe associated extend object for this instance."
+            }
+        ],
+        "constants": []
+    },
+    "LockdownShard_Extend": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "health",
+                "type": "int",
+                "documentation": "The current health of the shard. Is reduced by 1 for each hit from a crew member with base door damage. Only matters for door shards."
+            },
+            {
+                "name": "door",
+                "type": "Door",
+                "documentation": "**Read-Only**\nThe door that this shard is locking down, if any. Nil if no associated door."
+            },
+            {
+                "name": "color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
+                "documentation": "The color that this shard is tinted."
+            },
+            {
+                "name": "anim",
+                "type": "std::string",
+                "documentation": "**Read-Only**\nThe name of the animation for this shard. Used for restoring animations on save/load."
+            },
+            {
+                "name": "canDilate",
+                "type": "bool",
+                "documentation": "If this shard is affected by time dilation."
+            }
+        ],
+        "constants": []
+    },
+    "CustomLockdownDefinition": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "duration",
+                "type": "float",
+                "documentation": "The amount of time that this lockdown will last, in seconds."
+            },
+            {
+                "name": "health",
+                "type": "int",
+                "documentation": "The health of each shard."
+            },
+            {
+                "name": "color",
+                "type": "GL_Color`](./Lua-Graphics-Module#GL_Color)",
+                "documentation": "The color that each shard will be tinted."
+            },
+            {
+                "name": "anims",
+                "type": "std::vector<std::string>",
+                "documentation": "A selection of animation names for each shard to use.\nWall shards will use a random animation from the list.\nDoor shards will use the first animation from the list."
+            },
+            {
+                "name": "canDilate",
+                "type": "bool",
+                "documentation": "If this lockdown is affected by time dilation."
             }
         ],
         "constants": []
@@ -7791,6 +7877,11 @@
                 "name": "customTele",
                 "type": "CustomTeleport",
                 "documentation": ""
+            },
+            {
+                "name": "transformRace",
+                "type": "std::string",
+                "documentation": "Can be set within a CalculateStat callback to transform a crew to a different race."
             },
             {
                 "name": "GetDefinition()",
@@ -16266,6 +16357,148 @@
     "CustomShipSelect": {
         "methods": [
             {
+                "name": "GetShipBlueprint",
+                "return_type": "std::string",
+                "args": [
+                    {
+                        "name": "shipId",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "CountUnlockedShips",
+                "return_type": "int",
+                "args": [
+                    {
+                        "name": "variant",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "IsOpen",
+                "return_type": "bool",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetCurrentPage",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetMaxPages",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "FirstPage",
+                "return_type": "bool",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetSelection",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetSelectedId",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetLastSelected",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "ClearSelection",
+                "return_type": "void",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetShipButtonIdFromName",
+                "return_type": "int",
+                "args": [
+                    {
+                        "name": "name",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GetShipButtonListFromID",
+                "return_type": "ShipButtonList",
+                "args": [
+                    {
+                        "name": "id",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GetShipButtonLists",
+                "return_type": "std::vector<ShipButtonList>",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetShipIdAndVariantFromName",
+                "return_type": "std::pair<int,int>",
+                "args": [
+                    {
+                        "name": "name",
+                        "type": "std::string"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GetOrderedShipButtonDefinition",
+                "return_type": "ShipButtonDefinition",
+                "args": [
+                    {
+                        "name": "id",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GetShipButtonOrderIndex",
+                "return_type": "int",
+                "args": [
+                    {
+                        "name": "id",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
+                "name": "GetShipButtonDefinition",
+                "return_type": "ShipButtonDefinition",
+                "args": [
+                    {
+                        "name": "id",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            },
+            {
                 "name": "GetDefinition",
                 "return_type": "CustomShipDefinition",
                 "args": [
@@ -16275,6 +16508,70 @@
                     }
                 ],
                 "documentation": ""
+            },
+            {
+                "name": "GetDefaultDefinition",
+                "return_type": "CustomShipDefinition",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetRandomShipIndex",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "ShipCount",
+                "return_type": "int",
+                "args": [
+                    {
+                        "name": "type=0",
+                        "type": "int"
+                    }
+                ],
+                "documentation": ""
+            }
+        ],
+        "fields": [
+            {
+                "name": "customShipOrder",
+                "type": "std::vector<std::string>",
+                "documentation": "Each pages is %11 ships, `empty` means that a ship button in the page is skipped, special ships are the two last slots."
+            }
+        ],
+        "constants": []
+    },
+    "ShipButtonDefinition": {
+        "methods": [],
+        "fields": [
+            {
+                "name": "name",
+                "type": "std::string",
+                "documentation": ""
+            }
+        ],
+        "constants": []
+    },
+    "ShipButtonList": {
+        "methods": [
+            {
+                "name": "GetPage",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetId",
+                "return_type": "int",
+                "args": [],
+                "documentation": ""
+            },
+            {
+                "name": "GetIndex",
+                "return_type": "int",
+                "args": [],
+                "documentation": "equivalent of `:GetId() - 100`, all custom ship id are shifted by 100 to not overwrite vanilla ones"
             }
         ],
         "fields": [],

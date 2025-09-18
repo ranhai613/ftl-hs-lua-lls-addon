@@ -698,6 +698,33 @@
                 "documentation": "Renders a full circle\n`float x, float y` -- center point\n`radius` -- the radius of the circle"
             },
             {
+                "name": "GL_DrawEllipse",
+                "return_type": "bool",
+                "args": [
+                    {
+                        "name": "x",
+                        "type": "int"
+                    },
+                    {
+                        "name": "y",
+                        "type": "int"
+                    },
+                    {
+                        "name": "a1",
+                        "type": "int"
+                    },
+                    {
+                        "name": "b1",
+                        "type": "int"
+                    },
+                    {
+                        "name": "color",
+                        "type": "GL_Color"
+                    }
+                ],
+                "documentation": "Draws a full ellipse.\n`int x, int y` -- The coordinates of the ellipse's center\n`int a1` -- The horizontal radius.\n`int a2` -- The vertical radius.\n`GL_Color color` -- The color of the ellipse, normalized to RGBA values within the range [0, 1]"
+            },
+            {
                 "name": "GL_DrawLine",
                 "return_type": "bool",
                 "args": [

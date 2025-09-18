@@ -6071,6 +6071,44 @@ fail:
 }
 
 
+static int _wrap_CSurface_GL_DrawEllipse(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  int arg2 ;
+  int arg3 ;
+  int arg4 ;
+  GL_Color arg5 ;
+  GL_Color *argp5 ;
+  bool result;
+  
+  SWIG_check_num_args("CSurface::GL_DrawEllipse",5,5)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("CSurface::GL_DrawEllipse",1,"int");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CSurface::GL_DrawEllipse",2,"int");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("CSurface::GL_DrawEllipse",3,"int");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("CSurface::GL_DrawEllipse",4,"int");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("CSurface::GL_DrawEllipse",5,"GL_Color");
+  arg1 = (int)lua_tonumber(L, 1);
+  arg2 = (int)lua_tonumber(L, 2);
+  arg3 = (int)lua_tonumber(L, 3);
+  arg4 = (int)lua_tonumber(L, 4);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_GL_Color,0))){
+    SWIG_fail_ptr("CSurface_GL_DrawEllipse",5,SWIGTYPE_p_GL_Color);
+  }
+  arg5 = *argp5;
+  
+  result = (bool)CSurface::GL_DrawEllipse(arg1,arg2,arg3,arg4,arg5);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_CSurface_GL_DrawLine(lua_State* L) {
   int SWIG_arg = 0;
   float arg1 ;
@@ -6964,6 +7002,7 @@ static swig_lua_method swig_CSurface_Sf_SwigStatic_methods[]= {
     { "GL_DestroyPrimitive", _wrap_CSurface_GL_DestroyPrimitive},
     { "GL_DisableBlend", _wrap_CSurface_GL_DisableBlend},
     { "GL_DrawCircle", _wrap_CSurface_GL_DrawCircle},
+    { "GL_DrawEllipse", _wrap_CSurface_GL_DrawEllipse},
     { "GL_DrawLine", _wrap_CSurface_GL_DrawLine},
     { "GL_DrawRect", _wrap_CSurface_GL_DrawRect},
     { "GL_DrawRectOutline", _wrap_CSurface_GL_DrawRectOutline},
@@ -7347,6 +7386,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "CSurface_GL_DestroyPrimitive", _wrap_CSurface_GL_DestroyPrimitive},
     { "CSurface_GL_DisableBlend", _wrap_CSurface_GL_DisableBlend},
     { "CSurface_GL_DrawCircle", _wrap_CSurface_GL_DrawCircle},
+    { "CSurface_GL_DrawEllipse", _wrap_CSurface_GL_DrawEllipse},
     { "CSurface_GL_DrawLine", _wrap_CSurface_GL_DrawLine},
     { "CSurface_GL_DrawRect", _wrap_CSurface_GL_DrawRect},
     { "CSurface_GL_DrawRectOutline", _wrap_CSurface_GL_DrawRectOutline},

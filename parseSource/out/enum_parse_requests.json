@@ -93,6 +93,8 @@
   "Evasion::NONE",
   "InternalEvents::ACTIVATE_POWER",
   "InternalEvents::CALCULATE_LEAK_MODIFIER",
+  "InternalEvents::CALCULATE_STAT_POST",
+  "InternalEvents::CALCULATE_STAT_PRE",
   "InternalEvents::CANCEL_POWER",
   "InternalEvents::CONSTRUCT_CREWMEMBER",
   "InternalEvents::CONSTRUCT_PROJECTILE",

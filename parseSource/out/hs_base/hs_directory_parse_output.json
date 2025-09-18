@@ -1058,6 +1058,17 @@
       "static": false
     },
     {
+      "args": [
+        {
+          "name": "newTime",
+          "type": "float"
+        }
+      ],
+      "name": "SetCurrentTime",
+      "return_type": "void",
+      "static": false
+    },
+    {
       "args": [],
       "name": "Update",
       "return_type": "void",
@@ -2364,6 +2375,27 @@
       "name": "ProcessWeaponBlueprint",
       "return_type": "WeaponBlueprint",
       "static": false
+    },
+    {
+      "args": [],
+      "name": "ResetRarities",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "name",
+          "type": "std::string"
+        },
+        {
+          "name": "rarity",
+          "type": "int"
+        }
+      ],
+      "name": "SetRarity",
+      "return_type": "void",
+      "static": false
     }
   ],
   "BoarderDrone": [
@@ -3141,6 +3173,12 @@
       "static": true
     },
     {
+      "args": [],
+      "name": "FinishFrame",
+      "return_type": "void",
+      "static": true
+    },
+    {
       "args": [
         {
           "name": "tex",
@@ -3385,6 +3423,61 @@
           "type": "float"
         },
         {
+          "name": "start_x",
+          "type": "float"
+        },
+        {
+          "name": "end_x",
+          "type": "float"
+        },
+        {
+          "name": "start_y",
+          "type": "float"
+        },
+        {
+          "name": "end_y",
+          "type": "float"
+        },
+        {
+          "name": "alpha",
+          "type": "float"
+        },
+        {
+          "name": "color",
+          "type": "GL_Color"
+        },
+        {
+          "name": "mirror",
+          "type": "bool"
+        }
+      ],
+      "name": "GL_CreateImagePartialPrimitive",
+      "return_type": "GL_Primitive",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "tex",
+          "type": "GL_Texture"
+        },
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "y",
+          "type": "float"
+        },
+        {
+          "name": "size_x",
+          "type": "float"
+        },
+        {
+          "name": "size_y",
+          "type": "float"
+        },
+        {
           "name": "rotate",
           "type": "float"
         },
@@ -3394,7 +3487,7 @@
         }
       ],
       "name": "GL_CreateImagePrimitive",
-      "return_type": "GL_Primitive*",
+      "return_type": "GL_Primitive",
       "static": true
     },
     {
@@ -3413,7 +3506,7 @@
         }
       ],
       "name": "GL_CreateMultiImagePrimitive",
-      "return_type": "GL_Primitive*",
+      "return_type": "GL_Primitive",
       "static": true
     },
     {
@@ -3432,7 +3525,7 @@
         }
       ],
       "name": "GL_CreateMultiLinePrimitive",
-      "return_type": "GL_Primitive*",
+      "return_type": "GL_Primitive",
       "static": true
     },
     {
@@ -3447,7 +3540,42 @@
         }
       ],
       "name": "GL_CreateMultiRectPrimitive",
-      "return_type": "GL_Primitive*",
+      "return_type": "GL_Primitive",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "radius",
+          "type": "float"
+        },
+        {
+          "name": "deg1",
+          "type": "float"
+        },
+        {
+          "name": "deg2",
+          "type": "float"
+        },
+        {
+          "name": "thickness",
+          "type": "float"
+        },
+        {
+          "name": "color",
+          "type": "GL_Color"
+        }
+      ],
+      "name": "GL_CreatePiePartialPrimitive",
+      "return_type": "GL_Primitive",
       "static": true
     },
     {
@@ -3486,7 +3614,7 @@
         }
       ],
       "name": "GL_CreatePixelImagePrimitive",
-      "return_type": "GL_Primitive*",
+      "return_type": "GL_Primitive",
       "static": true
     },
     {
@@ -3517,7 +3645,7 @@
         }
       ],
       "name": "GL_CreateRectOutlinePrimitive",
-      "return_type": "GL_Primitive*",
+      "return_type": "GL_Primitive",
       "static": true
     },
     {
@@ -3544,7 +3672,7 @@
         }
       ],
       "name": "GL_CreateRectPrimitive",
-      "return_type": "GL_Primitive*",
+      "return_type": "GL_Primitive",
       "static": true
     },
     {
@@ -3568,11 +3696,11 @@
       "args": [
         {
           "name": "x",
-          "type": "float"
+          "type": "int"
         },
         {
           "name": "y",
-          "type": "float"
+          "type": "int"
         },
         {
           "name": "radius",
@@ -3584,6 +3712,60 @@
         }
       ],
       "name": "GL_DrawCircle",
+      "return_type": "bool",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "a1",
+          "type": "int"
+        },
+        {
+          "name": "b1",
+          "type": "int"
+        },
+        {
+          "name": "color",
+          "type": "GL_Color"
+        }
+      ],
+      "name": "GL_DrawEllipse",
+      "return_type": "bool",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "w",
+          "type": "int"
+        },
+        {
+          "name": "h",
+          "type": "int"
+        },
+        {
+          "name": "color",
+          "type": "GL_Color"
+        }
+      ],
+      "name": "GL_DrawLaser",
       "return_type": "bool",
       "static": true
     },
@@ -3718,33 +3900,6 @@
     {
       "args": [
         {
-          "name": "x",
-          "type": "int"
-        },
-        {
-          "name": "y",
-          "type": "int"
-        },
-        {
-          "name": "w",
-          "type": "int"
-        },
-        {
-          "name": "h",
-          "type": "int"
-        },
-        {
-          "name": "color",
-          "type": "GL_Color"
-        }
-      ],
-      "name": "GL_DrawLaser",
-      "return_type": "bool",
-      "static": true
-    },
-    {
-      "args": [
-        {
           "name": "vertex1",
           "type": "Point"
         },
@@ -3769,6 +3924,17 @@
       "args": [],
       "name": "GL_EnableBlend",
       "return_type": "bool",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "on",
+          "type": "bool"
+        }
+      ],
+      "name": "GL_ForceAntialias",
+      "return_type": "void",
       "static": true
     },
     {
@@ -3917,6 +4083,29 @@
     {
       "args": [
         {
+          "name": "angle",
+          "type": "float"
+        },
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "y",
+          "type": "float"
+        },
+        {
+          "name": "z=1.f",
+          "type": "float"
+        }
+      ],
+      "name": "GL_Rotate2",
+      "return_type": "void",
+      "static": true
+    },
+    {
+      "args": [
+        {
           "name": "x",
           "type": "float"
         },
@@ -3997,6 +4186,41 @@
       "args": [],
       "name": "GetColorTint",
       "return_type": "GL_Color",
+      "static": true
+    },
+    {
+      "args": [],
+      "name": "IsFrameBufferSupported",
+      "return_type": "bool",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "left",
+          "type": "int"
+        },
+        {
+          "name": "bottom",
+          "type": "int"
+        },
+        {
+          "name": "h",
+          "type": "int"
+        },
+        {
+          "name": "w",
+          "type": "int"
+        }
+      ],
+      "name": "SetViewPort",
+      "return_type": "int",
+      "static": true
+    },
+    {
+      "args": [],
+      "name": "StartFrame",
+      "return_type": "void",
       "static": true
     }
   ],
@@ -11403,6 +11627,52 @@
   ],
   "CustomFleetShip": [],
   "CustomHotkey": [],
+  "CustomLockdownDefinition": [
+    {
+      "args": [],
+      "name": "CustomLockdownDefinition",
+      "return_type": "CustomLockdownDefinition",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "duration_",
+          "type": "float"
+        },
+        {
+          "name": "health_",
+          "type": "int"
+        },
+        {
+          "name": "color_",
+          "type": "GL_Color"
+        },
+        {
+          "name": "anims_",
+          "type": "std::vector<std::string>"
+        },
+        {
+          "name": "canDilate_",
+          "type": "bool"
+        }
+      ],
+      "name": "CustomLockdownDefinition",
+      "return_type": "CustomLockdownDefinition",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "node",
+          "type": "rapidxml::xml_node<char>"
+        }
+      ],
+      "name": "ParseNode",
+      "return_type": "void",
+      "static": false
+    }
+  ],
   "CustomMainMenu": [
     {
       "args": [],
@@ -12901,6 +13171,12 @@
       ],
       "name": "AddShipVictoryFilter",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetShipButtonLists",
+      "return_type": "std::vector<ShipButtonList*>",
       "static": false
     }
   ],
@@ -14826,6 +15102,17 @@
   "DistressButton": [],
   "Door": [
     {
+      "args": [
+        {
+          "name": "val",
+          "type": "int"
+        }
+      ],
+      "name": "Door",
+      "return_type": "Door",
+      "static": true
+    },
+    {
       "args": [],
       "name": "GetCenterPoint",
       "return_type": "Point",
@@ -14845,11 +15132,93 @@
     {
       "args": [
         {
+          "name": "loc_x",
+          "type": "int"
+        },
+        {
+          "name": "loc_y",
+          "type": "int"
+        },
+        {
+          "name": "scale",
+          "type": "float"
+        },
+        {
+          "name": "force",
+          "type": "bool"
+        }
+      ],
+      "name": "HS_ContainsPoint",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unknown",
+          "type": "loc_x"
+        },
+        {
+          "name": "unknown",
+          "type": "loc_y"
+        },
+        {
+          "name": "unknown",
+          "type": "scale"
+        }
+      ],
+      "name": "ContainsPoint",
+      "return_type": "return",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "AccelerateAnimation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "amount",
           "type": "float"
         }
       ],
       "name": "ApplyDamage",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "roomId1",
+          "type": "int"
+        },
+        {
+          "name": "roomId2",
+          "type": "int"
+        }
+      ],
+      "name": "ConnectsRooms",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "loc_x",
+          "type": "int"
+        },
+        {
+          "name": "loc_y",
+          "type": "int"
+        },
+        {
+          "name": "scale",
+          "type": "float"
+        }
+      ],
+      "name": "ContainsPoint",
       "return_type": "bool",
       "static": false
     },
@@ -14902,11 +15271,117 @@
     {
       "args": [
         {
+          "name": "alpha",
+          "type": "float"
+        },
+        {
+          "name": "bForceView",
+          "type": "bool"
+        },
+        {
+          "name": "useLargeSprites",
+          "type": "bool"
+        }
+      ],
+      "name": "OnRender",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Open",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "PauseLoop",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "fd",
           "type": "int"
         }
       ],
       "name": "SaveState",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "val",
+          "type": "int"
+        }
+      ],
+      "name": "SetBlastDoor",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "val",
+          "type": "bool"
+        }
+      ],
+      "name": "SetLockdown",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "StartAnimIfNecessary",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "UpdateAnimations",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "roomId1",
+          "type": "int"
+        },
+        {
+          "name": "roomId2",
+          "type": "int"
+        },
+        {
+          "name": "locX",
+          "type": "int"
+        },
+        {
+          "name": "locY",
+          "type": "int"
+        },
+        {
+          "name": "bVertical",
+          "type": "bool"
+        },
+        {
+          "name": "doorId",
+          "type": "int"
+        },
+        {
+          "name": "shipId",
+          "type": "int"
+        }
+      ],
+      "name": "constructor",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "destructor",
       "return_type": "void",
       "static": false
     }
@@ -14951,6 +15426,7 @@
       "static": false
     }
   ],
+  "Door_Extend": [],
   "Drone": [
     {
       "args": [],
@@ -16537,6 +17013,12 @@
       "static": false
     },
     {
+      "args": [],
+      "name": "Clear",
+      "return_type": "void",
+      "static": false
+    },
+    {
       "args": [
         {
           "name": "name",
@@ -16805,6 +17287,12 @@
     }
   ],
   "ExplosionAnimation": [
+    {
+      "args": [],
+      "name": "GetFinalGib",
+      "return_type": "ImageDesc",
+      "static": false
+    },
     {
       "args": [],
       "name": "LoadGibs",
@@ -17715,6 +18203,28 @@
       ],
       "name": "GL_Color",
       "return_type": "return",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "SaveState",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "LoadState",
+      "return_type": "void",
       "static": false
     }
   ],
@@ -18905,11 +19415,152 @@
   "LockdownShard": [
     {
       "args": [],
+      "name": "LockdownShard",
+      "return_type": "LockdownShard",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "lockingRoom",
+          "type": "int"
+        },
+        {
+          "name": "start",
+          "type": "Pointf"
+        },
+        {
+          "name": "goal",
+          "type": "Point"
+        },
+        {
+          "name": "superFreeze",
+          "type": "bool"
+        }
+      ],
+      "name": "LockdownShard",
+      "return_type": "LockdownShard",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "LockdownShard",
+      "return_type": "LockdownShard",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "loading",
+          "type": "bool"
+        },
+        {
+          "name": "superFreeze",
+          "type": "bool"
+        }
+      ],
+      "name": "Initialize",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "door",
+          "type": "Door"
+        }
+      ],
+      "name": "LinkDoor",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnRender",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "SaveState",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "Update",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "lockingRoom",
+          "type": "int"
+        },
+        {
+          "name": "start",
+          "type": "Pointf"
+        },
+        {
+          "name": "goal",
+          "type": "Point"
+        },
+        {
+          "name": "superFreeze",
+          "type": "bool"
+        }
+      ],
+      "name": "constructor",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "lockingRoom",
+          "type": "int"
+        },
+        {
+          "name": "start",
+          "type": "Pointf"
+        },
+        {
+          "name": "goal",
+          "type": "Point"
+        },
+        {
+          "name": "superFreeze",
+          "type": "bool"
+        }
+      ],
+      "name": "constructor2",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "constructor3",
       "return_type": "void",
       "static": false
     }
   ],
+  "LockdownShard_Extend": [],
   "MainMenu": [
     {
       "args": [
@@ -19301,7 +19952,14 @@
       "static": false
     }
   ],
-  "OuterHull": [],
+  "OuterHull": [
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
+      "static": false
+    }
+  ],
   "OxygenSystem": [
     {
       "args": [
@@ -20668,7 +21326,179 @@
       "static": false
     }
   ],
-  "Repairable": [],
+  "Repairable": [
+    {
+      "args": [],
+      "name": "Repairable",
+      "return_type": "Repairable",
+      "static": true
+    },
+    {
+      "args": [],
+      "name": "CompletelyDestroyed",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetName",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "name",
+          "type": "std::string"
+        }
+      ],
+      "name": "SetName",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Repair",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "speed",
+          "type": "float"
+        },
+        {
+          "name": "autoRepair",
+          "type": "bool"
+        }
+      ],
+      "name": "PartialRepair",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "amount",
+          "type": "float"
+        }
+      ],
+      "name": "PartialDamage",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "NeedsRepairing",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Functioning",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanBeSabatoged",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetDamage",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetLocation",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetGridLocation",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "diff",
+          "type": "float"
+        }
+      ],
+      "name": "SetDamage",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "dam",
+          "type": "float"
+        }
+      ],
+      "name": "SetMaxDamage",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "location",
+          "type": "Point"
+        }
+      ],
+      "name": "SetLocation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnRenderHighlight",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsRoomBased",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetRoomId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "amount",
+          "type": "int"
+        }
+      ],
+      "name": "Ioned",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "SetRoomId",
+      "return_type": "void",
+      "static": false
+    }
+  ],
   "ReplacedSector": [],
   "ResourceBoxDesc": [],
   "ResourceControl": [
@@ -21117,6 +21947,12 @@
       ],
       "name": "GetEmptySlots",
       "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
       "static": false
     },
     {
@@ -21863,7 +22699,31 @@
       "static": false
     }
   ],
-  "Selectable": [],
+  "Selectable": [
+    {
+      "args": [],
+      "name": "Selectable",
+      "return_type": "Selectable",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "selected",
+          "type": "int"
+        }
+      ],
+      "name": "SetSelected",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSelected",
+      "return_type": "int",
+      "static": false
+    }
+  ],
   "SettingValues": [],
   "Settings": [
     {
@@ -22166,6 +23026,40 @@
     {
       "args": [
         {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "doorScale",
+          "type": "float"
+        },
+        {
+          "name": "force",
+          "type": "bool"
+        }
+      ],
+      "name": "HS_GetSelectedDoor",
+      "return_type": "Door*",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "doorId",
+          "type": "int"
+        }
+      ],
+      "name": "GetDoorById",
+      "return_type": "Door*",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "roomId",
           "type": "int"
         }
@@ -22187,6 +23081,17 @@
       ],
       "name": "BreachSpecificHull",
       "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "roomId",
+          "type": "int"
+        }
+      ],
+      "name": "ContainsHullBreach",
+      "return_type": "int>",
       "static": false
     },
     {
@@ -22260,6 +23165,17 @@
     {
       "args": [
         {
+          "name": "complete",
+          "type": "bool"
+        }
+      ],
+      "name": "GetCloakAlpha",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "onlyDamaged",
           "type": "bool"
         }
@@ -22291,6 +23207,17 @@
       "args": [],
       "name": "GetShipCorner",
       "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "LoadState",
+      "return_type": "void",
       "static": false
     },
     {
@@ -22424,6 +23351,17 @@
         }
       ],
       "name": "SetSelectedRoom",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "doorControlMode",
+          "type": "bool"
+        }
+      ],
+      "name": "UpdateDoorsPrimitive",
       "return_type": "void",
       "static": false
     }
@@ -22708,17 +23646,6 @@
     }
   ],
   "ShipButtonDefinition": [
-    {
-      "args": [
-        {
-          "name": "variant",
-          "type": "int"
-        }
-      ],
-      "name": "VariantExists",
-      "return_type": "bool",
-      "static": false
-    },
     {
       "args": [
         {
@@ -23748,6 +24675,17 @@
       "static": false
     },
     {
+      "args": [
+        {
+          "name": "useDummyOxygen",
+          "type": "bool"
+        }
+      ],
+      "name": "SetDummyOxygen",
+      "return_type": "bool",
+      "static": false
+    },
+    {
       "args": [],
       "name": "StartDummyOxygen",
       "return_type": "void",
@@ -24651,6 +25589,17 @@
     {
       "args": [],
       "name": "JumpLeave",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "noClone",
+          "type": "bool"
+        }
+      ],
+      "name": "KillEveryone",
       "return_type": "void",
       "static": false
     },
@@ -26104,6 +27053,17 @@
     {
       "args": [
         {
+          "name": "val",
+          "type": "int"
+        }
+      ],
+      "name": "SetDividePower",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "cap",
           "type": "int"
         }
@@ -27334,7 +28294,25 @@
   ],
   "SplashImage": [],
   "Spreadable": [],
-  "Spreader_Fire": [],
+  "Spreader_Fire": [
+    {
+      "args": [
+        {
+          "name": "roomId",
+          "type": "int"
+        }
+      ],
+      "name": "CounterRoom",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "UpdateSpread",
+      "return_type": "void",
+      "static": false
+    }
+  ],
   "StarMap": [
     {
       "args": [
@@ -27686,7 +28664,7 @@
     {
       "args": [],
       "name": "MapConnected",
-      "return_type": "void",
+      "return_type": "bool",
       "static": false
     },
     {

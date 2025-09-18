@@ -1172,6 +1172,38 @@ function Hyperspace.vector_AugmentCrystalShard(size, value) end
 ---@return vector<Hyperspace.AugmentCrystalShard>
 function Hyperspace.vector_AugmentCrystalShard() end
 
+---@param size uint
+---@return vector<Hyperspace.ShipButtonList>
+function Hyperspace.vector_p_ShipButtonList(size) end
+
+---@param other vector<Hyperspace.ShipButtonList>
+---@return vector<Hyperspace.ShipButtonList>
+function Hyperspace.vector_p_ShipButtonList(other) end
+
+---@param size uint
+---@param value Hyperspace.ShipButtonList
+---@return vector<Hyperspace.ShipButtonList>
+function Hyperspace.vector_p_ShipButtonList(size, value) end
+
+---@return vector<Hyperspace.ShipButtonList>
+function Hyperspace.vector_p_ShipButtonList() end
+
+---@param size uint
+---@return vector<Graphics.GL_Texture>
+function Hyperspace.vector_p_GL_Texture(size) end
+
+---@param other vector<Graphics.GL_Texture>
+---@return vector<Graphics.GL_Texture>
+function Hyperspace.vector_p_GL_Texture(other) end
+
+---@param size uint
+---@param value Graphics.GL_Texture
+---@return vector<Graphics.GL_Texture>
+function Hyperspace.vector_p_GL_Texture(size, value) end
+
+---@return vector<Graphics.GL_Texture>
+function Hyperspace.vector_p_GL_Texture() end
+
 ---@class Hyperspace.ToggleValue_int
 ---@field value integer
 ---@field enabled boolean
@@ -1401,6 +1433,10 @@ function Hyperspace.Point:__div(unknown) end
 ---@param unknown integer
 ---@return Hyperspace.Point
 function Hyperspace.Point:__mul(unknown) end
+
+---@param unknown Hyperspace.Point
+---@return boolean
+function Hyperspace.Point:__lt(unknown) end
 
 ---@param other Hyperspace.Point
 ---@return integer
@@ -4310,16 +4346,31 @@ function Hyperspace.LaserBlast(_position, _ownerId, _targetId, _target) end
 Hyperspace.Location = {}
 
 ---@class Hyperspace.LockdownShard
----@field shard Hyperspace.Animation
----@field position Hyperspace.Pointf
----@field goal Hyperspace.Pointf
----@field speed number
----@field bArrived boolean
----@field bDone boolean
----@field lifeTime number
----@field superFreeze boolean
----@field lockingRoom integer
+---@field shard Hyperspace.Animation The animation used for the shard visual.
+---@field position Hyperspace.Pointf The current position of the shard.
+---@field goal Hyperspace.Pointf The location where the shard is heading, if it is not already there.
+---@field speed number The rate at which the shard is moving.
+---@field bArrived boolean If the shard has reached its destination.
+---@field bDone boolean (Read-only) **Read-only**<br>If the shard has completed its lifetime and is marked for removal.
+---@field lifeTime number The remaining time in seconds until this shard disappears.
+---@field superFreeze boolean If false, the shard will gradually complete its animation over the course of its lifetime. If true, the shard will not animation until the end of its lifetime, and will start the animation then at a faster pace.
+---@field lockingRoom integer (Read-only) **Read-only**<br>The room that this shard is locking down.
+---@field extend Hyperspace.LockdownShard_Extend (Read-only) **Read-only**<br>The associated extend object for this instance.
 Hyperspace.LockdownShard = {}
+
+---@return Hyperspace.LockdownShard
+function Hyperspace.LockdownShard() end
+
+---@param lockingRoom integer
+---@param start Hyperspace.Pointf
+---@param goal Hyperspace.Point
+---@param superFreeze boolean
+---@return Hyperspace.LockdownShard
+function Hyperspace.LockdownShard(lockingRoom, start, goal, superFreeze) end
+
+---@param fd integer
+---@return Hyperspace.LockdownShard
+function Hyperspace.LockdownShard(fd) end
 
 function Hyperspace.LockdownShard:Update() end
 
@@ -4438,15 +4489,15 @@ Hyperspace.OxygenSystem = {}
 ---@return Hyperspace.OxygenSystem
 function Hyperspace.OxygenSystem(numRooms, roomId, shipId, startingPower) end
 
----@param roomId integer
-function Hyperspace.OxygenSystem:EmptyOxygen(roomId) end
-
 ---@return number
 function Hyperspace.OxygenSystem:GetRefillSpeed() end
 
 ---@param roomId integer
 ---@param value number
 function Hyperspace.OxygenSystem:ModifyRoomOxygen(roomId, value) end
+
+---@param roomId integer
+function Hyperspace.OxygenSystem:EmptyOxygen(roomId) end
 
 ---@class Hyperspace.PDSFire: Hyperspace.LaserBlast
 ---@field startPoint Hyperspace.Pointf
@@ -4751,7 +4802,7 @@ Hyperspace.Shield = {}
 ---@field bCloaked boolean
 ---@field bExperiment boolean
 ---@field bShowEngines boolean
----@field lockdowns vector<Hyperspace.LockdownShard> Does not give a pointer to the LockdownShard, so any changes to the LockdownShard will not be reflected. Use GetShards() instead.
+---@field lockdowns vector<Hyperspace.LockdownShard> (Read-only) **Read-only**<br>Does not give a pointer to the LockdownShard, so any changes to the LockdownShard will not be reflected. Use GetShards() instead.<br>WARNING: Shards should not be removed from this vector! This will result in a memory leak. If this is absolutely necessary, set the `.bDone` field to true instead.
 ---@field extraEngineAnim vector<pair<Hyperspace.Animation, integer>> (Read-only)
 Hyperspace.Ship = {}
 
@@ -4803,11 +4854,6 @@ function Hyperspace.Ship:GetHullBreaches(onlyDamaged) end
 ---@return integer
 function Hyperspace.Ship:GetSelectedRoomId(x, y, unk) end
 
---- Locks down the room, and spawns the crystal animation at `pos`. Does not play the lockdown sound. Note: For a "normal" animation, `pos` can be set to the room's center, but it can be set outside of the room as well.
----@param roomId integer
----@param pos Hyperspace.Pointf
-function Hyperspace.Ship:LockdownRoom(roomId, pos) end
-
 --- Returns true if the room is locked down.
 ---@param roomId integer
 ---@return boolean
@@ -4821,6 +4867,17 @@ function Hyperspace.Ship:SetRoomBlackout(roomId, blackout) end
 --- Sets the room to be selected (Yellow outline). Note: Must be done every tick to have an effect.
 ---@param roomId integer
 function Hyperspace.Ship:SetSelectedRoom(roomId) end
+
+--- Locks down the room, and spawns the crystal animation at `pos`. Does not play the lockdown sound. Note: For a "normal" animation, `pos` can be set to the room's center, but it can be set outside of the room as well. Uses the default lockdown type.
+---@param roomId integer
+---@param pos Hyperspace.Pointf
+function Hyperspace.Ship:LockdownRoom(roomId, pos) end
+
+--- Does the same thing as the other version of LockdownRoom, and allows a custom lockdown type to be defined with a [`CustomLockdownDefinition`](#CustomLockdownDefinition).
+---@param roomId integer
+---@param pos Hyperspace.Pointf
+---@param def Hyperspace.CustomLockdownDefinition
+function Hyperspace.Ship:LockdownRoom(roomId, pos, def) end
 
 ---@class Hyperspace.ShipGenerator
 Hyperspace.ShipGenerator = {}
@@ -5959,6 +6016,10 @@ function Hyperspace.CustomShipGenerator() end
 ---@return Hyperspace.ShipManager
 function Hyperspace.CustomShipGenerator:CreateShip(shipBlueprint, sector, event) end
 
+---@class Hyperspace.ShipButtonDefinition
+---@field name String (Read-only)
+Hyperspace.ShipButtonDefinition = {}
+
 ---@class Hyperspace.RoomDefinition
 ---@field roomId integer
 ---@field sensorBlind boolean
@@ -6004,15 +6065,105 @@ Hyperspace.CustomShipDefinition = {}
 ---@return Hyperspace.CustomShipDefinition
 function Hyperspace.CustomShipDefinition() end
 
+---@class Hyperspace.ShipButtonList
+Hyperspace.ShipButtonList = {}
+
+---@param _page integer
+---@param _id integer
+---@param _a ShipButton
+---@param _b? ShipButton = NULL
+---@param _c? ShipButton = nullptr
+---@return Hyperspace.ShipButtonList
+function Hyperspace.ShipButtonList(_page, _id, _a, _b, _c) end
+
+---@return integer
+function Hyperspace.ShipButtonList:GetPage() end
+
+---@return integer
+function Hyperspace.ShipButtonList:GetId() end
+
+--- equivalent of `:GetId() - 100`, all custom ship id are shifted by 100 to not overwrite vanilla ones
+---@return integer
+function Hyperspace.ShipButtonList:GetIndex() end
+
 ---@class Hyperspace.CustomShipSelect
+---@field customShipOrder vector<String> Each pages is %11 ships, `empty` means that a ship button in the page is skipped, special ships are the two last slots.
 Hyperspace.CustomShipSelect = {}
 
 ---@return Hyperspace.CustomShipSelect
 function Hyperspace.CustomShipSelect() end
 
+---@param shipId integer
+---@return string
+function Hyperspace.CustomShipSelect:GetShipBlueprint(shipId) end
+
+---@param variant integer
+---@return integer
+function Hyperspace.CustomShipSelect:CountUnlockedShips(variant) end
+
+---@return boolean
+function Hyperspace.CustomShipSelect:IsOpen() end
+
+---@return integer
+function Hyperspace.CustomShipSelect:GetCurrentPage() end
+
+---@return integer
+function Hyperspace.CustomShipSelect:GetMaxPages() end
+
+---@return boolean
+function Hyperspace.CustomShipSelect:FirstPage() end
+
+---@return integer
+function Hyperspace.CustomShipSelect:GetSelection() end
+
+---@return integer
+function Hyperspace.CustomShipSelect:GetSelectedId() end
+
+---@return integer
+function Hyperspace.CustomShipSelect:GetLastSelected() end
+
+function Hyperspace.CustomShipSelect:ClearSelection() end
+
+---@param name String
+---@return integer
+function Hyperspace.CustomShipSelect:GetShipButtonIdFromName(name) end
+
+---@param id integer
+---@return Hyperspace.ShipButtonList
+function Hyperspace.CustomShipSelect:GetShipButtonListFromID(id) end
+
+---@param name String
+---@return pair<integer, integer>
+function Hyperspace.CustomShipSelect:GetShipIdAndVariantFromName(name) end
+
+---@param id integer
+---@return Hyperspace.ShipButtonDefinition
+function Hyperspace.CustomShipSelect:GetOrderedShipButtonDefinition(id) end
+
+---@param id integer
+---@return integer
+function Hyperspace.CustomShipSelect:GetShipButtonOrderIndex(id) end
+
+---@param id integer
+---@return Hyperspace.ShipButtonDefinition
+function Hyperspace.CustomShipSelect:GetShipButtonDefinition(id) end
+
 ---@param name String
 ---@return Hyperspace.CustomShipDefinition
 function Hyperspace.CustomShipSelect:GetDefinition(name) end
+
+---@return Hyperspace.CustomShipDefinition
+function Hyperspace.CustomShipSelect:GetDefaultDefinition() end
+
+---@return integer
+function Hyperspace.CustomShipSelect:GetRandomShipIndex() end
+
+---@param type? integer = 0
+---@return integer
+function Hyperspace.CustomShipSelect:ShipCount(type) end
+
+---@return vector<Hyperspace.ShipButtonList>
+function Hyperspace.CustomShipSelect:GetShipButtonLists() end
 
 ---@return Hyperspace.CustomShipSelect
 function Hyperspace.CustomShipSelect.GetInstance() end
@@ -6170,6 +6321,7 @@ function Hyperspace.ActivatedPower:GetCrewBoxResourceWidth(mode) end
 ---@field powerChange vector<Hyperspace.ActivatedPowerDefinition>
 ---@field noSlot boolean
 ---@field noClone boolean
+---@field transformRace String Can be set within a CalculateStat callback to transform a crew to a different race.
 ---@field customTele Hyperspace.CustomTeleport
 Hyperspace.CrewMember_Extend = {}
 
@@ -6453,6 +6605,25 @@ function Hyperspace.CustomDamage() end
 
 function Hyperspace.CustomDamage:Clear() end
 
+---@class Hyperspace.CustomLockdownDefinition
+---@field duration number The amount of time that this lockdown will last, in seconds.
+---@field health integer The health of each shard.
+---@field color Graphics.GL_Color The color that each shard will be tinted.
+---@field anims vector<String> A selection of animation names for each shard to use.<br>Wall shards will use a random animation from the list.<br>Door shards will use the first animation from the list.
+---@field canDilate boolean If this lockdown is affected by time dilation.
+Hyperspace.CustomLockdownDefinition = {}
+
+---@return Hyperspace.CustomLockdownDefinition
+function Hyperspace.CustomLockdownDefinition() end
+
+---@class Hyperspace.LockdownShard_Extend
+---@field health integer The current health of the shard. Is reduced by 1 for each hit from a crew member with base door damage. Only matters for door shards.
+---@field door Hyperspace.Door (Read-only) **Read-Only**<br>The door that this shard is locking down, if any. Nil if no associated door.
+---@field color Graphics.GL_Color The color that this shard is tinted.
+---@field anim String (Read-only) **Read-Only**<br>The name of the animation for this shard. Used for restoring animations on save/load.
+---@field canDilate boolean If this shard is affected by time dilation.
+Hyperspace.LockdownShard_Extend = {}
+
 ---@class Graphics
 Graphics = {
     STENCIL_IGNORE = 0,
@@ -6612,6 +6783,15 @@ function Graphics.CSurface_GL_DisableBlend() end
 ---@param color Graphics.GL_Color
 ---@return boolean
 function Graphics.CSurface_GL_DrawCircle(x, y, radius, color) end
+
+--- Draws a full ellipse.<br>`int x, int y` -- The coordinates of the ellipse's center<br>`int a1` -- The horizontal radius.<br>`int a2` -- The vertical radius.<br>`GL_Color color` -- The color of the ellipse, normalized to RGBA values within the range [0, 1]
+---@param x integer
+---@param y integer
+---@param a1 integer
+---@param b1 integer
+---@param color Graphics.GL_Color
+---@return boolean
+function Graphics.CSurface_GL_DrawEllipse(x, y, a1, b1, color) end
 
 --- Renders a line<br>`float x1, float y1` -- starting point<br>`float x2, float y2` -- end point
 ---@param x1 number
@@ -7053,6 +7233,15 @@ function Graphics.CSurface.GL_DisableBlend() end
 ---@return boolean
 function Graphics.CSurface.GL_DrawCircle(x, y, radius, color) end
 
+--- Draws a full ellipse.<br>`int x, int y` -- The coordinates of the ellipse's center<br>`int a1` -- The horizontal radius.<br>`int a2` -- The vertical radius.<br>`GL_Color color` -- The color of the ellipse, normalized to RGBA values within the range [0, 1]
+---@param x integer
+---@param y integer
+---@param a1 integer
+---@param b1 integer
+---@param color Graphics.GL_Color
+---@return boolean
+function Graphics.CSurface.GL_DrawEllipse(x, y, a1, b1, color) end
+
 --- Renders a line<br>`float x1, float y1` -- starting point<br>`float x2, float y2` -- end point
 ---@param x1 number
 ---@param y1 number
@@ -7327,15 +7516,17 @@ Defines = {
     InternalEvents_SYSTEM_BOX_KEY_DOWN = 68,
     InternalEvents_GET_LEVEL_DESCRIPTION = 69,
     InternalEvents_CALCULATE_LEAK_MODIFIER = 70,
-    InternalEvents_CONSTRUCT_CREWMEMBER = 71,
-    InternalEvents_CONSTRUCT_SPACEDRONE = 72,
-    InternalEvents_CONSTRUCT_PROJECTILE_FACTORY = 73,
-    InternalEvents_CONSTRUCT_PROJECTILE = 74,
-    InternalEvents_CONSTRUCT_ROOM = 75,
-    InternalEvents_CONSTRUCT_SHIP_MANAGER = 76,
-    InternalEvents_CONSTRUCT_SHIP_SYSTEM = 77,
-    InternalEvents_CONSTRUCT_SYSTEM_BOX = 78,
-    InternalEvents_UNKNOWN_MAX = 79,
+    InternalEvents_CALCULATE_STAT_PRE = 71,
+    InternalEvents_CALCULATE_STAT_POST = 72,
+    InternalEvents_CONSTRUCT_CREWMEMBER = 73,
+    InternalEvents_CONSTRUCT_SPACEDRONE = 74,
+    InternalEvents_CONSTRUCT_PROJECTILE_FACTORY = 75,
+    InternalEvents_CONSTRUCT_PROJECTILE = 76,
+    InternalEvents_CONSTRUCT_ROOM = 77,
+    InternalEvents_CONSTRUCT_SHIP_MANAGER = 78,
+    InternalEvents_CONSTRUCT_SHIP_SYSTEM = 79,
+    InternalEvents_CONSTRUCT_SYSTEM_BOX = 80,
+    InternalEvents_UNKNOWN_MAX = 81,
     Chain_CONTINUE = 0,
     Chain_HALT = 1,
     Chain_PREEMPT = 2,
@@ -7582,15 +7773,17 @@ Defines.InternalEvents = {
     SYSTEM_BOX_KEY_DOWN = 68, -- Called when a key is pressed. `Key` argument indicates the specific key pressed, and `shift` argument indicates whether the shift key is held on click.
     GET_LEVEL_DESCRIPTION = 69, -- Called to get the description of what a system does at a certain level. `systemId` indicates the ID of the system, `level` indicates the power level, and `tooltip` indicates whether the string being generated is in the context of a mouseover tooltip.
     CALCULATE_LEAK_MODIFIER = 70, -- Called once per ship every game tick to calculate a multiplier to the rate at which airlocks and breaches drain oxygen.
-    CONSTRUCT_CREWMEMBER = 71, -- Called when constructing a crew member
-    CONSTRUCT_SPACEDRONE = 72, -- Called when constructing a space drone
-    CONSTRUCT_PROJECTILE_FACTORY = 73, -- Called when constructing a weapon
-    CONSTRUCT_PROJECTILE = 74, -- Called when constructing a projectile
-    CONSTRUCT_ROOM = 75, -- Called when constructing a room
-    CONSTRUCT_SHIP_MANAGER = 76, -- Called when constructing a ShipManager
-    CONSTRUCT_SHIP_SYSTEM = 77, -- Called when constructing a ship system
-    CONSTRUCT_SYSTEM_BOX = 78, -- Called when constructing a GUI system box
-    UNKNOWN_MAX = 79,
+    CALCULATE_STAT_PRE = 71,
+    CALCULATE_STAT_POST = 72,
+    CONSTRUCT_CREWMEMBER = 73, -- Called when constructing a crew member
+    CONSTRUCT_SPACEDRONE = 74, -- Called when constructing a space drone
+    CONSTRUCT_PROJECTILE_FACTORY = 75, -- Called when constructing a weapon
+    CONSTRUCT_PROJECTILE = 76, -- Called when constructing a projectile
+    CONSTRUCT_ROOM = 77, -- Called when constructing a room
+    CONSTRUCT_SHIP_MANAGER = 78, -- Called when constructing a ShipManager
+    CONSTRUCT_SHIP_SYSTEM = 79, -- Called when constructing a ship system
+    CONSTRUCT_SYSTEM_BOX = 80, -- Called when constructing a GUI system box
+    UNKNOWN_MAX = 81,
 }
 
 ---@enum Defines.Chain
