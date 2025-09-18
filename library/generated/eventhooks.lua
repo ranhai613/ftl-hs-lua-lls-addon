@@ -419,50 +419,62 @@ function script.on_internal_event(eventId, callback, priority) end
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
+--- Data for this event not found in wiki.
+---@param eventId 71 --[[@as Defines.InternalEvents.CALCULATE_STAT_PRE]]
+---@param callback fun(...): chain: Defines.Chain?, ... Callback to be called when the event occurs.
+---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
+function script.on_internal_event(eventId, callback, priority) end
+
+--- Data for this event not found in wiki.
+---@param eventId 72 --[[@as Defines.InternalEvents.CALCULATE_STAT_POST]]
+---@param callback fun(...): chain: Defines.Chain?, ... Callback to be called when the event occurs.
+---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
+function script.on_internal_event(eventId, callback, priority) end
+
 --- Called when constructing a crew member
----@param eventId 71 --[[@as Defines.InternalEvents.CONSTRUCT_CREWMEMBER]]
+---@param eventId 73 --[[@as Defines.InternalEvents.CONSTRUCT_CREWMEMBER]]
 ---@param callback fun(crew?: Hyperspace.CrewMember) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when constructing a space drone
----@param eventId 72 --[[@as Defines.InternalEvents.CONSTRUCT_SPACEDRONE]]
+---@param eventId 74 --[[@as Defines.InternalEvents.CONSTRUCT_SPACEDRONE]]
 ---@param callback fun(drone?: Hyperspace.SpaceDrone) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when constructing a weapon
----@param eventId 73 --[[@as Defines.InternalEvents.CONSTRUCT_PROJECTILE_FACTORY]]
+---@param eventId 75 --[[@as Defines.InternalEvents.CONSTRUCT_PROJECTILE_FACTORY]]
 ---@param callback fun(weapon?: Hyperspace.ProjectileFactory) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when constructing a projectile
----@param eventId 74 --[[@as Defines.InternalEvents.CONSTRUCT_PROJECTILE]]
+---@param eventId 76 --[[@as Defines.InternalEvents.CONSTRUCT_PROJECTILE]]
 ---@param callback fun(projectile?: Hyperspace.Projectile) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when constructing a room
----@param eventId 75 --[[@as Defines.InternalEvents.CONSTRUCT_ROOM]]
+---@param eventId 77 --[[@as Defines.InternalEvents.CONSTRUCT_ROOM]]
 ---@param callback fun(room?: Hyperspace.Room) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when constructing a ShipManager
----@param eventId 76 --[[@as Defines.InternalEvents.CONSTRUCT_SHIP_MANAGER]]
+---@param eventId 78 --[[@as Defines.InternalEvents.CONSTRUCT_SHIP_MANAGER]]
 ---@param callback fun(ship?: Hyperspace.ShipManager) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when constructing a ship system
----@param eventId 77 --[[@as Defines.InternalEvents.CONSTRUCT_SHIP_SYSTEM]]
+---@param eventId 79 --[[@as Defines.InternalEvents.CONSTRUCT_SHIP_SYSTEM]]
 ---@param callback fun(system?: Hyperspace.ShipSystem) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
 
 --- Called when constructing a GUI system box
----@param eventId 78 --[[@as Defines.InternalEvents.CONSTRUCT_SYSTEM_BOX]]
+---@param eventId 80 --[[@as Defines.InternalEvents.CONSTRUCT_SYSTEM_BOX]]
 ---@param callback fun(systemBox?: Hyperspace.SystemBox) Callback to be called when the event occurs.
 ---@param priority? integer = 0. Determines the order of calling the callbacks. Priority with a greater number will be called first.
 function script.on_internal_event(eventId, callback, priority) end
