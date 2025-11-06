@@ -8,13 +8,13 @@
 function log(text) end
 
 --- Returns the type of a userdata as an original C++ type name.
----@param variable userdata
+---@param variable any
 ---@return string
 function swig_type(variable) end
 
 --- Compares userdata's value
----@param a userdata
----@param b userdata
+---@param a any
+---@param b any
 ---@return boolean
 function  swig_equals(a, b) end
 
