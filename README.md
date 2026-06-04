@@ -13,9 +13,8 @@ An addon for [VSCode extension for Lua](https://marketplace.visualstudio.com/ite
 2. Update LLS-Addons fork
 3. In LLS-Addons fork, make a branch named like `update-ftl-hyperspace` from main branch then checkout it
 4. Run `cd addons/ftl-hyperspace/module`
-5. Run `git pull`
-6. Run `git checkout publish`. Make sure the submodule is at the latest commit on `publish` branch
-7. Commit and push changes.
-8. Send a pull request to [LLS-Addons](https://github.com/LuaLS/LLS-Addons). Refer to [the previous pr I sent](https://github.com/LuaLS/LLS-Addons/pull/284)
-9. Wait for LLS-Addons maintainers to take care of your pr (Don't forget to show your appreciation for their work!)
-10. Done!
+5. Run `git pull origin publish`. Make sure the submodule is at the latest commit on `publish` branch
+6. Commit and push changes.
+7. Send a pull request to [LLS-Addons](https://github.com/LuaLS/LLS-Addons). Refer to [the previous pr I sent](https://github.com/LuaLS/LLS-Addons/pull/284)
+8. Wait for LLS-Addons maintainers to take care of your pr (Don't forget to show your appreciation for their work!)
+9. Done!
