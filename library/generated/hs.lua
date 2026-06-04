@@ -2,6 +2,8 @@
 ---@class Hyperspace
 ---@field version Hyperspace.HyperspaceVersion (Read-only)
 ---@field Global_currentSeed uint (Read-only)
+---@field Global_dronePosition Hyperspace.Point (Read-only)
+---@field Global_weaponPosition Hyperspace.Point (Read-only)
 ---@field metaVariables Hyperspace.playerVariableType
 ---@field playerVariables Hyperspace.playerVariableType
 ---@field Animations Hyperspace.AnimationControl (Read-only)
@@ -107,6 +109,8 @@ Hyperspace = {
     CrewStat_POWER_CHARGES_PER_JUMP = 60,
     CrewStat_POWER_COOLDOWN = 61,
     CrewStat_TRANSFORM_RACE = 62,
+    CrewStat_PERS_DAMAGE_MULTIPLIER = 63,
+    CrewStat_PERS_HEAL_MULTIPLIER = 64,
     StatBoostDefinition_BoostType_MULT = 0,
     StatBoostDefinition_BoostType_FLAT = 1,
     StatBoostDefinition_BoostType_ADD = 1,
@@ -596,6 +600,22 @@ function Hyperspace.vector_Animation(size, value) end
 
 ---@return vector<Hyperspace.Animation>
 function Hyperspace.vector_Animation() end
+
+---@param size uint
+---@return vector<vector<Hyperspace.Animation>>
+function Hyperspace.vector_vector_Animation(size) end
+
+---@param other vector<vector<Hyperspace.Animation>>
+---@return vector<vector<Hyperspace.Animation>>
+function Hyperspace.vector_vector_Animation(other) end
+
+---@param size uint
+---@param value vector<Hyperspace.Animation>
+---@return vector<vector<Hyperspace.Animation>>
+function Hyperspace.vector_vector_Animation(size, value) end
+
+---@return vector<vector<Hyperspace.Animation>>
+function Hyperspace.vector_vector_Animation() end
 
 ---@param size uint
 ---@return vector<Hyperspace.MiniProjectile>
@@ -1204,6 +1224,102 @@ function Hyperspace.vector_p_GL_Texture(size, value) end
 ---@return vector<Graphics.GL_Texture>
 function Hyperspace.vector_p_GL_Texture() end
 
+---@param size uint
+---@return vector<Hyperspace.ArmamentBox>
+function Hyperspace.vector_p_ArmamentBox(size) end
+
+---@param other vector<Hyperspace.ArmamentBox>
+---@return vector<Hyperspace.ArmamentBox>
+function Hyperspace.vector_p_ArmamentBox(other) end
+
+---@param size uint
+---@param value Hyperspace.ArmamentBox
+---@return vector<Hyperspace.ArmamentBox>
+function Hyperspace.vector_p_ArmamentBox(size, value) end
+
+---@return vector<Hyperspace.ArmamentBox>
+function Hyperspace.vector_p_ArmamentBox() end
+
+---@param size uint
+---@return vector<Hyperspace.ActivatedPowerDefinition>
+function Hyperspace.vector_p_ActivatedPowerDefinition(size) end
+
+---@param other vector<Hyperspace.ActivatedPowerDefinition>
+---@return vector<Hyperspace.ActivatedPowerDefinition>
+function Hyperspace.vector_p_ActivatedPowerDefinition(other) end
+
+---@param size uint
+---@param value Hyperspace.ActivatedPowerDefinition
+---@return vector<Hyperspace.ActivatedPowerDefinition>
+function Hyperspace.vector_p_ActivatedPowerDefinition(size, value) end
+
+---@return vector<Hyperspace.ActivatedPowerDefinition>
+function Hyperspace.vector_p_ActivatedPowerDefinition() end
+
+---@param size uint
+---@return vector<Hyperspace.AnimationTracker>
+function Hyperspace.vector_AnimationTracker(size) end
+
+---@param other vector<Hyperspace.AnimationTracker>
+---@return vector<Hyperspace.AnimationTracker>
+function Hyperspace.vector_AnimationTracker(other) end
+
+---@param size uint
+---@param value Hyperspace.AnimationTracker
+---@return vector<Hyperspace.AnimationTracker>
+function Hyperspace.vector_AnimationTracker(size, value) end
+
+---@return vector<Hyperspace.AnimationTracker>
+function Hyperspace.vector_AnimationTracker() end
+
+---@param size uint
+---@return vector<vector<Hyperspace.AnimationTracker>>
+function Hyperspace.vector_vector_AnimationTracker(size) end
+
+---@param other vector<vector<Hyperspace.AnimationTracker>>
+---@return vector<vector<Hyperspace.AnimationTracker>>
+function Hyperspace.vector_vector_AnimationTracker(other) end
+
+---@param size uint
+---@param value vector<Hyperspace.AnimationTracker>
+---@return vector<vector<Hyperspace.AnimationTracker>>
+function Hyperspace.vector_vector_AnimationTracker(size, value) end
+
+---@return vector<vector<Hyperspace.AnimationTracker>>
+function Hyperspace.vector_vector_AnimationTracker() end
+
+---@param size uint
+---@return vector<boolean>
+function Hyperspace.vector_bool(size) end
+
+---@param other vector<boolean>
+---@return vector<boolean>
+function Hyperspace.vector_bool(other) end
+
+---@param size uint
+---@param value boolean
+---@return vector<boolean>
+function Hyperspace.vector_bool(size, value) end
+
+---@return vector<boolean>
+function Hyperspace.vector_bool() end
+
+---@param size uint
+---@return vector<vector<boolean>>
+function Hyperspace.vector_vector_bool(size) end
+
+---@param other vector<vector<boolean>>
+---@return vector<vector<boolean>>
+function Hyperspace.vector_vector_bool(other) end
+
+---@param size uint
+---@param value vector<boolean>
+---@return vector<vector<boolean>>
+function Hyperspace.vector_vector_bool(size, value) end
+
+---@return vector<vector<boolean>>
+function Hyperspace.vector_vector_bool() end
+
 ---@class Hyperspace.ToggleValue_int
 ---@field value integer
 ---@field enabled boolean
@@ -1266,6 +1382,8 @@ function Hyperspace.HyperspaceVersion:__tostring() end
 
 ---@class Hyperspace.Global
 ---@field currentSeed uint (Read-only) **Read-only**<br>The seed for the run.
+---@field dronePosition Hyperspace.Point (Read-only) **Read-only**<br>The position of the first drone box generated by the drone system
+---@field weaponPosition Hyperspace.Point (Read-only) **Read-only**<br>The position of the first weapon box generated by the weapon system
 Hyperspace.Global = {}
 
 --- Returns the instance of [`ShipManager`](#ShipManager) associated with the given ID (can be 0 or 1). If a ship does not exist for the given ID, returns `nil`.
@@ -1537,6 +1655,10 @@ function Hyperspace.Pointf() end
 ---@return Hyperspace.Pointf
 function Hyperspace.Pointf(_x, _y) end
 
+---@param p Hyperspace.Point
+---@return Hyperspace.Pointf
+function Hyperspace.Pointf(p) end
+
 ---@param unknown Hyperspace.Pointf
 ---@return Hyperspace.Pointf
 function Hyperspace.Pointf:__add(unknown) end
@@ -1559,10 +1681,6 @@ function Hyperspace.Pointf:Normalize() end
 ---@param other Hyperspace.Pointf
 ---@return number
 function Hyperspace.Pointf:RelativeDistance(other) end
-
----@param x number
----@param y number
-function Hyperspace.Pointf:constructor(x, y) end
 
 ---@class Hyperspace.Animation
 ---@field animationStrip Graphics.GL_Texture
@@ -1721,6 +1839,46 @@ function Hyperspace.Rect() end
 ---@return Hyperspace.Rect
 function Hyperspace.Rect(_x, _y, _w, _h) end
 
+---@class Hyperspace.ArmamentBox
+---@field iconName String
+---@field iconBackgroundName String
+---@field lastIconPos Hyperspace.Point
+---@field location Hyperspace.Point
+---@field xOffset integer
+---@field largeIconOffset Hyperspace.Point
+---@field nameOffset Hyperspace.Point
+---@field nameWidth integer
+---@field mouseHover boolean
+---@field selected boolean
+---@field hotKey integer
+---@field iconColor Graphics.GL_Color
+---@field droneVariation boolean
+---@field bIoned boolean
+Hyperspace.ArmamentBox = {}
+
+---@return boolean
+function Hyperspace.ArmamentBox:Powered() end
+
+---@class Hyperspace.ArmamentControl
+---@field systemId integer
+---@field boxes vector<Hyperspace.ArmamentBox>
+---@field location Hyperspace.Point
+---@field bDragging boolean
+Hyperspace.ArmamentControl = {}
+
+---@return boolean
+function Hyperspace.ArmamentControl:IsDragging() end
+
+---@param i uint
+function Hyperspace.ArmamentControl:SelectArmament(i) end
+
+---@param i uint
+function Hyperspace.ArmamentControl:DeselectArmament(i) end
+
+---@param a uint
+---@param b uint
+function Hyperspace.ArmamentControl:SwapArmaments(a, b) end
+
 ---@class Hyperspace.SystemBox
 ---@field location Hyperspace.Point The location of the SystemBox.
 ---@field pSystem Hyperspace.ShipSystem The ShipSystem managed by this SystemBox.
@@ -1754,7 +1912,7 @@ function Hyperspace.ShipObject:ClearShipInfo() end
 ---@return integer
 function Hyperspace.ShipObject:GetAugmentationCount() end
 
---- Returns a `std::vector<std::string>` of augments, in Lua you can handle this as if it was an array of strings.
+--- Returns a list of augments.
 ---@return vector<String>
 function Hyperspace.ShipObject:GetAugmentationList() end
 
@@ -1924,11 +2082,11 @@ function Hyperspace.ShipSystem:GetDamage() end
 ---@param damage number
 function Hyperspace.ShipSystem:SetDamage(damage) end
 
----@param maxDamage number
-function Hyperspace.ShipSystem:SetMaxDamage(maxDamage) end
+---@param damage number
+function Hyperspace.ShipSystem:SetMaxDamage(damage) end
 
----@param pos Hyperspace.Point
-function Hyperspace.ShipSystem:SetLocation(pos) end
+---@param position Hyperspace.Point
+function Hyperspace.ShipSystem:SetLocation(position) end
 
 ---@return integer
 function Hyperspace.ShipSystem:GetId() end
@@ -1938,6 +2096,10 @@ function Hyperspace.ShipSystem:IsRoomBased() end
 
 ---@return integer
 function Hyperspace.ShipSystem:GetRoomId() end
+
+---@param num integer
+---@return boolean
+function Hyperspace.ShipSystem:Ioned(num) end
 
 function Hyperspace.ShipSystem:SetRoomId() end
 
@@ -1962,11 +2124,9 @@ function Hyperspace.ShipSystem:AddDamage(amount) end
 ---@return boolean
 function Hyperspace.ShipSystem:ForceDecreasePower(powerLoss) end
 
----@param power integer
+---@param amount integer
 ---@return boolean
-function Hyperspace.ShipSystem:ForceIncreasePower(power) end
-
-function Hyperspace.ShipSystem:StopHacking() end
+function Hyperspace.ShipSystem:ForceIncreasePower(amount) end
 
 ---@return boolean
 function Hyperspace.ShipSystem:GetNeedsPower() end
@@ -2012,13 +2172,6 @@ function Hyperspace.ShipSystem:IncreasePower(amount, force) end
 ---@param amount integer
 function Hyperspace.ShipSystem:IonDamage(amount) end
 
----@return boolean
-function Hyperspace.ShipSystem:Ioned() end
-
----@param num integer
----@return boolean
-function Hyperspace.ShipSystem:Ioned(num) end
-
 ---@return integer
 function Hyperspace.ShipSystem:IsMannedBoost() end
 
@@ -2031,6 +2184,8 @@ function Hyperspace.ShipSystem:SetPowerCap(cap) end
 ---@param power integer
 ---@return integer
 function Hyperspace.ShipSystem:SetPowerLoss(power) end
+
+function Hyperspace.ShipSystem:StopHacking() end
 
 --- Upgrading a system is basically the same as changing the max power of a system although I think max power might reset after a jump? Not sure haven't tested.<br>I think negative upgrades (downgrades) are allowed, please report if they are not.
 ---@param amount integer
@@ -2157,9 +2312,9 @@ Hyperspace.Targetable = {}
 ---@return Hyperspace.Pointf
 function Hyperspace.Targetable:GetWorldCenterPoint() end
 
----@param unk boolean
+---@param valuable boolean
 ---@return Hyperspace.Pointf
-function Hyperspace.Targetable:GetRandomTargettingPoint(unk) end
+function Hyperspace.Targetable:GetRandomTargettingPoint(valuable) end
 
 ---@return vector<Hyperspace.Pointf>
 function Hyperspace.Targetable:GetAllTargettingPoints() end
@@ -2185,9 +2340,9 @@ function Hyperspace.Targetable:GetSelfId() end
 ---@return boolean
 function Hyperspace.Targetable:IsCloaked() end
 
----@param pos Hyperspace.Pointf
+---@param location Hyperspace.Pointf
 ---@param damage Hyperspace.Damage
-function Hyperspace.Targetable:DamageTarget(pos, damage) end
+function Hyperspace.Targetable:DamageTarget(location, damage) end
 
 ---@return boolean
 function Hyperspace.Targetable:GetIsDying() end
@@ -2238,6 +2393,22 @@ function Hyperspace.Projectile:OnUpdate() end
 
 ---@param other Hyperspace.Collideable
 function Hyperspace.Projectile:CollisionCheck(other) end
+
+---@param start Hyperspace.Pointf
+---@param finish Hyperspace.Pointf
+---@param damage Hyperspace.Damage
+---@param raytrace boolean
+---@return Hyperspace.CollisionResponse
+function Hyperspace.Projectile:CollisionMoving(start, finish, damage, raytrace) end
+
+---@return integer
+function Hyperspace.Projectile:GetSpaceId() end
+
+---@return integer
+function Hyperspace.Projectile:GetSelfId() end
+
+---@return integer
+function Hyperspace.Projectile:GetOwnerId() end
 
 ---@param animation Hyperspace.WeaponAnimation
 function Hyperspace.Projectile:SetWeaponAnimation(animation) end
@@ -2290,13 +2461,6 @@ function Hyperspace.Projectile:GetType() end
 
 ---@param target Hyperspace.Targetable
 function Hyperspace.Projectile:SetMovingTarget(target) end
-
----@param start Hyperspace.Pointf
----@param finish Hyperspace.Pointf
----@param damage Hyperspace.Damage
----@param raytrace boolean
----@return Hyperspace.CollisionResponse
-function Hyperspace.Projectile:CollisionMoving(start, finish, damage, raytrace) end
 
 ---@param bp Hyperspace.WeaponBlueprint
 function Hyperspace.Projectile:Initialize(bp) end
@@ -2376,8 +2540,8 @@ function Hyperspace.GenericButton:Reset() end
 ---@param pos Hyperspace.Point
 function Hyperspace.GenericButton:SetLocation(pos) end
 
----@param rect Hyperspace.Rect
-function Hyperspace.GenericButton:SetHitBox(rect) end
+---@param box Hyperspace.Rect
+function Hyperspace.GenericButton:SetHitBox(box) end
 
 ---@param active boolean
 function Hyperspace.GenericButton:SetActive(active) end
@@ -2395,7 +2559,14 @@ function Hyperspace.GenericButton:OnClick() end
 
 function Hyperspace.GenericButton:OnRightClick() end
 
-function Hyperspace.GenericButton:OnTouch() end
+---@param action TouchAction
+---@param id integer
+---@param x integer
+---@param y integer
+---@param initialX integer
+---@param initialY integer
+---@return boolean
+function Hyperspace.GenericButton:OnTouch(action, id, x, y, initialX, initialY) end
 
 function Hyperspace.GenericButton:ResetPrimitives() end
 
@@ -2431,6 +2602,17 @@ function Hyperspace.Button:SetLocation(pos) end
 ---@field bTurnedOn boolean
 ---@field soundeffect String
 Hyperspace.BatterySystem = {}
+
+---@class Hyperspace.BoardingGoal
+---@field fHealthLimit number
+---@field causedDamage integer
+---@field targetsDestroyed integer
+---@field target integer
+---@field damageType integer
+Hyperspace.BoardingGoal = {}
+
+---@return Hyperspace.BoardingGoal
+function Hyperspace.BoardingGoal() end
 
 ---@class Hyperspace.CrewAnimation
 ---@field iShipId integer
@@ -2622,7 +2804,7 @@ Hyperspace.Slot = {}
 ---@field flashHealthTracker Hyperspace.AnimationTracker
 ---@field currentTarget Hyperspace.Pointf
 ---@field crewTarget Hyperspace.StatBoostDefinition.CrewTarget
----@field boardingGoal BoardingGoal
+---@field boardingGoal Hyperspace.BoardingGoal
 ---@field bFrozen boolean
 ---@field bFrozenLocation boolean
 ---@field task CrewTask
@@ -2690,9 +2872,9 @@ function Hyperspace.CrewMember:ApplyDamage(damage) end
 ---@return integer
 function Hyperspace.CrewMember:GetPriority() end
 
----@param unk integer
+---@param shipId integer
 ---@return boolean
-function Hyperspace.CrewMember:ValidTarget(unk) end
+function Hyperspace.CrewMember:ValidTarget(shipId) end
 
 ---@return boolean
 function Hyperspace.CrewMember:MultiShots() end
@@ -2775,9 +2957,9 @@ function Hyperspace.CrewMember:IsDead() end
 ---@return boolean
 function Hyperspace.CrewMember:PermanentDeath() end
 
----@param damage number
+---@param amount number
 ---@return boolean
-function Hyperspace.CrewMember:ShipDamage(damage) end
+function Hyperspace.CrewMember:ShipDamage(amount) end
 
 ---@return boolean
 function Hyperspace.CrewMember:FireFightingSoundEffect() end
@@ -3120,23 +3302,23 @@ function Hyperspace.Drone:OnLoop() end
 
 function Hyperspace.Drone:OnDestroy() end
 
----@param _powered boolean
-function Hyperspace.Drone:SetPowered(_powered) end
+---@param powered boolean
+function Hyperspace.Drone:SetPowered(powered) end
 
 function Hyperspace.Drone:SetInstantPowered() end
 
 ---@return boolean
 function Hyperspace.Drone:GetPowered() end
 
----@param shipId integer
-function Hyperspace.Drone:SetCurrentShip(shipId) end
+---@param iShipId integer
+function Hyperspace.Drone:SetCurrentShip(iShipId) end
 
----@param _deployed boolean
-function Hyperspace.Drone:SetDeployed(_deployed) end
+---@param newDeployed boolean
+function Hyperspace.Drone:SetDeployed(newDeployed) end
 
 ---@param dead boolean
----@param setTimer boolean
-function Hyperspace.Drone:SetDestroyed(dead, setTimer) end
+---@param rebuildRequired boolean
+function Hyperspace.Drone:SetDestroyed(dead, rebuildRequired) end
 
 ---@param level integer
 function Hyperspace.Drone:SetHacked(level) end
@@ -3147,9 +3329,9 @@ function Hyperspace.Drone:GetDeployed() end
 ---@return boolean
 function Hyperspace.Drone:NeedsRoom() end
 
----@param room integer
----@param slot integer
-function Hyperspace.Drone:SetSlot(room, slot) end
+---@param slotId integer
+---@param roomId integer
+function Hyperspace.Drone:SetSlot(slotId, roomId) end
 
 ---@return boolean
 function Hyperspace.Drone:Destroyed() end
@@ -3157,12 +3339,11 @@ function Hyperspace.Drone:Destroyed() end
 ---@return Hyperspace.Point
 function Hyperspace.Drone:GetWorldLocation() end
 
----@param point Hyperspace.Point
-function Hyperspace.Drone:SetWorldLocation(point) end
+---@param position Hyperspace.Point
+function Hyperspace.Drone:SetWorldLocation(position) end
 
----@param drone Hyperspace.Drone
 ---@return Hyperspace.Slot
-function Hyperspace.Drone:GetDroneSlot(drone) end
+function Hyperspace.Drone:GetDroneSlot() end
 
 ---@return integer
 function Hyperspace.Drone:GetDroneHealth() end
@@ -3172,9 +3353,8 @@ function Hyperspace.Drone:GetRequiredPower() end
 
 function Hyperspace.Drone:RenderIcon() end
 
----@param drone Hyperspace.Drone
 ---@return string
-function Hyperspace.Drone:GetName(drone) end
+function Hyperspace.Drone:GetName() end
 
 ---@return boolean
 function Hyperspace.Drone:CanBeDeployed() end
@@ -3185,11 +3365,11 @@ function Hyperspace.Drone:RecallOnJump() end
 ---@return boolean
 function Hyperspace.Drone:CanBeRecovered() end
 
----@param fh integer
-function Hyperspace.Drone:SaveState(fh) end
+---@param fd integer
+function Hyperspace.Drone:SaveState(fd) end
 
----@param fh integer
-function Hyperspace.Drone:LoadState(fh) end
+---@param fd integer
+function Hyperspace.Drone:LoadState(fd) end
 
 ---@param silent boolean
 function Hyperspace.Drone:BlowUp(silent) end
@@ -3424,6 +3604,11 @@ Hyperspace.SpaceDrone = {
     table = {},
 }
 
+function Hyperspace.SpaceDrone:OnLoop() end
+
+---@param deployed boolean
+function Hyperspace.SpaceDrone:SetDeployed(deployed) end
+
 function Hyperspace.SpaceDrone:PickDestination() end
 
 function Hyperspace.SpaceDrone:PickTarget() end
@@ -3455,32 +3640,30 @@ function Hyperspace.SpaceDrone:SetWeaponTarget(target) end
 ---@return boolean
 function Hyperspace.SpaceDrone:ValidTargetObject(target) end
 
----@param space integer
-function Hyperspace.SpaceDrone:OnRender(space) end
+---@param spaceId integer
+function Hyperspace.SpaceDrone:OnRender(spaceId) end
 
 function Hyperspace.SpaceDrone:RenderDrone() end
 
----@param drone Hyperspace.SpaceDrone
 ---@return string
-function Hyperspace.SpaceDrone:GetTooltip(drone) end
+function Hyperspace.SpaceDrone:GetTooltip() end
 
 ---@return Hyperspace.Pointf
 function Hyperspace.SpaceDrone:GetWorldCenterPoint() end
 
----@param pos Hyperspace.Pointf
-function Hyperspace.SpaceDrone:SetCurrentLocation(pos) end
+---@param location Hyperspace.Pointf
+function Hyperspace.SpaceDrone:SetCurrentLocation(location) end
 
 ---@param mX integer
 ---@param mY integer
 function Hyperspace.SpaceDrone:MouseMove(mX, mY) end
 
----@param unk boolean
+---@param valuable boolean
 ---@return Hyperspace.Pointf
-function Hyperspace.SpaceDrone:GetRandomTargettingPoint(unk) end
+function Hyperspace.SpaceDrone:GetRandomTargettingPoint(valuable) end
 
----@param drone Hyperspace.SpaceDrone
 ---@return Hyperspace.Ellipse
-function Hyperspace.SpaceDrone:GetShieldShape(drone) end
+function Hyperspace.SpaceDrone:GetShieldShape() end
 
 ---@return integer
 function Hyperspace.SpaceDrone:GetSpaceId() end
@@ -3501,23 +3684,20 @@ function Hyperspace.SpaceDrone:GetSelfId() end
 ---@return Hyperspace.CollisionResponse
 function Hyperspace.SpaceDrone:CollisionMoving(start, finish, damage, raytrace) end
 
----@param pos1 Hyperspace.Pointf
----@param pos2 Hyperspace.Pointf
+---@param current Hyperspace.Pointf
+---@param last Hyperspace.Pointf
 ---@param damage Hyperspace.Damage
 ---@return boolean
-function Hyperspace.SpaceDrone:DamageBeam(pos1, pos2, damage) end
+function Hyperspace.SpaceDrone:DamageBeam(current, last, damage) end
 
----@param pos Hyperspace.Pointf
+---@param location Hyperspace.Pointf
 ---@param damage Hyperspace.Damage
----@param unk boolean
+---@param forceHit boolean
 ---@return boolean
-function Hyperspace.SpaceDrone:DamageArea(pos, damage, unk) end
+function Hyperspace.SpaceDrone:DamageArea(location, damage, forceHit) end
 
----@return BoarderDrone
+---@return CrewDrone
 function Hyperspace.SpaceDrone:GetBoardingDrone() end
-
----@param deployed boolean
-function Hyperspace.SpaceDrone:SetDeployed(deployed) end
 
 ---@param location Hyperspace.Pointf
 ---@param percentage number
@@ -3679,6 +3859,11 @@ function Hyperspace.TextButton:OnRender() end
 
 function Hyperspace.TextButton:ResetPrimitives() end
 
+---@class Hyperspace.ShipSelect
+---@field selectedShip integer
+---@field currentType integer
+Hyperspace.ShipSelect = {}
+
 ---@class Hyperspace.ShipBuilder
 ---@field bOpen boolean (Read-only) **read-only**
 Hyperspace.ShipBuilder = {}
@@ -3728,7 +3913,13 @@ Hyperspace.CloakingSystem = {}
 ---@field slot integer
 Hyperspace.CloneSystem = {}
 
----@class Hyperspace.WeaponControl
+---@class Hyperspace.DroneControl: Hyperspace.ArmamentControl
+Hyperspace.DroneControl = {}
+
+---@param i uint
+function Hyperspace.DroneControl:SelectArmament(i) end
+
+---@class Hyperspace.WeaponControl: Hyperspace.ArmamentControl
 ---@field armedWeapon Hyperspace.ProjectileFactory
 ---@field autoFiring boolean (Read-only) **Read-only**
 ---@field armedSlot integer
@@ -3739,9 +3930,13 @@ Hyperspace.WeaponControl = {}
 ---@param autoFire boolean
 function Hyperspace.WeaponControl:Fire(points, target, autoFire) end
 
+---@param armamentSlot uint
+function Hyperspace.WeaponControl:SelectArmament(armamentSlot) end
+
 ---@class Hyperspace.CombatControl
 ---@field playerShipPosition Hyperspace.Point
 ---@field weapControl Hyperspace.WeaponControl
+---@field droneControl Hyperspace.DroneControl
 ---@field position Hyperspace.Point
 ---@field selectedRoom integer
 ---@field selectedSelfRoom integer
@@ -4263,13 +4458,13 @@ Hyperspace.Spreadable = {}
 ---@field bWasOnFire boolean
 Hyperspace.Fire = {}
 
-function Hyperspace.Fire:OnLoop() end
-
 ---@param connectedFires integer
 function Hyperspace.Fire:UpdateDeathTimer(connectedFires) end
 
 ---@param doorLevel integer
 function Hyperspace.Fire:UpdateStartTimer(doorLevel) end
+
+function Hyperspace.Fire:OnLoop() end
 
 ---@class Hyperspace.HackingDrone: Hyperspace.SpaceDrone
 ---@field startingPosition Hyperspace.Pointf
@@ -4653,7 +4848,6 @@ function Hyperspace.ResourceControl:LoadFile(fileName) end
 ---@param color Graphics.GL_Color
 ---@param opacity number
 ---@param mirror boolean
----@return integer
 function Hyperspace.ResourceControl:RenderImage(tex, x, y, rotation, color, opacity, mirror) end
 
 ---@param tex String
@@ -4663,7 +4857,6 @@ function Hyperspace.ResourceControl:RenderImage(tex, x, y, rotation, color, opac
 ---@param color Graphics.GL_Color
 ---@param opacity number
 ---@param mirror boolean
----@return integer
 function Hyperspace.ResourceControl:RenderImageString(tex, x, y, rotation, color, opacity, mirror) end
 
 ---@class Hyperspace.TopScore
@@ -4879,6 +5072,30 @@ function Hyperspace.Ship:LockdownRoom(roomId, pos) end
 ---@param def Hyperspace.CustomLockdownDefinition
 function Hyperspace.Ship:LockdownRoom(roomId, pos, def) end
 
+---@class Hyperspace.ShipButton: Hyperspace.Button
+---@field iShipImage Graphics.GL_Texture
+---@field bShipLocked boolean
+---@field bLayoutLocked boolean
+---@field bNoExist boolean
+---@field iSelectedAch integer
+---@field bSelected boolean
+Hyperspace.ShipButton = {}
+
+---@param shipType integer
+---@param shipVariant integer
+---@return Hyperspace.ShipButton
+function Hyperspace.ShipButton(shipType, shipVariant) end
+
+---@param x integer
+---@param y integer
+function Hyperspace.ShipButton:MouseMove(x, y) end
+
+---@param imgName String
+---@param pos Hyperspace.Point
+function Hyperspace.ShipButton:OnInit(imgName, pos) end
+
+function Hyperspace.ShipButton:OnRender() end
+
 ---@class Hyperspace.ShipGenerator
 Hyperspace.ShipGenerator = {}
 
@@ -4945,7 +5162,7 @@ function Hyperspace.Spreader_Fire() end
 
 ---@class Hyperspace.ShipManager: Hyperspace.ShipObject
 ---@field _targetable Hyperspace.Targetable (Read-only) **Read-only**
----@field vSystemList vector<Hyperspace.ShipSystem> (Read-only) **Read-only** currently, however we might need to explore if this would be a safe way to remove a system<br>Fields under this object may still be mutable (see their docs).<br>Holds a vector (array in lua) of ship systems that you can iterate over
+---@field vSystemList vector<Hyperspace.ShipSystem> (Read-only) **Read-only**<br>Fields under this object may still be mutable (see their docs).<br>Holds a vector of ship systems that you can iterate over
 ---@field oxygenSystem Hyperspace.OxygenSystem (Read-only) Field is **read-only** but fields under this object may still be mutable.
 ---@field teleportSystem Hyperspace.TeleportSystem (Read-only) Field is **read-only** but fields under this object may still be mutable.
 ---@field cloakSystem Hyperspace.CloakingSystem (Read-only) Field is **read-only** but fields under this object may still be mutable.
@@ -4958,8 +5175,8 @@ function Hyperspace.Spreader_Fire() end
 ---@field droneSystem Hyperspace.DroneSystem (Read-only) Field is **read-only** but fields under this object may still be mutable.
 ---@field engineSystem Hyperspace.EngineSystem (Read-only) Field is **read-only** but fields under this object may still be mutable.
 ---@field medbaySystem Hyperspace.MedbaySystem (Read-only) **Note:** shares system with Clonebay system and both cannot exist at the same time<br>Field is **read-only** but fields under this object may still be mutable.
----@field artillerySystems vector<Hyperspace.ArtillerySystem> (Read-only) Array (vector) of artillery systems on this ship, you will need to check for length<br>**Note:** Unlike Lua arrays, because this is a C vector internally it will start at index `0` not index `1` so `.artillerySystems[0]` is the first artillery system.<br>Field is **read-only** but fields under this object may still be mutable.
----@field vCrewList vector<Hyperspace.CrewMember> (Read-only) Array (vector) of crew members on this ship<br>**Note:** Vectors are 0 indexed unlike lua's normal arrays<br>Field is **read-only** but fields under this object may still be mutable.
+---@field artillerySystems vector<Hyperspace.ArtillerySystem> (Read-only) Vector of artillery systems on this ship, you will need to check for length<br>**Note:** Unlike Lua arrays, because this is a C vector internally it will start at index `0` not index `1` so `.artillerySystems[0]` is the first artillery system.<br>Field is **read-only** but fields under this object may still be mutable.
+---@field vCrewList vector<Hyperspace.CrewMember> (Read-only) Vector of crew members on this ship<br>**Note:** Vectors are 0 indexed unlike lua's normal arrays<br>Field is **read-only** but fields under this object may still be mutable.
 ---@field fireSpreader Hyperspace.Spreader_Fire
 ---@field ship Hyperspace.Ship (Read-only) Field is **read-only** but fields under this object may still be mutable.
 ---@field current_target Hyperspace.ShipManager (Read-only)
@@ -5137,7 +5354,7 @@ function Hyperspace.ShipManager:GetDodged() end
 ---@return integer
 function Hyperspace.ShipManager:GetDroneCount() end
 
---- Returns the list of Drones for this ship, the `std::vector` it returns can be accessed like an array in Lua
+--- Returns the list of Drones for this ship.
 ---@return vector<Hyperspace.Drone>
 function Hyperspace.ShipManager:GetDroneList() end
 
@@ -5190,7 +5407,7 @@ function Hyperspace.ShipManager:GetSystemRoom(sysId) end
 ---@return string
 function Hyperspace.ShipManager:GetTooltip(x, y) end
 
---- Return a vector of weapons on this ship, can be treated like an array in Lua.
+--- Return a vector of weapons on this ship.
 ---@return vector<Hyperspace.ProjectileFactory>
 function Hyperspace.ShipManager:GetWeaponList() end
 
@@ -5680,6 +5897,8 @@ function Hyperspace.CustomAugmentManager.GetInstance() end
 ---@field oxygenChangeSpeed ToggleValue<number>
 ---@field canPhaseThroughDoors ToggleValue<boolean>
 ---@field fireDamageMultiplier ToggleValue<number>
+---@field persDamageMultiplier ToggleValue<number>
+---@field persHealMultiplier ToggleValue<number>
 ---@field isTelepathic ToggleValue<boolean>
 ---@field resistsMindControl ToggleValue<boolean>
 ---@field isAnaerobic ToggleValue<boolean>
@@ -5908,6 +6127,8 @@ function Hyperspace.PowerResourceDefinition.AddNamedDefinition(_name, copyDef) e
 ---@field resistsMindControl boolean
 ---@field isAnaerobic boolean
 ---@field fireDamageMultiplier number
+---@field persDamageMultiplier number
+---@field persHealMultiplier number
 ---@field canPhaseThroughDoors boolean
 ---@field oxygenChangeSpeed number
 ---@field damageTakenMultiplier number
@@ -6070,11 +6291,15 @@ Hyperspace.ShipButtonList = {}
 
 ---@param _page integer
 ---@param _id integer
----@param _a ShipButton
----@param _b? ShipButton = NULL
----@param _c? ShipButton = nullptr
+---@param _a Hyperspace.ShipButton
+---@param _b? Hyperspace.ShipButton = NULL
+---@param _c? Hyperspace.ShipButton = nullptr
 ---@return Hyperspace.ShipButtonList
 function Hyperspace.ShipButtonList(_page, _id, _a, _b, _c) end
+
+---@param variant integer
+---@return Hyperspace.ShipButton
+function Hyperspace.ShipButtonList:GetButton(variant) end
 
 ---@return integer
 function Hyperspace.ShipButtonList:GetPage() end
@@ -6087,7 +6312,8 @@ function Hyperspace.ShipButtonList:GetId() end
 function Hyperspace.ShipButtonList:GetIndex() end
 
 ---@class Hyperspace.CustomShipSelect
----@field customShipOrder vector<String> Each pages is %11 ships, `empty` means that a ship button in the page is skipped, special ships are the two last slots.
+---@field customShipOrder vector<String> Each pages always contain 10 ship string, `empty` means that a ship button in the page is skipped
+---@field shipSelect Hyperspace.ShipSelect
 Hyperspace.CustomShipSelect = {}
 
 ---@return Hyperspace.CustomShipSelect
@@ -8066,6 +8292,8 @@ Hyperspace.CrewStat = {
     POWER_CHARGES_PER_JUMP = 60,
     POWER_COOLDOWN = 61,
     TRANSFORM_RACE = 62,
+    PERS_DAMAGE_MULTIPLIER = 63,
+    PERS_HEAL_MULTIPLIER = 64,
 }
 
 ---@enum Hyperspace.StatBoostDefinition.BoostType
