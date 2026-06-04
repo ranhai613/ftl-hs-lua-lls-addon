@@ -29,6 +29,17 @@
     {
       "args": [
         {
+          "name": "flagName",
+          "type": "std::string"
+        }
+      ],
+      "name": "GetFlagValue",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "ship",
           "type": "std::string"
         }
@@ -1234,6 +1245,10 @@
         {
           "name": "spaceToTop",
           "type": "int"
+        },
+        {
+          "name": "tray",
+          "type": "bool"
         }
       ],
       "name": "RenderTouchTooltip",
@@ -1279,12 +1294,18 @@
     {
       "args": [
         {
-          "name": "p",
+          "name": "position",
           "type": "Point"
         }
       ],
       "name": "RenderIcon",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetHacked",
+      "return_type": "bool",
       "static": false
     }
   ],
@@ -1505,7 +1526,7 @@
     {
       "args": [
         {
-          "name": "loc",
+          "name": "location",
           "type": "Point"
         }
       ],
@@ -2102,7 +2123,7 @@
     {
       "args": [
         {
-          "name": "unk",
+          "name": "scale",
           "type": "float"
         }
       ],
@@ -2841,7 +2862,7 @@
     {
       "args": [],
       "name": "OnInit",
-      "return_type": "int",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -3064,7 +3085,7 @@
     {
       "args": [],
       "name": "SetupWindow",
-      "return_type": "int",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -3118,6 +3139,12 @@
     {
       "args": [],
       "name": "GetSpeedFactor",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetUnpausedTime",
       "return_type": "float",
       "static": false
     },
@@ -4975,7 +5002,7 @@
     {
       "args": [],
       "name": "CanTargetSelf",
-      "return_type": "char",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -4987,7 +5014,7 @@
     {
       "args": [],
       "name": "CurrentTargetIsBoss",
-      "return_type": "char",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -5275,6 +5302,17 @@
     {
       "args": [
         {
+          "name": "secret",
+          "type": "bool"
+        }
+      ],
+      "name": "SetSecretSector",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "ship",
           "type": "CompleteShip"
         }
@@ -5286,6 +5324,12 @@
     {
       "args": [],
       "name": "CheckGameover",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ClearLocation",
       "return_type": "void",
       "static": false
     },
@@ -6875,6 +6919,23 @@
       "static": false
     },
     {
+      "args": [],
+      "name": "MouseClick",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "location",
+          "type": "Point"
+        }
+      ],
+      "name": "SetCustomizeMode",
+      "return_type": "void",
+      "static": false
+    },
+    {
       "args": [
         {
           "name": "location",
@@ -7070,6 +7131,17 @@
       ],
       "name": "SetCurrentShip",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "amount",
+          "type": "float"
+        }
+      ],
+      "name": "ShipDamage",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -7561,6 +7633,12 @@
     },
     {
       "args": [],
+      "name": "GetGridPosition",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "GetPosition",
       "return_type": "Point",
       "static": false
@@ -7602,7 +7680,7 @@
     {
       "args": [
         {
-          "name": "unk",
+          "name": "shipId",
           "type": "int"
         }
       ],
@@ -7796,7 +7874,7 @@
     {
       "args": [
         {
-          "name": "damage",
+          "name": "amount",
           "type": "float"
         }
       ],
@@ -9484,7 +9562,7 @@
     {
       "args": [
         {
-          "name": "unk",
+          "name": "shipId",
           "type": "int"
         }
       ],
@@ -9975,6 +10053,21 @@
       ],
       "name": "GetAugmentDefinition",
       "return_type": "AugmentDefinition*",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "name",
+          "type": "std::string"
+        },
+        {
+          "name": "def",
+          "type": "AugmentDefinition"
+        }
+      ],
+      "name": "AddAugmentDefinition",
+      "return_type": "void",
       "static": false
     },
     {
@@ -13629,6 +13722,32 @@
       "name": "GetStoreDefinition",
       "return_type": "StoreDefinition*",
       "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "id",
+          "type": "std::string"
+        },
+        {
+          "name": "def",
+          "type": "StoreDefinition"
+        }
+      ],
+      "name": "RegisterStoreDefinition",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "id",
+          "type": "std::string"
+        }
+      ],
+      "name": "UnregisterStoreDefinition",
+      "return_type": "void",
+      "static": false
     }
   ],
   "CustomStoreBox": [
@@ -14689,7 +14808,86 @@
         },
         {
           "name": "unknown",
+          "type": "nullptr"
+        }
+      ],
+      "name": "DetourPageProtectionException",
+      "return_type": "throw",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "unknown",
           "type": "backupOriginalCode_"
+        },
+        {
+          "name": "unknown",
+          "type": "targetFunction"
+        },
+        {
+          "name": "unknown",
+          "type": "instructionCount_"
+        }
+      ],
+      "name": "memcpy",
+      "return_type": "endif",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "to",
+          "type": "\"Failed"
+        },
+        {
+          "name": "unknown",
+          "type": "backupOriginalCode_"
+        }
+      ],
+      "name": "DetourPageProtectionException",
+      "return_type": "throw",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "to",
+          "type": "\"Failed"
+        },
+        {
+          "name": "unknown",
+          "type": "backupOriginalCode_"
+        }
+      ],
+      "name": "DetourPageProtectionException",
+      "return_type": "throw",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "to",
+          "type": "\"Failed"
+        },
+        {
+          "name": "unknown",
+          "type": "nullptr"
+        }
+      ],
+      "name": "DetourPageProtectionException",
+      "return_type": "throw",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "to",
+          "type": "\"Failed"
+        },
+        {
+          "name": "unknown",
+          "type": "trampoline_"
         }
       ],
       "name": "DetourPageProtectionException",
@@ -15455,7 +15653,7 @@
     {
       "args": [
         {
-          "name": "_powered",
+          "name": "powered",
           "type": "bool"
         }
       ],
@@ -15478,7 +15676,7 @@
     {
       "args": [
         {
-          "name": "shipId",
+          "name": "iShipId",
           "type": "int"
         }
       ],
@@ -15489,7 +15687,7 @@
     {
       "args": [
         {
-          "name": "_deployed",
+          "name": "newDeployed",
           "type": "bool"
         }
       ],
@@ -15504,7 +15702,7 @@
           "type": "bool"
         },
         {
-          "name": "setTimer",
+          "name": "rebuildRequired",
           "type": "bool"
         }
       ],
@@ -15538,11 +15736,11 @@
     {
       "args": [
         {
-          "name": "room",
+          "name": "slotId",
           "type": "int"
         },
         {
-          "name": "slot",
+          "name": "roomId",
           "type": "int"
         }
       ],
@@ -15565,7 +15763,7 @@
     {
       "args": [
         {
-          "name": "point",
+          "name": "position",
           "type": "Point"
         }
       ],
@@ -15574,12 +15772,7 @@
       "static": false
     },
     {
-      "args": [
-        {
-          "name": "drone",
-          "type": "Drone"
-        }
-      ],
+      "args": [],
       "name": "GetDroneSlot",
       "return_type": "Slot",
       "static": false
@@ -15603,12 +15796,7 @@
       "static": false
     },
     {
-      "args": [
-        {
-          "name": "drone",
-          "type": "Drone"
-        }
-      ],
+      "args": [],
       "name": "GetName",
       "return_type": "std::string",
       "static": false
@@ -15634,7 +15822,7 @@
     {
       "args": [
         {
-          "name": "fh",
+          "name": "fd",
           "type": "int"
         }
       ],
@@ -15645,7 +15833,7 @@
     {
       "args": [
         {
-          "name": "fh",
+          "name": "fd",
           "type": "int"
         }
       ],
@@ -16000,7 +16188,7 @@
     {
       "args": [
         {
-          "name": "damage",
+          "name": "amount",
           "type": "float"
         }
       ],
@@ -16017,7 +16205,7 @@
     {
       "args": [
         {
-          "name": "unk",
+          "name": "shipId",
           "type": "int"
         }
       ],
@@ -16070,7 +16258,7 @@
     {
       "args": [
         {
-          "name": "fileHelper",
+          "name": "fd",
           "type": "int"
         }
       ],
@@ -16081,7 +16269,7 @@
     {
       "args": [
         {
-          "name": "fileHelper",
+          "name": "fd",
           "type": "int"
         }
       ],
@@ -16098,7 +16286,7 @@
     {
       "args": [
         {
-          "name": "unk",
+          "name": "outlineOnly",
           "type": "bool"
         }
       ],
@@ -16211,7 +16399,7 @@
     {
       "args": [
         {
-          "name": "damage",
+          "name": "amount",
           "type": "float"
         }
       ],
@@ -16647,7 +16835,32 @@
       "static": false
     },
     {
-      "args": [],
+      "args": [
+        {
+          "name": "action",
+          "type": "TouchAction"
+        },
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "initialX",
+          "type": "int"
+        },
+        {
+          "name": "initialY",
+          "type": "int"
+        }
+      ],
       "name": "OnTouch",
       "return_type": "void",
       "static": false
@@ -16701,7 +16914,7 @@
     {
       "args": [],
       "name": "CanHoldAugment",
-      "return_type": "char",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -16724,19 +16937,19 @@
     {
       "args": [],
       "name": "IsCargoBox",
-      "return_type": "char",
+      "return_type": "bool",
       "static": false
     },
     {
       "args": [],
       "name": "CanHoldCrew",
-      "return_type": "char",
+      "return_type": "bool",
       "static": false
     },
     {
       "args": [],
       "name": "CanDoJob",
-      "return_type": "char",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -17382,6 +17595,28 @@
     {
       "args": [
         {
+          "name": "fd",
+          "type": "int"
+        }
+      ],
+      "name": "fileLength",
+      "return_type": "int",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "unknown",
+          "type": "fd"
+        }
+      ],
+      "name": "fileLength_OnlyForHooking",
+      "return_type": "return",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "file",
           "type": "int"
         }
@@ -17450,11 +17685,11 @@
     {
       "args": [
         {
-          "name": "file",
+          "name": "fd",
           "type": "int"
         }
       ],
-      "name": "fileLength",
+      "name": "fileLength_OnlyForHooking",
       "return_type": "int",
       "static": true
     },
@@ -17691,8 +17926,196 @@
   "Fire": [
     {
       "args": [],
-      "name": "OnLoop",
+      "name": "Fire",
+      "return_type": "Fire",
+      "static": true
+    },
+    {
+      "args": [
+        {
+          "name": "selected",
+          "type": "int"
+        }
+      ],
+      "name": "SetSelected",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSelected",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CompletelyDestroyed",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetName",
+      "return_type": "std::string",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "name",
+          "type": "std::string"
+        }
+      ],
+      "name": "SetName",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Repair",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "speed",
+          "type": "float"
+        },
+        {
+          "name": "autoRepair",
+          "type": "bool"
+        }
+      ],
+      "name": "PartialRepair",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "amount",
+          "type": "float"
+        }
+      ],
+      "name": "PartialDamage",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "NeedsRepairing",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Functioning",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CanBeSabatoged",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetDamage",
+      "return_type": "float",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetLocation",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetGridLocation",
+      "return_type": "Point",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "diff",
+          "type": "float"
+        }
+      ],
+      "name": "SetDamage",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "damage",
+          "type": "float"
+        }
+      ],
+      "name": "SetMaxDamage",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "location",
+          "type": "Point"
+        }
+      ],
+      "name": "SetLocation",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnRenderHighlight",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "IsRoomBased",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetRoomId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "amount",
+          "type": "int"
+        }
+      ],
+      "name": "Ioned",
+      "return_type": "bool",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "SetRoomId",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Present",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -17714,6 +18137,30 @@
         }
       ],
       "name": "UpdateStartTimer",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "ResetStartTimer",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "Spread",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "OnInit",
       "return_type": "void",
       "static": false
     }
@@ -18332,7 +18779,7 @@
     {
       "args": [
         {
-          "name": "rect",
+          "name": "box",
           "type": "Globals::Rect"
         }
       ],
@@ -18395,9 +18842,34 @@
       "static": false
     },
     {
-      "args": [],
+      "args": [
+        {
+          "name": "action",
+          "type": "TouchAction"
+        },
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "initialX",
+          "type": "int"
+        },
+        {
+          "name": "initialY",
+          "type": "int"
+        }
+      ],
       "name": "OnTouch",
-      "return_type": "void",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -19952,6 +20424,7 @@
       "static": false
     }
   ],
+  "OptionsScreen::Steam1613OptionsScreenStructAdditions": [],
   "OuterHull": [
     {
       "args": [],
@@ -20350,6 +20823,17 @@
     {
       "args": [
         {
+          "name": "p",
+          "type": "Point"
+        }
+      ],
+      "name": "Pointf",
+      "return_type": "Pointf",
+      "static": true
+    },
+    {
+      "args": [
+        {
           "name": "+",
           "type": "x"
         },
@@ -20482,21 +20966,6 @@
       ],
       "name": "RelativeDistance",
       "return_type": "float",
-      "static": false
-    },
-    {
-      "args": [
-        {
-          "name": "x",
-          "type": "float"
-        },
-        {
-          "name": "y",
-          "type": "float"
-        }
-      ],
-      "name": "constructor",
-      "return_type": "void",
       "static": false
     }
   ],
@@ -20703,6 +21172,12 @@
   "Projectile": [
     {
       "args": [],
+      "name": "Projectile",
+      "return_type": "Projectile",
+      "static": true
+    },
+    {
+      "args": [],
       "name": "HS_OnUpdate",
       "return_type": "void",
       "static": false
@@ -20716,6 +21191,47 @@
       ],
       "name": "HS_CollisionCheck",
       "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "start",
+          "type": "Pointf"
+        },
+        {
+          "name": "finish",
+          "type": "Pointf"
+        },
+        {
+          "name": "damage",
+          "type": "Damage"
+        },
+        {
+          "name": "raytrace",
+          "type": "bool"
+        }
+      ],
+      "name": "CollisionMoving",
+      "return_type": "CollisionResponse",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSpaceId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSelfId",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetOwnerId",
+      "return_type": "int",
       "static": false
     },
     {
@@ -20886,29 +21402,6 @@
       ],
       "name": "SetMovingTarget",
       "return_type": "void",
-      "static": false
-    },
-    {
-      "args": [
-        {
-          "name": "start",
-          "type": "Pointf"
-        },
-        {
-          "name": "finish",
-          "type": "Pointf"
-        },
-        {
-          "name": "damage",
-          "type": "Damage"
-        },
-        {
-          "name": "raytrace",
-          "type": "bool"
-        }
-      ],
-      "name": "CollisionMoving",
-      "return_type": "CollisionResponse",
       "static": false
     },
     {
@@ -21334,6 +21827,23 @@
       "static": true
     },
     {
+      "args": [
+        {
+          "name": "selected",
+          "type": "int"
+        }
+      ],
+      "name": "SetSelected",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "GetSelected",
+      "return_type": "int",
+      "static": false
+    },
+    {
       "args": [],
       "name": "CompletelyDestroyed",
       "return_type": "bool",
@@ -21374,7 +21884,7 @@
         }
       ],
       "name": "PartialRepair",
-      "return_type": "void",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -21385,7 +21895,7 @@
         }
       ],
       "name": "PartialDamage",
-      "return_type": "void",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -21438,7 +21948,7 @@
     {
       "args": [
         {
-          "name": "dam",
+          "name": "damage",
           "type": "float"
         }
       ],
@@ -21689,7 +22199,7 @@
         }
       ],
       "name": "RenderImage",
-      "return_type": "int",
+      "return_type": "void",
       "static": false
     },
     {
@@ -21724,7 +22234,7 @@
         }
       ],
       "name": "RenderImageString",
-      "return_type": "int",
+      "return_type": "void",
       "static": false
     },
     {
@@ -22219,6 +22729,12 @@
       ],
       "name": "CountUnlockedShips",
       "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "AddExploredLocations",
+      "return_type": "void",
       "static": false
     },
     {
@@ -23062,6 +23578,21 @@
         {
           "name": "roomId",
           "type": "int"
+        },
+        {
+          "name": "damage",
+          "type": "float"
+        }
+      ],
+      "name": "ProjectileStrike",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "roomId",
+          "type": "int"
         }
       ],
       "name": "BreachRandomHull",
@@ -23421,6 +23952,12 @@
   "ShipBuilder": [
     {
       "args": [],
+      "name": "Finish",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "CheckTypes",
       "return_type": "void",
       "static": false
@@ -23581,11 +24118,11 @@
     {
       "args": [
         {
-          "name": "x",
+          "name": "shipType",
           "type": "int"
         },
         {
-          "name": "y",
+          "name": "shipVariant",
           "type": "int"
         }
       ],
@@ -24101,6 +24638,17 @@
       "static": false
     },
     {
+      "args": [
+        {
+          "name": "p",
+          "type": "Point"
+        }
+      ],
+      "name": "Valid",
+      "return_type": "bool",
+      "static": true
+    },
+    {
       "args": [],
       "name": "ComputeCenter",
       "return_type": "void",
@@ -24607,7 +25155,7 @@
         }
       ],
       "name": "AddAugmentation",
-      "return_type": "char",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -24672,6 +25220,57 @@
       "args": [],
       "name": "GetAvailablePower",
       "return_type": "int>",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "bIncludeWalls",
+          "type": "bool"
+        }
+      ],
+      "name": "GetSelectedRoom",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "roomId",
+          "type": "int"
+        },
+        {
+          "name": "position",
+          "type": "Pointf"
+        }
+      ],
+      "name": "LockdownRoom",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "DestroyBoardingDrones",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "augment",
+          "type": "std::string"
+        }
+      ],
+      "name": "ResistDamage",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -24929,6 +25528,12 @@
         }
       ],
       "name": "CheckCrystalAugment",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "CheckDlcEnabled",
       "return_type": "void",
       "static": false
     },
@@ -26186,6 +26791,12 @@
   "ShipSelect": [
     {
       "args": [],
+      "name": "GetSelection",
+      "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "ClearShipButtons",
       "return_type": "void",
       "static": false
@@ -26258,28 +26869,6 @@
         }
       ],
       "name": "Open",
-      "return_type": "void",
-      "static": false
-    },
-    {
-      "args": [
-        {
-          "name": "shipType",
-          "type": "int"
-        }
-      ],
-      "name": "PreSelectShip",
-      "return_type": "void",
-      "static": false
-    },
-    {
-      "args": [
-        {
-          "name": "shipType",
-          "type": "int"
-        }
-      ],
-      "name": "SelectShip",
       "return_type": "void",
       "static": false
     },
@@ -26520,13 +27109,13 @@
     {
       "args": [],
       "name": "GetLocation",
-      "return_type": "void",
+      "return_type": "Point",
       "static": false
     },
     {
       "args": [],
       "name": "GetGridLocation",
-      "return_type": "void",
+      "return_type": "Point",
       "static": false
     },
     {
@@ -26543,7 +27132,7 @@
     {
       "args": [
         {
-          "name": "maxDamage",
+          "name": "damage",
           "type": "float"
         }
       ],
@@ -26554,7 +27143,7 @@
     {
       "args": [
         {
-          "name": "pos",
+          "name": "position",
           "type": "Point"
         }
       ],
@@ -26587,7 +27176,12 @@
       "static": false
     },
     {
-      "args": [],
+      "args": [
+        {
+          "name": "num",
+          "type": "int"
+        }
+      ],
       "name": "Ioned",
       "return_type": "bool",
       "static": false
@@ -26684,7 +27278,7 @@
     {
       "args": [
         {
-          "name": "power",
+          "name": "amount",
           "type": "int"
         }
       ],
@@ -26694,7 +27288,7 @@
     },
     {
       "args": [],
-      "name": "StopHacking",
+      "name": "Jump",
       "return_type": "void",
       "static": false
     },
@@ -26884,17 +27478,6 @@
       "static": false
     },
     {
-      "args": [
-        {
-          "name": "num",
-          "type": "int"
-        }
-      ],
-      "name": "Ioned",
-      "return_type": "bool",
-      "static": false
-    },
-    {
       "args": [],
       "name": "IsMannedBoost",
       "return_type": "int",
@@ -27081,6 +27664,12 @@
       ],
       "name": "SetPowerLoss",
       "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [],
+      "name": "StopHacking",
+      "return_type": "void",
       "static": false
     },
     {
@@ -27317,6 +27906,29 @@
   "SpaceDrone": [
     {
       "args": [],
+      "name": "SpaceDrone",
+      "return_type": "SpaceDrone",
+      "static": true
+    },
+    {
+      "args": [],
+      "name": "OnLoop",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "deployed",
+          "type": "bool"
+        }
+      ],
+      "name": "SetDeployed",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [],
       "name": "PickDestination",
       "return_type": "void",
       "static": false
@@ -27399,7 +28011,7 @@
     {
       "args": [
         {
-          "name": "space",
+          "name": "spaceId",
           "type": "int"
         }
       ],
@@ -27414,12 +28026,7 @@
       "static": false
     },
     {
-      "args": [
-        {
-          "name": "drone",
-          "type": "SpaceDrone"
-        }
-      ],
+      "args": [],
       "name": "GetTooltip",
       "return_type": "std::string",
       "static": false
@@ -27433,7 +28040,7 @@
     {
       "args": [
         {
-          "name": "pos",
+          "name": "location",
           "type": "Pointf"
         }
       ],
@@ -27459,7 +28066,7 @@
     {
       "args": [
         {
-          "name": "unk",
+          "name": "valuable",
           "type": "bool"
         }
       ],
@@ -27468,12 +28075,7 @@
       "static": false
     },
     {
-      "args": [
-        {
-          "name": "drone",
-          "type": "SpaceDrone"
-        }
-      ],
+      "args": [],
       "name": "GetShieldShape",
       "return_type": "Globals::Ellipse",
       "static": false
@@ -27528,11 +28130,11 @@
     {
       "args": [
         {
-          "name": "pos1",
+          "name": "current",
           "type": "Pointf"
         },
         {
-          "name": "pos2",
+          "name": "last",
           "type": "Pointf"
         },
         {
@@ -27547,7 +28149,7 @@
     {
       "args": [
         {
-          "name": "pos",
+          "name": "location",
           "type": "Pointf"
         },
         {
@@ -27555,7 +28157,7 @@
           "type": "Damage"
         },
         {
-          "name": "unk",
+          "name": "forceHit",
           "type": "bool"
         }
       ],
@@ -27566,18 +28168,7 @@
     {
       "args": [],
       "name": "GetBoardingDrone",
-      "return_type": "BoarderDrone",
-      "static": false
-    },
-    {
-      "args": [
-        {
-          "name": "deployed",
-          "type": "bool"
-        }
-      ],
-      "name": "SetDeployed",
-      "return_type": "void",
+      "return_type": "CrewDrone",
       "static": false
     },
     {
@@ -28298,12 +28889,42 @@
     {
       "args": [
         {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        }
+      ],
+      "name": "StartInGrid",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "roomId",
           "type": "int"
         }
       ],
       "name": "CounterRoom",
       "return_type": "int",
+      "static": false
+    },
+    {
+      "args": [
+        {
+          "name": "roomId",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        }
+      ],
+      "name": "StartInRoom",
+      "return_type": "bool",
       "static": false
     },
     {
@@ -29669,11 +30290,11 @@
     {
       "args": [
         {
-          "name": "unknown",
+          "name": "mX",
           "type": "int"
         },
         {
-          "name": "unknown",
+          "name": "mY",
           "type": "int"
         }
       ],
@@ -29697,7 +30318,32 @@
       "static": false
     },
     {
-      "args": [],
+      "args": [
+        {
+          "name": "action",
+          "type": "TouchAction"
+        },
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "initialX",
+          "type": "int"
+        },
+        {
+          "name": "initialY",
+          "type": "int"
+        }
+      ],
       "name": "OnTouch",
       "return_type": "void",
       "static": false
@@ -29717,11 +30363,11 @@
     {
       "args": [
         {
-          "name": "unknown",
+          "name": "box",
           "type": "InfoBox"
         },
         {
-          "name": "unknown",
+          "name": "forceSystemInfoWidth",
           "type": "int"
         }
       ],
@@ -29744,7 +30390,7 @@
     {
       "args": [
         {
-          "name": "unknown",
+          "name": "val",
           "type": "bool"
         }
       ],
@@ -29767,7 +30413,7 @@
     {
       "args": [
         {
-          "name": "unknown",
+          "name": "data",
           "type": "int"
         }
       ],
@@ -30112,8 +30758,13 @@
       "static": true
     },
     {
-      "args": [],
-      "name": "destroy",
+      "args": [
+        {
+          "name": "renderTray",
+          "type": "bool"
+        }
+      ],
+      "name": "RenderTouchTooltips",
       "return_type": "void",
       "static": false
     },
@@ -30196,7 +30847,32 @@
       "static": false
     },
     {
-      "args": [],
+      "args": [
+        {
+          "name": "action",
+          "type": "TouchAction"
+        },
+        {
+          "name": "id",
+          "type": "int"
+        },
+        {
+          "name": "x",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "type": "int"
+        },
+        {
+          "name": "initialX",
+          "type": "int"
+        },
+        {
+          "name": "initialY",
+          "type": "int"
+        }
+      ],
       "name": "OnTouch",
       "return_type": "void",
       "static": false
@@ -30216,19 +30892,19 @@
     {
       "args": [],
       "name": "IsTouchTooltipOpen",
-      "return_type": "void",
+      "return_type": "bool",
       "static": false
     },
     {
       "args": [],
       "name": "IsTouchTooltipActive",
-      "return_type": "void",
+      "return_type": "bool",
       "static": false
     },
     {
       "args": [
         {
-          "name": "unk",
+          "name": "immediate",
           "type": "bool"
         }
       ],
@@ -30545,6 +31221,12 @@
     },
     {
       "args": [],
+      "name": "SystemStoreBox",
+      "return_type": "SystemStoreBox",
+      "static": true
+    },
+    {
+      "args": [],
       "name": "Activate",
       "return_type": "void",
       "static": false
@@ -30704,7 +31386,7 @@
     {
       "args": [
         {
-          "name": "unk",
+          "name": "valuable",
           "type": "bool"
         }
       ],
@@ -30763,7 +31445,7 @@
     {
       "args": [
         {
-          "name": "pos",
+          "name": "location",
           "type": "Pointf"
         },
         {
@@ -33541,6 +34223,21 @@
     {
       "args": [
         {
+          "name": "target",
+          "type": "ShipManager"
+        },
+        {
+          "name": "targetType",
+          "type": "int"
+        }
+      ],
+      "name": "ModifyAllStatusEffects",
+      "return_type": "void",
+      "static": false
+    },
+    {
+      "args": [
+        {
           "name": "boardingEvent",
           "type": "BoardingEvent"
         }
@@ -33589,17 +34286,6 @@
         }
       ],
       "name": "CreateChoiceBox",
-      "return_type": "void",
-      "static": false
-    },
-    {
-      "args": [
-        {
-          "name": "event",
-          "type": "LocationEvent"
-        }
-      ],
-      "name": "CreateChoiceBox0",
       "return_type": "void",
       "static": false
     },
@@ -33727,6 +34413,17 @@
       "static": false
     },
     {
+      "args": [
+        {
+          "name": "damage",
+          "type": "EventDamage"
+        }
+      ],
+      "name": "PossibleDamage",
+      "return_type": "int",
+      "static": false
+    },
+    {
       "args": [],
       "name": "Restart",
       "return_type": "void",
@@ -33757,17 +34454,6 @@
         }
       ],
       "name": "UpdateLocation",
-      "return_type": "void",
-      "static": false
-    },
-    {
-      "args": [
-        {
-          "name": "event",
-          "type": "LocationEvent"
-        }
-      ],
-      "name": "UpdateLocation0",
       "return_type": "void",
       "static": false
     },
